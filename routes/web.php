@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Front\ProductController;
+use App\Http\Controllers\Front\BasketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,13 @@ use App\Http\Controllers\Front\ProductController;
 // CATALOG & PRODUCT
 Route::get('/', [CategoryController::class, 'showAllCategories']);
 Route::get('/catalog/{parent}/{children?}/{product?}', [ProductController::class, 'findMethodShow']);
-//Route::get('/catalog/{parent}/{children?}/{product}', [ProductController::class, 'findMethodShow']);
 
-/*Route::get('/', 'Shop\MainController@index')->name('shop.main');
-Route::get('/catalog/{slug}', 'Shop\CatalogController@show')->name('shop.category');
-Route::get('/catalog', 'Shop\CatalogController@showCatalog')->name('shop.catalog');
-Route::get('/product/{productSlug}', 'Shop\ProductController@show')->name('shop.product');*/
+//BASKET
+Route::get('/basket', [BasketController::class, 'showBasket']);
+Route::get('/basket/add/{productId}', [BasketController::class, 'addProduct']);
+Route::get('/basket/addcount/{productId}', [BasketController::class, 'addCountProduct']);
+Route::get('/basket/remove/{productId}', [BasketController::class, 'removeProduct']);
+
+
+
 

@@ -22,4 +22,13 @@ class Product extends Model
     {
         return $this->hasOne(Attribute::class, 'product_id');
     }
+
+    public function getPriceForCount()
+    {
+        if (!is_null($this->pivot)) {
+            return $this->pivot->count * $this->price;
+        } else {
+            return $this->price;
+        }
+    }
 }

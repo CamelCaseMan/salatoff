@@ -11,7 +11,9 @@
                                     <li><a href="#">{{$category->name}}<span class="fa fa-angle-down"></span></a>
                                         <ul class="submenu">
                                             @foreach($category->childrenCategories as $children)
-                                                <li><a href="/catalog/{{$category->slug}}/{{$children->slug}}">{{$children->name}}</a></li>
+                                                <li>
+                                                    <a href="/catalog/{{$category->slug}}/{{$children->slug}}">{{$children->name}}</a>
+                                                </li>
                                             @endforeach
                                         </ul>
                                 @else
@@ -25,6 +27,7 @@
                 <li><a href="">Наши кафе</a></li>
                 <li><a href="">Рецепты</a></li>
                 <li><a href="">Контакты</a></li>
+                <li><a href="/basket">Корзина</a></li>
             </ul>
         </div>
     </nav>

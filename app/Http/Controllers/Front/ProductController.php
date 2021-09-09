@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Product;
 use App\Repositories\EloquentCategoryRepository;
 use App\Repositories\EloquentProductRepository;
 use Illuminate\Http\Request;
@@ -20,24 +18,39 @@ class ProductController extends Controller
         $this->categoryRepository = $categoryRepository;
     }
 
-
-    public function findMethodShow($parent, $children = null)
+    /**
+     * @param $parent
+     * @param null $children
+     * @param null $product
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * Поиск метода отображения
+     * Если есть подкатегории отображаем
+     * Если подкатегории нет - отображаем товар
+     */
+    public function findMethodShow($parent, $children = null, $product = null)
     {
+
         $category = $this->categoryRepository->getCategory($parent);
 
         if ($category == null) {
             abort('404');
         }
 
+        //Поиск дочерней категории или отображаем товар
         if ($children !== null) {
             $parent = $category;
             $category = $this->categoryRepository->findParentCategory($parent->id, $children);
+
+            if ($product !== null) {
+                return $this->showOneProduct($category->id, $product);
+            }
 
             if ($category == null) {
                 return $this->showOneProduct($parent->id, $children);
             }
         }
         $category_name = isset($parent->name) ? $parent->name . '/' . $category->name : $category->name;
+
         return $this->showAllProducts($category_name, $category->id);
     }
 

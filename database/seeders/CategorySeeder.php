@@ -167,7 +167,7 @@ class CategorySeeder extends Seeder
 
             20 => [
                 'name' => 'Комплесные обеды',
-                'slug' => \Str::of('Выпечка')->slug('-')->snake(),
+                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
                 'image' => 'https://salatoff.ru/storage/product/KSmpn4ndxfYHbcegzNADY49NJ0mRzfVbnIPqN7Il.jpeg',
                 'parent_id' => 0,
                 'show' => 1,

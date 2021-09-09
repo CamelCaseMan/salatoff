@@ -16,6 +16,7 @@ class EloquentProductRepository extends CoreRepository
     {
         return Model::where('category_id', $category_id)
             ->where('slug', $slug)
+            ->where('show', 1)
             ->with('getAttributeProduct')
             ->first();
     }
@@ -24,6 +25,7 @@ class EloquentProductRepository extends CoreRepository
     {
         return Model::where('category_id', $category_id)
             ->with('getAttributeProduct')
+            ->where('show', 1)
             ->get();
     }
 
