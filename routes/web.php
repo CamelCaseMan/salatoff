@@ -6,6 +6,7 @@ use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Front\BasketController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Order\OrderController;
+use App\Http\Controllers\Manager\ManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,15 @@ Route::prefix('client')->namespace('Client')->middleware(['role:client'])->group
     Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
     Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
     Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
+});
+
+
+/**
+ * Личный кабинет менеджера
+ */
+Route::prefix('manager')->middleware(['role:client'])->group(function () {
+    Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
+    Route::get('/orders', 'ProfileController@changeInfo')->name('change.profile');
 });
 
 /**
