@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangePasswordClientRequest;
 use App\Http\Requests\ChangeProfileClientRequest;
+use App\Models\Order;
 use App\Services\Client\ClientService;
 use Auth;
 
@@ -21,12 +22,18 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
+        $orders = Order::where('user_id', $user->id)
+            ->where('status', '1')
+            ->get();
+
+
+
        // $id = Auth::user()->id;
         /*$orders = $clientService->getAllOrders($id);
         */
 
         //return view('client.index', compact('orders', 'user'));
-        return view('client.index', compact('user'));
+        return view('client.index', compact('user', 'orders'));
     }
 
     public function changeInfo(ChangeProfileClientRequest $request)
