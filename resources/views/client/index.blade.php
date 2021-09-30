@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <div class="tab-content" id="myTabContent">
                             @include('client.profile.index')
-                           {{-- @include('client.order.index')--}}
+                            @include('client.order.index')
                         </div>
                     </div>
                 </div>

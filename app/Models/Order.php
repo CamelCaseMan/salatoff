@@ -39,4 +39,9 @@ class Order extends Model
         $this->save();
         session()->forget('orderId');
     }
+
+    /*public function getProductsOrder()
+    {
+        return $this->belongsTo(Attribute::class, 'product_id');
+    }*/
 }
