@@ -33,12 +33,7 @@ class BasketService
      */
     public function addCountBasket(int $productId, int $count = 1)
     {
-        if (is_null($this->orderId)) {
-            $order = Order::create();
-            session(['orderId' => $order->id]);
-        } else {
-            $order = Order::find($this->orderId);
-        }
+        $order = $this->createOrder();
 
         if ($order->products->contains($productId)) {
             $pivotTable = $order->products()->where('product_id', $productId)->first()->pivot;
@@ -61,12 +56,7 @@ class BasketService
      */
     public function addOneBasket(int $productId)
     {
-        if (is_null($this->orderId)) {
-            $order = Order::create();
-            session(['orderId' => $order->id]);
-        } else {
-            $order = Order::find($this->orderId);
-        }
+        $order = $this->createOrder();
 
         if ($order->products->contains($productId)) {
             $pivotTable = $order->products()->where('product_id', $productId)->first()->pivot;
@@ -97,5 +87,34 @@ class BasketService
             }
 
         }
+    }
+
+    /**
+     * Получаем владельца заказ
+     */
+    public function saveUserOrder()
+    {
+        if (\Auth::check()) {
+            return \Auth::id();
+        } else {
+            return null;
+        }
+
+    }
+
+    /**
+     * @return mixed
+     */
+    private function createOrder()
+    {
+        if (is_null($this->orderId)) {
+            $order = Order::create([
+                'user_id' => $this->saveUserOrder()]);
+            session(['orderId' => $order->id]);
+        } else {
+            $order = Order::find($this->orderId);
+        }
+
+        return $order;
     }
 }
