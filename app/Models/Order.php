@@ -17,13 +17,43 @@ class Order extends Model
         return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
     }
 
+    /**
+     * @return int
+     * Сумма товаров в корзине
+     */
     public function getFullPrice()
     {
         $sum = 0;
         foreach ($this->products as $product) {
             $sum += $product->getPriceForCount();
         }
-        return $sum;
+        return round($sum, 2);
+    }
+
+    /**
+     * @return int
+     * Количество товаров в корзине
+     */
+    public function getCountProducts()
+    {
+        $count = 0;
+        foreach ($this->products as $product) {
+            $count = $product->getProductCount() + $count;
+        }
+        return $count;
+    }
+
+    public function haveProductsOrder()
+    {
+        $products = [];
+        foreach ($this->products as $product) {
+            $products[] = [
+                'id' => $product->id,
+                'count' => $product->getProductCount()
+            ];
+
+        }
+        return $products;
     }
 
     /**
@@ -40,8 +70,4 @@ class Order extends Model
         session()->forget('orderId');
     }
 
-    /*public function getProductsOrder()
-    {
-        return $this->belongsTo(Attribute::class, 'product_id');
-    }*/
 }
