@@ -15,7 +15,7 @@ class BasketService
 
     /**
      * @return mixed
-     * Получаем корзину
+     * Получаем заказ клиента
      */
     public function getOrder()
     {
@@ -29,6 +29,7 @@ class BasketService
     /**
      * @param int $productId
      * @param int $count
+     * @return mixed
      * Указываем нужное количества товара в корзине
      */
     public function addCountBasket(int $productId, int $count = 1)
@@ -47,10 +48,12 @@ class BasketService
         } else {
             $order->products()->attach($productId, ['count' => $count]);
         }
+        return $order;
     }
 
     /**
      * @param int $productId
+     * @return mixed
      * Добавляем товар в корзину
      * Если есть - увеличиваем count
      */
@@ -65,12 +68,14 @@ class BasketService
         } else {
             $order->products()->attach($productId);
         }
+        return $order;
     }
 
     /**
      * @param int $productId
-     * Удаляем товар из корзины полностью
-     * или уменьшаем на 1
+     * @return mixed
+     * Удаляем один товар из корзины
+     * Или полностью, если меньше 1
      */
     public function removeOneBasket(int $productId)
     {
@@ -85,8 +90,20 @@ class BasketService
                 $pivotTable->count--;
                 $pivotTable->update();
             }
-
+            return $order;
         }
+    }
+
+    /**
+     * @param int $productId
+     * @return mixed
+     * Удаляем товар полностью из корзины
+     */
+    public function removeProduct(int $productId)
+    {
+        $order = Order::find($this->orderId);
+        $order->products()->detach($productId);
+        return $order;
     }
 
     /**
@@ -116,5 +133,22 @@ class BasketService
         }
 
         return $order;
+    }
+
+    /**
+     * @param int $id
+     * @return array
+     * Информация для фронта
+     */
+    public function setInfoOrder(int $id)
+    {
+        $order = Order::find($id);
+        $info = [
+            'total' => $order->getFullPrice(), //Сумма корзины
+            'count' => $order->getCountProducts(), //Количество товаров в корзине
+            'products' => $order->haveProductsOrder(), //Какие продукты в корзине и какое количество
+            'success' => 'true'
+        ];
+        return $info;
     }
 }

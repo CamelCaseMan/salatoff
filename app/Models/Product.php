@@ -23,12 +23,26 @@ class Product extends Model
         return $this->hasOne(Attribute::class, 'product_id');
     }
 
+    /**
+     * Считаем цену товара
+     */
     public function getPriceForCount()
     {
         if (!is_null($this->pivot)) {
             return $this->pivot->count * $this->price;
         } else {
             return $this->price;
+        }
+    }
+
+    /**
+     * @return int
+     * Получаем количество товара в корзине
+     */
+    public function getProductCount(): int
+    {
+        if (!is_null($this->pivot)) {
+            return $this->pivot->count;
         }
     }
 }

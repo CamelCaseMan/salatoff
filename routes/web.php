@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Front\ProductController;
-use App\Http\Controllers\Front\BasketController;
+use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Manager\ManagerController;
@@ -28,7 +28,7 @@ Route::prefix('basket')->middleware(['role:client'])->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
     Route::get('/add/{productId}', [BasketController::class, 'addProduct']);
     Route::get('/addcount/{productId}', [BasketController::class, 'addCountProduct']);
-    Route::get('/remove/{productId}', [BasketController::class, 'removeProduct']);
+    Route::get('/remove/{productId}', [BasketController::class, 'removeOneProduct']);
 });
 
 /**
