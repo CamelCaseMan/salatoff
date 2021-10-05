@@ -15,6 +15,7 @@ class OrderController
     public function orderConfirm(Request $request)
     {
         $orderID = session('orderId');
+
         if ($orderID == null) {
             return view('front.basket.emptyBasket');
         }

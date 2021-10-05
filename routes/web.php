@@ -19,16 +19,25 @@ use App\Http\Controllers\Manager\ManagerController;
 |
 */
 
-// CATALOG & PRODUCT
+// Каталог и карточки товара
 Route::get('/', [CategoryController::class, 'showAllCategories']);
 Route::get('/catalog/{parent}/{children?}/{product?}', [ProductController::class, 'findMethodShow']);
 
-//BASKET
-Route::prefix('basket')->middleware(['role:client'])->group(function () {
+//Корзина
+Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
-    Route::get('/add/{productId}', [BasketController::class, 'addProduct']);
-    Route::get('/addcount/{productId}', [BasketController::class, 'addCountProduct']);
-    Route::get('/remove/{productId}', [BasketController::class, 'removeOneProduct']);
+    Route::post('/add', [BasketController::class, 'addProduct']);
+    Route::post('/addcount', [BasketController::class, 'addCountProduct']);
+    Route::post('/remove', [BasketController::class, 'removeOneProduct']);
+    Route::post('/removeAll', [BasketController::class, 'removeProduct']);
+});
+
+/**
+ * Shop - оформление заказа
+ */
+Route::namespace('Shop')->middleware(['auth'])->group(function () {
+    Route::get('/save-order', [OrderController::class, 'orderConfirm'])->name('save.order');
+    Route::get('/finish', 'FinishController@index')->name('finish');
 });
 
 /**
@@ -47,14 +56,6 @@ Route::prefix('client')->namespace('Client')->middleware(['role:client'])->group
 Route::prefix('manager')->middleware(['role:client'])->group(function () {
     Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
     Route::get('/orders', 'ProfileController@changeInfo')->name('change.profile');
-});
-
-/**
- * Order - оформление заказа
- */
-Route::namespace('Shop')->middleware(['auth'])->group(function () {
-    Route::get('/save-order', [OrderController::class, 'orderConfirm'])->name('save.order');
-    Route::get('/finish', 'FinishController@index')->name('finish');
 });
 
 

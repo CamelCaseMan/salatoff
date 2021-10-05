@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers\Basket;
 
-use App\Helpers\CheckProduct;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\Basket\BasketAddCountProductRequest;
+use App\Http\Requests\Basket\BasketAddProductRequest;
+use App\Http\Requests\Basket\RemoveOneProductRequest;
 use App\Services\Basket\BasketService;
-use Illuminate\Http\Request;
+use App\Services\Order\BasketOrder;
 
 
 class BasketController extends Controller
 {
+    private $basketOrder;
+
+    public function __construct(BasketOrder $basketOrder)
+    {
+        $this->basketOrder = $basketOrder;
+    }
+
     /**
      * @param BasketService $basketService
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -18,7 +26,7 @@ class BasketController extends Controller
      */
     public function showBasket(BasketService $basketService)
     {
-        $order = $basketService->getOrder();
+        $order = $this->basketOrder->getOrder();
         if (is_null($order)) {
             return view('front.basket.emptyBasket');
         }
@@ -26,63 +34,55 @@ class BasketController extends Controller
     }
 
     /**
-     * @param int $productId
+     * @param BasketAddProductRequest $basketAddProductRequest
      * @param BasketService $basketService
      * @return \Illuminate\Http\JsonResponse
      * Добавляем один товар в корзину
      */
-    public function addProduct(int $productId, BasketService $basketService)
+    public function addProduct(BasketAddProductRequest $basketAddProductRequest, BasketService $basketService)
     {
-        if (CheckProduct::checkShowProduct($productId)) {
-            $order = $basketService->addOneBasket($productId);
-            $info = $basketService->setInfoOrder($order->id);
-            return response()->json($info);
-        } else {
-            return response()->json([
-                'success' => 'false'
-            ]);
-        }
+        $order = $basketService->addOneBasket($basketAddProductRequest->productId);
+        $info = $this->basketOrder->setInfoOrder($order->id);
+        return response()->json($info);
     }
 
     /**
+     * @param BasketAddCountProductRequest $basketAddCountProductRequest
      * @param BasketService $basketService
      * @return \Illuminate\Http\JsonResponse
      * Добавляем сразу нужное число товаров в корзину
      */
-    public function addCountProduct(BasketService $basketService)
+    public function addCountProduct(BasketAddCountProductRequest $basketAddCountProductRequest, BasketService $basketService)
     {
-        $productId = 32;
-        $count = 21;
-
-        if (CheckProduct::checkShowProduct($productId)) {
-            $order = $basketService->addCountBasket($productId, $count);
-            $info = $basketService->setInfoOrder($order->id);
-            return response()->json($info);
-        } else {
-            return response()->json([
-                'success' => 'false'
-            ]);
-        }
+        $order = $basketService->addCountBasket($basketAddCountProductRequest->productId, $basketAddCountProductRequest->count);
+        $info = $this->basketOrder->setInfoOrder($order->id);
+        return response()->json($info);
     }
 
 
     /**
-     * @param int $productId
+     * @param RemoveOneProductRequest $removeOneProductRequest
      * @param BasketService $basketService
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     * Удаляем один товар из корзины
+     * @return \Illuminate\Http\JsonResponse
+     * Уменьшаем количество товара на 1
      */
-    public function removeOneProduct(int $productId, BasketService $basketService)
+    public function removeOneProduct(RemoveOneProductRequest $removeOneProductRequest, BasketService $basketService)
     {
-        $order = $basketService->removeOneBasket($productId);
-        $info = $basketService->setInfoOrder($order->id);
+        $order = $basketService->removeOneBasket($removeOneProductRequest->productId);
+        $info = $this->basketOrder->setInfoOrder($order->id);
         return response()->json($info);
     }
 
-    public function removeProduct(int $productId, BasketService $basketService)
+    /**
+     * @param RemoveOneProductRequest $removeOneProductRequest
+     * @param BasketService $basketService
+     * @return \Illuminate\Http\JsonResponse
+     * Удаляем товар из корзины полностью
+     */
+    public function removeProduct(RemoveOneProductRequest $removeOneProductRequest, BasketService $basketService)
     {
-        $order = $basketService->removeOneBasket($productId);
-        $info = $basketService->setInfoOrder($order->id);
+        $order = $basketService->removeProduct($removeOneProductRequest->productId);
+        $info = $this->basketOrder->setInfoOrder($order->id);
         return response()->json($info);
     }
 
