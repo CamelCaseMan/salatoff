@@ -9,13 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Salatoff.ru</title>
+    <title>Менеджер — Salatoff.ru</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('theme')}}/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('theme')}}/css/beauty.css"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('theme')}}/css/manager.css"/>
 </head>
 <body>
 @include('front.menu')
 <div class="container">
-    <div id="page" style="margin-top: 50px;">
+    <div id="manager-page">
         @yield('content')
     </div>
 </div>

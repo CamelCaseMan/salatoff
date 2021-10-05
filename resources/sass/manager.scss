@@ -1,0 +1,37 @@
+@import "font";
+
+#manager-page {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  .page-title {
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+  }
+}
+
+.big-table {
+  &__wrapper {
+    position: relative;
+  }
+  width: 100%;
+  tr {
+    th {
+      font-weight: 500;
+    }
+    td, th {
+      padding: 15px 10px;
+      
+    }
+    &:nth-child(2n) {
+      background-color: rgba(56 124 75 / 5%);
+    }
+  }
+  .-button {
+    display: inline-block;
+    cursor: pointer;
+    &.--remove {
+      color: #D13301;
+    }
+  }
+}

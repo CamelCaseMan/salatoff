@@ -10,6 +10,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Salatoff.ru</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('theme')}}/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('theme')}}/css/beauty.css"/>
 </head>
 <body>
