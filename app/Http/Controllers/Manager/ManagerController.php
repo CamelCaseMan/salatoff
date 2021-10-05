@@ -6,6 +6,7 @@ class ManagerController
 {
     public function showMainPage()
     {
-        return view('manager.index');
+        $name = 'Андрей';
+        return view('manager.index', compact('name'));
     }
 }
