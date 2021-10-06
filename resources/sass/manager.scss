@@ -1,8 +1,74 @@
 @import "font";
+@import "reset";
+@import "libs";
+@import "vars";
 
-#manager-page {
+.manager-modals {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255 255 255 / 50%);
+  padding: 20px;
+  padding-top: 80px;
+  &.active {
+    display: block;
+  }
+  
+}
+
+.manager-page {
   padding-top: 50px;
   padding-bottom: 100px;
+  &__separation {
+    display: flex;
+    &.active {
+      .manager-page__menu {
+        left: -300px;
+      }
+      .manager-page__left-plug {
+        width: 0;
+      }
+    }
+  }
+  &__container {
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-grow: 1;
+  }
+  &__left-plug {
+    width: 300px;
+    transition: .3s ease;
+  }
+  &__menu {
+    width: 300px;
+    background-color: rgba(56 124 75 / 5%);
+    position: fixed;
+    top: 74px;
+    bottom: 0;
+    padding: 30px 20px;
+    left: 0;
+    transition: .3s ease;
+    li {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        transition: .2s ease;
+        color: #252525;
+        opacity: 0.6;
+        font-weight: 500;
+        &.active, &:hover {
+          color: #387C4B;
+          opacity: 1;
+        }
+      }
+    }
+  }
   .page-title {
     text-align: left;
     font-weight: 500;

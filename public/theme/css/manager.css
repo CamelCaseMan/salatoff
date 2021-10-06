@@ -30,13 +30,106 @@
 }
 html, body {
   font-family: "mtsrt", sans-serif !important;
+  color: #252525;
 }
 
-#manager-page {
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tag-button {
+  display: inline-block;
+  background-color: #ddd;
+  color: #555;
+  padding: 2px 5px;
+  border-radius: 2px;
+  cursor: default;
+}
+.tag-button.--green {
+  cursor: pointer;
+  background-color: #387c4b17;
+  color: #387C4B;
+}
+.tag-button.--blue {
+  cursor: pointer;
+  background-color: #008bfd1a;
+  color: #008bfd;
+}
+
+.manager-modals {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  padding-top: 80px;
+}
+.manager-modals.active {
+  display: block;
+}
+
+.manager-page {
   padding-top: 50px;
   padding-bottom: 100px;
 }
-#manager-page .page-title {
+.manager-page__separation {
+  display: flex;
+}
+.manager-page__separation.active .manager-page__menu {
+  left: -300px;
+}
+.manager-page__separation.active .manager-page__left-plug {
+  width: 0;
+}
+.manager-page__container {
+  padding-left: 30px;
+  padding-right: 30px;
+  flex-grow: 1;
+}
+.manager-page__left-plug {
+  width: 300px;
+  transition: 0.3s ease;
+}
+.manager-page__menu {
+  width: 300px;
+  background-color: rgba(56, 124, 75, 0.05);
+  position: fixed;
+  top: 74px;
+  bottom: 0;
+  padding: 30px 20px;
+  left: 0;
+  transition: 0.3s ease;
+}
+.manager-page__menu li {
+  margin-bottom: 10px;
+}
+.manager-page__menu li:last-child {
+  margin-bottom: 0;
+}
+.manager-page__menu li a {
+  transition: 0.2s ease;
+  color: #252525;
+  opacity: 0.6;
+  font-weight: 500;
+}
+.manager-page__menu li a.active, .manager-page__menu li a:hover {
+  color: #387C4B;
+  opacity: 1;
+}
+.manager-page .page-title {
   text-align: left;
   font-weight: 500;
   margin-bottom: 1.5em;
