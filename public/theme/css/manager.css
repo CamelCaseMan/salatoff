@@ -30,13 +30,162 @@
 }
 html, body {
   font-family: "mtsrt", sans-serif !important;
+  color: #252525;
 }
 
-#manager-page {
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tag-button {
+  display: inline-block;
+  background-color: #ddd;
+  color: #555;
+  padding: 2px 5px;
+  border-radius: 2px;
+  cursor: default;
+}
+.tag-button.--green {
+  cursor: pointer;
+  background-color: #387c4b17;
+  color: #387C4B;
+}
+.tag-button.--blue {
+  cursor: pointer;
+  background-color: #008bfd1a;
+  color: #008bfd;
+}
+
+body.--block {
+  overflow: hidden;
+}
+
+.manager-modals {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  padding-top: 80px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.manager-modals.active {
+  display: flex;
+}
+.manager-modals__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.manager-modal {
+  display: none;
+  position: relative;
+  min-width: 350px;
+  background-color: #fff;
+  border: 1px solid rgba(56, 124, 75, 0.1);
+}
+.manager-modal.active {
+  display: block;
+}
+.manager-modal__header {
+  padding: 15px;
+  border-bottom: 4px solid rgba(56, 124, 75, 0.1);
+  position: relative;
+}
+.manager-modal__header .-title {
+  font-weight: 500;
+  padding-right: 50px;
+}
+.manager-modal__header .-close {
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.2;
+  transition: 0.2s ease;
+}
+.manager-modal__header .-close:hover {
+  opacity: 0.5;
+}
+.manager-modal__content {
+  padding: 15px;
+  padding-bottom: 30px;
+}
+.manager-modal .-chars li {
+  margin-bottom: 10px;
+}
+.manager-modal .-chars li .-prefix {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-bottom: 2px;
+}
+
+.manager-page {
   padding-top: 50px;
   padding-bottom: 100px;
 }
-#manager-page .page-title {
+.manager-page__separation {
+  display: flex;
+}
+.manager-page__separation.active .manager-page__menu {
+  left: -300px;
+}
+.manager-page__separation.active .manager-page__left-plug {
+  width: 0;
+}
+.manager-page__container {
+  padding-left: 30px;
+  padding-right: 30px;
+  flex-grow: 1;
+}
+.manager-page__left-plug {
+  width: 300px;
+  transition: 0.3s ease;
+}
+.manager-page__menu {
+  width: 300px;
+  background-color: rgba(56, 124, 75, 0.05);
+  position: fixed;
+  top: 74px;
+  bottom: 0;
+  padding: 30px 20px;
+  left: 0;
+  transition: 0.3s ease;
+}
+.manager-page__menu li {
+  margin-bottom: 10px;
+}
+.manager-page__menu li:last-child {
+  margin-bottom: 0;
+}
+.manager-page__menu li a {
+  transition: 0.2s ease;
+  color: #252525;
+  opacity: 0.6;
+  font-weight: 500;
+}
+.manager-page__menu li a.active, .manager-page__menu li a:hover {
+  color: #387C4B;
+  opacity: 1;
+}
+.manager-page .page-title {
   text-align: left;
   font-weight: 500;
   margin-bottom: 1.5em;

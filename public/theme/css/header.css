@@ -30,6 +30,7 @@
 }
 html, body {
   font-family: "mtsrt", sans-serif !important;
+  color: #252525;
 }
 
 .header {
@@ -39,6 +40,41 @@ html, body {
   position: fixed;
   left: 0;
   right: 0;
+}
+.header.--manager .header__container {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  -moz-column-gap: 0;
+       column-gap: 0;
+}
+.header__hamburger {
+  margin-right: 30px;
+  cursor: pointer;
+}
+.header__hamburger svg {
+  overflow: visible;
+}
+.header__hamburger svg path {
+  transition: 0.2s ease;
+}
+.header__hamburger svg path:nth-child(1) {
+  transform-origin: left top;
+}
+.header__hamburger svg path:nth-child(2) {
+  transform-origin: left;
+}
+.header__hamburger svg path:nth-child(3) {
+  transform-origin: left bottom;
+}
+.header__hamburger.active svg path:nth-child(1) {
+  transform: rotate(45deg);
+}
+.header__hamburger.active svg path:nth-child(2) {
+  transform: scaleX(0);
+}
+.header__hamburger.active svg path:nth-child(3) {
+  transform: rotate(-45deg);
 }
 .header__container {
   position: relative;
