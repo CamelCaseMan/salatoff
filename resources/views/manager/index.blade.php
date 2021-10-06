@@ -19,7 +19,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -43,7 +43,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -67,7 +67,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -91,7 +91,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -115,7 +115,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -139,7 +139,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -163,7 +163,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -187,7 +187,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -211,7 +211,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -235,7 +235,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -259,7 +259,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
@@ -283,7 +283,7 @@
             <tr>
                 <td>41</td>
                 <td>
-                    <div class="tag-button --green">
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-user-info">
                         Мыльникова Вера
                     </div>
                 </td>
