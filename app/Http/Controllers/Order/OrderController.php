@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Order;
 
+use App\Http\Requests\Order\OrderRequest;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class OrderController
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * Подтверждение заказа
      */
-    public function orderConfirm(Request $request)
+    public function orderConfirm(OrderRequest $orderRequest)
     {
         $orderID = session('orderId');
 
@@ -21,7 +22,7 @@ class OrderController
         }
 
         $order = Order::find($orderID);
-        $order->saveOrder($request->name, $request->phone);
+        $order->saveOrder($orderRequest->name, $orderRequest->phone);
     }
 
     /**
