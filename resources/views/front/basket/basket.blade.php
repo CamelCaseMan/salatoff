@@ -31,15 +31,7 @@
             </tbody>
         </table>
         <b>Итого: {{$order->getFullPrice()}} руб.</b>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+
         @include('front.basket.delivery')
     </div>
 

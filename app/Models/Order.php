@@ -9,7 +9,11 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'user_id', 'total'
+    ];
+
+    protected $casts = [
+        'delivery' => 'array'
     ];
 
     public function products()
@@ -57,17 +61,34 @@ class Order extends Model
     }
 
     /**
-     * @param string $name
-     * @param string $phone
+     * @param array $data
      * Сохраняем информацию по заказу
      */
-    public function saveOrder(string $name, string $phone)
+    public function saveOrder(array $data, $order)
     {
-        $this->name = $name;
-        $this->phone = $phone;
-        $this->status = 1;
-        $this->save();
-        session()->forget('orderId');
-    }
+        $cupon_value = $data['cupon'];
+        $cupon = Cupon::where('value', $cupon_value)->first();
+        if (!empty($cupon)) {
+            $discount = ($order->getFullPrice() * $cupon->discount) / 100;
+        }
 
+        dd($discount);
+
+
+        $this->name = $data['name'];
+        $this->phone = $data['phone'];
+        $this->status = 1;
+        $this->total = $order->getFullPrice();
+        $delivery = [
+            'address' => $data['address'],
+            'entrance' => $data['entrance'],
+            'intercom' => $data['intercom'],
+            'floor' => $data['floor'],
+            'flat' => $data['flat'],
+            'comment' => $data['comment'],
+        ];
+        $this->delivery = $delivery;
+        $this->user_id = \Auth::user()->id;
+        $this->save();
+    }
 }

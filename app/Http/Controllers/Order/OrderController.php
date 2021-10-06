@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Order;
 
 use App\Http\Requests\Order\OrderRequest;
 use App\Models\Order;
-use Illuminate\Http\Request;
+
 
 class OrderController
 {
     /**
-     * @param Request $request
+     * @param OrderRequest $orderRequest
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     * Подтверждение заказа
+     * Валидируем и сохраняем заказ
      */
     public function orderConfirm(OrderRequest $orderRequest)
     {
@@ -22,14 +22,9 @@ class OrderController
         }
 
         $order = Order::find($orderID);
-        $order->saveOrder($orderRequest->name, $orderRequest->phone);
+        $order->saveOrder($orderRequest->all(), $order);
+        session()->forget('orderId');
     }
 
-    /**
-     * Сохраняем заказ
-     */
-    public function saveOrder(Request $request)
-    {
-        dd($request->all());
-    }
+
 }

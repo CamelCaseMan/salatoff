@@ -19,6 +19,9 @@ class CreateOrdersTable extends Migration
             $table->integer('status')->unsigned()->default(0);
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
+            $table->double('total')->default(0);
+            $table->json('delivery')->nullable();
+            $table->bigInteger('cupon_id')->nullable()->unsigned();
             $table->timestamps();
         });
 
@@ -26,6 +29,11 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('cupon_id')
+                ->references('id')
+                ->on('cupons')
                 ->onDelete('cascade');
         });
     }
