@@ -1,5 +1,4 @@
-{{--
-{{dd($orders)}}--}}
+
 
 @foreach($orders as $order)
     <h2>Заказ номер: {{$order->id}}</h2>
@@ -8,9 +7,9 @@
     <h2>Что заказал:</h2>
     <ul>
         @foreach($order->products as $product)
-        <li>Название: {{$product->name}}</li>
-        <li>Цена: {{$product->price}}</li>
-        <li>Фото: <img src="{{$product->image}}" alt="{{$product->name}}"></li>
+            <li>Название: {{$product->name}}</li>
+            <li>Цена: {{$product->price}}</li>
+            <li>Фото: <img src="{{$product->image}}" alt="{{$product->name}}"></li>
         @endforeach
     </ul>
     <h3>Итого: {{$order->getFullPrice()}}</h3>
