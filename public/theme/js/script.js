@@ -20,4 +20,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	modals()
+	function modals() {
+		const modal = document.getElementsByClassName('manager-modals')[0]
+		const modals = document.getElementsByClassName('manager-modal')
+		const triggers = document.getElementsByClassName('open-modal')
+		const closers = document.getElementsByClassName('close-modal')
+
+		if ( !modal ) {
+			console.error('Не обнаружена система модальных окон!')
+			return
+		}
+
+		Object.values(triggers).forEach(triggerClick)
+		function triggerClick(trigger) {
+			trigger.addEventListener('click', () => {
+				modal.classList.add('active')
+				document.body.classList.add('--block')
+			})
+		}
+
+		Object.values(closers).forEach(closerClick)
+		function closerClick(closer) {
+			closer.addEventListener('click', () => {
+				modal.classList.remove('active')
+				document.body.classList.remove('--block')
+				deactivateAll()
+			})
+		}
+
+		function deactivateAll() {
+			Object.values(modals).forEach(modal => {
+				modal.classList.remove('active')
+			})
+		}
+	}
+
 })
