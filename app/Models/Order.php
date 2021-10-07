@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\CuponHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -64,31 +65,15 @@ class Order extends Model
      * @param array $data
      * Сохраняем информацию по заказу
      */
-    public function saveOrder(array $data, $order)
+    public function saveOrder(array $data)
     {
-        $cupon_value = $data['cupon'];
-        $cupon = Cupon::where('value', $cupon_value)->first();
-        if (!empty($cupon)) {
-            $discount = ($order->getFullPrice() * $cupon->discount) / 100;
-        }
-
-        dd($discount);
-
-
         $this->name = $data['name'];
         $this->phone = $data['phone'];
         $this->status = 1;
-        $this->total = $order->getFullPrice();
-        $delivery = [
-            'address' => $data['address'],
-            'entrance' => $data['entrance'],
-            'intercom' => $data['intercom'],
-            'floor' => $data['floor'],
-            'flat' => $data['flat'],
-            'comment' => $data['comment'],
-        ];
-        $this->delivery = $delivery;
+        $this->total = $data['total'];
+        $this->delivery = $data['delivery'];
         $this->user_id = \Auth::user()->id;
+        $this->cupon_id = $data['cupon_id'];
         $this->save();
     }
 }
