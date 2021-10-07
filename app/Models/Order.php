@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\CuponHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +10,11 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'user_id', 'total'
+    ];
+
+    protected $casts = [
+        'delivery' => 'array'
     ];
 
     public function products()
@@ -57,17 +62,18 @@ class Order extends Model
     }
 
     /**
-     * @param string $name
-     * @param string $phone
+     * @param array $data
      * Сохраняем информацию по заказу
      */
-    public function saveOrder(string $name, string $phone)
+    public function saveOrder(array $data)
     {
-        $this->name = $name;
-        $this->phone = $phone;
+        $this->name = $data['name'];
+        $this->phone = $data['phone'];
         $this->status = 1;
+        $this->total = $data['total'];
+        $this->delivery = $data['delivery'];
+        $this->user_id = \Auth::user()->id;
+        $this->cupon_id = $data['cupon_id'];
         $this->save();
-        session()->forget('orderId');
     }
-
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Order;
 
+use App\Rules\CheckTotalBasket;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -27,7 +28,7 @@ class OrderRequest extends FormRequest
             'name' => 'required', 'string',
             'phone' => 'required', 'string',
             'address' => 'required', 'string',
-            'payment_method' => 'required',
+            'total' => [new CheckTotalBasket()]
         ];
     }
 
