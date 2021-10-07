@@ -7,6 +7,46 @@
 	position: fixed;
 	left: 0;
 	right: 0;
+	&.--manager {
+		.header__container {
+			padding-left: 30px;
+			padding-right: 30px;
+			display: flex;
+			column-gap: 0;
+		}
+	}
+	&__hamburger {
+		margin-right: 30px;
+		cursor: pointer;
+		svg {
+			overflow: visible;
+			path {
+				transition: .2s ease;
+			}
+			path:nth-child(1) {
+				transform-origin: left top;
+			}
+			path:nth-child(2) {
+				transform-origin: left;
+			}
+			path:nth-child(3) {
+				transform-origin: left bottom;
+			}
+		}
+		&.active {
+			svg {
+				path:nth-child(1) {
+					transform: rotate(45deg);
+				}
+				path:nth-child(2) {
+					transform: scaleX(0);
+				}
+				path:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
 	&__container {
 		position: relative;
 		height: 70px;

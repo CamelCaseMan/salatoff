@@ -1,0 +1,18 @@
+.tag-button {
+	display: inline-block;
+	background-color: #ddd;
+	color: #555;
+	padding: 2px 5px;
+	border-radius: 2px;
+	cursor: default;
+	&.--green {
+		cursor: pointer;
+		background-color: #387c4b17;
+		color: #387C4B;
+	}
+	&.--blue {
+		cursor: pointer;
+		background-color: #008bfd1a;
+		color: #008bfd;
+	}
+}
