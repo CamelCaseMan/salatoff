@@ -18,7 +18,7 @@
 <body>
 
     <div class="manager-modals">
-        <div class="manager-modals__bg toggle-active close-modal"></div>
+        <div class="manager-modals__bg close-modal"></div>
         <div id="mw-user-info" class="manager-modals__modal manager-modal">
             <div class="manager-modal__header">
                 <div class="-title">Мыльникова Вера</div>

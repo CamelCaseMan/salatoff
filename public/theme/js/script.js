@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (element) {
 				this.classList.toggle('active')
 				element.classList.toggle('active')
+				setTimeout( () => {
+					element.classList.add('--animated')
+				} )
 			} else {
 				console.error(`Element by id "${id}" not found!`)
 			}
@@ -36,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		function triggerClick(trigger) {
 			trigger.addEventListener('click', () => {
 				modal.classList.add('active')
+				setTimeout( () => {
+					modal.classList.add('--animated')
+				} )
+				document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
 				document.body.classList.add('--block')
 			})
 		}
@@ -43,15 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		Object.values(closers).forEach(closerClick)
 		function closerClick(closer) {
 			closer.addEventListener('click', () => {
-				modal.classList.remove('active')
-				document.body.classList.remove('--block')
+				modal.classList.remove('--animated')
 				deactivateAll()
+				setTimeout( () => {
+					modal.classList.remove('active')
+					document.body.style.paddingRight = 0
+					document.body.classList.remove('--block')
+				}, 500 )
 			})
 		}
 
 		function deactivateAll() {
 			Object.values(modals).forEach(modal => {
-				modal.classList.remove('active')
+					modal.classList.remove('--animated')
+					setTimeout( () => {
+						modal.classList.remove('active')
+					}, 500 )
 			})
 		}
 	}
