@@ -11,7 +11,7 @@
             <p><b>Срок реализации:</b> 72 часа</p>
             <div class="product-price">₽ {{$product->price}}</div>
             <p>Введите количество <input type="number" value="1" min="1"></p>
-            <a href="">Купить</a>
+            <div class="btn btn-success btn_buy">Купить</div>
         </div>
     </div>
 @endsection

@@ -31,6 +31,7 @@
             </tbody>
         </table>
         <b>Итого: {{$order->getFullPrice()}} руб.</b>
+
         @include('front.basket.delivery')
     </div>
 
