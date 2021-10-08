@@ -32,7 +32,6 @@
                             <div class="-body">
                                 <div class="-name">{{$product->name}}</div>
                                 <div class="btn btn-success add-one-button" data-id="{{$product->id}}">В корзину</div>
-                                <div class="btn btn-danger remove-button" data-id="{{$product->id}}">Удалить</div>
                             </div>
                             <div class="-quty">1 шт</div>
                             <div class="-price">{{$product->price}} руб.</div>
