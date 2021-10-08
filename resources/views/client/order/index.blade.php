@@ -23,6 +23,7 @@
                         {{$order->updated_at}}
                     </li>
                 </ul>
+                <div class="btn btn-success">Повторить</div>
             </div>
             <div class="order__products" id="order-{{$order->id}}">
                 <div class="order__products-container">

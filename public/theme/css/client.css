@@ -234,6 +234,9 @@ body.--block {
   transition: 0.2s ease;
   opacity: 0.3;
 }
+.order__chars {
+  margin-bottom: 15px;
+}
 .order__chars li {
   margin-bottom: 8px;
 }
