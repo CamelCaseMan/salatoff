@@ -12,6 +12,7 @@
                 <th scope="col">Количество</th>
                 <th scope="col">ПодИтог</th>
                 <th scope="col">Фото</th>
+                <th scope="col">Удалить</th>
             </tr>
             </thead>
             <tbody>
@@ -24,6 +25,9 @@
                     <td>{{$product->getPriceForCount()}} руб.</td>
                     <td><img src="{{$product->image}}" class="img-fluid" style="max-width: 150px;"
                              alt="{{$product->name}}"></td>
+                    <td>
+                        <div class="btn btn-danger remove-button" data-id="{{$product->id}}">Удалить</div>
+                    </td>
                 </tr>
             @endforeach
             <th></th>

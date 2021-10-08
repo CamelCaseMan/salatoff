@@ -12,7 +12,7 @@
                            {{-- <a href="{{Request::url()}}/{{$product->slug}}" class="button">Подробнее</a>--}}
                             <div class="button">
                                 <a href="{{Request::url()}}/{{$product->slug}}" style="display: block">В карточку</a>
-                                <a href="#" style="display: block">В корзину</a>
+                                <a href="#" class="add-one-button" data-id="{{$product->id}}" style="display: block">В корзину</a>
                             </div>
                         </div>
                     </div>
