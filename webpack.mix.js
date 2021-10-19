@@ -15,4 +15,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/header.scss', 'public/theme/css')
     .sass('resources/sass/manager.scss', 'public/theme/css')
+    .sass('resources/sass/product.scss', 'public/theme/css')
+    .sass('resources/sass/client.scss', 'public/theme/css')
     .sourceMaps();

@@ -1,0 +1,132 @@
+@import "font";
+@import "reset";
+@import "libs";
+@import "vars";
+@import "modals";
+
+.profile-page {
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+
+.client-tabs-header {
+	margin-bottom: 30px;
+	border-bottom: 4px solid rgba(56 124 75 / 10%);
+	.nav-link {
+		margin-bottom: -4px;
+		border: none;
+		border-bottom: 4px solid transparent;
+		color: #252525;
+		&.active {
+			background-color: transparent;
+			color: var(--green);
+			border-color: rgba(56 124 75 / 100%);
+			&:hover {
+				border-color: rgba(56 124 75 / 100%);
+			}
+		}
+		&:hover {
+			border-color: rgba(56 124 75 / 10%);
+		}
+	}
+}
+
+.order {
+	padding: 20px 15px;
+	border: 2px solid rgba(56 124 75 / 10%);
+	margin-bottom: 30px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&__header {
+		position: relative;
+		border-bottom: 2px solid rgba(56 124 75 / 10%);
+		padding-bottom: 15px;
+	}
+	&__title {
+		font-size: 1.4rem;
+		font-weight: 500;
+		margin-bottom: 0.5em;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&.active {
+			.-right {
+				svg {
+					transform: scaleY(-1);
+				}
+			}
+		}
+		.-right {
+			svg {
+				transition: .2s ease;
+				opacity: 0.3;
+			}
+		}
+	}
+	&__chars {
+		margin-bottom: 15px;
+		li {
+			margin-bottom: 8px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.-prefix {
+			font-size: 0.8rem;
+		}
+	}
+	&__products {
+		overflow: hidden;
+		transition: .5s;
+		height: 0;
+		&-container {
+			padding: 15px 0;
+			border-bottom: 2px solid rgba(56 124 75 / 10%);
+		}
+	}
+	&__product {
+		display: flex;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		& > div {
+			flex-grow: 1;
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.-photo {
+			min-width: 120px;
+			height: 120px;
+			flex-grow: 0;
+			background-position: center;
+			background-size: cover;
+		}
+		.-body {
+			.-name {
+				font-size: 1.1rem;
+				font-weight: 500;
+				margin-bottom: 10px;
+			}
+		}
+		.-quty {
+			text-align: right;
+		}
+		.-price {
+			text-align: right;
+		}
+	}
+	&__footer {
+		padding-top: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.-num {
+			font-weight: 500;
+		}
+	}
+}

@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "mtsrt";
+  src: url(/fonts/Montserrat-Light.ttf?02afb26fe72fcc05298817491c044b7b);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mtsrt";
+  src: url(/fonts/Montserrat-Regular.ttf?3cd786652b8a2e9d41f210cb1a527ff6);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mtsrt";
+  src: url(/fonts/Montserrat-Italic.ttf?e7728c27ba36b97eb82f27047bf0b6ac);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "mtsrt";
+  src: url(/fonts/Montserrat-Medium.ttf?e2d60bc49517598c0ce8b98f8d4e579f);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mtsrt";
+  src: url(/fonts/Montserrat-Bold.ttf?079ca05d3ded9bc107ab8a8da013be22);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mtsrt";
+  src: url(/fonts/Montserrat-Black.ttf?46e8b3d6aad6545789584deda0e29b75);
+  font-weight: 900;
+  font-style: normal;
+}
+html, body {
+  font-family: "mtsrt", sans-serif !important;
+  color: #252525;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.tag-button {
+  display: inline-block;
+  background-color: #ddd;
+  color: #555;
+  padding: 2px 5px;
+  border-radius: 2px;
+  cursor: default;
+}
+.tag-button.--green {
+  cursor: pointer;
+  background-color: #387c4b17;
+  color: #387C4B;
+}
+.tag-button.--blue {
+  cursor: pointer;
+  background-color: #008bfd1a;
+  color: #008bfd;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.page-title {
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+}
+
+:root {
+  --green: #387C4B;
+}
+
+.quty-interface {
+  display: grid;
+  grid-template-columns: 30px 40px 30px;
+  grid-auto-rows: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.quty-interface-btn {
+  background-color: var(--green);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.quty-interface-value {
+  border: none;
+  text-align: center;
+}
+
+.product-pg__quty {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.product-pg__quty .-prefix {
+  margin-bottom: 10px;
+  font-weight: 700;
+}

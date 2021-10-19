@@ -70,4 +70,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	expandElements();
+	function expandElements() {
+		const togglers = document.getElementsByClassName('expand-toggler');
+
+		for (let toggler of togglers) {
+			toggler.addEventListener('click', toggle);
+		}
+
+		function toggle(evt) {
+			const target = document.getElementById(this.dataset.expand);
+			if (!target) return;
+
+			if ( this.classList.contains('active') ) {
+				this.classList.remove('active');
+				if ( target.classList.contains('active') ) {
+					target.classList.remove('active');
+					cut(target);
+				}
+			} else {
+				this.classList.add('active');
+				if ( !target.classList.contains('active') ) {
+					target.classList.add('active');
+					expand(target);
+				}
+			}
+		}
+
+		function cut(target) {
+			target.style.height = 0;
+		}
+		function expand(target) {
+			const height = target.scrollHeight;
+			target.style.height = height + 'px';
+		}
+	}
+
 })
