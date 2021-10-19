@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Helpers\CuponHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -75,5 +74,54 @@ class Order extends Model
         $this->user_id = \Auth::user()->id;
         $this->cupon_id = $data['cupon_id'];
         $this->save();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function cupon()
+    {
+        return $this->belongsTo(Cupon::class);
+    }
+
+    /**
+     * @return array
+     * Формируем информацию о доставке
+     */
+    public function getInfoDelivery()
+    {
+        $info = [];
+
+        $a = $this->delivery;
+
+        foreach ($a as $key => $delivery) {
+            if (!is_null($delivery)) {
+                switch ($key) {
+                    case 'entrance':
+                        $name = 'Подъезд';
+                        break;
+                    case 'intercom':
+                        $name = 'Домофон';
+                        break;
+                    case 'floor':
+                        $name = 'Этаж';
+                        break;
+                    case 'flat':
+                        $name = 'Квартира';
+                        break;
+                    case 'comment':
+                        $name = 'Комментарий к заказу';
+                        break;
+                }
+                $info[] = [
+                    'name' => $name,
+                    'value' => $delivery
+                ];
+            }
+        }
+
+        return $info;
     }
 }

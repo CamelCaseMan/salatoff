@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Basket\BasketController;
+use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Manager\ManagerController;
+use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,7 @@ Route::get('/catalog/{parent}/{children?}/{product?}', [ProductController::class
 //Корзина
 Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
+    Route::get('/finish/{id}', [FinishController::class, 'showFinishPage'])->name('basket.finish')->middleware(['role:client']);
     Route::post('/add', [BasketController::class, 'addProduct']);
     Route::post('/addcount', [BasketController::class, 'addCountProduct']);
     Route::post('/remove', [BasketController::class, 'removeOneProduct']);
@@ -55,7 +58,8 @@ Route::prefix('client')->namespace('Client')->middleware(['role:client'])->group
  */
 Route::prefix('manager')->middleware(['role:client'])->group(function () {
     Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
-    Route::get('/orders', 'ProfileController@changeInfo')->name('change.profile');
+    Route::get('/orders', [ManagerOrder::class, 'showOrderPage'])->name('manager.orders');
+
 });
 
 
