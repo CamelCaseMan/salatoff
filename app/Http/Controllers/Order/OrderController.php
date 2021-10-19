@@ -26,16 +26,17 @@ class OrderController
         $data = $this->prepareData($orderRequest->all(), $order);
         $order->saveOrder($data);
         session()->forget('orderId');
+        return redirect()->route('basket.finish', [$order]);
     }
 
     /**
      * @param array $data
-     * @param $order
+     * @param \App\Models\Order $order
      * @return array
      * Подготавливаем данные для сохранения заказа
      * Считаем корзину с учетом купона
      */
-    private function prepareData(array $data, $order):array
+    private function prepareData(array $data, $order): array
     {
         $cupon = new CuponHelper();
         $data['delivery'] = [
