@@ -15,161 +15,195 @@ class CategorySeeder extends Seeder
     {
         $data = [
             0 => [
+                'name' => 'Весовые',
+                'slug' => \Str::of('Весовые')->slug('-')->snake(),
+                'image' => '',
+                'parent_id' => 0,
+                'show' => 1,
+            ],
+
+            1 => [
+                'name' => 'Фасовые',
+                'slug' => \Str::of('Фасовые')->slug('-')->snake(),
+                'image' => '',
+                'parent_id' => 0,
+                'show' => 1,
+            ],
+
+            2 => [
                 'name' => 'Традиционные салаты',
                 'slug' => \Str::of('Традиционные салаты')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/tradition%20salat.jpeg',
-                'parent_id' => 0,
-                'show' => 1,
-            ],
-            1 => [
-                'name' => 'Фасованные',
-                'slug' => \Str::of('Фасованные')->slug('-')->snake(),
-                'image' => '',
+                'image' => '1.jpg',
                 'parent_id' => 1,
                 'show' => 1,
             ],
-            2 => [
-                'name' => 'Весовые',
-                'slug' => \Str::of('Весовые')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 1,
-                'show' => 1,
-            ],
-
 
             3 => [
+                'name' => 'Традиционные салаты',
+                'slug' => \Str::of('Традиционные салаты')->slug('-')->snake(),
+                'image' => '1.jpg',
+                'parent_id' => 2,
+                'show' => 1,
+            ],
+
+            4 => [
                 'name' => 'Корейские салаты',
                 'slug' => \Str::of('Корейские салаты')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/koreiskie%20salati.jpeg',
-                'parent_id' => 0,
+                'image' => '2.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
-            4 => [
-                'name' => 'Фасованные',
-                'slug' => \Str::of('Фасованные')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 4,
-                'show' => 1,
-            ],
+
             5 => [
-                'name' => 'Весовые',
-                'slug' => \Str::of('Весовые')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 4,
+                'name' => 'Корейские салаты',
+                'slug' => \Str::of('Корейские салаты')->slug('-')->snake(),
+                'image' => '2.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
+
 
             6 => [
                 'name' => 'Готовая кулинария',
                 'slug' => \Str::of('Готовая кулинария')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/kulinariya2.jpeg',
-                'parent_id' => 0,
+                'image' => '3.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
+
             7 => [
-                'name' => 'Фасованная',
-                'slug' => \Str::of('Фасованная')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 7,
+                'name' => 'Готовая кулинария',
+                'slug' => \Str::of('Готовая кулинария')->slug('-')->snake(),
+                'image' => '3.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
+
             8 => [
-                'name' => 'Весовая',
-                'slug' => \Str::of('Весовая')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 7,
+                'name' => 'Комплесные обеды',
+                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
+                'image' => '4.jpg',
+                'parent_id' => 1,
                 'show' => 1,
             ],
 
             9 => [
-                'name' => 'Блины',
-                'slug' => \Str::of('Блины')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/blini.jpeg',
-                'parent_id' => 0,
+                'name' => 'Комплесные обеды',
+                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
+                'image' => '4.jpg',
+                'parent_id' => 2,
                 'show' => 1,
             ],
+
             10 => [
-                'name' => 'Фасованные',
-                'slug' => \Str::of('Фасованные')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 10,
+                'name' => 'Бутерброды и сэндвичи',
+                'slug' => \Str::of('Бутерброды и сэндвичи')->slug('-')->snake(),
+                'image' => '5.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
+
             11 => [
-                'name' => 'Весовые',
-                'slug' => \Str::of('Весовые')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 10,
+                'name' => 'Бутерброды и сэндвичи',
+                'slug' => \Str::of('Бутерброды и сэндвичи')->slug('-')->snake(),
+                'image' => '5.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
 
             12 => [
-                'name' => 'Бутерброды и сэндвичи',
-                'slug' => \Str::of('Бутерброды и сэндвичи')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/sendvich.jpeg',
-                'parent_id' => 0,
+                'name' => 'Роллы',
+                'slug' => \Str::of('Роллы')->slug('-')->snake(),
+                'image' => '6.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
 
             13 => [
-                'name' => 'Кондитерские изделия',
-                'slug' => \Str::of('Кондитерские изделия')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/konditer.jpeg',
-                'parent_id' => 0,
+                'name' => 'Роллы',
+                'slug' => \Str::of('Роллы')->slug('-')->snake(),
+                'image' => '6.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
 
             14 => [
-                'name' => 'Роллы',
-                'slug' => \Str::of('Роллы')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/roll2.jpeg',
-                'parent_id' => 0,
+                'name' => 'Кондитерские изделия',
+                'slug' => \Str::of('Кондитерские изделия')->slug('-')->snake(),
+                'image' => '7.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
 
             15 => [
-                'name' => 'Супы',
-                'slug' => \Str::of('Супы')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/category/soupi.jpeg',
-                'parent_id' => 0,
+                'name' => 'Кондитерские изделия',
+                'slug' => \Str::of('Кондитерские изделия')->slug('-')->snake(),
+                'image' => '7.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
+
             16 => [
-                'name' => 'Фасованные',
-                'slug' => \Str::of('Фасованные')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 16,
+                'name' => 'Блины',
+                'slug' => \Str::of('Блины')->slug('-')->snake(),
+                'image' => '8.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
+
             17 => [
-                'name' => 'Весовые',
-                'slug' => \Str::of('Весовые')->slug('-')->snake(),
-                'image' => '',
-                'parent_id' => 16,
+                'name' => 'Блины',
+                'slug' => \Str::of('Блины')->slug('-')->snake(),
+                'image' => '8.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
 
             18 => [
-                'name' => 'Напитки',
-                'slug' => \Str::of('Напитки')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/product/lZIGzsxyYdblrP62ZsUFCTgCyXSV8OqzEBQwmydV.jpeg',
-                'parent_id' => 0,
+                'name' => 'Выпечка',
+                'slug' => \Str::of('Выпечка')->slug('-')->snake(),
+                'image' => '9.png',
+                'parent_id' => 1,
                 'show' => 1,
             ],
 
             19 => [
                 'name' => 'Выпечка',
                 'slug' => \Str::of('Выпечка')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/product/6unjiFbtQA1yyfELDgBoKBRmfMsVjDd68bhho2hN.jpeg',
-                'parent_id' => 0,
+                'image' => '9.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
 
             20 => [
-                'name' => 'Комплесные обеды',
-                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
-                'image' => 'https://salatoff.ru/storage/product/KSmpn4ndxfYHbcegzNADY49NJ0mRzfVbnIPqN7Il.jpeg',
-                'parent_id' => 0,
+                'name' => 'Супы',
+                'slug' => \Str::of('Супы')->slug('-')->snake(),
+                'image' => '10.png',
+                'parent_id' => 1,
+                'show' => 1,
+            ],
+
+            21 => [
+                'name' => 'Супы',
+                'slug' => \Str::of('Супы')->slug('-')->snake(),
+                'image' => '10.png',
+                'parent_id' => 2,
+                'show' => 1,
+            ],
+
+            22 => [
+                'name' => 'Напитки',
+                'slug' => \Str::of('Напитки')->slug('-')->snake(),
+                'image' => '11.png',
+                'parent_id' => 1,
+                'show' => 1,
+            ],
+
+            23 => [
+                'name' => 'Напитки',
+                'slug' => \Str::of('Напитки')->slug('-')->snake(),
+                'image' => '11.png',
+                'parent_id' => 2,
                 'show' => 1,
             ],
 

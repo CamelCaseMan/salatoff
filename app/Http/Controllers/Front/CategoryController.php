@@ -10,20 +10,14 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    private $categoryRepository;
-
-    public function __construct(EloquentCategoryRepository $categoryRepository)
-    {
-        $this->categoryRepository = $categoryRepository;
-    }
-
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * Получить все категории с подкатегориями
      */
-    public function showAllCategories()
+    public function showPageCategory($parent, $category)
     {
-        $categories = $this->categoryRepository->getAll();
-        return view('front.category.index', ['categories' => $categories]);
+        dd($parent,$category);
+        //$produscts =
+        return view('front.catalog.category');
     }
 }
