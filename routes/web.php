@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\CatalogController;
+use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\CategoryController;
-use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
@@ -22,8 +23,10 @@ use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 */
 
 // Каталог и карточки товара
-Route::get('/', [CategoryController::class, 'showAllCategories']);
-Route::get('/catalog/{parent}/{children?}/{product?}', [ProductController::class, 'findMethodShow']);
+Route::get('/', [PageController::class, 'showPage']);
+Route::get('/catalog', [CatalogController::class, 'showPageCatalog']);
+Route::get('/catalog/{parent}/{category}', [CategoryController::class, 'showPageCategory']);
+//Route::get('/catalog/{parent}/{children?}/{product?}', [ProductController::class, 'findMethodShow']);
 
 //Корзина
 Route::prefix('basket')->group(function () {

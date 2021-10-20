@@ -1,0 +1,10 @@
+.magic-tab {
+	display: none;
+}
+.magic-tab.active {
+	display: block;
+	transition: .2s ease;
+}
+.magic-tab.--transparent {
+	opacity: 0;
+}

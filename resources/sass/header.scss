@@ -1,18 +1,31 @@
 @import "font";
 
+body {
+	padding-top: 70px;
+}
+
 .header {
 	background-color: #fff;
 	box-sizing: border-box;
 	border-bottom: 4px solid rgba(56 124 75 / 10%);
 	position: fixed;
+	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 10;
 	&.--manager {
 		.header__container {
 			padding-left: 30px;
 			padding-right: 30px;
 			display: flex;
 			column-gap: 0;
+		}
+	}
+	&.--client {
+		.header__container {
+			display: flex;
+			column-gap: 0;
+			justify-content: space-between;
 		}
 	}
 	&__hamburger {

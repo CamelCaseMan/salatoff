@@ -27,10 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        $categories = Category::where('show', 1)
+        /*$categories = Category::where('show', 1)
            ->with('childrenCategories')
            ->get();
 
-       View::share('categories', $categories);
+       View::share('categories', $categories);*/
     }
 }
