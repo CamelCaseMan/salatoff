@@ -21,7 +21,7 @@
                             @foreach($categories as $key => $children)
                                 @if($children->parent_id == $category->id)
                                     <a href="catalog/{{$category->slug}}/{{$children->slug}}" class="catalog-page__cat"
-                                       style="background-color: #70B0FF; color: #70B0FF;">
+                                       style="{{$children->style}}">
                                         <div class="-img"
                                              style="background-image: url('{{asset('theme')}}/img/cat-images/{{$children->image}}')"></div>
                                         <div class="-name">

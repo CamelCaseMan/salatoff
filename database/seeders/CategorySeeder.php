@@ -20,6 +20,8 @@ class CategorySeeder extends Seeder
                 'image' => '',
                 'parent_id' => 0,
                 'show' => 1,
+                'sort' => 0,
+                'style' => ''
             ],
 
             1 => [
@@ -28,6 +30,8 @@ class CategorySeeder extends Seeder
                 'image' => '',
                 'parent_id' => 0,
                 'show' => 1,
+                'sort' => 1,
+                'style' => ''
             ],
 
             2 => [
@@ -36,6 +40,8 @@ class CategorySeeder extends Seeder
                 'image' => '1.jpg',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 2,
+                'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             3 => [
@@ -44,6 +50,8 @@ class CategorySeeder extends Seeder
                 'image' => '1.jpg',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 2,
+                'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             4 => [
@@ -52,6 +60,8 @@ class CategorySeeder extends Seeder
                 'image' => '2.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 3,
+                'style' => 'background-color: #FFA64D; color: #FFA64D;'
             ],
 
             5 => [
@@ -60,6 +70,8 @@ class CategorySeeder extends Seeder
                 'image' => '2.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 3,
+                'style' => 'background-color: #FFA64D; color: #FFA64D;'
             ],
 
 
@@ -69,6 +81,8 @@ class CategorySeeder extends Seeder
                 'image' => '3.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 4,
+                'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
             7 => [
@@ -77,6 +91,8 @@ class CategorySeeder extends Seeder
                 'image' => '3.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 4,
+                'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
             8 => [
@@ -85,6 +101,8 @@ class CategorySeeder extends Seeder
                 'image' => '4.jpg',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 5,
+                'style' => 'background-color: #FFBF8C; color: #FFBF8C;'
             ],
 
             9 => [
@@ -93,6 +111,8 @@ class CategorySeeder extends Seeder
                 'image' => '4.jpg',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 5,
+                'style' => 'background-color: #FFBF8C; color: #FFBF8C;'
             ],
 
             10 => [
@@ -101,6 +121,8 @@ class CategorySeeder extends Seeder
                 'image' => '5.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 6,
+                'style' => 'background-color: #5CC19A; color: #5CC19A;'
             ],
 
             11 => [
@@ -109,6 +131,8 @@ class CategorySeeder extends Seeder
                 'image' => '5.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 6,
+                'style' => 'background-color: #5CC19A; color: #5CC19A;'
             ],
 
             12 => [
@@ -117,6 +141,8 @@ class CategorySeeder extends Seeder
                 'image' => '6.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 7,
+                'style' => 'background-color: #FFA64D; color: #FFA64D;'
             ],
 
             13 => [
@@ -125,6 +151,8 @@ class CategorySeeder extends Seeder
                 'image' => '6.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 7,
+                'style' => 'background-color: #FFA64D; color: #FFA64D;'
             ],
 
             14 => [
@@ -133,6 +161,8 @@ class CategorySeeder extends Seeder
                 'image' => '7.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 8,
+                'style' => 'background-color: #FFBFFF; color: #FFBFFF;'
             ],
 
             15 => [
@@ -141,6 +171,8 @@ class CategorySeeder extends Seeder
                 'image' => '7.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 8,
+                'style' => 'background-color: #FFBFFF; color: #FFBFFF;'
             ],
 
             16 => [
@@ -149,6 +181,8 @@ class CategorySeeder extends Seeder
                 'image' => '8.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 9,
+                'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             17 => [
@@ -157,6 +191,8 @@ class CategorySeeder extends Seeder
                 'image' => '8.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 9,
+                'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             18 => [
@@ -165,6 +201,8 @@ class CategorySeeder extends Seeder
                 'image' => '9.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 10,
+                'style' => 'background-color: #FF80A6; color: #FF80A6;'
             ],
 
             19 => [
@@ -173,6 +211,8 @@ class CategorySeeder extends Seeder
                 'image' => '9.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 10,
+                'style' => 'background-color: #FF80A6; color: #FF80A6;'
             ],
 
             20 => [
@@ -181,6 +221,8 @@ class CategorySeeder extends Seeder
                 'image' => '10.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 11,
+                'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
             21 => [
@@ -189,6 +231,8 @@ class CategorySeeder extends Seeder
                 'image' => '10.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 11,
+                'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
             22 => [
@@ -197,6 +241,8 @@ class CategorySeeder extends Seeder
                 'image' => '11.png',
                 'parent_id' => 1,
                 'show' => 1,
+                'sort' => 12,
+                'style' => 'background-color: #FF80A6; color: #FF80A6;'
             ],
 
             23 => [
@@ -205,9 +251,11 @@ class CategorySeeder extends Seeder
                 'image' => '11.png',
                 'parent_id' => 2,
                 'show' => 1,
+                'sort' => 12,
+                'style' => 'background-color: #FF80A6; color: #FF80A6;'
             ],
-
         ];
+
         \DB::table('categories')->insert($data);
     }
 }

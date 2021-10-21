@@ -18,10 +18,10 @@ class AttributeSeeder extends Seeder
         for ($i = 1; $i < 150; $i++) {
             $data[$i] = [
                 'product_id' => $i,
-                'nutrients' => \Str::random(30),
-                'energy' => \Str::random(20),
+                'nutrients' => 'Белки ' . mt_rand(100, 1999) . 'г. Жиры ' . mt_rand(100, 1999) . 'г. Углеводы ' . mt_rand(100, 1999) . ' г.',
+                'energy' => mt_rand(100, 1999) . ' ккал/' . mt_rand(100, 1999) . '  кДж',
                 'composition' => 'филе куриное, хлеб пшеничный, яйцо куриное, масло растительное, мука пшеничная высший сорт, майонез, чеснок, соль пищевая.',
-                'implementation_period' => \Str::random(15),
+                'implementation_period' => mt_rand(1, 99) . ' часа',
                 'packaging' => \Str::random(10)
             ];
         }

@@ -16,6 +16,7 @@ class Product extends Model
         'price',
         'show',
         'image',
+        'weight'
     ];
 
     public function getAttributeProduct()

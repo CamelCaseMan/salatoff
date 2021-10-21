@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->double('price')->default(0);
             $table->boolean('show')->default(0);
             $table->text('image')->nullable();
+            $table->string('weight')->nullable();
             $table->timestamps();
         });
 
