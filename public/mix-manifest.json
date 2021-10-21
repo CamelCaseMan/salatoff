@@ -1,8 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/theme/js/script.js": "/theme/js/script.js",
     "/css/app.css": "/css/app.css",
     "/theme/css/client.css": "/theme/css/client.css",
     "/theme/css/product.css": "/theme/css/product.css",
     "/theme/css/manager.css": "/theme/css/manager.css",
-    "/theme/css/header.css": "/theme/css/header.css"
+    "/theme/css/header.css": "/theme/css/header.css",
+    "/theme/css/style.css": "/theme/css/style.css"
 }

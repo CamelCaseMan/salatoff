@@ -1,5 +1,60 @@
 @extends('front.master')
 @section('content')
+
+    <div class="modals">
+        <div class="modals__modals">
+            <div class="modals__bg"></div>
+            <div id="wndw-001" class="modals__modal">
+                <div class="modals__close toggle-active" data-toggle-active="wndw-001">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="modals__title">Добавить отзыв</div>
+                <div class="modals__address-modal">
+                    <!-- ! Добавить класс "--success", после успешной отправки -->
+                    <form action="" class="superform">
+                        <section class="-form-section">
+                            <label class="-prefix" for="wndw-001-name">Имя</label>
+                            <div class="valinput">
+                                <!-- * Если успешно, то "--success", нет — "--error" -->
+                                <input class="input-style --error" id="wndw-001-name" type="text">
+                                <!-- * Это сообщение об ошибке -->
+                                <div class="-error-message">Сообщение с ошибкой</div>
+                                <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                                <div class="-message">Сообщение к полю</div>
+                            </div>
+                        </section>
+                        <section class="-form-section">
+                            <label class="-prefix" for="wndw-001-text">Текст</label>
+                            <div class="valinput">
+                                <!-- * Если успешно, то "--success", нет — "--error" -->
+                                <textarea class="input-style" id="wndw-001-text" rows="5"></textarea>
+                                <!-- * Это сообщение об ошибке -->
+                                <div class="-error-message">Сообщение с ошибкой</div>
+                                <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                                <!-- <div class="-message">Сообщение к полю</div> -->
+                            </div>
+                        </section>
+                        <section class="-form-section">
+                            <label>
+                                <input type="checkbox">
+                                Я не робот
+                            </label>
+                        </section>
+                        <input type="submit" value="Отправить" class="typical-button modals__button d-block">
+                    </form>
+                    <div class="superform-success">
+                        <p>
+                            Спасибо! Ваш отзыв отправлен!
+                        </p>
+                        <div class="typical-button -button toggle-active modals__close" data-toggle-active="wndw-001">Ок</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="tel:+74957976457" class="body-phone d-none xs-d-block">
         +7 495 797 64 57
     </a>
@@ -328,7 +383,7 @@
                 </div>
             </div>
             <div class="reviews-screen__button">
-                <div class="typical-button --stroke">Добавить отзыв</div>
+                <div class="typical-button --stroke toggle-active open-modals" data-toggle-active="wndw-001">Добавить отзыв</div>
             </div>
         </div>
     </div>

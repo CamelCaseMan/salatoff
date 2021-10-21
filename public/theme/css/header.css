@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Golos";
+  src: url(/fonts/Golos-Text_Regular.ttf?5d7bc563bd99aa608d2301a9db247b79);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url(/fonts/Golos-Text_Medium.ttf?3b4d13cddd570d1baa956e6ea910d205);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url(/fonts/Golos-Text_DemiBold.ttf?1aeb7cbf0e3f34336b553e3e12d60b58);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url(/fonts/Golos-Text_Bold.ttf?d49028485e3783e3b1aca6348f952238);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url(/fonts/Golos-Text_Black.ttf?b374b00b26dd4fa12b58af0101439c73);
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NP";
+  src: url(/fonts/Pompilius.ttf?be317a3cf712c833e294b892c792ed43);
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  padding-top: 70px;
+}
+
+.header {
+  background-color: #fff;
+  box-sizing: border-box;
+  border-bottom: 4px solid rgba(56, 124, 75, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.header.--manager .header__container {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  -moz-column-gap: 0;
+       column-gap: 0;
+}
+.header.--client .header__container {
+  display: flex;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  justify-content: space-between;
+}
+.header__hamburger {
+  margin-right: 30px;
+  cursor: pointer;
+}
+.header__hamburger svg {
+  overflow: visible;
+}
+.header__hamburger svg path {
+  transition: 0.2s ease;
+}
+.header__hamburger svg path:nth-child(1) {
+  transform-origin: left top;
+}
+.header__hamburger svg path:nth-child(2) {
+  transform-origin: left;
+}
+.header__hamburger svg path:nth-child(3) {
+  transform-origin: left bottom;
+}
+.header__hamburger.active svg path:nth-child(1) {
+  transform: rotate(45deg);
+}
+.header__hamburger.active svg path:nth-child(2) {
+  transform: scaleX(0);
+}
+.header__hamburger.active svg path:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.header__container {
+  position: relative;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 170px 1fr 170px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  align-items: center;
+}
+.header__nav {
+  justify-self: center;
+  height: 100%;
+}
+.header__menu {
+  display: flex;
+  height: 100%;
+}
+.header__menu li {
+  list-style: none;
+}
+.header__menu li a:hover + .-submenu {
+  display: block;
+}
+.header__menu > li {
+  margin-right: 30px;
+  height: 100%;
+}
+.header__menu > li:last-child {
+  margin-right: 0;
+}
+.header__menu > li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.header__menu > li a.active, .header__menu > li a:hover {
+  color: #387C4B;
+}
+.header__menu > li a .-down {
+  margin-right: 5px;
+}
+.header__menu > li .-down {
+  opacity: 0.3;
+  box-sizing: content-box;
+  padding-bottom: 1px;
+}
+.header__menu > li .-submenu {
+  background-color: #fff;
+  width: 160px;
+  border: 1px solid rgba(56, 124, 75, 0.1);
+  box-sizing: border-box;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  transition: 0.5s ease;
+}
+.header__menu > li .-submenu:hover {
+  display: block;
+}
+.header__menu > li .-submenu a {
+  padding: 8px 10px;
+}
+.header__menu > li .-submenu .-right {
+  opacity: 0.3;
+  margin-left: 3px;
+}
+.header__menu > li .-submenu .-right svg {
+  display: inline;
+}
+.header__menu > li > .-submenu {
+  width: 200px;
+  border-top: 4px solid rgba(56, 124, 75, 0.2);
+  top: 100%;
+}
+.header__menu > li > .-submenu li {
+  position: relative;
+}
+.header__menu > li > .-submenu li .-submenu {
+  left: 100%;
+  top: 0;
+}
+.header__logo svg {
+  height: 32px;
+}
+.header__basket {
+  justify-self: end;
+  font-style: normal;
+}
+.header__basket a {
+  display: flex;
+  font-weight: 500;
+  font-size: normal;
+  text-decoration: none;
+}
+.header__basket a .-icon {
+  margin-right: 10px;
+}
+.header__basket a .-num {
+  padding-top: 1px;
+  width: 22px;
+}
+.header a {
+  color: #252525;
+}
