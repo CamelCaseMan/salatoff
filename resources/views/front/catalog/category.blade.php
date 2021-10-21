@@ -1,7 +1,7 @@
 @extends('front.master')
 @section('content')
     <div class="catalog-page container mb-240 l-mb-160 m-mb-120">
-        <h2 class="second-title">Традиционные салаты</h2>
+        <h2 class="second-title">{{$category->name}}</h2>
 
         <div class="catalog-page__filter megafilter">
             <input checked class="d-none" id="cpf-01" type="radio" name="cpf">
@@ -11,151 +11,25 @@
         </div>
 
         <div class="catalog-page__wrapper --products">
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/01.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Грибной»</div>
-                        <div class="-weight">150г</div>
+            @foreach($products as $product)
+                <a href="{{$category->slug}}/{{$product->slug}}" class="catalog-page__product">
+                    <div class="-img">
+                        <img src="{{asset('theme')}}/img/salats/01.png" alt="{{$product->name}}">
                     </div>
-                    <div class="-price-row">
-                        <div class="-price">180 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
+                    <div class="-content">
+                        <div class="-name-row">
+                            <div class="-name">{{$product->name}}</div>
+                            @if(isset($product->weight))
+                                <div class="-weight">{{$product->weight}}г</div>
+                            @endif
+                        </div>
+                        <div class="-price-row">
+                            <div class="-price">{{$product->price}} ₽</div>
+                            <div class="-button typical-button">В корзину</div>
+                        </div>
                     </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/02.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Загадка»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">120 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/03.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Из тунца с овощами»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">160 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/04.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Итальянская трапеза»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">140 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/05.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Нежный»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">60 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/06.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Морковный»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">80 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/07.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Свекольный с майонезом»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">260 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/08.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Столичный»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">180 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="catalog-page__product">
-                <div class="-img">
-                    <img src="{{asset('theme')}}/img/salats/09.png" alt="Салат">
-                </div>
-                <div class="-content">
-                    <div class="-name-row">
-                        <div class="-name">Салат «Цезарь»</div>
-                        <div class="-weight">150г</div>
-                    </div>
-                    <div class="-price-row">
-                        <div class="-price">140 ₽</div>
-                        <div class="-button typical-button">В корзину</div>
-                    </div>
-                </div>
-            </a>
-
+                </a>
+            @endforeach
         </div>
     </div>
 @endsection

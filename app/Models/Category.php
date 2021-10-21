@@ -16,12 +16,9 @@ class Category extends Model
         'parent_id',
         'show',
         'sort',
+        'style'
     ];
 
-    public function childrenCategories()
-    {
-        return $this->hasMany(Category::class,'parent_id');
-    }
 
     public function getSlug()
     {

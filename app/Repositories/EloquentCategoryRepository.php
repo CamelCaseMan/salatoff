@@ -16,24 +16,24 @@ class EloquentCategoryRepository extends CoreRepository
      */
     public function getAll()
     {
-        return Model::with('childrenCategories')
-            ->where('show', 1)
+        return Model::where('show', 1)
             ->get();
     }
 
-    public function getCategory(string $slug)
+    public function findParent(string $slug)
     {
         return Model::where('slug', $slug)
-            ->where('show', 1)
             ->first();
     }
 
-    public function findParentCategory(string $parent_id, string $slug)
+
+    public function findCategoryInParent(string $slug, int $id)
     {
-        return Model::where('parent_id', $parent_id)
-            ->where('slug', $slug)
+        return Model::where('slug', $slug)
             ->where('show', 1)
+            ->where('parent_id', $id)
             ->first();
     }
+
 
 }

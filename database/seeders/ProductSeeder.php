@@ -36,7 +36,8 @@ class ProductSeeder extends Seeder
                 'category_id' => rand(1, 21),
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
-                'image' => $images[rand(0, 10)]
+                'image' => $images[rand(0, 10)],
+                'weight' => mt_rand(550, 1999)
             ];
         }
 
