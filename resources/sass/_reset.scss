@@ -1,12 +1,18 @@
-ul, ol {
-	padding: 0;
+* {
 	margin: 0;
+	padding: 0;
 }
-li {
-	list-style: none;
+
+img, video {
+  max-width: 100%;
 }
+
 a {
-	text-decoration: none;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -14,6 +20,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type=number] {
   -moz-appearance: textfield;
 }

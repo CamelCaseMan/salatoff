@@ -50,7 +50,7 @@
         <div class="header__top">
 
             <!-- Header logo -->
-            <a href="#" class="header__logo">
+            <a href="/" class="header__logo">
                 <img src="{{asset('theme')}}/img/logo.svg" alt="Еда без забот логотип">
             </a>
             <!-- End Header logo -->
@@ -171,7 +171,7 @@
                     </ul>
                 </nav>
                 <div class="header__downloads">
-                    <a href="#">
+                    <a href="https://play.google.com/store/apps/details?id=com.loyaltyplant.partner.daridobro">
                         <svg width="120" height="40" viewBox="0 0 120 40" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0)">
@@ -344,7 +344,7 @@
                             </defs>
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://apps.apple.com/ru/app/%D0%B5%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82/id1466983545">
                         <svg width="120" height="40" viewBox="0 0 120 40" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip1)">
@@ -457,7 +457,7 @@
         </div>
 
         <div class="footer__button">
-            <div class="typical-button">Выбрать блюдо</div>
+            <a href="/catalog" class="typical-button">Выбрать блюдо</a>
         </div>
 
         <ul class="footer__socials">
@@ -483,10 +483,10 @@
         </ul>
 
         <div class="footer__stores">
-            <a href="#" class="-item">
+            <a href="https://apps.apple.com/ru/app/%D0%B5%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82/id1466983545" class="-item">
                 <img src="{{asset('theme')}}/img/app-appstore.svg" alt="Загрузите еда без забот в App Store">
             </a>
-            <a href="#" class="-item">
+            <a href="https://play.google.com/store/apps/details?id=com.loyaltyplant.partner.daridobro" class="-item">
                 <img src="{{asset('theme')}}/img/app-googleplay.svg" alt="Загрузите еда без забот в Google Play">
             </a>
         </div>

@@ -366,6 +366,17 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 
 /***/ }),
 
+/***/ "./resources/sass/style.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/style.scss ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9zdHlsZS5zY3NzLmpzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9zYXNzL3N0eWxlLnNjc3M/YzFhMSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/style.scss\n");
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -580,7 +591,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"theme/css/client": 0,
 /******/ 			"theme/css/product": 0,
 /******/ 			"theme/css/manager": 0,
-/******/ 			"theme/css/header": 0
+/******/ 			"theme/css/header": 0,
+/******/ 			"theme/css/style": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -630,12 +642,13 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header"], () => (__webpack_require__("./resources/sass/header.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header"], () => (__webpack_require__("./resources/sass/manager.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header"], () => (__webpack_require__("./resources/sass/product.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header"], () => (__webpack_require__("./resources/sass/client.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/sass/header.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/sass/manager.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/sass/product.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/sass/client.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","theme/css/client","theme/css/product","theme/css/manager","theme/css/header","theme/css/style"], () => (__webpack_require__("./resources/sass/style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
