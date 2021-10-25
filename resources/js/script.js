@@ -227,12 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	modals()
 	function modals() {
-		const header = document.getElementById('header')
 		const modal = document.getElementsByClassName('modals')[0]
-		const modals = modal.getElementsByClassName('modals__modal')
-
+		
 		if ( !modal ) return
-
+		
+		const header = document.getElementById('header')
+		const modals = modal.getElementsByClassName('modals__modal')
 		const openers = document.getElementsByClassName('open-modal')
 		const closers = document.getElementsByClassName('close-modal')
 
