@@ -98,8 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     console.log(data)
-
-                    if (this.dataset.url) window.location = this.dataset.url
                 })
                 .catch(err => {
                     console.log( err )
