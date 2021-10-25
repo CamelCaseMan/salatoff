@@ -76,7 +76,7 @@
             </li>--}}
             {{--            <li>
                             <a href="#">
-                                Фасовые
+                                Фасованные
                                 <svg class="-down" width="9" height="12" viewBox="0 0 9 12" fill="none">
                                     <path d="M9 6L0 0.803848V11.1962L9 6Z" fill="#E0E0E0"/>
                                 </svg>

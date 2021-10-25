@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+ 
+    const CSRFToken = document.querySelector('meta[name="csrf-token"]').content
+    let quty = 1
 
     qutyInterface()
 	function qutyInterface() {
 		const interfaces = document.getElementsByClassName('quty-interface')
 
         Object.values(interfaces).forEach(init)
-        function init(interface) {
-            const input = interface.getElementsByClassName('quty-interface-value')[0]
-            const buttons = interface.getElementsByClassName('quty-interface-btn')
+        function init(interfc) {
 
-            input.addEventListener('input', inputHandler)
-            function inputHandler() {
-                this.value = this.value.replace(/[^\d]/g, '')
-            }
-
-            input.addEventListener('blur', blurHandler)
-            function blurHandler() {
-                if (this.value <= 0) this.value = 1
-            }
+            const valueField = interfc.getElementsByClassName('quty-interface-value')[0]
+            const buttons = interfc.getElementsByClassName('quty-interface-btn')
 
             Object.values(buttons).forEach(button => {
                 button.addEventListener('click', changeQuty)
@@ -26,13 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const symbol = this.dataset.quty;
                 switch (symbol) {
                     case '+':
-                        input.value++
+                        quty++
                         break
                     case '-':
-                        input.value--
+                        quty--
                         break
                 }
-                if (input.value <= 0) input.value = 1
+                if (quty <= 0) quty = 1
+
+                valueField.innerText = quty + ' шт.'
             }
             
         }
@@ -44,21 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     basketAddCount()
     function basketAddCount() {
-        const addButton = document.getElementsByClassName('add-button')[0]
+        const addButton = document.getElementsByClassName('add-cart-button')[0]
         if ( !addButton ) return;
         addButton.addEventListener('click', function () {
-            let count = document.getElementsByClassName('quty-interface-value')[0].value
             let productId = this.dataset.id;
-            console.log(count, productId)
+            console.log(quty, productId)
 
             let formData = new FormData();
             formData.append('productId', productId)
-            formData.append('count', count)
+            formData.append('count', quty)
 
             fetch(`/basket/addcount`, {
                 method: 'POST',
                 headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    'X-CSRF-TOKEN': CSRFToken
                 },
                 body: formData
             })
@@ -69,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(data)
             })
             .catch(err => {
-                console.error(err)
+                console.log(err)
             })
 
         })
@@ -80,7 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const addButtons = document.getElementsByClassName('add-one-button')
 
         Object.values(addButtons).forEach(addButton => {
-            addButton.addEventListener('click', function () {
+            addButton.addEventListener('click', function (evt) {
+                evt.preventDefault()
+                evt.stopPropagation()
+
+
                 let productId = this.dataset.id;
                 console.log(productId)
     
@@ -90,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fetch(`/basket/add`, {
                     method: 'POST',
                     headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                        'X-CSRF-TOKEN': CSRFToken
                     },
                     body: formData
                 })
@@ -99,9 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     console.log(data)
+
+                    if (this.dataset.url) window.location = this.dataset.url
                 })
                 .catch(err => {
-                    console.error(err)
+                    console.log( err )
                 })
     
             })
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fetch(`/basket/removeAll`, {
                     method: 'POST',
                     headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                        'X-CSRF-TOKEN': CSRFToken
                     },
                     body: formData
                 })
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(data)
                 })
                 .catch(err => {
-                    console.error( err.json() )
+                    console.log( err )
                 })
     
             })

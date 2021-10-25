@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/script.js', 'public/theme/js')
+    .js('resources/js/basket.js', 'public/theme/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/header.scss', 'public/theme/css')
     .sass('resources/sass/manager.scss', 'public/theme/css')

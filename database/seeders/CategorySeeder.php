@@ -25,8 +25,8 @@ class CategorySeeder extends Seeder
             ],
 
             1 => [
-                'name' => 'Фасовые',
-                'slug' => \Str::of('Фасовые')->slug('-')->snake(),
+                'name' => 'Фасованные',
+                'slug' => \Str::of('Фасованные')->slug('-')->snake(),
                 'image' => '',
                 'parent_id' => 0,
                 'show' => 1,

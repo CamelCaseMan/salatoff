@@ -3,9 +3,9 @@
 
     <div class="modals">
         <div class="modals__modals">
-            <div class="modals__bg"></div>
+            <div class="modals__bg close-modal"></div>
             <div id="wndw-001" class="modals__modal">
-                <div class="modals__close toggle-active" data-toggle-active="wndw-001">
+                <div class="modals__close close-modal">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -48,7 +48,7 @@
                         <p>
                             Спасибо! Ваш отзыв отправлен!
                         </p>
-                        <div class="typical-button -button toggle-active modals__close" data-toggle-active="wndw-001">Ок</div>
+                        <div class="typical-button -button close-modal">Ок</div>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         <div class="pretty-slider__hidden-slides">
                             <!-- ! Сюда нужно загрузить все слайды -->
 
-                            <a href="#" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
+                            <a href="/catalog" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
                                 <div class="slider__slide-content">
                                     <div class="-title">
                                         Скидка 15% на каждый следующий заказ
@@ -90,29 +90,6 @@
                                 <div class="slider__slide-image"
                                      style="background-image: url({{asset('theme')}}/img/slider/01.png);"></div>
                             </a>
-
-                            <a href="#" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
-                                <div class="slider__slide-content">
-                                    <div class="-title">
-                                        Скидка 15% на каждый следующий заказ
-                                    </div>
-                                    <div class="-button typical-button">Выбрать блюдо</div>
-                                </div>
-                                <div class="slider__slide-image"
-                                     style="background-image: url({{asset('theme')}}/img/slider/01.png);"></div>
-                            </a>
-
-                            <a href="#" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
-                                <div class="slider__slide-content">
-                                    <div class="-title">
-                                        Скидка 15% на каждый следующий заказ
-                                    </div>
-                                    <div class="-button typical-button">Выбрать блюдо</div>
-                                </div>
-                                <div class="slider__slide-image"
-                                     style="background-image: url({{asset('theme')}}/img/slider/01.png);"></div>
-                            </a>
-
                         </div>
 
                     </div>
@@ -154,7 +131,7 @@
                 <a href="#" class="catalog-screen__cat">
                     <div class="-img" style="background-image: url('{{asset('theme')}}/img/cats/1.jpg');"></div>
                     <div class="-name">
-                        Магазин <br>
+                        Магазинам <br>
                         и кафе
                     </div>
                 </a>
@@ -383,7 +360,7 @@
                 </div>
             </div>
             <div class="reviews-screen__button">
-                <div class="typical-button --stroke toggle-active open-modals" data-toggle-active="wndw-001">Добавить отзыв</div>
+                <div class="typical-button --stroke open-modal" data-open-modal="wndw-001">Добавить отзыв</div>
             </div>
         </div>
     </div>

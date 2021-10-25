@@ -225,43 +225,69 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	modals();
+	modals()
 	function modals() {
-		const triggers = document.getElementsByClassName('open-modals');
-		const windows  = document.getElementsByClassName('modals__modal');
-		const closers  = document.getElementsByClassName('modals__close');
-		const back     = document.getElementsByClassName('modals__bg')[0];
+		const header = document.getElementById('header')
+		const modal = document.getElementsByClassName('modals')[0]
+		const modals = modal.getElementsByClassName('modals__modal')
 
-		if (back) {
-			back.addEventListener('click', closeModal);
+		if ( !modal ) return
+
+		const openers = document.getElementsByClassName('open-modal')
+		const closers = document.getElementsByClassName('close-modal')
+
+		Object.values(openers).forEach(opener => {
+			opener.addEventListener('click', () => {
+				openWind(opener.dataset.openModal)
+			})
+		})
+
+		Object.values(closers).forEach(closer => {
+			closer.addEventListener('click', () => {
+				closeWind()
+			})
+		})
+
+		function openWind(id) {
+			document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
+			header.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
+			document.body.classList.add('--fixed')
+			
+			const wind = document.getElementById(id)
+
+			modal.classList.add('active')
+			modal.classList.add('--transparent')
+
+			wind.classList.add('active')
+			wind.classList.add('--transparent')
+			
+			setTimeout( () => {
+				modal.classList.remove('--transparent')
+
+				wind.classList.remove('--transparent')
+			} )
 		}
 
-		const modals = document.getElementsByClassName('modals')[0];
-		if ( !modals ) return;
+		function closeWind() {
+			modal.classList.add('--transparent')
 
-		for (let trigger of triggers) {
-			trigger.addEventListener('click', openModal);
-		}
+			Object.values(modals).forEach(wind => {
+				wind.classList.add('--transparent')
+			})
 
-		for (let closer of closers) {
-			closer.addEventListener('click', closeModal);
-		}
+			setTimeout( () => {
+				modal.classList.remove('active')
+				modal.classList.remove('--transparent')
 
-		function closeAll() {
-			for (let window of windows) {
-				window.classList.remove('active');
-			}
-		}
+				Object.values(modals).forEach(wind => {
+					wind.classList.remove('active')
+					wind.classList.remove('--transparent')
+				})
 
-		function openModal() {
-			document.body.classList.add('--fixed');
-			modals.classList.add('active');
-		}
-
-		function closeModal() {
-			closeAll();
-			document.body.classList.remove('--fixed');
-			modals.classList.remove('active');
+				document.body.style.paddingRight = 0
+				header.style.paddingRight = 0
+				document.body.classList.remove('--fixed')
+			}, 300 )
 		}
 
 	}
