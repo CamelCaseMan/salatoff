@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Salatoff</title>
     <!-- End Meta-tegs -->
 
@@ -37,6 +38,7 @@
 
     <!-- Scripts -->
     <script src="{{asset('theme')}}/js/script.js"></script>
+    <script src="{{asset('theme')}}/js/basket.js"></script>
     <!-- End Scripts -->
 </head>
 <body class="fixed ">
@@ -123,7 +125,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="cart.html" class="header__cart">
+                <a href="/basket" class="header__cart">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M11.0861 1.21162L7.01301 8.00002H16.9871L12.9141 1.21162L14.2861 0.388428L18.853 8.00002H22.8749C23.4963 8.00002 24 8.50376 24 9.12514V9.82716C24 14.5369 22.9034 19.182 20.7972 23.3945C20.6116 23.7656 20.2323 24 19.8174 24H4.18255C3.76765 24 3.38836 23.7656 3.20282 23.3945C1.09655 19.182 0 14.5369 0 9.82716V9.12514C0 8.50376 0.503729 8.00002 1.12511 8.00002H5.1471L9.71406 0.388428L11.0861 1.21162Z"
                               fill="#A2CD3A"/>

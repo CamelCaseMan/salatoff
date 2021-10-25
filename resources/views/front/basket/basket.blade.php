@@ -1,5 +1,31 @@
 @extends('front.master')
 @section('content')
+
+    <style>
+        .table {
+            width: 100%;
+        }
+        .table__wrapper {
+            position: relative;
+        }
+        .table tr th {
+            font-weight: 500;
+        }
+        .table tr td, .table tr th {
+            padding: 15px 10px;
+        }
+        .table tr:nth-child(2n) {
+            background-color: rgba(56, 124, 75, 0.05);
+        }
+        .table .-button {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .table .-button.--remove {
+            color: #D13301;
+        }
+    </style>
+
     <h2>Корзина</h2>
 
     <div class="row">

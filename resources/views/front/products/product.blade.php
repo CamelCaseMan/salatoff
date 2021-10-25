@@ -2,6 +2,10 @@
 @section('content')
     <div class="product-page container mb-250 m-mb-160 xs-mb-120">
 
+        <a href="tel:+74957976457" class="body-phone d-none xs-d-block" style="margin-top: -18px; margin-bottom: 8px;">
+            +7 495 797 64 57
+        </a>
+
         <div class="product-page__back mb-50 xs-mb-40">
             <a href="{{ URL::previous() }}">
                 <svg width="12" height="11" viewBox="0 0 12 11" fill="none">
@@ -54,8 +58,8 @@
                     </div>
 
                     <div class="-quty-row mb-40 xs-mb-30">
-                        <div class="-quty">
-                            <div class="-btn">
+                        <div class="-quty quty-interface">
+                            <div class="-btn quty-interface-btn" data-quty="-">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                                     <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"
                                           stroke="#828282" stroke-miterlimit="10"/>
@@ -63,10 +67,10 @@
                                           stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <div class="-num">
+                            <div class="-num quty-interface-value">
                                 1 шт.
                             </div>
-                            <div class="-btn">
+                            <div class="-btn quty-interface-btn" data-quty="+">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                                     <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"
                                           stroke="#828282" stroke-miterlimit="10"/>
@@ -78,7 +82,7 @@
                         <div class="-price">{{$product->price}} ₽</div>
                     </div>
 
-                    <div class="typical-button -button">Добавить в корзину</div>
+                    <div class="typical-button -button add-cart-button" data-id="{{$product->id}}">Добавить в корзину</div>
 
                 </div>
             </div>
