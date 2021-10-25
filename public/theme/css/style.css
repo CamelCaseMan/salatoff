@@ -382,7 +382,9 @@ input[type=number] {
   color: var(--black);
   background-color: var(--green);
   display: inline-block;
-  padding: 20px 30px;
+  padding: 30px;
+  padding-bottom: 22px;
+  padding-top: 18px;
   border-radius: 40px;
   transition: 0.2s ease;
 }
@@ -391,7 +393,7 @@ input[type=number] {
 }
 .typical-button.--stroke {
   background-color: transparent;
-  border: 1px solid var(--green);
+  border: 2px solid var(--green);
 }
 .typical-button.--stroke:hover {
   color: var(--green);
@@ -488,9 +490,13 @@ input[type=number] {
   right: 0;
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
 }
 .modals.active {
   display: block;
+}
+.modals.--transparent {
+  opacity: 0;
 }
 .modals__bg {
   position: absolute;
@@ -523,6 +529,8 @@ input[type=number] {
   border-radius: 16px;
   margin-bottom: 30px;
   position: relative;
+  transition: 0.3s ease;
+  transform: translateY(0);
 }
 .modals__modal.--mini {
   max-width: 320px;
@@ -533,6 +541,10 @@ input[type=number] {
 }
 .modals__modal.active {
   display: block;
+}
+.modals__modal.--transparent {
+  transform: translateY(-200px);
+  opacity: 0;
 }
 .modals__close {
   position: absolute;
@@ -955,10 +967,19 @@ p {
 .header__hamburger.active .-icon line:nth-child(2) {
   transform: scaleX(0.7);
 }
+.header__hamburger.active .-icon line:first-child {
+  transform: translateY(-2px);
+}
+.header__hamburger.active .-icon line:last-child {
+  transform: translateY(2px);
+}
 .header__hamburger .-word {
   margin-right: 10px;
 }
-.header__hamburger .-icon line:nth-child(2) {
+.header__hamburger .-icon {
+  overflow: visible;
+}
+.header__hamburger .-icon line {
   transition: 0.2s ease;
   transform-origin: center;
 }
@@ -1302,6 +1323,7 @@ p {
   left: -20px;
 }
 .info-screen__text {
+  padding-top: 10px;
   grid-column: 8/13;
 }
 .info-screen__text p {
@@ -1503,7 +1525,9 @@ p {
   font-size: 1.5rem;
 }
 .catalog-page__product .-button {
-  padding: 12px 24px;
+  padding: 24px;
+  padding-top: 10px;
+  padding-bottom: 12px;
 }
 
 /* /catalog-page */
@@ -1582,6 +1606,10 @@ p {
 .product-page__product-container .-quty-row {
   display: flex;
   align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .product-page__product-container .-quty-row .-quty {
   display: flex;
