@@ -161,6 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         totalPrice.innerText = data.total
                     }
 
+                    if (data.count == 0) location.reload()
+
                 })
                 .catch(err => {
                     console.log( err )
