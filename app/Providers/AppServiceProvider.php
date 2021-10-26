@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
+use App\Services\Catalog\CatalogService;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Paginator;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,10 +28,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        /*$categories = Category::where('show', 1)
-           ->with('childrenCategories')
-           ->get();
 
-       View::share('categories', $categories);*/
+        $category = new CatalogService();
+        if (!is_null($category)) {
+            $menu = $category->setMenuCatalog();
+            View::share(
+                [
+                    'parents' => $menu['parents'],
+                    'categories' => $menu['children'],
+                ]
+            );
+        }
     }
 }

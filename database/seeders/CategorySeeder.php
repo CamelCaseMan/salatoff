@@ -14,7 +14,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $data = [
-            0 => [
+            1 => [
                 'name' => 'Весовые',
                 'slug' => \Str::of('Весовые')->slug('-')->snake(),
                 'image' => '',
@@ -24,7 +24,7 @@ class CategorySeeder extends Seeder
                 'style' => ''
             ],
 
-            1 => [
+            2 => [
                 'name' => 'Фасованные',
                 'slug' => \Str::of('Фасованные')->slug('-')->snake(),
                 'image' => '',
@@ -34,40 +34,40 @@ class CategorySeeder extends Seeder
                 'style' => ''
             ],
 
-            2 => [
-                'name' => 'Традиционные салаты',
-                'slug' => \Str::of('Традиционные салаты')->slug('-')->snake(),
-                'image' => '1.jpg',
-                'parent_id' => 1,
-                'show' => 1,
-                'sort' => 2,
-                'style' => 'background-color: #70B0FF; color: #70B0FF;'
-            ],
-
             3 => [
                 'name' => 'Традиционные салаты',
                 'slug' => \Str::of('Традиционные салаты')->slug('-')->snake(),
                 'image' => '1.jpg',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 2,
                 'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             4 => [
-                'name' => 'Корейские салаты',
-                'slug' => \Str::of('Корейские салаты')->slug('-')->snake(),
-                'image' => '2.png',
-                'parent_id' => 1,
+                'name' => 'Традиционные салаты',
+                'slug' => \Str::of('Традиционные салаты')->slug('-')->snake(),
+                'image' => '1.jpg',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 3,
-                'style' => 'background-color: #FFA64D; color: #FFA64D;'
+                'sort' => 2,
+                'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             5 => [
                 'name' => 'Корейские салаты',
                 'slug' => \Str::of('Корейские салаты')->slug('-')->snake(),
                 'image' => '2.png',
+                'parent_id' => 1,
+                'show' => 1,
+                'sort' => 3,
+                'style' => 'background-color: #FFA64D; color: #FFA64D;'
+            ],
+
+            6 => [
+                'name' => 'Корейские салаты',
+                'slug' => \Str::of('Корейские салаты')->slug('-')->snake(),
+                'image' => '2.png',
                 'parent_id' => 2,
                 'show' => 1,
                 'sort' => 3,
@@ -75,147 +75,147 @@ class CategorySeeder extends Seeder
             ],
 
 
-            6 => [
-                'name' => 'Готовая кулинария',
-                'slug' => \Str::of('Готовая кулинария')->slug('-')->snake(),
-                'image' => '3.png',
-                'parent_id' => 1,
-                'show' => 1,
-                'sort' => 4,
-                'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
-            ],
-
             7 => [
                 'name' => 'Готовая кулинария',
                 'slug' => \Str::of('Готовая кулинария')->slug('-')->snake(),
                 'image' => '3.png',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 4,
                 'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
             8 => [
-                'name' => 'Комплесные обеды',
-                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
-                'image' => '4.jpg',
-                'parent_id' => 1,
+                'name' => 'Готовая кулинария',
+                'slug' => \Str::of('Готовая кулинария')->slug('-')->snake(),
+                'image' => '3.png',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 5,
-                'style' => 'background-color: #FFBF8C; color: #FFBF8C;'
+                'sort' => 4,
+                'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
             9 => [
                 'name' => 'Комплесные обеды',
                 'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
                 'image' => '4.jpg',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 5,
                 'style' => 'background-color: #FFBF8C; color: #FFBF8C;'
             ],
 
             10 => [
-                'name' => 'Бутерброды и сэндвичи',
-                'slug' => \Str::of('Бутерброды и сэндвичи')->slug('-')->snake(),
-                'image' => '5.png',
-                'parent_id' => 1,
+                'name' => 'Комплесные обеды',
+                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
+                'image' => '4.jpg',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 6,
-                'style' => 'background-color: #5CC19A; color: #5CC19A;'
+                'sort' => 5,
+                'style' => 'background-color: #FFBF8C; color: #FFBF8C;'
             ],
 
             11 => [
                 'name' => 'Бутерброды и сэндвичи',
                 'slug' => \Str::of('Бутерброды и сэндвичи')->slug('-')->snake(),
                 'image' => '5.png',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 6,
                 'style' => 'background-color: #5CC19A; color: #5CC19A;'
             ],
 
             12 => [
-                'name' => 'Роллы',
-                'slug' => \Str::of('Роллы')->slug('-')->snake(),
-                'image' => '6.png',
-                'parent_id' => 1,
+                'name' => 'Бутерброды и сэндвичи',
+                'slug' => \Str::of('Бутерброды и сэндвичи')->slug('-')->snake(),
+                'image' => '5.png',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 7,
-                'style' => 'background-color: #FFA64D; color: #FFA64D;'
+                'sort' => 6,
+                'style' => 'background-color: #5CC19A; color: #5CC19A;'
             ],
 
             13 => [
                 'name' => 'Роллы',
                 'slug' => \Str::of('Роллы')->slug('-')->snake(),
                 'image' => '6.png',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 7,
                 'style' => 'background-color: #FFA64D; color: #FFA64D;'
             ],
 
             14 => [
-                'name' => 'Кондитерские изделия',
-                'slug' => \Str::of('Кондитерские изделия')->slug('-')->snake(),
-                'image' => '7.png',
-                'parent_id' => 1,
+                'name' => 'Роллы',
+                'slug' => \Str::of('Роллы')->slug('-')->snake(),
+                'image' => '6.png',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 8,
-                'style' => 'background-color: #FFBFFF; color: #FFBFFF;'
+                'sort' => 7,
+                'style' => 'background-color: #FFA64D; color: #FFA64D;'
             ],
 
             15 => [
                 'name' => 'Кондитерские изделия',
                 'slug' => \Str::of('Кондитерские изделия')->slug('-')->snake(),
                 'image' => '7.png',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 8,
                 'style' => 'background-color: #FFBFFF; color: #FFBFFF;'
             ],
 
             16 => [
-                'name' => 'Блины',
-                'slug' => \Str::of('Блины')->slug('-')->snake(),
-                'image' => '8.png',
-                'parent_id' => 1,
+                'name' => 'Кондитерские изделия',
+                'slug' => \Str::of('Кондитерские изделия')->slug('-')->snake(),
+                'image' => '7.png',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 9,
-                'style' => 'background-color: #70B0FF; color: #70B0FF;'
+                'sort' => 8,
+                'style' => 'background-color: #FFBFFF; color: #FFBFFF;'
             ],
 
             17 => [
                 'name' => 'Блины',
                 'slug' => \Str::of('Блины')->slug('-')->snake(),
                 'image' => '8.png',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 9,
                 'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             18 => [
-                'name' => 'Выпечка',
-                'slug' => \Str::of('Выпечка')->slug('-')->snake(),
-                'image' => '9.png',
-                'parent_id' => 1,
+                'name' => 'Блины',
+                'slug' => \Str::of('Блины')->slug('-')->snake(),
+                'image' => '8.png',
+                'parent_id' => 2,
                 'show' => 1,
-                'sort' => 10,
-                'style' => 'background-color: #FF80A6; color: #FF80A6;'
+                'sort' => 9,
+                'style' => 'background-color: #70B0FF; color: #70B0FF;'
             ],
 
             19 => [
                 'name' => 'Выпечка',
                 'slug' => \Str::of('Выпечка')->slug('-')->snake(),
                 'image' => '9.png',
-                'parent_id' => 2,
+                'parent_id' => 1,
                 'show' => 1,
                 'sort' => 10,
                 'style' => 'background-color: #FF80A6; color: #FF80A6;'
             ],
 
             20 => [
+                'name' => 'Выпечка',
+                'slug' => \Str::of('Выпечка')->slug('-')->snake(),
+                'image' => '9.png',
+                'parent_id' => 2,
+                'show' => 1,
+                'sort' => 10,
+                'style' => 'background-color: #FF80A6; color: #FF80A6;'
+            ],
+
+            21 => [
                 'name' => 'Супы',
                 'slug' => \Str::of('Супы')->slug('-')->snake(),
                 'image' => '10.png',
@@ -225,7 +225,7 @@ class CategorySeeder extends Seeder
                 'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
-            21 => [
+            22 => [
                 'name' => 'Супы',
                 'slug' => \Str::of('Супы')->slug('-')->snake(),
                 'image' => '10.png',
@@ -235,7 +235,7 @@ class CategorySeeder extends Seeder
                 'style' => 'background-color: #4CD9C3; color: #4CD9C3;'
             ],
 
-            22 => [
+            23 => [
                 'name' => 'Напитки',
                 'slug' => \Str::of('Напитки')->slug('-')->snake(),
                 'image' => '11.png',
@@ -245,11 +245,21 @@ class CategorySeeder extends Seeder
                 'style' => 'background-color: #FF80A6; color: #FF80A6;'
             ],
 
-            23 => [
+            24 => [
                 'name' => 'Напитки',
                 'slug' => \Str::of('Напитки')->slug('-')->snake(),
                 'image' => '11.png',
                 'parent_id' => 2,
+                'show' => 1,
+                'sort' => 12,
+                'style' => 'background-color: #FF80A6; color: #FF80A6;'
+            ],
+
+            25 => [
+                'name' => 'Кейтеринг',
+                'slug' => \Str::of('Кейтеринг')->slug('-')->snake(),
+                'image' => '11.png',
+                'parent_id' => 0,
                 'show' => 1,
                 'sort' => 12,
                 'style' => 'background-color: #FF80A6; color: #FF80A6;'

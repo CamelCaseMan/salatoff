@@ -80,7 +80,7 @@
                         <div class="pretty-slider__hidden-slides">
                             <!-- ! Сюда нужно загрузить все слайды -->
 
-                            <a href="/catalog" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
+                            <a href="/shop" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
                                 <div class="slider__slide-content">
                                     <div class="-title">
                                         Скидка 15% на каждый следующий заказ
@@ -128,7 +128,7 @@
                 Каталог
             </h2>
             <div class="catalog-screen__cats">
-                <a href="#" class="catalog-screen__cat">
+                <a href="/shop" class="catalog-screen__cat">
                     <div class="-img" style="background-image: url('{{asset('theme')}}/img/cats/1.jpg');"></div>
                     <div class="-name">
                         Магазинам <br>
@@ -142,7 +142,7 @@
                         и в офис
                     </div>
                 </a>
-                <a href="#" class="catalog-screen__cat">
+                <a href="/catering" class="catalog-screen__cat">
                     <div class="-img" style="background-image: url('{{asset('theme')}}/img/cats/3.jpg');"></div>
                     <div class="-name">
                         Кейтеринг

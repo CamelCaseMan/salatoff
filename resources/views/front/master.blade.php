@@ -40,6 +40,11 @@
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <!-- End Scripts -->
+    <style>
+        #has_add_basket  .-button{
+            background: red!important;
+        }
+    </style>
 </head>
 <body class="fixed ">
 
@@ -57,9 +62,9 @@
             </a>
             <!-- End Header logo -->
 
-            @include('front.include.menu')
+        @include('front.include.menu')
 
-            <!-- Header hamburger -->
+        <!-- Header hamburger -->
             <div class="header__hamburger expand-toggler" data-expand="header-drop">
                 <div class="-word s-d-none">Меню</div>
                 <svg class="-icon" width="36" height="18" viewBox="0 0 36 18" fill="none">
@@ -130,6 +135,7 @@
                         <path d="M11.0861 1.21162L7.01301 8.00002H16.9871L12.9141 1.21162L14.2861 0.388428L18.853 8.00002H22.8749C23.4963 8.00002 24 8.50376 24 9.12514V9.82716C24 14.5369 22.9034 19.182 20.7972 23.3945C20.6116 23.7656 20.2323 24 19.8174 24H4.18255C3.76765 24 3.38836 23.7656 3.20282 23.3945C1.09655 19.182 0 14.5369 0 9.82716V9.12514C0 8.50376 0.503729 8.00002 1.12511 8.00002H5.1471L9.71406 0.388428L11.0861 1.21162Z"
                               fill="#A2CD3A"/>
                     </svg>
+
                     <div class="-num" id="header-quty">
                         {{session('cart_count')?? 0}}
                     </div>
@@ -459,7 +465,7 @@
         </div>
 
         <div class="footer__button">
-            <a href="/catalog" class="typical-button">Выбрать блюдо</a>
+            <a href="/shop" class="typical-button">Выбрать блюдо</a>
         </div>
 
         <ul class="footer__socials">
@@ -485,7 +491,8 @@
         </ul>
 
         <div class="footer__stores">
-            <a href="https://apps.apple.com/ru/app/%D0%B5%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82/id1466983545" class="-item">
+            <a href="https://apps.apple.com/ru/app/%D0%B5%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82/id1466983545"
+               class="-item">
                 <img src="{{asset('theme')}}/img/app-appstore.svg" alt="Загрузите еда без забот в App Store">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.loyaltyplant.partner.daridobro" class="-item">
