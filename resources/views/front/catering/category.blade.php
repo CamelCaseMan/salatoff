@@ -18,9 +18,7 @@
 
         <div class="catalog-page__wrapper --products">
             @foreach($products as $product)
-                <a href="catering/{{$product->slug}}" class="catalog-page__product" @if(session('cart_products')!=null)
-                @if(in_array($product->id,session('cart_products')))id="has_add_basket" @endif
-                        @endif>
+                <a href="catering/{{$product->slug}}" class="catalog-page__product">
                     <div class="-img">
                         <img src="{{$product->image}}" alt="{{$product->name}}">
                     </div>
@@ -33,9 +31,14 @@
                         </div>
                         <div class="-price-row">
                             <div class="-price">{{$product->price}} ₽</div>
-                            <div class="-button typical-button add-one-button" data-id="{{$product->id}}"
-                                 data-url="catering/{{$product->slug}}"
-                            >В корзину
+                            <!-- ! Если товар уже есть в корзине, то убираем класс "add-one-button", ставим класс "--done" -->
+                            <div class="-button typical-button add-one-button @if(session('cart_products')!=null)
+                            @if(in_array($product->id,session('cart_products')))--done @endif
+                            @endif " data-id="{{$product->id}}" data-url="/catering/{{$product->slug}}">
+                                <span class="-text">В корзину</span>
+                                <svg class="-icon" width="27" height="18" viewBox="0 0 27 18" fill="none">
+                                    <path d="M0.5 7.5L10 17L26 1" stroke="#A2CD3A" stroke-width="1.5"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
