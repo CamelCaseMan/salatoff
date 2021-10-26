@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CatalogController;
 use App\Http\Controllers\Front\ProductController;
+use App\Http\Controllers\Front\CateringController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Basket\BasketController;
@@ -25,9 +26,11 @@ use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 
 // Каталог и карточки товара
 Route::get('/', [PageController::class, 'showPage']);
-Route::get('/catalog', [CatalogController::class, 'showPageCatalog']);
-Route::get('/catalog/{parent}/{category}', [CategoryController::class, 'showPageCategory']);
-Route::get('/catalog/{parent}/{category}/{product}', [ProductController::class, 'showProduct']);
+Route::get('/shop', [CatalogController::class, 'showPageCatalog']);
+Route::get('/shop/{parent}/{category}', [CategoryController::class, 'showPageCategory']);
+Route::get('/shop/{parent}/{category}/{product}', [ProductController::class, 'showProduct']);
+Route::get('/catering', [CateringController::class, 'showPageCategory']);
+Route::get('/catering/{product}', [CateringController::class, 'showPageProduct']);
 
 
 //Корзина

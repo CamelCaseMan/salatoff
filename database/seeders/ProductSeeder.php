@@ -26,14 +26,17 @@ class ProductSeeder extends Seeder
             'https://salatoff.ru/storage/product/Mt1jJ3V5u1YTNVzpZsIgZowpF0ODle3R5k1jh9u0.jpeg',
             'https://salatoff.ru/storage/product/4KwNaqnDWm2q2Y6FE9J3vP4jfxejpfAbZtwZnc1U.jpeg',
         ];
+
+
         $data = [];
+        $catering = [];
 
         for ($i = 1; $i < 150; $i++) {
             $title = 'Название товара_' . $i;
             $data[$i] = [
                 'name' => $title,
                 'slug' => \Str::of($title)->slug('-')->snake(),
-                'category_id' => rand(1, 21),
+                'category_id' => rand(3, 24),
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => $images[rand(0, 10)],
@@ -41,6 +44,21 @@ class ProductSeeder extends Seeder
             ];
         }
 
+
+        for ($i = 1; $i < 15; $i++) {
+            $title = 'Кейтеринг_' . $i;
+            $catering[$i] = [
+                'name' => $title,
+                'slug' => \Str::of($title)->slug('-')->snake(),
+                'category_id' => 25,
+                'price' => mt_rand(550, 1999) / 10,
+                'show' => rand(0, 1),
+                'image' => 'http://salatoff.loc/theme/img/catering/' . rand(1, 7) . '.png',
+                'weight' => mt_rand(550, 1999)
+            ];
+        }
+
         \DB::table('products')->insert($data);
+        \DB::table('products')->insert($catering);
     }
 }
