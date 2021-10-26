@@ -8,15 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	function qutyInterface() {
 		const interfaces = document.getElementsByClassName('quty-interface')
 
-        
         Object.values(interfaces).forEach(init)
         function init(interfc) {
-            let quty = 1
-            console.log(quty)
 
             const valueField = interfc.getElementsByClassName('quty-interface-value')[0]
             const buttons = interfc.getElementsByClassName('quty-interface-btn')
-
 
             Object.values(buttons).forEach(button => {
                 button.addEventListener('click', changeQuty)
