@@ -33,7 +33,13 @@
                         </div>
                         <div class="-price-row">
                             <div class="-price">{{$product->price}} ₽</div>
-                            <div class="-button typical-button add-one-button" data-id="{{$product->id}}" data-url="{{$category->slug}}/{{$product->slug}}">В корзину</div>
+                            <!-- ! Если товар уже есть в корзине, то убираем класс "add-one-button", ставим класс "--done" -->
+                            <div class="-button typical-button add-one-button" data-id="{{$product->id}}" data-url="{{$category->slug}}/{{$product->slug}}">
+                                <span class="-text">В корзину</span>
+                                <svg class="-icon" width="27" height="18" viewBox="0 0 27 18" fill="none">
+                                    <path d="M0.5 7.5L10 17L26 1" stroke="#A2CD3A" stroke-width="1.5"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </a>

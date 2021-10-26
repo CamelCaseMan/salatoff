@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
  
     const CSRFToken = document.querySelector('meta[name="csrf-token"]').content
+    const headerQuty = document.getElementById('header-quty')
     let quty = 1
 
     qutyInterface()
 	function qutyInterface() {
 		const interfaces = document.getElementsByClassName('quty-interface')
 
+        
         Object.values(interfaces).forEach(init)
         function init(interfc) {
+            let quty = 1
+            console.log(quty)
 
             const valueField = interfc.getElementsByClassName('quty-interface-value')[0]
             const buttons = interfc.getElementsByClassName('quty-interface-btn')
+
 
             Object.values(buttons).forEach(button => {
                 button.addEventListener('click', changeQuty)
@@ -41,7 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     basketAddCount()
     function basketAddCount() {
         const addButton = document.getElementsByClassName('add-cart-button')[0]
-        if ( !addButton ) return;
+        const startQutyField = document.getElementsByClassName('quty-start')[0]
+
+        if ( !addButton || !startQutyField ) return;
+        quty = +startQutyField.dataset.value
+
         addButton.addEventListener('click', function () {
             let productId = this.dataset.id;
             console.log(quty, productId)
@@ -62,6 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 console.log(data)
+
+                addButton.innerText = 'Изменить колличество'
+
+                headerQuty.innerText = data.count
             })
             .catch(err => {
                 console.log(err)
@@ -75,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const addButtons = document.getElementsByClassName('add-one-button')
 
         Object.values(addButtons).forEach(addButton => {
-            addButton.addEventListener('click', function (evt) {
+            addButton.addEventListener('click', function addButtonEvent(evt) {
                 evt.preventDefault()
                 evt.stopPropagation()
 
@@ -98,6 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     console.log(data)
+
+                    addButton.classList.add('--done')
+                    addButton.removeEventListener('click', addButtonEvent)
+
+                    headerQuty.innerText = data.count
                 })
                 .catch(err => {
                     console.log( err )
@@ -131,6 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     console.log(data)
+                    headerQuty.innerText = data.count
+
+                    document.getElementById('basket-row-' + productId).remove()
                 })
                 .catch(err => {
                     console.log( err )
@@ -141,5 +162,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     }  
+
+    basketAddInCart()
+    function basketAddInCart() {
+
+    }
+
+
 
 })
