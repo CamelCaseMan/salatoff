@@ -67,7 +67,7 @@
                                           stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <div class="-num quty-interface-value">
+                            <div class="-num quty-interface-value quty-start" data-value="1">
                                 1 шт.
                             </div>
                             <div class="-btn quty-interface-btn" data-quty="+">
