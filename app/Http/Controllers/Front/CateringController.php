@@ -13,7 +13,9 @@ class CateringController
      */
     public function showPageCategory()
     {
-        $products = Product::where('category_id', 25)->get();
+        $products = Product::where('category_id', 25)
+            ->where('show', 1)
+            ->get();
         return view('front.catering.category', ['products' => $products]);
     }
 
@@ -25,6 +27,7 @@ class CateringController
     public function showPageProduct(string $product)
     {
         $product = Product::where('category_id', 25)
+            ->where('show', 1)
             ->where('slug', $product)
             ->firstOrFail();
         return view('front.catering.product', ['product' => $product]);

@@ -133,7 +133,7 @@
                                 </div>
                             </section>
                             <div class="-total">
-                                <b>Итого:</b> <span id="total-price">365</span> ₽
+                                <b>Итого:</b> <span id="total-price">{{$order->getFullPrice()}}</span> ₽
                             </div>
                         </div>
                         <input type="submit" value="Оформить заказ" class="typical-button modals__button d-block">
