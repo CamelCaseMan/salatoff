@@ -1161,18 +1161,17 @@ body.profile-page {
 		border: 1px solid #E0E0E0;
 		box-shadow: rgba(0 0 0 / 5%) 0 5px 5px;
 		padding: 40px;
+		padding-top: 0;
 		padding-bottom: 65px;
 	}
 	&__table {
 		margin-bottom: 40px;
 		&-row {
-			display: flex;
-			padding-bottom: 40px;
-			border-bottom: 1px solid #E0E0E0;
-			margin-bottom: 40px;
-			align-items: center;
-			&:last-child {
-				margin-bottom: 0;
+			overflow: hidden;
+			transition: .3s ease;
+			&.--hide {
+				opacity: 0;
+				height: 0 !important;
 			}
 			.-row-item {
 				margin-right: 25px;
@@ -1262,6 +1261,13 @@ body.profile-page {
 				text-align: right;
 				cursor: pointer;
 			}
+		}
+		&-body {
+			display: flex;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			border-bottom: 1px solid #E0E0E0;
+			align-items: center;
 		}
 	}
 	&__split {

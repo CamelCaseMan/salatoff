@@ -147,7 +147,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(data)
                     headerQuty.innerText = data.count
 
-                    document.getElementById('basket-row-' + productId).remove()
+                    const row = document.getElementById('basket-row-' + productId)
+                    row.style.height = row.offsetHeight + 'px'
+                    setTimeout( () => {
+                        row.classList.add('--hide')
+                    } )
+                    setTimeout( () => {
+                        row.remove()
+                    }, 300 )
+
                 })
                 .catch(err => {
                     console.log( err )
