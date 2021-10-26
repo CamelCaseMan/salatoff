@@ -40,6 +40,11 @@
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <!-- End Scripts -->
+    <style>
+        #has_add_basket  .-button{
+            background: red!important;
+        }
+    </style>
 </head>
 <body class="fixed ">
 
@@ -57,9 +62,9 @@
             </a>
             <!-- End Header logo -->
 
-            @include('front.include.menu')
+        @include('front.include.menu')
 
-            <!-- Header hamburger -->
+        <!-- Header hamburger -->
             <div class="header__hamburger expand-toggler" data-expand="header-drop">
                 <div class="-word s-d-none">Меню</div>
                 <svg class="-icon" width="36" height="18" viewBox="0 0 36 18" fill="none">
@@ -131,7 +136,7 @@
                               fill="#A2CD3A"/>
                     </svg>
                     <div class="-num">
-                        2
+                        {{session('cart_count')?? 0}}
                     </div>
                 </a>
             </div>
@@ -459,7 +464,7 @@
         </div>
 
         <div class="footer__button">
-            <a href="/catalog" class="typical-button">Выбрать блюдо</a>
+            <a href="/shop" class="typical-button">Выбрать блюдо</a>
         </div>
 
         <ul class="footer__socials">
@@ -485,7 +490,8 @@
         </ul>
 
         <div class="footer__stores">
-            <a href="https://apps.apple.com/ru/app/%D0%B5%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82/id1466983545" class="-item">
+            <a href="https://apps.apple.com/ru/app/%D0%B5%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82/id1466983545"
+               class="-item">
                 <img src="{{asset('theme')}}/img/app-appstore.svg" alt="Загрузите еда без забот в App Store">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.loyaltyplant.partner.daridobro" class="-item">
