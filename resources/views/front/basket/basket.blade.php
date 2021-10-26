@@ -47,7 +47,7 @@
                     </div>
                     <div class="-quty-cell -row-item">
                         <!-- ! Указываем кол-во товара в "data-count" -->
-                        <div class="-quty quty-interface basket-row-intenface" data-count="{{$product->pivot->count}}">
+                        <div class="-quty basket-row-intenface" data-count="{{$product->pivot->count}}" data-id="{{$product->id}}">
                             <div class="-btn quty-interface-btn" data-quty="-">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                                     <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"

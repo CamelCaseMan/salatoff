@@ -162,6 +162,62 @@ document.addEventListener('DOMContentLoaded', () => {
     basketAddInCart()
     function basketAddInCart() {
 
+        const basketRows = document.getElementsByClassName('basket-row-intenface')
+
+        Object.values(basketRows).forEach(init)
+
+        function init(row) {
+            let quty = +row.dataset.count
+            const productId = row.dataset.id
+
+            const valueField = row.getElementsByClassName('quty-interface-value')[0]
+            const buttons = row.getElementsByClassName('quty-interface-btn')
+
+            Object.values(buttons).forEach(button => {
+                button.addEventListener('click', changeQuty)
+            })
+            function changeQuty() {
+                const symbol = this.dataset.quty;
+                switch (symbol) {
+                    case '+':
+                        quty++
+                        break
+                    case '-':
+                        quty--
+                        break
+                }
+                if (quty <= 0) quty = 1
+
+                valueField.innerText = quty + ' шт.'
+
+                let formData = new FormData();
+                formData.append('productId', productId)
+                formData.append('count', quty)
+
+                fetch(`/basket/addcount`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': CSRFToken
+                    },
+                    body: formData
+                })
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    console.log(data)
+    
+    
+                    headerQuty.innerText = data.count
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            }
+
+
+        }
+
     }
 
 
