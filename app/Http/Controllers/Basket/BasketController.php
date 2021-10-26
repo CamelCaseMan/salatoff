@@ -27,7 +27,7 @@ class BasketController extends Controller
     public function showBasket(BasketService $basketService)
     {
         $order = $this->basketOrder->getOrder();
-        if (is_null($order)) {
+        if (is_null($order) || count($order->products) < 1) {
             return view('front.basket.emptyBasket');
         }
         return view('front.basket.basket', compact('order'));
