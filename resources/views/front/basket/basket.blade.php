@@ -133,7 +133,7 @@
                                 </div>
                             </section>
                             <div class="-total">
-                                <b>Итого:</b> 365 ₽
+                                <b>Итого:</b> <span id="total-price">365</span> ₽
                             </div>
                         </div>
                         <input type="submit" value="Оформить заказ" class="typical-button modals__button d-block">
