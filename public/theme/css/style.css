@@ -914,6 +914,9 @@ body.--fixed {
 p {
   line-height: 1.7;
 }
+p a {
+  color: var(--green);
+}
 
 .body-phone {
   text-align: center;

@@ -82,15 +82,17 @@
                         Обратите внимание
                     </div>
                     <p class="-text">
-                        Обратите внимание<br>
-                        <br>
-                        Мы обрабатываем заказы с 9:00 до 16:30. <br>
-                        <br>
-                        Это значит, что если Вы заказали у нас еду до 16:30, мы привезём её уже на следующий день. А если заказ поступил после 16:30, то через день.<br>
-                        <br>
-                        Доставка заказов осуществляется с 7:00 до 12:00<br>
-                        <br>
-                        По воскресеньям заказы не доставляем
+                    Минимальная сумма заказа: 2000 ₽
+                    Ближайшая дата доставки: 21.10.2021
+                    Доставка по Москве и Московской области — <a href="#">бесплатно</a><br>
+                    <br>
+                    Мы обрабатываем заказы с 9:00 до 16:30. <br>
+                    <br>
+                    Это значит, что если Вы заказали у нас еду до 16:30, мы привезём её уже на следующий день. А если заказ поступил после 16:30, то через день. <br>
+                    <br>
+                    Доставка заказов осуществляется с 7:00 до 12:00 <br>
+                    <br>
+                    По воскресеньям заказы не доставляем
                     </p>
                 </div>
                 <div class="basket__order basket__split-item">
@@ -140,47 +142,6 @@
             </div>
         </div>
 
-        <!-- <div class="row">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Название</th>
-                    <th scope="col">Цена</th>
-                    <th scope="col">Количество</th>
-                    <th scope="col">ПодИтог</th>
-                    <th scope="col">Фото</th>
-                    <th scope="col">Удалить</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($order->products as $key => $product)
-                    <tr>
-                        <th scope="row">{{$key + 1}}</th>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->price}} руб.</td>
-                        <td>{{$product->pivot->count}}</td>
-                        <td>{{$product->getPriceForCount()}} руб.</td>
-                        <td><img src="{{$product->image}}" class="img-fluid" style="max-width: 150px;"
-                                 alt="{{$product->name}}"></td>
-                        <td>
-                            <div class="btn btn-danger remove-button" data-id="{{$product->id}}">Удалить</div>
-                        </td>
-                    </tr>
-                @endforeach
-                <th></th>
-    
-                </tbody>
-            </table>
-            <b>Итого: {{$order->getFullPrice()}} руб.</b>
-    
-            @include('front.basket.delivery')
-        </div> -->
     </div>
-
-
-
-
-
 
 @endsection

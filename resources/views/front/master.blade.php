@@ -131,7 +131,7 @@
                               fill="#A2CD3A"/>
                     </svg>
                     <div class="-num" id="header-quty">
-                        0
+                        {{session('cart_count')?? 0}}
                     </div>
                 </a>
             </div>
