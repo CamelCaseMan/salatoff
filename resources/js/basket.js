@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
     const CSRFToken = document.querySelector('meta[name="csrf-token"]').content
     const headerQuty = document.getElementById('header-quty')
+    const totalPrice = document.getElementById('total-price')
     let quty = 1
 
     qutyInterface()
@@ -156,6 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         row.remove()
                     }, 300 )
 
+                    if (totalPrice) {
+                        totalPrice.innerText = data.total
+                    }
+
                 })
                 .catch(err => {
                     console.log( err )
@@ -217,6 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
                     headerQuty.innerText = data.count
+
+                    if (totalPrice) {
+                        totalPrice.innerText = data.total
+                    }
                 })
                 .catch(err => {
                     console.log(err)
