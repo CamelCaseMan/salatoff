@@ -18,7 +18,6 @@ class ProductController extends Controller
         $this->categoryRepository = $categoryRepository;
     }
 
-//{parent}/{category}/{product}
     public function showProduct(string $parent, string $category, $product)
     {
         $parent = $this->categoryRepository->findParent($parent);

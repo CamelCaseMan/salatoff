@@ -18,7 +18,7 @@ class EloquentProductRepository extends CoreRepository
             ->where('slug', $slug)
             ->where('show', 1)
             ->with('getAttributeProduct')
-            ->first();
+            ->firstOrFail();
     }
 
     public function getAllProductsCategory(string $category_id)
