@@ -914,6 +914,9 @@ body.--fixed {
 p {
   line-height: 1.7;
 }
+p a {
+  color: var(--green);
+}
 
 .body-phone {
   text-align: center;
@@ -1525,9 +1528,38 @@ p {
   font-size: 1.5rem;
 }
 .catalog-page__product .-button {
-  padding: 24px;
-  padding-top: 10px;
-  padding-bottom: 12px;
+  padding: 0;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  height: 42px;
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease;
+  position: relative;
+}
+.catalog-page__product .-button .-text {
+  position: absolute;
+  transition: 0.1s ease;
+}
+.catalog-page__product .-button .-icon {
+  position: absolute;
+  opacity: 0;
+  top: 12px;
+  right: 6px;
+  transition: 0.1s ease;
+}
+.catalog-page__product .-button.--done {
+  width: 42px;
+  border: 1px solid #E0E0E0;
+  background-color: transparent;
+}
+.catalog-page__product .-button.--done .-text {
+  opacity: 0;
+}
+.catalog-page__product .-button.--done .-icon {
+  opacity: 1;
 }
 
 /* /catalog-page */
@@ -1979,20 +2011,19 @@ body.profile-page {
   border: 1px solid #E0E0E0;
   box-shadow: rgba(0, 0, 0, 0.05) 0 5px 5px;
   padding: 40px;
+  padding-top: 0;
   padding-bottom: 65px;
 }
 .basket__table {
   margin-bottom: 40px;
 }
 .basket__table-row {
-  display: flex;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #E0E0E0;
-  margin-bottom: 40px;
-  align-items: center;
+  overflow: hidden;
+  transition: 0.3s ease;
 }
-.basket__table-row:last-child {
-  margin-bottom: 0;
+.basket__table-row.--hide {
+  opacity: 0;
+  height: 0 !important;
 }
 .basket__table-row .-row-item {
   margin-right: 25px;
@@ -2022,6 +2053,12 @@ body.profile-page {
 .basket__table-row .-info .-name {
   font-size: 1.5rem;
   margin-bottom: 8px;
+  display: block;
+  color: var(--black);
+  transition: 0.2s ease;
+}
+.basket__table-row .-info .-name:hover {
+  color: var(--green);
 }
 .basket__table-row .-info .-weight {
   opacity: 0.5;
@@ -2071,6 +2108,13 @@ body.profile-page {
   color: var(--red);
   text-align: right;
   cursor: pointer;
+}
+.basket__table-body {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #E0E0E0;
+  align-items: center;
 }
 .basket__split {
   display: grid;

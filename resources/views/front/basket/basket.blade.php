@@ -18,58 +18,61 @@
         <div class="basket-wrapper">
             <div class="basket__table">
                 @foreach($order->products as $key => $product)
-                <div class="basket__table-row">
-                    <div class="-photo -row-item">
-                        <img src="{{$product->image}}" alt="{{$product->name}}">
-                    </div>
-                    <div class="-info -row-item">
-                        <div class="-name">{{$product->name}}</div>
-                        <div class="-weight">
-                            {{$product->weight}} г
-                        </div>
-                        <div class="-composition">
-                            Состав
-                            <svg class="-icon" width="19" height="20" viewBox="0 0 19 20" fill="none">
-                                <g clip-path="url(#clip0_95:9)">
-                                    <path d="M9.625 1.5C4.86203 1.5 1 5.36203 1 10.125C1 14.888 4.86203 18.75 9.625 18.75C14.388 18.75 18.25 14.888 18.25 10.125C18.25 5.36203 14.388 1.5 9.625 1.5Z" stroke="#828282" stroke-miterlimit="10"/>
-                                    <path d="M8.3125 8.8125H9.8125V14.25" stroke="#828282" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M7.75 14.4375H11.875" stroke="#828282" stroke-miterlimit="10" stroke-linecap="round"/>
-                                    <path d="M9.625 4.59375C9.38396 4.59375 9.14832 4.66523 8.9479 4.79915C8.74748 4.93307 8.59127 5.12341 8.49902 5.34611C8.40678 5.56881 8.38264 5.81386 8.42967 6.05027C8.47669 6.28669 8.59277 6.50385 8.76321 6.67429C8.93366 6.84474 9.15082 6.96081 9.38724 7.00784C9.62365 7.05486 9.8687 7.03073 10.0914 6.93849C10.3141 6.84624 10.5044 6.69003 10.6384 6.48961C10.7723 6.28918 10.8438 6.05355 10.8438 5.8125C10.8438 5.48927 10.7154 5.17928 10.4868 4.95071C10.2582 4.72215 9.94824 4.59375 9.625 4.59375Z" fill="#828282"/>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_95:9">
-                                        <rect width="19" height="19" fill="white" transform="translate(0 0.5)"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                        </div>
-                    </div>
-                    <div class="-quty-cell -row-item">
-                        <div class="-quty quty-interface">
-                            <div class="-btn quty-interface-btn" data-quty="-">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"
-                                          stroke="#828282" stroke-miterlimit="10"/>
-                                    <path d="M22.1539 16H9.84619" stroke="#828282" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
+                <div class="basket__table-row" id="basket-row-{{$product->id}}">
+                    <div class="basket__table-body">
+                        <a href="#" class="-photo -row-item">
+                            <img src="{{$product->image}}" alt="{{$product->name}}">
+                        </a>
+                        <div class="-info -row-item">
+                            <a href="#" class="-name">{{$product->name}}</a>
+                            <div class="-weight">
+                                {{$product->weight}} г
+                            </div>
+                            <div class="-composition">
+                                Состав
+                                <svg class="-icon" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                                    <g clip-path="url(#clip0_95:9)">
+                                        <path d="M9.625 1.5C4.86203 1.5 1 5.36203 1 10.125C1 14.888 4.86203 18.75 9.625 18.75C14.388 18.75 18.25 14.888 18.25 10.125C18.25 5.36203 14.388 1.5 9.625 1.5Z" stroke="#828282" stroke-miterlimit="10"/>
+                                        <path d="M8.3125 8.8125H9.8125V14.25" stroke="#828282" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7.75 14.4375H11.875" stroke="#828282" stroke-miterlimit="10" stroke-linecap="round"/>
+                                        <path d="M9.625 4.59375C9.38396 4.59375 9.14832 4.66523 8.9479 4.79915C8.74748 4.93307 8.59127 5.12341 8.49902 5.34611C8.40678 5.56881 8.38264 5.81386 8.42967 6.05027C8.47669 6.28669 8.59277 6.50385 8.76321 6.67429C8.93366 6.84474 9.15082 6.96081 9.38724 7.00784C9.62365 7.05486 9.8687 7.03073 10.0914 6.93849C10.3141 6.84624 10.5044 6.69003 10.6384 6.48961C10.7723 6.28918 10.8438 6.05355 10.8438 5.8125C10.8438 5.48927 10.7154 5.17928 10.4868 4.95071C10.2582 4.72215 9.94824 4.59375 9.625 4.59375Z" fill="#828282"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_95:9">
+                                            <rect width="19" height="19" fill="white" transform="translate(0 0.5)"/>
+                                        </clipPath>
+                                    </defs>
                                 </svg>
-                            </div>
-                            <div class="-num quty-interface-value">
-                                {{$product->pivot->count}} шт.
-                            </div>
-                            <div class="-btn quty-interface-btn" data-quty="+">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"
-                                          stroke="#828282" stroke-miterlimit="10"/>
-                                    <path d="M22.1539 16H9.84619M16 9.84619V22.1539V9.84619Z" stroke="#828282"
-                                          stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+    
                             </div>
                         </div>
+                        <div class="-quty-cell -row-item">
+                            <!-- ! Указываем кол-во товара в "data-count" -->
+                            <div class="-quty basket-row-intenface" data-count="{{$product->pivot->count}}" data-id="{{$product->id}}">
+                                <div class="-btn quty-interface-btn" data-quty="-">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"
+                                              stroke="#828282" stroke-miterlimit="10"/>
+                                        <path d="M22.1539 16H9.84619" stroke="#828282" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="-num quty-interface-value quty-start" data-value="{{$product->pivot->count}}">
+                                    {{$product->pivot->count}} шт.
+                                </div>
+                                <div class="-btn quty-interface-btn" data-quty="+">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path d="M30.7694 16.0001C30.7694 7.84622 24.154 1.23083 16.0002 1.23083C7.84634 1.23083 1.23096 7.84622 1.23096 16.0001C1.23096 24.1539 7.84634 30.7693 16.0002 30.7693C24.154 30.7693 30.7694 24.1539 30.7694 16.0001Z"
+                                              stroke="#828282" stroke-miterlimit="10"/>
+                                        <path d="M22.1539 16H9.84619M16 9.84619V22.1539V9.84619Z" stroke="#828282"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="-price -row-item">{{$product->price}} ₽</div>
+                        <div class="-delete -row-item remove-button" data-id="{{$product->id}}">Удалить</div>
                     </div>
-                    <div class="-price -row-item">{{$product->price}} ₽</div>
-                    <div class="-delete -row-item">Удалить</div>
                 </div>
                 @endforeach
             </div>
@@ -79,15 +82,17 @@
                         Обратите внимание
                     </div>
                     <p class="-text">
-                        Обратите внимание<br>
-                        <br>
-                        Мы обрабатываем заказы с 9:00 до 16:30. <br>
-                        <br>
-                        Это значит, что если Вы заказали у нас еду до 16:30, мы привезём её уже на следующий день. А если заказ поступил после 16:30, то через день.<br>
-                        <br>
-                        Доставка заказов осуществляется с 7:00 до 12:00<br>
-                        <br>
-                        По воскресеньям заказы не доставляем
+                    Минимальная сумма заказа: 2000 ₽
+                    Ближайшая дата доставки: 21.10.2021
+                    Доставка по Москве и Московской области — <a href="#">бесплатно</a><br>
+                    <br>
+                    Мы обрабатываем заказы с 9:00 до 16:30. <br>
+                    <br>
+                    Это значит, что если Вы заказали у нас еду до 16:30, мы привезём её уже на следующий день. А если заказ поступил после 16:30, то через день. <br>
+                    <br>
+                    Доставка заказов осуществляется с 7:00 до 12:00 <br>
+                    <br>
+                    По воскресеньям заказы не доставляем
                     </p>
                 </div>
                 <div class="basket__order basket__split-item">
@@ -137,47 +142,6 @@
             </div>
         </div>
 
-        <!-- <div class="row">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Название</th>
-                    <th scope="col">Цена</th>
-                    <th scope="col">Количество</th>
-                    <th scope="col">ПодИтог</th>
-                    <th scope="col">Фото</th>
-                    <th scope="col">Удалить</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($order->products as $key => $product)
-                    <tr>
-                        <th scope="row">{{$key + 1}}</th>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->price}} руб.</td>
-                        <td>{{$product->pivot->count}}</td>
-                        <td>{{$product->getPriceForCount()}} руб.</td>
-                        <td><img src="{{$product->image}}" class="img-fluid" style="max-width: 150px;"
-                                 alt="{{$product->name}}"></td>
-                        <td>
-                            <div class="btn btn-danger remove-button" data-id="{{$product->id}}">Удалить</div>
-                        </td>
-                    </tr>
-                @endforeach
-                <th></th>
-    
-                </tbody>
-            </table>
-            <b>Итого: {{$order->getFullPrice()}} руб.</b>
-    
-            @include('front.basket.delivery')
-        </div> -->
     </div>
-
-
-
-
-
 
 @endsection
