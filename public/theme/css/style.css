@@ -1030,12 +1030,13 @@ p a {
   box-shadow: rgba(0, 0, 0, 0.05) 0 6px 8px;
 }
 .header__menu .-droplist .-link, .header__menu .-droplist a {
-  padding: 14px 16px;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .header__menu .-droplist .-droplist {
+  width: 250px;
   transform: scaleX(0);
   top: 0;
   left: 100%;

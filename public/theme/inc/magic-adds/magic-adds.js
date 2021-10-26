@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const parent = document.getElementById(id)
 			if (!parent) return
 
+			menu.classList.add('--visible')
 			parent.append(menu)
 
 			const link = parent.getElementsByClassName('-link')[0]

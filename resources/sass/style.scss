@@ -143,12 +143,13 @@ p {
 			border-radius: 8px;
 			box-shadow: rgba(0, 0, 0, 0.05) 0 6px 8px;
 			.-link, a {
-				padding: 14px 16px;
+				padding: 10px 15px;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 			}
 			.-droplist {
+				width: 250px;
 				transform: scaleX(0);
 				top: 0;
 				left: 100%;
