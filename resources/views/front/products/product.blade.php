@@ -84,7 +84,11 @@
                     </div>
 
                     <!-- Если товар уже есть, меняем текст на "Изменить колличество" -->
-                    <div class="typical-button -button add-cart-button" data-id="{{$product->id}}">Добавить в корзину</div>
+                    <div class="typical-button -button add-cart-button"
+                         data-id="{{$product->id}}">@if(session('cart_products')!=null)
+                            @if(in_array($product->id,session('cart_products')))Изменить количество@elseДобавить в
+                            корзину @endif
+                        @elseДобавить в корзину@endif</div>
 
                 </div>
             </div>
