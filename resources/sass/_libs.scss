@@ -383,7 +383,7 @@
 /* /input-droplist */
 
 /* modals */
-.modals {
+.modal {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -406,7 +406,7 @@
 		left: 0;
 		right: 0;
 	}
-	&__modals {
+	&__container {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -417,7 +417,7 @@
 		padding-right: 20px;
 		overflow: auto;
 	}
-	&__modal {
+	&__body {
 		display: none;
 		background-color: #fff;
 		margin: 0 auto;

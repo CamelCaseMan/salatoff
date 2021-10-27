@@ -190,7 +190,7 @@
                                 <b>Итого:</b> <span id="total-price">{{$order->getFullPrice()}}</span> ₽
                             </div>
                         </div>
-                        <input type="submit" value="Оформить заказ" class="typical-button modals__button d-block">
+                        <input type="submit" value="Оформить заказ" class="typical-button modal__button d-block">
                     </form>
                 </div>
             </div>
