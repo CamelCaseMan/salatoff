@@ -1,7 +1,12 @@
 @extends('front.master')
 @section('content')
 
-    <div class="basket-page container mb-160">
+
+    <div class="basket-page container mb-160 l-mb-130">
+    
+        <a href="tel:+74957976457" class="body-phone d-none xs-d-block" style="margin-top: -18px; margin-bottom: 8px;">
+            +7 495 797 64 57
+        </a>
 
         <div class="product-page__back mb-30 xs-mb-20">
             <a href="{{ URL::previous() }}">
@@ -29,21 +34,41 @@
                                 {{$product->weight}} г
                             </div>
                             <div class="-composition">
-                                Состав
-                                <svg class="-icon" width="19" height="20" viewBox="0 0 19 20" fill="none">
-                                    <g clip-path="url(#clip0_95:9)">
-                                        <path d="M9.625 1.5C4.86203 1.5 1 5.36203 1 10.125C1 14.888 4.86203 18.75 9.625 18.75C14.388 18.75 18.25 14.888 18.25 10.125C18.25 5.36203 14.388 1.5 9.625 1.5Z" stroke="#828282" stroke-miterlimit="10"/>
-                                        <path d="M8.3125 8.8125H9.8125V14.25" stroke="#828282" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7.75 14.4375H11.875" stroke="#828282" stroke-miterlimit="10" stroke-linecap="round"/>
-                                        <path d="M9.625 4.59375C9.38396 4.59375 9.14832 4.66523 8.9479 4.79915C8.74748 4.93307 8.59127 5.12341 8.49902 5.34611C8.40678 5.56881 8.38264 5.81386 8.42967 6.05027C8.47669 6.28669 8.59277 6.50385 8.76321 6.67429C8.93366 6.84474 9.15082 6.96081 9.38724 7.00784C9.62365 7.05486 9.8687 7.03073 10.0914 6.93849C10.3141 6.84624 10.5044 6.69003 10.6384 6.48961C10.7723 6.28918 10.8438 6.05355 10.8438 5.8125C10.8438 5.48927 10.7154 5.17928 10.4868 4.95071C10.2582 4.72215 9.94824 4.59375 9.625 4.59375Z" fill="#828282"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_95:9">
-                                            <rect width="19" height="19" fill="white" transform="translate(0 0.5)"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-    
+                                <div class="-trigger">
+                                    Состав
+                                    <svg class="-icon" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                                        <g clip-path="url(#clip0_95:9)">
+                                            <path d="M9.625 1.5C4.86203 1.5 1 5.36203 1 10.125C1 14.888 4.86203 18.75 9.625 18.75C14.388 18.75 18.25 14.888 18.25 10.125C18.25 5.36203 14.388 1.5 9.625 1.5Z" stroke="#828282" stroke-miterlimit="10"/>
+                                            <path d="M8.3125 8.8125H9.8125V14.25" stroke="#828282" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7.75 14.4375H11.875" stroke="#828282" stroke-miterlimit="10" stroke-linecap="round"/>
+                                            <path d="M9.625 4.59375C9.38396 4.59375 9.14832 4.66523 8.9479 4.79915C8.74748 4.93307 8.59127 5.12341 8.49902 5.34611C8.40678 5.56881 8.38264 5.81386 8.42967 6.05027C8.47669 6.28669 8.59277 6.50385 8.76321 6.67429C8.93366 6.84474 9.15082 6.96081 9.38724 7.00784C9.62365 7.05486 9.8687 7.03073 10.0914 6.93849C10.3141 6.84624 10.5044 6.69003 10.6384 6.48961C10.7723 6.28918 10.8438 6.05355 10.8438 5.8125C10.8438 5.48927 10.7154 5.17928 10.4868 4.95071C10.2582 4.72215 9.94824 4.59375 9.625 4.59375Z" fill="#828282"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_95:9">
+                                                <rect width="19" height="19" fill="white" transform="translate(0 0.5)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="-hidden-info">
+                                    <div class="-body">
+                                        <p>
+                                            <b>Состав:</b> тыква, картофель, морковь, лук репчатый, вода питьевая, сливки, сухари, масло сливочное, масло растительное, соль пищевая
+                                        </p>
+                                        <ul>
+                                            <li>Белки 2,7 г</li>
+                                            <li>Жиры 12 г</li>
+                                            <li>Углеводы 17 г</li>
+                                        </ul>
+                                        <p>
+                                            <b>Энергетическая ценность на 100 г:</b><br>
+                                            566 кклал / 777 кДж
+                                        </p>
+                                    </div>
+                                    <svg class="-angle" width="29" height="10" viewBox="0 0 29 10" fill="none">
+                                        <path d="M13.5201 9.70876L6.01196 2.32994C4.49944 0.843479 2.38567 -2.09686e-06 0.173096 0H28.3269C26.1143 0 24.0005 0.843481 22.488 2.32994L14.9798 9.70876C14.5847 10.0971 13.9153 10.0971 13.5201 9.70876Z" fill="#3A3A3A"/>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                         <div class="-quty-cell -row-item">
@@ -114,6 +139,35 @@
                             </section>
                             <div class="-check-btn">Проверить баланс</div>
                         </div>
+
+                        <!-- 
+                            * Следущий блок должен вызываться после
+                              проверки баланса карты тройка
+                        -->
+                        <div class="basket__order-flex-row">
+                            <p>
+                                <b>Карта «Город Тройка»</b><br>
+                                Баланс по карте: 150 баллов <br>
+                                Оплата бонусами — не более 40% заказа = не более 60 баллов
+                            </p>
+                            <div class="input-droplist">
+								<div data-value="0" class="input-style -no-input -input" tabindex="-1">
+									Начислить
+								</div>
+								<div class="-focus-elements">
+									<svg class="-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
+										<path d="M7 9L13.9282 0H0.0717969L7 9Z" fill="#C4C4C4"/>
+									</svg>									
+									<div class="-list">
+										<ul class="-new">
+											<li data-value="0">Начислить</li>
+											<li data-value="1">Списать</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+                        </div>
+
                         <div class="basket__order-row">
                             <section class="-form-section">
                                 <label class="-prefix" for="ordpg-001-text">Промокод</label>
