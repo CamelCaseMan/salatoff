@@ -227,12 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	modals()
 	function modals() {
-		const modal = document.getElementsByClassName('modals')[0]
-		
-		if ( !modal ) return
-		
+		const modals = document.getElementsByClassName('modal')
 		const header = document.getElementById('header')
-		const modals = modal.getElementsByClassName('modals__modal')
 		const openers = document.getElementsByClassName('open-modal')
 		const closers = document.getElementsByClassName('close-modal')
 
@@ -248,46 +244,57 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 
-		function openWind(id) {
+		function openWind(id) {			
+			const modal = document.getElementById(id)
+			if ( !modal ) {
+				console.warn('Модального окна с id "' + id + '" не существует')
+				return
+			}
+
 			document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
 			header.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
 			document.body.classList.add('--fixed')
-			
-			const wind = document.getElementById(id)
+
+			const modalBody = modal.getElementsByClassName('modal__body')[0]
 
 			modal.classList.add('active')
 			modal.classList.add('--transparent')
 
-			wind.classList.add('active')
-			wind.classList.add('--transparent')
+			modalBody.classList.add('active')
+			modalBody.classList.add('--transparent')
 			
 			setTimeout( () => {
 				modal.classList.remove('--transparent')
 
-				wind.classList.remove('--transparent')
+				modalBody.classList.remove('--transparent')
 			} )
 		}
 
 		function closeWind() {
-			modal.classList.add('--transparent')
+			
+			Object.values(modals).forEach(modal => {
+				const modalBody = modal.getElementsByClassName('modal__body')[0]
+				
+				modal.classList.add('--transparent')
+				modalBody.classList.add('--transparent')
 
-			Object.values(modals).forEach(wind => {
-				wind.classList.add('--transparent')
+				setTimeout( () => {
+					modal.classList.remove('active')
+					modal.classList.remove('--transparent')
+	
+					modalBody.classList.remove('active')
+					modalBody.classList.remove('--transparent')
+	
+				}, 300 )
+				
 			})
-
+			
 			setTimeout( () => {
-				modal.classList.remove('active')
-				modal.classList.remove('--transparent')
-
-				Object.values(modals).forEach(wind => {
-					wind.classList.remove('active')
-					wind.classList.remove('--transparent')
-				})
-
 				document.body.style.paddingRight = 0
 				header.style.paddingRight = 0
 				document.body.classList.remove('--fixed')
 			}, 300 )
+
 		}
 
 	}

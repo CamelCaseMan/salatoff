@@ -1,17 +1,17 @@
 @extends('front.master')
 @section('content')
 
-    <div class="modals">
-        <div class="modals__modals">
-            <div class="modals__bg close-modal"></div>
-            <div id="wndw-001" class="modals__modal">
-                <div class="modals__close close-modal">
+    <div id="wndw-001" class="modal">
+        <div class="modal__container">
+            <div class="modal__bg close-modal"></div>
+            <div class="modal__body">
+                <div class="modal__close close-modal">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="modals__title">Добавить отзыв</div>
-                <div class="modals__address-modal">
+                <div class="modal__title">Добавить отзыв</div>
+                <div class="modal__address-modal">
                     <!-- ! Добавить класс "--success", после успешной отправки -->
                     <form action="" class="superform">
                         <section class="-form-section">
@@ -42,7 +42,7 @@
                                 Я не робот
                             </label>
                         </section>
-                        <input type="submit" value="Отправить" class="typical-button modals__button d-block">
+                        <input type="submit" value="Отправить" class="typical-button modal__button d-block">
                     </form>
                     <div class="superform-success">
                         <p>

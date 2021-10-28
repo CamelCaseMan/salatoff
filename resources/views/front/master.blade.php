@@ -93,37 +93,13 @@
                     <div id="hdr-dplst" class="-droplist">
                         <ul>
                             <li>
-                                <a href="profile.html">
-                                    <svg class="-icon" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                                        <path d="M17 18V16C17 14.9391 16.5786 13.9217 15.8284 13.1716C15.0783 12.4214 14.0609 12 13 12H5C3.93913 12 2.92172 12.4214 2.17157 13.1716C1.42143 13.9217 1 14.9391 1 16V18M13 5C13 7.20914 11.2091 9 9 9C6.79086 9 5 7.20914 5 5C5 2.79086 6.79086 1 9 1C11.2091 1 13 2.79086 13 5Z"
-                                              stroke="#272727" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-                                    <div class="-name">Профиль</div>
-                                </a>
+                                <div class="-link open-modal" data-open-modal="wndw-login">Войти</div>
                             </li>
                             <li>
-                                <a href="profile.html">
-                                    <svg class="-icon" width="20" height="22" viewBox="0 0 20 22" fill="none">
-                                        <path d="M1 5L4 1H16L19 5M1 5V19C1 19.5304 1.21071 20.0391 1.58579 20.4142C1.96086 20.7893 2.46957 21 3 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V5M1 5H19M14 9C14 10.0609 13.5786 11.0783 12.8284 11.8284C12.0783 12.5786 11.0609 13 10 13C8.93913 13 7.92172 12.5786 7.17157 11.8284C6.42143 11.0783 6 10.0609 6 9"
-                                              stroke="#272727" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-                                    <div class="-name">Заказы</div>
-                                </a>
+                                <div class="-link open-modal" data-open-modal="wndw-signin">Регистрация</div>
                             </li>
                             <li>
-                                <a href="profile.html">
-                                    <svg class="-icon" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                                        <path d="M11.5 1L14.59 7.26L21.5 8.27L16.5 13.14L17.68 20.02L11.5 16.77L5.32 20.02L6.5 13.14L1.5 8.27L8.41 7.26L11.5 1Z"
-                                              stroke="#272727" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-                                    <div class="-name">Бонусы <span class="-num">(30)</span></div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="--exit -link open-modals toggle-active" data-toggle-active="wndw-001">
+                                <div class="--exit -link">
                                     Выйти
                                 </div>
                             </li>
@@ -417,6 +393,81 @@
     </div>
 </header>
 <!-- End Header -->
+
+<div id="wndw-login" class="modal">
+    <div class="modal__container">
+        <div class="modal__bg close-modal"></div>
+        <div class="modal__body">
+            <div class="modal__close close-modal">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="modal__title">Войти</div>
+            <div class="modal__address-modal">
+                <!-- ! Добавить класс "--success", после успешной отправки -->
+                <form action="" class="superform">
+                    <section class="-form-section">
+                        <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
+                        <div class="valinput">
+                            <!-- * Если успешно, то "--success", нет — "--error" -->
+                            <input class="input-style" id="wndw-login-phone" type="text">
+                            <!-- * Это сообщение об ошибке -->
+                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                            <!-- <div class="-message">Сообщение к полю</div> -->
+                        </div>
+                    </section>
+                    <input type="submit" value="Отправить код" class="typical-button modal__button d-block">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="wndw-signin" class="modal">
+    <div class="modal__container">
+        <div class="modal__bg close-modal"></div>
+        <div class="modal__body">
+            <div class="modal__close close-modal">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="modal__title">Регистрация</div>
+            <div class="modal__address-modal">
+                <!-- ! Добавить класс "--success", после успешной отправки -->
+                <form action="" class="superform">
+                    <section class="-form-section">
+                        <label class="-prefix" for="wndw-signin-name">Имя</label>
+                        <div class="valinput">
+                            <!-- * Если успешно, то "--success", нет — "--error" -->
+                            <input class="input-style" id="wndw-signin-name" type="text">
+                            <!-- * Это сообщение об ошибке -->
+                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                            <!-- <div class="-message">Сообщение к полю</div> -->
+                        </div>
+                    </section>
+                    <section class="-form-section">
+                        <label class="-prefix" for="wndw-signin-phone">Номер телефона</label>
+                        <div class="valinput">
+                            <!-- * Если успешно, то "--success", нет — "--error" -->
+                            <input class="input-style" id="wndw-signin-phone" type="text">
+                            <!-- * Это сообщение об ошибке -->
+                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                            <!-- <div class="-message">Сообщение к полю</div> -->
+                        </div>
+                    </section>
+                    <input type="submit" value="Отправить код" class="typical-button modal__button d-block">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @yield('content')
 <footer id="footer" class="footer">
     <div class="container footer__container">

@@ -475,7 +475,7 @@ input[type=number] {
 
 /* /input-droplist */
 /* modals */
-.modals {
+.modal {
   display: none;
   position: fixed;
   top: 0;
@@ -486,20 +486,20 @@ input[type=number] {
   background-color: rgba(0, 0, 0, 0.3);
   transition: 0.3s ease;
 }
-.modals.active {
+.modal.active {
   display: block;
 }
-.modals.--transparent {
+.modal.--transparent {
   opacity: 0;
 }
-.modals__bg {
+.modal__bg {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
-.modals__modals {
+.modal__container {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -510,7 +510,7 @@ input[type=number] {
   padding-right: 20px;
   overflow: auto;
 }
-.modals__modal {
+.modal__body {
   display: none;
   background-color: #fff;
   margin: 0 auto;
@@ -526,84 +526,84 @@ input[type=number] {
   transition: 0.3s ease;
   transform: translateY(0);
 }
-.modals__modal.--mini {
+.modal__body.--mini {
   max-width: 320px;
 }
-.modals__modal.--mini .modals__title {
+.modal__body.--mini .modals__title {
   font-size: 1.5rem;
   text-align: center;
 }
-.modals__modal.active {
+.modal__body.active {
   display: block;
 }
-.modals__modal.--transparent {
+.modal__body.--transparent {
   transform: translateY(-200px);
   opacity: 0;
 }
-.modals__close {
+.modal__close {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
 }
-.modals__title {
+.modal__title {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 25px;
 }
-.modals__text {
+.modal__text {
   line-height: 1.5;
 }
-.modals__button {
+.modal__button {
   margin-top: 40px;
   display: block;
   text-align: center;
   border: none;
   width: 100%;
 }
-.modals__sms-modal .-input {
+.modal__sms-modal .-input {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.modals__sms-modal .-input .-prefix {
+.modal__sms-modal .-input .-prefix {
   font-size: 1.5rem;
   margin-right: 15px;
 }
-.modals__sms-modal .-input input {
+.modal__sms-modal .-input input {
   font-size: 1.5rem;
   width: 190px;
 }
-.modals__sms-modal .-button {
+.modal__sms-modal .-button {
   margin-bottom: 25px;
 }
-.modals__tel-modal {
+.modal__tel-modal {
   margin-top: 40px;
   padding-bottom: 30px;
 }
-.modals__tel-modal .-sms-group .-grid {
+.modal__tel-modal .-sms-group .-grid {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(4, 45px);
   -moz-column-gap: 8px;
        column-gap: 8px;
 }
-.modals__tel-modal .-sms-group .-grid input {
+.modal__tel-modal .-sms-group .-grid input {
   text-align: center;
   font-size: 1.5rem;
 }
-.modals__tel-modal .-sms-group .-message {
+.modal__tel-modal .-sms-group .-message {
   color: var(--red);
   text-align: center;
   padding: 15px 0;
   opacity: 0;
 }
-.modals__tel-modal .-sms-group .-message.active {
+.modal__tel-modal .-sms-group .-message.active {
   opacity: 1;
 }
-.modals__tel-modal .-repeat {
+.modal__tel-modal .-repeat {
   cursor: pointer;
   text-align: center;
   -webkit-text-decoration: dashed underline;
@@ -611,39 +611,39 @@ input[type=number] {
   opacity: 0.5;
   transition: 0.2s ease;
 }
-.modals__tel-modal .-repeat:hover {
+.modal__tel-modal .-repeat:hover {
   opacity: 0.8;
 }
-.modals__address-modal {
+.modal__address-modal {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.modals__address-modal .-button {
+.modal__address-modal .-button {
   margin-top: 60px;
 }
-.modals__address-modal .-label {
+.modal__address-modal .-label {
   display: block;
 }
-.modals__address-modal .-label.-cutted {
+.modal__address-modal .-label.-cutted {
   max-width: 300px;
 }
-.modals__address-modal .-label .-prefix {
+.modal__address-modal .-label .-prefix {
   margin-bottom: 8px;
 }
-.modals__address-modal .-grid-labels {
+.modal__address-modal .-grid-labels {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
-.modals__address-modal .-addresses-wrapper {
+.modal__address-modal .-addresses-wrapper {
   position: relative;
   display: none;
 }
-.modals__address-modal .-addresses-wrapper.active {
+.modal__address-modal .-addresses-wrapper.active {
   display: block;
 }
-.modals__address-modal .-addresses-wrapper .-addresses {
+.modal__address-modal .-addresses-wrapper .-addresses {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -656,24 +656,24 @@ input[type=number] {
   max-height: 250px;
   box-sizing: border-box;
 }
-.modals__address-modal .-addresses-wrapper .-addresses li {
+.modal__address-modal .-addresses-wrapper .-addresses li {
   padding: 5px 15px;
 }
-.modals__address-modal .-addresses-wrapper .-addresses li:hover {
+.modal__address-modal .-addresses-wrapper .-addresses li:hover {
   background-color: #E5E5E5;
 }
-.modals .-split-buttons .-button {
+.modal .-split-buttons .-button {
   margin-bottom: 8px;
   position: static !important;
   transform: none !important;
 }
-.modals .-split-buttons .-button.--close {
+.modal .-split-buttons .-button.--close {
   color: var(--black);
   background: none;
   border: 1px solid var(--black);
   font-weight: 400;
 }
-.modals a {
+.modal a {
   color: #2F80ED;
 }
 
