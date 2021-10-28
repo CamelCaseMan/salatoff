@@ -474,6 +474,32 @@ input[type=number] {
 }
 
 /* /input-droplist */
+/* nexts-form */
+.nexts-form__cells {
+  display: flex;
+  justify-content: center;
+}
+.nexts-form__cells.--error input {
+  border-color: var(--red);
+}
+.nexts-form__cells.--done input {
+  border-color: var(--green);
+}
+.nexts-form__cells input {
+  width: 35px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 8px;
+}
+.nexts-form__cells input:last-child {
+  margin-right: 0;
+}
+.nexts-form__input {
+  display: none;
+}
+
+/* /nexts-form */
 /* modals */
 .modal {
   display: none;
@@ -847,7 +873,7 @@ input[type=number] {
 .superform.--success {
   display: none;
 }
-.superform.--success + .superform-success {
+.superform.--success + .superform-success, .superform.--success + .superform-postsuccess {
   display: block;
 }
 .superform .-form-section {
@@ -856,6 +882,9 @@ input[type=number] {
 .superform .-form-section .-prefix {
   margin-bottom: 10px;
   display: block;
+}
+.superform-postsuccess {
+  display: none;
 }
 .superform-success {
   display: none;
