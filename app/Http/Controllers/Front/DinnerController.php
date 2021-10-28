@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
-
 use App\Models\Product;
 
-class CateringController
+class DinnerController
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -13,10 +12,10 @@ class CateringController
      */
     public function showPageCategory()
     {
-        $products = Product::where('category_id', 23)
+        $products = Product::where('category_id', 24)
             ->where('show', 1)
             ->get();
-        return view('front.catering.category', ['products' => $products]);
+        return view('front.dinner.category', ['products' => $products]);
     }
 
     /**
@@ -26,10 +25,10 @@ class CateringController
      */
     public function showPageProduct(string $product)
     {
-        $product = Product::where('category_id', 23)
+        $product = Product::where('category_id', 24)
             ->where('show', 1)
             ->where('slug', $product)
             ->firstOrFail();
-        return view('front.catering.product', ['product' => $product]);
+        return view('front.dinner.product', ['product' => $product]);
     }
 }

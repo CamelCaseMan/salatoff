@@ -17,7 +17,8 @@ class EloquentCategoryRepository extends CoreRepository
     public function getAll()
     {
         return Model::where('show', 1)
-            ->where('id', '!=', 25)//Исключаем кейтеринг
+            ->where('id', '!=', 23)//Исключаем кейтеринг
+            ->where('id', '!=', 24)//Исключаем готовые обеды
             ->get();
     }
 

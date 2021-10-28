@@ -135,7 +135,7 @@
                         и кафе
                     </div>
                 </a>
-                <a href="#" class="catalog-screen__cat">
+                <a href="/dinner" class="catalog-screen__cat">
                     <div class="-img" style="background-image: url('{{asset('theme')}}/img/cats/2.jpg');"></div>
                     <div class="-name">
                         Готовая еда домой <br>

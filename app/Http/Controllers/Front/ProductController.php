@@ -23,6 +23,6 @@ class ProductController extends Controller
         $parent = $this->categoryRepository->findParent($parent);
         $category = $this->categoryRepository->findCategoryInParent($category, $parent->id);
         $product = $this->productRepository->findProductsCategory($category->id, $product);
-        return view('front.products.product', ['category' => $category, 'product' => $product, 'parent' => $parent]);
+        return view('front.catalog.product', ['category' => $category, 'product' => $product, 'parent' => $parent]);
     }
 }
