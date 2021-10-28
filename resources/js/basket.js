@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 console.log(data)
 
-                addButton.innerText = 'Изменить колличество'
+                addButton.innerText = 'Изменить количество'
 
                 headerQuty.innerText = data.count
             })
