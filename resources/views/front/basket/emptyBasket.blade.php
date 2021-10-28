@@ -1,7 +1,7 @@
 @extends('front.master')
 @section('content')
     
-    <div class="basket-page container mb-160">
+    <div class="basket-page container mb-160 s-mb-100">
 
         <div class="product-page__back mb-30 xs-mb-20">
             <a href="{{ URL::previous() }}">

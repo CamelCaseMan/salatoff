@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const row = document.getElementById('basket-row-' + productId)
                     row.style.height = row.offsetHeight + 'px'
+                    row.style.overflow = 'hidden'
                     setTimeout( () => {
                         row.classList.add('--hide')
                     } )
