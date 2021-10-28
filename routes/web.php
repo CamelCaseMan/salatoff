@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CatalogController;
 use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Front\CateringController;
+use App\Http\Controllers\Front\DinnerController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Basket\BasketController;
@@ -31,6 +32,8 @@ Route::get('/shop/{parent}/{category}', [CategoryController::class, 'showPageCat
 Route::get('/shop/{parent}/{category}/{product}', [ProductController::class, 'showProduct']);
 Route::get('/catering', [CateringController::class, 'showPageCategory']);
 Route::get('/catering/{product}', [CateringController::class, 'showPageProduct']);
+Route::get('/dinner', [DinnerController::class, 'showPageCategory']);
+Route::get('/dinner/{product}', [DinnerController::class, 'showPageProduct']);
 
 
 //Корзина

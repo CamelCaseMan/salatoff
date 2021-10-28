@@ -29,15 +29,18 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
 
-        $category = new CatalogService();
-        if (!is_null($category)) {
-            $menu = $category->setMenuCatalog();
-            View::share(
-                [
-                    'parents' => $menu['parents'],
-                    'categories' => $menu['children'],
-                ]
-            );
+        if (\Schema::hasTable('categories')) {
+            $category = new CatalogService();
+
+            if (isset($category)) {
+                $menu = $category->setMenuCatalog();
+                View::share(
+                    [
+                        'parents' => $menu['parents'],
+                        'categories' => $menu['children'],
+                    ]
+                );
+            }
         }
     }
 }

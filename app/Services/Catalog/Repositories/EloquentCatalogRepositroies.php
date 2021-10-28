@@ -10,7 +10,8 @@ class EloquentCatalogRepositroies
     {
         return Category::where('show', 1)
             ->where('parent_id', 0)
-            ->where('id', '!=', 25)//Исключаем кейтеринг
+            ->where('id', '!=', 23)//Исключаем кейтеринг
+            ->where('id', '!=', 24)//Комплексные обеды
             ->get();
     }
 

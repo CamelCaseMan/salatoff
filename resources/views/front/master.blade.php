@@ -41,8 +41,8 @@
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <!-- End Scripts -->
     <style>
-        #has_add_basket  .-button{
-            background: red!important;
+        #has_add_basket .-button {
+            background: red !important;
         }
     </style>
 </head>
@@ -133,24 +133,19 @@
                 <nav class="header__drop-menu">
                     <ul class="-side">
                         <li>
-                            <a href="#">Наши кафе</a>
+                            <a href="#">Кейтеринг</a>
                         </li>
+                        <li>
+                            <a href="#">Наше производство</a>
+                        </li>
+                    </ul>
+                    <ul class="-side">
+
                         <li>
                             <a href="#">Блог</a>
                         </li>
                         <li>
                             <a href="#">Рецепты</a>
-                        </li>
-                    </ul>
-                    <ul class="-side">
-                        <li>
-                            <a href="#">Кейтеринг</a>
-                        </li>
-                        <li>
-                            <a href="#">Вендинг</a>
-                        </li>
-                        <li>
-                            <a href="#">Франшиза</a>
                         </li>
                     </ul>
                 </nav>
@@ -523,9 +518,6 @@
 
         <ul class="footer__menu --fm-01">
             <li>
-                <a href="#">Наши кафе</a>
-            </li>
-            <li>
                 <a href="#">Блог</a>
             </li>
             <li>
@@ -538,11 +530,9 @@
                 <a href="#">Кейтеринг</a>
             </li>
             <li>
-                <a href="#">Вендинг</a>
+                <a href="#">Наше производство</a>
             </li>
-            <li>
-                <a href="#">Франшиза</a>
-            </li>
+
         </ul>
 
         <div class="footer__schedule --fs-01">
