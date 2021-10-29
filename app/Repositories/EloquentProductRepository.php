@@ -12,12 +12,12 @@ class EloquentProductRepository extends CoreRepository
     }
 
 
-    public function findProductsCategory(string $category_id, string $slug)
+    public function findProductCategory(string $category_id, string $slug)
     {
         return Model::where('category_id', $category_id)
             ->where('slug', $slug)
             ->where('show', 1)
-            ->with('getAttributeProduct')
+            ->with('getAttributeProduct', 'getRecommendationsProducts')
             ->firstOrFail();
     }
 

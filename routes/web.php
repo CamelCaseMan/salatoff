@@ -27,6 +27,7 @@ use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 
 // Каталог и карточки товара
 Route::get('/', [PageController::class, 'showPage']);
+Route::get('/our-production', [PageController::class, 'showOurProduction']);
 Route::get('/shop', [CatalogController::class, 'showPageCatalog']);
 Route::get('/shop/{parent}/{category}', [CategoryController::class, 'showPageCategory']);
 Route::get('/shop/{parent}/{category}/{product}', [ProductController::class, 'showProduct']);
