@@ -67,6 +67,13 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.--green {
+  color: var(--green);
+}
+.--red {
+  color: var(--red);
+}
+
 .tag-button {
   display: inline-block;
   background-color: #ddd;
@@ -2283,6 +2290,134 @@ body.profile-page {
 }
 
 /* /basket-page */
+/* our-production */
+.our-production-page {
+  padding-top: 40px;
+}
+.our-production__top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__top-text p {
+  font-size: 1.5rem;
+  grid-column: 2/4;
+}
+.our-production__top-split .-img {
+  grid-column: span 2;
+}
+.our-production__cooking-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.our-production__cooking-products-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 45px;
+}
+.our-production__cooking-products-wrapper .-product .-img {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+.our-production__cooking-products-wrapper .-product .-img::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.our-production__cooking-products-wrapper .-product .-img img {
+  position: absolute;
+  width: 100%;
+  left: -50%;
+  top: -50%;
+  transform: translateX(50%) translateY(50%);
+}
+.our-production__two .info-screen__container {
+  grid-template-columns: 1fr 1fr;
+}
+.our-production__two .info-screen__title {
+  grid-column: auto;
+}
+.our-production__two .info-screen__text {
+  grid-column: auto;
+}
+.our-production__why-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.our-production__why-answers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__why-answers .-answer .-num {
+  color: var(--green);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.our-production__why-note {
+  max-width: 370px;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  border-top: 1px solid #BDBDBD;
+}
+.our-production__split-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 25px;
+}
+.our-production__split-blocks .-text {
+  font-size: 1.5rem;
+}
+.our-production__split-blocks .-text .-link {
+  color: var(--black);
+  display: inline-block;
+  position: relative;
+}
+.our-production__split-blocks .-text .-link:hover {
+  color: var(--green);
+}
+.our-production__split-blocks .-text .-link .-underline {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+}
+.our-production__split-blocks .-img {
+  grid-row: 2;
+}
+.our-production__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__right-content {
+  grid-column: 2/4;
+}
+.our-production__right-content .-text {
+  font-size: 1.5rem;
+}
+.our-production__before-end-text {
+  font-size: 1.5rem;
+  width: 50%;
+}
+.our-production__before-end-split {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__end .-text {
+  width: 50%;
+  font-size: 2.2rem;
+}
+
+/* /our-production */
 /* footer */
 .footer {
   padding: 30px 0;

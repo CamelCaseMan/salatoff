@@ -1,3 +1,12 @@
+.-- {
+	&green {
+		color: var(--green);
+	}
+	&red {
+		color: var(--red);
+	}
+}
+
 .tag-button {
 	display: inline-block;
 	background-color: #ddd;
