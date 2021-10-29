@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	// hi
 	expandElements();
 	function expandElements() {
 		const togglers = document.getElementsByClassName('expand-toggler');
@@ -335,6 +334,65 @@ document.addEventListener('DOMContentLoaded', () => {
 					input.dataset.value = this.dataset.value;
 				}
 			}
+		}
+
+	}
+
+	nextsForm()
+	function nextsForm() {
+
+		const forms = document.getElementsByClassName('nexts-form')
+
+		Object.values(forms).forEach(init)
+
+		function init(form) {
+			const input = form.getElementsByClassName('nexts-form__input')[0]
+
+			if ( !input ) {
+				console.warn('Не обнаружен "input.nexts-form__input"!')
+				return
+			}
+
+			const nextsWrapper = form.getElementsByClassName('nexts-form__cells')[0]
+			const nexts = nextsWrapper.getElementsByTagName('input')
+
+			Object.values(nexts).forEach( (input, i) => {
+				input.value = ''
+
+				input.addEventListener('input', evt =>{
+					input.value = input.value.replace(/[^\d]/g,'')
+
+					if (input.value.length > 0) {
+						if (i < nexts.length-1) {
+							nexts[i+1].focus()
+							input.value = input.value[ input.value.length-1 ]
+						} else {
+							input.value = input.value[ input.value.length-1 ]
+							finish()
+						}
+					}
+
+				})
+			} )
+
+			function finish() {
+				input.value = ''
+
+				Object.values(nexts).forEach(next => {
+					input.value += next.value
+				})
+
+				if (input.value.length === 4) {
+					setTimeout( () => {
+						nextsWrapper.classList.add('--done')
+					}, 200)
+					form.submit()
+				} else {
+					nextsWrapper.classList.add('--error')
+					input.classList.add('--error')
+				}
+			}
+
 		}
 
 	}

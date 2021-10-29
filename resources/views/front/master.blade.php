@@ -401,7 +401,7 @@
             <div class="modal__title">Войти</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform">
+                <form action="" class="superform --success">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
                         <div class="valinput">
@@ -414,6 +414,29 @@
                         </div>
                     </section>
                     <input type="submit" value="Отправить код" class="typical-button modal__button d-block">
+                </form>
+
+                <!-- * Следующая форма для ввода кода из СМС -->
+                <form action="/" class="superform superform-postsuccess nexts-form">
+                    <section class="-form-section">
+                        <label class="-prefix text-center" for="wndw-signin-code">Введите код из СМС</label>
+                        <div class="valinput">
+
+                            <div class="nexts-form__cells">
+                                <input class="input-style" type="text" placeholder="0" id="wndw-signin-code">
+                                <input class="input-style" type="text" placeholder="0">
+                                <input class="input-style" type="text" placeholder="0">
+                                <input class="input-style" type="text" placeholder="0">
+                            </div>
+
+                            <!-- * Если успешно, то "--success", нет — "--error" -->
+                            <input class="nexts-form__input input-style" name="code" type="text">
+                            <!-- * Это сообщение об ошибке -->
+                            <div class="-error-message text-center">Неверное количество введенных символов</div>
+                            <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                            <!-- <div class="-message">Сообщение к полю</div> -->
+                        </div>
+                    </section>
                 </form>
             </div>
         </div>
@@ -433,7 +456,7 @@
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform">
+                <form action="" class="superform --success">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-signin-name">Имя</label>
                         <div class="valinput">
@@ -457,6 +480,29 @@
                         </div>
                     </section>
                     <input type="submit" value="Отправить код" class="typical-button modal__button d-block">
+                </form>
+
+                <!-- * Следующая форма для ввода кода из СМС -->
+                <form action="/" class="superform superform-postsuccess nexts-form">
+                    <section class="-form-section">
+                        <label class="-prefix text-center" for="wndw-signin-code">Введите код из СМС</label>
+                        <div class="valinput">
+
+                            <div class="nexts-form__cells">
+                                <input class="input-style" type="text" placeholder="0" id="wndw-signin-code">
+                                <input class="input-style" type="text" placeholder="0">
+                                <input class="input-style" type="text" placeholder="0">
+                                <input class="input-style" type="text" placeholder="0">
+                            </div>
+
+                            <!-- * Если успешно, то "--success", нет — "--error" -->
+                            <input class="nexts-form__input input-style" name="code" type="text">
+                            <!-- * Это сообщение об ошибке -->
+                            <div class="-error-message text-center">Неверное количество введенных символов</div>
+                            <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                            <!-- <div class="-message">Сообщение к полю</div> -->
+                        </div>
+                    </section>
                 </form>
             </div>
         </div>

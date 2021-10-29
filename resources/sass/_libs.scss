@@ -382,6 +382,38 @@
 }
 /* /input-droplist */
 
+/* nexts-form */
+.nexts-form {
+	&__cells {
+		display: flex;
+		justify-content: center;
+		&.--error {
+			input {
+				border-color: var(--red);
+			}
+		}
+		&.--done {
+			input {
+				border-color: var(--green);
+			}
+		}
+		input {
+			width: 35px;
+			text-align: center;
+			padding-left: 0;
+			padding-right: 0;
+			margin-right: 8px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&__input {
+		display: none;
+	}
+}
+/* /nexts-form */
+
 /* modals */
 .modal {
 	display: none;
@@ -754,7 +786,7 @@
 .superform {
 	&.--success {
 		display: none;
-		& + .superform-success {
+		& + .superform-success, & + .superform-postsuccess {
 			display: block;
 		}
 	}
@@ -764,6 +796,9 @@
 			margin-bottom: 10px;
 			display: block;
 		}
+	}
+	&-postsuccess {
+		display: none;
 	}
 	&-success {
 		display: none;

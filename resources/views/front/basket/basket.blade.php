@@ -25,11 +25,11 @@
                 @foreach($order->products as $key => $product)
                     <div class="basket__table-row" id="basket-row-{{$product->id}}">
                         <div class="basket__table-body">
-                            <a href="#" class="-photo -row-item">
+                            <div class="-photo -row-item">
                                 <img src="{{$product->image}}" alt="{{$product->name}}">
-                            </a>
+                            </div>
                             <div class="-info -row-item">
-                                <a href="#" class="-name">{{$product->name}}</a>
+                                <div class="-name">{{$product->name}}</div>
                                 <div class="-weight">
                                     {{$product->weight}} г
                                 </div>
