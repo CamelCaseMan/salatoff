@@ -15,4 +15,9 @@ class PageController extends Controller
     {
         return view('front.page.main');
     }
+
+    public function showOurProduction()
+    {
+        return view('front.page.our_production');
+    }
 }

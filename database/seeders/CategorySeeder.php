@@ -238,7 +238,7 @@ class CategorySeeder extends Seeder
 
             23 => [
                 'name' => 'Кейтеринг',
-                'slug' => \Str::of('Кейтеринг')->slug('-')->snake(),
+                'slug' => 'catering',
                 'image' => '11.png',
                 'parent_id' => 0,
                 'show' => 1,
@@ -248,7 +248,7 @@ class CategorySeeder extends Seeder
 
             24 => [
                 'name' => 'Комплесные обеды',
-                'slug' => \Str::of('Комплесные обеды')->slug('-')->snake(),
+                'slug' => 'dinner',
                 'image' => '4.jpg',
                 'parent_id' => 0,
                 'show' => 1,

@@ -24,4 +24,10 @@ class Category extends Model
     {
         return $this->hasOne(Category::class,'parent_id');
     }
+
+    public function getParentSlug(int $id)
+    {
+        $category = Category::find($id);
+        return $category;
+    }
 }
