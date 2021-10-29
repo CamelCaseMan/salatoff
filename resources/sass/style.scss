@@ -1436,6 +1436,7 @@ body.profile-page {
 	&__menu {
 		grid-row: 2;
 		grid-column: span 2;
+		align-self: start;
 		li {
 			margin-bottom: 8px;
 			&:last-child {

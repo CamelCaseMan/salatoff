@@ -401,7 +401,7 @@
             <div class="modal__title">Войти</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform --success">
+                <form action="" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
                         <div class="valinput">
@@ -456,7 +456,7 @@
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform --success">
+                <form action="" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-signin-name">Имя</label>
                         <div class="valinput">

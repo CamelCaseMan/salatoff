@@ -889,12 +889,6 @@ input[type=number] {
   margin-bottom: 10px;
   display: block;
 }
-.superform-postsuccess {
-  display: none;
-}
-.superform-success {
-  display: none;
-}
 .superform-success .-button {
   display: block;
   text-align: center;
@@ -2311,6 +2305,7 @@ body.profile-page {
 .footer__menu {
   grid-row: 2;
   grid-column: span 2;
+  align-self: start;
 }
 .footer__menu li {
   margin-bottom: 8px;

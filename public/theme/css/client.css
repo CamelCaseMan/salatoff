@@ -883,12 +883,6 @@ input[type=number] {
   margin-bottom: 10px;
   display: block;
 }
-.superform-postsuccess {
-  display: none;
-}
-.superform-success {
-  display: none;
-}
 .superform-success .-button {
   display: block;
   text-align: center;
