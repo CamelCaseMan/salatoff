@@ -292,7 +292,7 @@ p {
 		.-side {
 			display: grid;
 			justify-items: center;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
 		}
 		a {
 			color: var(--black);
@@ -1470,6 +1470,9 @@ body.profile-page {
 	&__schedule {
 		grid-column: span 3;
 		grid-row: 2;
+		&.--fs-01 {
+			padding-left: 30px;
+		}
 		.-header {
 			margin-bottom: 6px;
 			opacity: 0.5;
