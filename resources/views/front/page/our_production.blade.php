@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="our-production-page container mb-160">
+<div class="our-production-page container mb-160 l-mb-120">
 
 	<div class="product-page__back mb-30 xs-mb-20">
 			<a href="{{ URL::previous() }}">
@@ -16,10 +16,10 @@
 
 	<h2 class="second-title">Производство</h2>
 
-	<div class="our-production__top mb-160">
-		<img src="/theme/img/our-production/start-image.jpg" alt="Производство" class="our-production__top-image d-block mb-100">
+	<div class="our-production__top mb-160 l-mb-120 s-mb-100">
+		<img src="/theme/img/our-production/start-image.jpg" alt="Производство" class="our-production__top-image d-block mb-100 l-mb-60 s-mb-30">
 
-		<div class="our-production__top-row our-production__top-text mb-190">
+		<div class="our-production__top-row our-production__top-text mb-100 s-mb-60">
 			<p>
 				Каждое конкурентоспособное современное кафе или супермаркет предлагает клиентам услугу доставки готовой еды. В условиях городского ритма жизни большинство людей не могут проводить на кухне много времени, поэтому спрос на готовую кулинарию с каждым годом только растёт. <br>
 				<br>
@@ -40,7 +40,7 @@
 
 	</div>
 
-	<div class="our-production__cooking mb-220">
+	<div class="our-production__cooking mb-220 l-mb-140 m-mb-120">
 		<div class="our-production__cooking-title">Готовим для вас</div>
 
 		<div class="our-production__cooking-products-wrapper">
@@ -111,8 +111,8 @@
 		</div>
 	</div>
 
-	<div class="our-production__two info-screen mb-100">
-			<div class="info-screen__container container">
+	<div class="our-production__two info-screen mb-100 l-mb-80">
+			<div class="info-screen__container">
 					<div class="info-screen__title">
 							Главный принцип нашей кулинарии — <br>
 							<div class="-highlighting">
@@ -134,16 +134,16 @@
 			</div>
 	</div>
 
-	<div class="our-production__middle mb-180">
+	<div class="our-production__middle mb-180 l-mb-120 s-mb-100">
 		<img src="/theme/img/our-production/middle-image.jpg" alt="Готовая кулинария">
 	</div>
 
-	<div class="our-production__why mb-180">
-		<div class="our-production__why-title mb-120">
+	<div class="our-production__why mb-180 l-mb-120">
+		<div class="our-production__why-title mb-120 l-mb-80">
 			Почему стоит попробовать <br> нашу кулинарию
 		</div>
 
-		<div class="our-production__why-answers mb-80">
+		<div class="our-production__why-answers mb-80 l-mb-60">
 			<div class="-answer">
 				<div class="-num">1</div>
 				<p class="-text">используем только свежие проверенные продукты</p>
@@ -168,7 +168,7 @@
 
 	</div>
 
-	<div class="our-production__split-blocks mb-120">
+	<div class="our-production__split-blocks mb-120 m-mb-100">
 		<p class="-text">
 			Клиенты часто обращаются в «Еда без забот» и за услугой
 			<a class="-link" href="/catering">
@@ -183,7 +183,7 @@
 		<img src="/theme/img/our-production/sp-image-2.jpg" alt="Производство" class="-img d-block">
 	</div>
 
-	<div class="our-production__right mb-180">
+	<div class="our-production__right mb-180 l-mb-120 m-mb-100">
 		<div class="our-production__right-content">
 			<p class="-text mb-50">
 				Ассортимент предлагаемых блюд можно попробовать в стационарных фирменных кафе. <br>
@@ -194,7 +194,7 @@
 		</div>
 	</div>
 
-	<div class="our-production__before-end mb-180">
+	<div class="our-production__before-end mb-180 l-mb-120 s-mb-100">
 		<p class="our-production__before-end-text mb-60">
 			Мы трезво оцениваем оборот кулинарии и минимизируем издержки производства, что позволяет устанавливать демократичную цену на нашу продукцию. 
 		</p>
