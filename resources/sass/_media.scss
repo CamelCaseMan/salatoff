@@ -1337,6 +1337,7 @@
 		}
 		&__before-end {
 			&-text {
+				padding-right: 0;
 				font-size: 1rem;
 				width: auto;
 			}
@@ -1607,6 +1608,7 @@
 	.our-production {
 		&__why-title, &__cooking-title {
 			font-size: 2rem;
+			margin-bottom: 1em;
 		}
 		&__why {
 			&-answers {
@@ -2034,6 +2036,28 @@
 		}
 	}
 	/* /cart-page */
+
+	/* our-production */
+	.our-production {
+		&__cooking {
+			&-products-wrapper {
+				display: block;
+				.-product {
+					margin-bottom: 40px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+		&__end {
+			.-text {
+				font-size: 1.3em;
+				width: auto;
+			}
+		}
+	}
+	/* our-production */
 
 	/* footer */
 	.footer {

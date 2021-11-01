@@ -133,10 +133,10 @@
                 <nav class="header__drop-menu">
                     <ul class="-side">
                         <li>
-                            <a href="#">Кейтеринг</a>
+                            <a href="/catering">Кейтеринг</a>
                         </li>
                         <li>
-                            <a href="#">Наше производство</a>
+                            <a href="/our-production">Наше производство</a>
                         </li>
                     </ul>
                     <ul class="-side">
@@ -527,10 +527,10 @@
 
         <ul class="footer__menu --fm-02">
             <li>
-                <a href="#">Кейтеринг</a>
+                <a href="/catering">Кейтеринг</a>
             </li>
             <li>
-                <a href="#">Наше производство</a>
+                <a href="/our-production">Наше производство</a>
             </li>
 
         </ul>

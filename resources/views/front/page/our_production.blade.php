@@ -40,7 +40,7 @@
 
 	</div>
 
-	<div class="our-production__cooking mb-220 l-mb-140 m-mb-120">
+	<div class="our-production__cooking mb-220 l-mb-140 m-mb-120 xs-mb-100">
 		<div class="our-production__cooking-title">Готовим для вас</div>
 
 		<div class="our-production__cooking-products-wrapper">
@@ -111,7 +111,7 @@
 		</div>
 	</div>
 
-	<div class="our-production__two info-screen mb-100 l-mb-80">
+	<div class="our-production__two info-screen mb-100 l-mb-80 xs-mb-60">
 			<div class="info-screen__container">
 					<div class="info-screen__title">
 							Главный принцип нашей кулинарии — <br>
@@ -138,7 +138,7 @@
 		<img src="/theme/img/our-production/middle-image.jpg" alt="Готовая кулинария">
 	</div>
 
-	<div class="our-production__why mb-180 l-mb-120">
+	<div class="our-production__why mb-180 l-mb-120 xs-mb-100">
 		<div class="our-production__why-title mb-120 l-mb-80">
 			Почему стоит попробовать <br> нашу кулинарию
 		</div>
@@ -183,7 +183,7 @@
 		<img src="/theme/img/our-production/sp-image-2.jpg" alt="Производство" class="-img d-block">
 	</div>
 
-	<div class="our-production__right mb-180 l-mb-120 m-mb-100">
+	<div class="our-production__right mb-180 l-mb-120 m-mb-100 xs-mb-80">
 		<div class="our-production__right-content">
 			<p class="-text mb-50">
 				Ассортимент предлагаемых блюд можно попробовать в стационарных фирменных кафе. <br>
@@ -194,7 +194,7 @@
 		</div>
 	</div>
 
-	<div class="our-production__before-end mb-180 l-mb-120 s-mb-100">
+	<div class="our-production__before-end mb-180 l-mb-120 s-mb-100 xs-mb-80">
 		<p class="our-production__before-end-text mb-60">
 			Мы трезво оцениваем оборот кулинарии и минимизируем издержки производства, что позволяет устанавливать демократичную цену на нашу продукцию. 
 		</p>

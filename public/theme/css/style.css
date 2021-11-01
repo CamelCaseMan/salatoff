@@ -3800,6 +3800,7 @@ body.profile-page {
     font-size: 1rem;
   }
   .our-production__before-end-text {
+    padding-right: 0;
     font-size: 1rem;
     width: auto;
   }
@@ -4042,6 +4043,7 @@ body.profile-page {
   /* our-production */
   .our-production__why-title, .our-production__cooking-title {
     font-size: 2rem;
+    margin-bottom: 1em;
   }
   .our-production__why-answers {
     display: block;
@@ -4452,6 +4454,22 @@ body.profile-page {
   }
 
   /* /cart-page */
+  /* our-production */
+  .our-production__cooking-products-wrapper {
+    display: block;
+  }
+  .our-production__cooking-products-wrapper .-product {
+    margin-bottom: 40px;
+  }
+  .our-production__cooking-products-wrapper .-product:last-child {
+    margin-bottom: 0;
+  }
+  .our-production__end .-text {
+    font-size: 1.3em;
+    width: auto;
+  }
+
+  /* our-production */
   /* footer */
   .footer__container {
     row-gap: 20px;
