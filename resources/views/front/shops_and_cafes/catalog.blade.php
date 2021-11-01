@@ -20,7 +20,7 @@
                         <div class="catalog-page__wrapper">
                             @foreach($categories as $key => $children)
                                 @if($children->parent_id == $category->id)
-                                    <a href="shop/{{$category->slug}}/{{$children->slug}}" class="catalog-page__cat"
+                                    <a href="shops-and-cafes/{{$category->slug}}/{{$children->slug}}" class="catalog-page__cat"
                                        style="{{$children->style}}">
                                         <div class="-img"
                                              style="background-image: url('{{asset('theme')}}/img/cat-images/{{$children->image}}')"></div>

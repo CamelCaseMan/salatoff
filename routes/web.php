@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Front\CatalogController;
-use App\Http\Controllers\Front\ProductController;
+use App\Http\Controllers\Front\ShopsAndCafesController;
 use App\Http\Controllers\Front\CateringController;
 use App\Http\Controllers\Front\DinnerController;
 use App\Http\Controllers\Front\PageController;
-use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
@@ -25,14 +23,20 @@ use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 |
 */
 
-// Каталог и карточки товара
+//Страницы сайта
 Route::get('/', [PageController::class, 'showPage']);
 Route::get('/our-production', [PageController::class, 'showOurProduction']);
-Route::get('/shop', [CatalogController::class, 'showPageCatalog']);
-Route::get('/shop/{parent}/{category}', [CategoryController::class, 'showPageCategory']);
-Route::get('/shop/{parent}/{category}/{product}', [ProductController::class, 'showProduct']);
+
+// Каталог и карточки товара раздела кафе и магазины
+Route::get('/shops-and-cafes', [ShopsAndCafesController::class, 'showPageCatalog']);
+Route::get('/shops-and-cafes/{parent}/{category}', [ShopsAndCafesController::class, 'showProductInCategory']);
+Route::get('/shops-and-cafes/{parent}/{category}/{product}', [ShopsAndCafesController::class, 'showCardProduct']);
+
+// Каталог и карточки товара раздела кейтеринг
 Route::get('/catering', [CateringController::class, 'showPageCategory']);
 Route::get('/catering/{product}', [CateringController::class, 'showPageProduct']);
+
+// Каталог и карточки товара раздела обеды в офис
 Route::get('/dinner', [DinnerController::class, 'showPageCategory']);
 Route::get('/dinner/{product}', [DinnerController::class, 'showPageProduct']);
 

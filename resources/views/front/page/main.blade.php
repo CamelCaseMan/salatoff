@@ -7,7 +7,8 @@
             <div class="modal__body">
                 <div class="modal__close close-modal">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <div class="modal__title">Добавить отзыв</div>
@@ -80,7 +81,8 @@
                         <div class="pretty-slider__hidden-slides">
                             <!-- ! Сюда нужно загрузить все слайды -->
 
-                            <a href="/shop" class="pretty-slider__slide slider__slide" style="background-color: #11305e;">
+                            <a href="/shop" class="pretty-slider__slide slider__slide"
+                               style="background-color: #11305e;">
                                 <div class="slider__slide-content">
                                     <div class="-title">
                                         Скидка 15% на каждый следующий заказ
@@ -128,7 +130,7 @@
                 Каталог
             </h2>
             <div class="catalog-screen__cats">
-                <a href="/shop" class="catalog-screen__cat">
+                <a href="/shops-and-cafes" class="catalog-screen__cat">
                     <div class="-img" style="background-image: url('{{asset('theme')}}/img/cats/1.jpg');"></div>
                     <div class="-name">
                         Магазинам <br>

@@ -21,6 +21,11 @@ class EloquentProductRepository extends CoreRepository
             ->firstOrFail();
     }
 
+    /**
+     * @param string $category_id
+     * @return mixed
+     * Получаем список продуктов категории
+     */
     public function getAllProductsCategory(string $category_id)
     {
         return Model::where('category_id', $category_id)
@@ -28,5 +33,14 @@ class EloquentProductRepository extends CoreRepository
             ->where('show', 1)
             ->get();
     }
+
+
+    public function getProductSlug(string $slug)
+    {
+        return Model::where('category_id', 23)
+            ->where('show', 1)
+            ->get();
+    }
+
 
 }

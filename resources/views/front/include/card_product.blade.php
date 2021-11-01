@@ -78,9 +78,9 @@
 
             <div class="typical-button -button add-cart-button" data-id="{{$product->id}}">
                 @if(session('cart_products')!=null)
-                    @if(in_array($product->id,session('cart_products')))Изменить количество @elseДобавить в
+                    @if(in_array($product->id,session('cart_products')))Изменить количество @else Добавить в
                     корзину @endif
-                @elseДобавить в корзину@endif
+                @else Добавить в корзину @endif
             </div>
         </div>
     </div>

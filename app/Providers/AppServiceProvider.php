@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Services\Catalog\CatalogService;
+use App\Services\ShopsAndCafesService;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Paginator;
@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         if (\Schema::hasTable('categories')) {
-            $category = new CatalogService();
+            $category = new ShopsAndCafesService();
 
             if (isset($category)) {
                 $menu = $category->setMenuCatalog();
