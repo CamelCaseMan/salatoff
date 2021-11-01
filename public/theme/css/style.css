@@ -67,6 +67,13 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.--green {
+  color: var(--green);
+}
+.--red {
+  color: var(--red);
+}
+
 .tag-button {
   display: inline-block;
   background-color: #ddd;
@@ -888,12 +895,6 @@ input[type=number] {
 .superform .-form-section .-prefix {
   margin-bottom: 10px;
   display: block;
-}
-.superform-postsuccess {
-  display: none;
-}
-.superform-success {
-  display: none;
 }
 .superform-success .-button {
   display: block;
@@ -2289,6 +2290,134 @@ body.profile-page {
 }
 
 /* /basket-page */
+/* our-production */
+.our-production-page {
+  padding-top: 40px;
+}
+.our-production__top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__top-text p {
+  font-size: 1.5rem;
+  grid-column: 2/4;
+}
+.our-production__top-split .-img {
+  grid-column: span 2;
+}
+.our-production__cooking-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.our-production__cooking-products-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 45px;
+}
+.our-production__cooking-products-wrapper .-product .-img {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+.our-production__cooking-products-wrapper .-product .-img::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.our-production__cooking-products-wrapper .-product .-img img {
+  position: absolute;
+  width: 100%;
+  left: -50%;
+  top: -50%;
+  transform: translateX(50%) translateY(50%);
+}
+.our-production__two .info-screen__container {
+  grid-template-columns: 1fr 1fr;
+}
+.our-production__two .info-screen__title {
+  grid-column: auto;
+}
+.our-production__two .info-screen__text {
+  grid-column: auto;
+}
+.our-production__why-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.our-production__why-answers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__why-answers .-answer .-num {
+  color: var(--green);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.our-production__why-note {
+  max-width: 370px;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  border-top: 1px solid #BDBDBD;
+}
+.our-production__split-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 25px;
+}
+.our-production__split-blocks .-text {
+  font-size: 1.5rem;
+}
+.our-production__split-blocks .-text .-link {
+  color: var(--black);
+  display: inline-block;
+  position: relative;
+}
+.our-production__split-blocks .-text .-link:hover {
+  color: var(--green);
+}
+.our-production__split-blocks .-text .-link .-underline {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+}
+.our-production__split-blocks .-img {
+  grid-row: 2;
+}
+.our-production__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__right-content {
+  grid-column: 2/4;
+}
+.our-production__right-content .-text {
+  font-size: 1.5rem;
+}
+.our-production__before-end-text {
+  font-size: 1.5rem;
+  width: 50%;
+}
+.our-production__before-end-split {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.our-production__end .-text {
+  width: 50%;
+  font-size: 2.2rem;
+}
+
+/* /our-production */
 /* footer */
 .footer {
   padding: 30px 0;
@@ -2311,6 +2440,7 @@ body.profile-page {
 .footer__menu {
   grid-row: 2;
   grid-column: span 2;
+  align-self: start;
 }
 .footer__menu li {
   margin-bottom: 8px;
@@ -2655,6 +2785,32 @@ body.profile-page {
   }
 
   /* /catalog-page */
+  /* our-production */
+  .our-production__top-text p {
+    font-size: 1.3rem;
+  }
+  .our-production__split-blocks .-text {
+    font-size: 1.3rem;
+  }
+  .our-production__split-blocks .-text .-link .-underline {
+    transform-origin: left bottom;
+    transform: scale(0.87);
+  }
+  .our-production__right-content .-text {
+    font-size: 1.3rem;
+  }
+  .our-production__before-end-text {
+    font-size: 1.3rem;
+  }
+  .our-production__before-end-split {
+    grid-template-columns: 598px 1fr;
+  }
+  .our-production__end .-text {
+    font-size: 1.5rem;
+    width: 400px;
+  }
+
+  /* /our-production */
   /* footer */
   .footer__container {
     row-gap: 80px;
@@ -3032,6 +3188,68 @@ body.profile-page {
   }
 
   /* /cart-page */
+  /* our-production */
+  .our-production__top-row {
+    display: block;
+  }
+  .our-production__top-text {
+    padding-left: 60px;
+  }
+  .our-production__top-text p {
+    font-size: 1.1rem;
+  }
+  .our-production__top-split .-img {
+    margin-bottom: 30px;
+  }
+  .our-production__cooking-products-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .our-production__two .info-screen__container {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 60px;
+  }
+  .our-production__two .info-screen__title {
+    grid-column: 1/5;
+  }
+  .our-production__two .info-screen__text {
+    grid-column: 3/7;
+    grid-row: 2;
+  }
+  .our-production__why-answers {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+  .our-production__why-answers .-answer .-text {
+    width: 220px;
+  }
+  .our-production__split-blocks .-text {
+    grid-column: span 2;
+    font-size: 1.1rem;
+    padding-right: 120px;
+  }
+  .our-production__split-blocks .-text .-link .-underline {
+    transform: scale(0.7);
+  }
+  .our-production__right {
+    display: block;
+  }
+  .our-production__right-content .-text {
+    font-size: 1.1rem;
+  }
+  .our-production__before-end-text {
+    font-size: 1.1rem;
+    width: auto;
+    padding-right: 120px;
+  }
+  .our-production__before-end-split {
+    grid-template-columns: 449px 1fr;
+  }
+  .our-production__end .-text {
+    font-size: 1.5rem;
+    width: 400px;
+  }
+
+  /* /our-production */
   /* footer */
   .footer__container {
     gap: 70px 10px;
@@ -3555,6 +3773,42 @@ body.profile-page {
   }
 
   /* /cart-page */
+  /* our-production */
+  .our-production__top-text {
+    padding-left: 0;
+  }
+  .our-production__top-text p {
+    font-size: 1rem;
+  }
+  .our-production__top-split .-img {
+    margin-bottom: 20px;
+  }
+  .our-production__cooking-products-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .our-production__split-blocks .-text {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+  .our-production__split-blocks .-text .-link .-underline {
+    transform: scale(0.67);
+  }
+  .our-production__right {
+    display: block;
+  }
+  .our-production__right-content .-text {
+    font-size: 1rem;
+  }
+  .our-production__before-end-text {
+    padding-right: 0;
+    font-size: 1rem;
+    width: auto;
+  }
+  .our-production__before-end-split {
+    grid-template-columns: 413px 1fr;
+  }
+
+  /* /our-production */
   /* footer */
   .footer__container {
     display: grid;
@@ -3786,6 +4040,40 @@ body.profile-page {
   }
 
   /* /basket-page */
+  /* our-production */
+  .our-production__why-title, .our-production__cooking-title {
+    font-size: 2rem;
+    margin-bottom: 1em;
+  }
+  .our-production__why-answers {
+    display: block;
+  }
+  .our-production__why-answers .-answer {
+    margin-bottom: 40px;
+  }
+  .our-production__why-answers .-answer:last-child {
+    margin-bottom: 0;
+  }
+  .our-production__split-blocks {
+    display: block;
+  }
+  .our-production__split-blocks .-text {
+    margin-bottom: 30px;
+  }
+  .our-production__split-blocks .-img {
+    margin-bottom: 20px;
+  }
+  .our-production__split-blocks .-img:last-child {
+    margin-bottom: 0;
+  }
+  .our-production__before-end-split {
+    display: block;
+  }
+  .our-production__before-end-split .-img:first-child {
+    margin-bottom: 20px;
+  }
+
+  /* /our-production */
 }
 @media (max-width: 480px) {
   .xs-d-none {
@@ -4166,6 +4454,22 @@ body.profile-page {
   }
 
   /* /cart-page */
+  /* our-production */
+  .our-production__cooking-products-wrapper {
+    display: block;
+  }
+  .our-production__cooking-products-wrapper .-product {
+    margin-bottom: 40px;
+  }
+  .our-production__cooking-products-wrapper .-product:last-child {
+    margin-bottom: 0;
+  }
+  .our-production__end .-text {
+    font-size: 1.3em;
+    width: auto;
+  }
+
+  /* our-production */
   /* footer */
   .footer__container {
     row-gap: 20px;

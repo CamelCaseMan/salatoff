@@ -61,6 +61,13 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.--green {
+  color: var(--green);
+}
+.--red {
+  color: var(--red);
+}
+
 .tag-button {
   display: inline-block;
   background-color: #ddd;
@@ -882,12 +889,6 @@ input[type=number] {
 .superform .-form-section .-prefix {
   margin-bottom: 10px;
   display: block;
-}
-.superform-postsuccess {
-  display: none;
-}
-.superform-success {
-  display: none;
 }
 .superform-success .-button {
   display: block;

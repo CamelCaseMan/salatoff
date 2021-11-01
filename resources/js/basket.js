@@ -50,31 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         addButton.addEventListener('click', function () {
             let productId = this.dataset.id;
-            console.log(quty, productId)
 
             let formData = new FormData();
             formData.append('productId', productId)
             formData.append('count', quty)
 
-            fetch(`/basket/addcount`, {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': CSRFToken
-                },
-                body: formData
-            })
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
+            sendBasket('/basket/addcount', formData, (err, data) => {
+                if (err) {
+                    console.log(err)
+                    return
+                }
                 console.log(data)
 
                 addButton.innerText = 'Изменить количество'
-
                 headerQuty.innerText = data.count
-            })
-            .catch(err => {
-                console.log(err)
             })
 
         })
@@ -89,33 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 evt.preventDefault()
                 evt.stopPropagation()
 
-
                 let productId = this.dataset.id;
-                console.log(productId)
-    
                 let formData = new FormData();
                 formData.append('productId', productId)
     
-                fetch(`/basket/add`, {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': CSRFToken
-                    },
-                    body: formData
-                })
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
+
+                sendBasket('/basket/add', formData, (err, data) => {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
                     console.log(data)
 
                     addButton.classList.add('--done')
                     addButton.removeEventListener('click', addButtonEvent)
 
                     headerQuty.innerText = data.count
-                })
-                .catch(err => {
-                    console.log( err )
                 })
     
             })
@@ -129,23 +107,19 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.values(removeButtons).forEach(removeButton => {
             removeButton.addEventListener('click', function () {
                 let productId = this.dataset.id;
-                console.log(productId)
     
                 let formData = new FormData();
                 formData.append('productId', productId)
     
-                fetch(`/basket/removeAll`, {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': CSRFToken
-                    },
-                    body: formData
-                })
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
+
+                sendBasket('/basket/removeAll', formData, (err, data) => {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
+
                     console.log(data)
+
                     headerQuty.innerText = data.count
 
                     const row = document.getElementById('basket-row-' + productId)
@@ -165,12 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (data.count == 0) location.reload()
 
                 })
-                .catch(err => {
-                    console.log( err )
-                })
     
             })
-
         })
 
     }  
@@ -210,19 +180,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('productId', productId)
                 formData.append('count', quty)
 
-                fetch(`/basket/addcount`, {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': CSRFToken
-                    },
-                    body: formData
-                })
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
+                sendBasket('/basket/addcount', formData, (err, data) => {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
                     console.log(data)
-    
     
                     headerQuty.innerText = data.count
 
@@ -230,16 +193,33 @@ document.addEventListener('DOMContentLoaded', () => {
                         totalPrice.innerText = data.total
                     }
                 })
-                .catch(err => {
-                    console.log(err)
-                })
-            }
 
+            }
 
         }
 
     }
 
+    
+    function sendBasket(url, formData, callback) {
 
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': CSRFToken
+            },
+            body: formData
+        })
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            callback(null, data)
+        })
+        .catch(err => {
+            callback(err, null)
+        })
+
+    }
 
 })

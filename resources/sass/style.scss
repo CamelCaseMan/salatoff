@@ -1415,6 +1415,153 @@ body.profile-page {
 }
 /* /basket-page */
 
+/* our-production */
+.our-production {
+	&-page {
+		padding-top: 40px;
+	}
+	&__top {
+		&-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			column-gap: 25px;
+		}
+		&-text {
+			p {
+				font-size: 1.5rem;
+				grid-column: 2/4;
+			}
+		}
+		&-split {
+			.-img {
+				grid-column: span 2;
+			}
+		}
+	}
+	&__cooking {
+		&-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-bottom: 1em;
+		}
+		&-products-wrapper {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			column-gap: 25px;
+			row-gap: 45px;
+			.-product {
+				.-img {
+					overflow: hidden;
+					position: relative;
+					margin-bottom: 10px;
+					&::before {
+						content: '';
+						display: block;
+						padding-top: 100%;
+					}
+					img {
+						position: absolute;
+						width: 100%;
+						left: -50%;
+						top: -50%;
+						transform: translateX(50%) translateY(50%);
+					}
+				}
+			}
+		}
+	}
+	&__two {
+		.info-screen {
+			&__container {
+				grid-template-columns: 1fr 1fr;
+			}
+			&__title {
+				grid-column: auto;
+			}
+			&__text {
+				grid-column: auto;
+			}
+		}
+	}
+	&__why {
+		&-title {
+			font-weight: 700;
+			font-size: 2.5rem;
+		}
+		&-answers {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			column-gap: 25px;
+			.-answer {
+				.-num {
+					color: var(--green);
+					font-size: 3rem;
+					font-weight: 700;
+				}
+			}
+		}
+		&-note {
+			max-width: 370px;
+			padding-top: 10px;
+			font-size: 0.9rem;
+			border-top: 1px solid #BDBDBD;
+		}
+	}
+	&__split-blocks {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px 25px;
+		.-text {
+			font-size: 1.5rem;
+			.-link {
+				color: var(--black);
+				display: inline-block;
+				position: relative;
+				&:hover {
+					color: var(--green);
+				}
+				.-underline {
+					position: absolute;
+					bottom: -6px;
+					left: 0;
+				}
+			}
+		}
+		.-img {
+			grid-row: 2;
+		}
+	}
+	&__right {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 25px;
+		&-content {
+			grid-column: 2/4;
+			.-text {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	&__before-end {
+		&-text {
+			font-size: 1.5rem;
+			width: 50%;
+		}
+		&-split {
+			display: grid;
+			grid-template-columns: 720px 1fr;
+			column-gap: 25px;
+		}
+	}
+	&__end {
+		.-text {
+			width: 50%;
+			font-size: 2.2rem;
+		}
+	}
+}
+/* /our-production */
+
 /* footer */
 .footer {
 	padding: 30px 0;
@@ -1436,6 +1583,7 @@ body.profile-page {
 	&__menu {
 		grid-row: 2;
 		grid-column: span 2;
+		align-self: start;
 		li {
 			margin-bottom: 8px;
 			&:last-child {

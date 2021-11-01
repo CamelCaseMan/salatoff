@@ -1,3 +1,12 @@
+.-- {
+	&green {
+		color: var(--green);
+	}
+	&red {
+		color: var(--red);
+	}
+}
+
 .tag-button {
 	display: inline-block;
 	background-color: #ddd;
@@ -798,10 +807,10 @@
 		}
 	}
 	&-postsuccess {
-		display: none;
+		// display: none;
 	}
 	&-success {
-		display: none;
+		// display: none;
 		.-button {
 			display: block;
 			text-align: center;

@@ -133,10 +133,10 @@
                 <nav class="header__drop-menu">
                     <ul class="-side">
                         <li>
-                            <a href="#">Кейтеринг</a>
+                            <a href="/catering">Кейтеринг</a>
                         </li>
                         <li>
-                            <a href="#">Наше производство</a>
+                            <a href="/our-production">Наше производство</a>
                         </li>
                     </ul>
                     <ul class="-side">
@@ -401,7 +401,7 @@
             <div class="modal__title">Войти</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform --success">
+                <form action="" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
                         <div class="valinput">
@@ -456,7 +456,7 @@
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform --success">
+                <form action="" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-signin-name">Имя</label>
                         <div class="valinput">
@@ -527,10 +527,10 @@
 
         <ul class="footer__menu --fm-02">
             <li>
-                <a href="#">Кейтеринг</a>
+                <a href="/catering">Кейтеринг</a>
             </li>
             <li>
-                <a href="#">Наше производство</a>
+                <a href="/our-production">Наше производство</a>
             </li>
 
         </ul>
