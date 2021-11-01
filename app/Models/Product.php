@@ -16,6 +16,7 @@ class Product extends Model
         'price',
         'show',
         'image',
+        'weight'
     ];
 
     public function getAttributeProduct()
@@ -45,4 +46,20 @@ class Product extends Model
             return $this->pivot->count;
         }
     }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * Получаем три рекомендуемых товара для карточки
+     */
+    public function getRecommendationsProducts()
+    {
+        return $this->belongsToMany(Product::class, 'product_recommendations', 'product_id', 'recommendation_product_id')->take(3)->where('show', 1);
+    }
+
+    public function getCategory()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
 }

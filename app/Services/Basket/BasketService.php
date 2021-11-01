@@ -3,27 +3,22 @@
 namespace App\Services\Basket;
 
 use App\Models\Order;
+use App\Services\Order\BasketOrder;
 
+/**
+ * Class BasketService
+ * @package App\Services\Basket
+ * Добавляем / удаляем товар из корзины
+ */
 class BasketService
 {
     private $orderId;
+    private $basketOrder;
 
-    public function __construct()
+    public function __construct(BasketOrder $basketOrder)
     {
         $this->orderId = session('orderId');
-    }
-
-    /**
-     * @return mixed
-     * Получаем заказ клиента
-     */
-    public function getOrder()
-    {
-        if (!is_null($this->orderId)) {
-            return Order::findorFail($this->orderId);
-        } else {
-            return null;
-        }
+        $this->basketOrder = $basketOrder;
     }
 
     /**
@@ -34,7 +29,7 @@ class BasketService
      */
     public function addCountBasket(int $productId, int $count = 1)
     {
-        $order = $this->createOrder();
+        $order = $this->basketOrder->createOrder($this->orderId);
 
         if ($order->products->contains($productId)) {
             $pivotTable = $order->products()->where('product_id', $productId)->first()->pivot;
@@ -59,7 +54,7 @@ class BasketService
      */
     public function addOneBasket(int $productId)
     {
-        $order = $this->createOrder();
+        $order = $this->basketOrder->createOrder($this->orderId);
 
         if ($order->products->contains($productId)) {
             $pivotTable = $order->products()->where('product_id', $productId)->first()->pivot;
@@ -106,49 +101,4 @@ class BasketService
         return $order;
     }
 
-    /**
-     * Получаем владельца заказ
-     */
-    public function saveUserOrder()
-    {
-        if (\Auth::check()) {
-            return \Auth::id();
-        } else {
-            return null;
-        }
-
-    }
-
-    /**
-     * @return mixed
-     */
-    private function createOrder()
-    {
-        if (is_null($this->orderId)) {
-            $order = Order::create([
-                'user_id' => $this->saveUserOrder()]);
-            session(['orderId' => $order->id]);
-        } else {
-            $order = Order::find($this->orderId);
-        }
-
-        return $order;
-    }
-
-    /**
-     * @param int $id
-     * @return array
-     * Информация для фронта
-     */
-    public function setInfoOrder(int $id)
-    {
-        $order = Order::find($id);
-        $info = [
-            'total' => $order->getFullPrice(), //Сумма корзины
-            'count' => $order->getCountProducts(), //Количество товаров в корзине
-            'products' => $order->haveProductsOrder(), //Какие продукты в корзине и какое количество
-            'success' => 'true'
-        ];
-        return $info;
-    }
 }

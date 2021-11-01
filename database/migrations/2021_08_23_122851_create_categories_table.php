@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('parent_id')->unsigned()->default(0);
             $table->boolean('show')->default(1);
             $table->integer('sort')->nullable();
+            $table->text('style')->nullable();
             $table->timestamps();
         });
     }

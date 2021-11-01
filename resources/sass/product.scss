@@ -1,0 +1,39 @@
+@import "font";
+@import "reset";
+@import "libs";
+@import "vars";
+
+.quty-interface {
+	display: grid;
+	grid-template-columns: 30px 40px 30px;
+	grid-auto-rows: 30px;
+	user-select: none;
+	&-btn {
+		background-color: var(--green);
+		color: #fff;
+		font-size: 30px;
+		font-weight: 300;
+		border-radius: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		padding-bottom: 2px;
+		cursor: pointer;
+	}
+	&-value {
+		border: none;
+		text-align: center;
+	}
+}
+
+.product-pg {
+	&__quty {
+		margin-top: 10px;
+		margin-bottom: 30px;
+		.-prefix {
+			margin-bottom: 10px;
+			font-weight: 700;
+		}
+	}
+}

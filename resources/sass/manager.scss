@@ -1,0 +1,84 @@
+@import "font";
+@import "reset";
+@import "libs";
+@import "vars";
+@import "modals";
+
+.manager-page {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  &__separation {
+    display: flex;
+    &.active {
+      .manager-page__menu {
+        left: -250px;
+      }
+      .manager-page__left-plug {
+        width: 0;
+        min-width: 0;
+      }
+    }
+  }
+  &__container {
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-grow: 1;
+  }
+  &__left-plug {
+    min-width: 250px;
+    width: 250px;
+    transition: .3s ease;
+  }
+  &__menu {
+    width: 250px;
+    background-color: rgba(56 124 75 / 5%);
+    position: fixed;
+    top: 74px;
+    bottom: 0;
+    padding: 30px 20px;
+    left: 0;
+    transition: .3s ease;
+    li {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        transition: .2s ease;
+        color: #252525;
+        opacity: 0.6;
+        font-weight: 500;
+        &.active, &:hover {
+          color: #387C4B;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.big-table {
+  &__wrapper {
+    position: relative;
+  }
+  width: 100%;
+  tr {
+    th {
+      font-weight: 500;
+    }
+    td, th {
+      padding: 15px 10px;
+      
+    }
+    &:nth-child(2n) {
+      background-color: rgba(56 124 75 / 5%);
+    }
+  }
+  .-button {
+    display: inline-block;
+    cursor: pointer;
+    &.--remove {
+      color: #D13301;
+    }
+  }
+}

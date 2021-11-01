@@ -1,0 +1,21 @@
+.magic-tab {
+	display: none;
+}
+.magic-tab.active {
+	display: block;
+	transition: .2s ease;
+}
+.magic-tab.--transparent {
+	opacity: 0;
+}
+
+.magic-menu li ul li .-link .-down {
+	transform: rotate(-90deg);
+}
+
+[data-drop-to] {
+	display: none;
+}
+[data-drop-to].--visible {
+	display: block;
+}

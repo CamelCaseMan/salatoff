@@ -3,27 +3,32 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Product;
 use App\Repositories\EloquentCategoryRepository;
-use Illuminate\Http\Request;
+use App\Repositories\EloquentProductRepository;
 
 class CategoryController extends Controller
 {
+    private $productRepository;
     private $categoryRepository;
 
-    public function __construct(EloquentCategoryRepository $categoryRepository)
+    public function __construct(EloquentProductRepository $productRepository, EloquentCategoryRepository $categoryRepository)
     {
+        $this->productRepository = $productRepository;
         $this->categoryRepository = $categoryRepository;
     }
 
     /**
+     * @param string $parent
+     * @param string $category
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     * Получить все категории с подкатегориями
+     * Выводим товары категории
      */
-    public function showAllCategories()
+    public function showPageCategory(string $parent, string $category)
     {
-        $categories = $this->categoryRepository->getAll();
-        return view('front.category.index', ['categories' => $categories]);
+        $parent = $this->categoryRepository->findParent($parent);
+        $category = $this->categoryRepository->findCategoryInParent($category, $parent->id);
+        $products = $this->productRepository->getAllProductsCategory($category->id);
+        return view('front.catalog.category', ['category' => $category, 'products' => $products]);
     }
+
 }

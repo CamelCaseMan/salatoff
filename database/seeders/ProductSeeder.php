@@ -26,20 +26,56 @@ class ProductSeeder extends Seeder
             'https://salatoff.ru/storage/product/Mt1jJ3V5u1YTNVzpZsIgZowpF0ODle3R5k1jh9u0.jpeg',
             'https://salatoff.ru/storage/product/4KwNaqnDWm2q2Y6FE9J3vP4jfxejpfAbZtwZnc1U.jpeg',
         ];
+
+
         $data = [];
+        $catering = [];
+        $dinner = [];
 
         for ($i = 1; $i < 150; $i++) {
             $title = 'Название товара_' . $i;
             $data[$i] = [
                 'name' => $title,
                 'slug' => \Str::of($title)->slug('-')->snake(),
-                'category_id' => rand(1, 21),
+                'category_id' => rand(3, 22),
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
-                'image' => $images[rand(0, 10)]
+                'image' => $images[rand(0, 10)],
+                'weight' => mt_rand(550, 1999)
+            ];
+        }
+
+
+        for ($i = 1; $i < 15; $i++) {
+            $title = 'Кейтеринг_' . $i;
+            $catering[$i] = [
+                'name' => $title,
+                'slug' => \Str::of($title)->slug('-')->snake(),
+                'category_id' => 23,
+                'price' => mt_rand(550, 1999) / 10,
+                'show' => rand(0, 1),
+                'image' => 'http://salatoff.loc/theme/img/catering/' . rand(1, 9) . '.png',
+                'weight' => mt_rand(550, 1999)
+            ];
+        }
+
+
+        for ($i = 1; $i < 15; $i++) {
+            $title = 'Комплесный обед_' . $i;
+            $dinner[$i] = [
+                'name' => $title,
+                'slug' => \Str::of($title)->slug('-')->snake(),
+                'category_id' => 24,
+                'price' => mt_rand(550, 1999) / 10,
+                'show' => rand(0, 1),
+                'image' => 'http://salatoff.loc/theme/img/dinner/' . rand(1, 8) . '.jpeg',
+                'weight' => mt_rand(550, 1999)
             ];
         }
 
         \DB::table('products')->insert($data);
+        \DB::table('products')->insert($catering);
+        \DB::table('products')->insert($dinner);
+
     }
 }
