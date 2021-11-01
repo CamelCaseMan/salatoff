@@ -186,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const element = document.getElementById(id);
 			if (element) {
 				element.classList.toggle('active');
+				this.classList.toggle('active');
 			} else {
 				console.error(`Element by id "${id}" not found!`);
 			}

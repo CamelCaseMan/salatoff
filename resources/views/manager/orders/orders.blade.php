@@ -14,7 +14,26 @@
                 <th class="text-right">Итого</th>
                 <th>Дата заказа</th>
             </tr>
+            <tr>
+                <td>123</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal"
+                            data-toggle-active="mw-user-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td>Маша Зубкова</td>
 
+                <td class="">+7989898574</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td class="">123</td>
+                <td class="text-right">123 руб.</td>
+                <td class="">12 февраля</td>
+            </tr>
             @foreach($orders as $key =>$order)
                 <tr>
                     <td>{{$order->id}}</td>
@@ -26,7 +45,7 @@
                     </td>
                     <td>{{$order->name}}</td>
 
-                    <td class="text-right">{{$order->phone}}</td>
+                    <td class="">{{$order->phone}}</td>
                     <td>
                         <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_{{$key}}">
                             Подробнее
@@ -34,7 +53,7 @@
                     </td>
                     <td class="text-right">{{ $order->cupon['discount']? $order->cupon['discount'].'%': 'Нет' }}</td>
                     <td class="text-right">{{$order->total}}руб.</td>
-                    <td class="text-right">{{$order->created_at}}</td>
+                    <td class="">{{$order->created_at}}</td>
                 </tr>
             @endforeach
         </table>
