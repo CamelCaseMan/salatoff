@@ -62,7 +62,7 @@ Route::namespace('Shop')->middleware(['auth'])->group(function () {
 /**
  * Личный кабинет клиента
  */
-Route::prefix('client')->namespace('Client')->middleware(['role:client'])->group(function () {
+Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/->group(function () {
     Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
     Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
     Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
@@ -72,7 +72,7 @@ Route::prefix('client')->namespace('Client')->middleware(['role:client'])->group
 /**
  * Личный кабинет менеджера
  */
-Route::prefix('manager')->middleware(['role:client'])->group(function () {
+Route::prefix('manager')/*->middleware(['role:client'])*/->group(function () {
     Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
     Route::get('/orders', [ManagerOrder::class, 'showOrderPage'])->name('manager.orders');
 
