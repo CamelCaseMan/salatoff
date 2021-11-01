@@ -35,12 +35,4 @@ class EloquentProductRepository extends CoreRepository
     }
 
 
-    public function getProductSlug(string $slug)
-    {
-        return Model::where('category_id', 23)
-            ->where('show', 1)
-            ->get();
-    }
-
-
 }

@@ -21,7 +21,7 @@
             @foreach($categories as $key => $children)
                 @if($children->parent_id == $parent->id)
                     <li>
-                        <a href="/shop/{{$parent->slug}}/{{$children->slug}}" class="-link">
+                        <a href="/shops-and-cafes/{{$parent->slug}}/{{$children->slug}}" class="-link">
                             {{$children->name}}
                         </a>
                     </li>

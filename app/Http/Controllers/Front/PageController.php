@@ -13,11 +13,19 @@ class PageController extends Controller
      */
     public function showPage()
     {
-        return view('front.page.main');
+        $url = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
+
+        if (empty($url)) {
+            return view('front.page.main');
+        }
+
+        if (view()->exists('front.page.' . $url)) {
+            return view('front.page.' . $url);
+        } else {
+            abort('404');
+        }
+
     }
 
-    public function showOurProduction()
-    {
-        return view('front.page.our_production');
-    }
+
 }
