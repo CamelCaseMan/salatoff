@@ -149,7 +149,7 @@
                             <a href="/blog">Блог</a>
                         </li>
                         <li>
-                            <a href="#">Рецепты</a>
+                            <a href="/recipes">Рецепты</a>
                         </li>
                     </ul>
                 </nav>

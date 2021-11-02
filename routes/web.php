@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\ShopsAndCafesController;
 use App\Http\Controllers\Front\OtherCategoriesController;
 use App\Http\Controllers\Front\PageController;
+use App\Http\Controllers\Front\RecipesController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Basket\FinishController;
@@ -43,6 +44,11 @@ Route::get('/dinner/{product}', [OtherCategoriesController::class, 'showPageProd
 //Блог
 Route::get('/blog', [BlogController::class, 'showPageList']);
 Route::get('/blog/{slug}', [BlogController::class, 'showPageText']);
+
+//Рецепты
+Route::get('/recipes', [RecipesController::class, 'getCategoryRecipes']);
+Route::get('/recipes/{category_slug}', [RecipesController::class, 'getListRecipes']);
+Route::get('/recipes/{category_slug}/{recipe_slug}', [RecipesController::class, 'getRecipe']);
 
 
 //Корзина
