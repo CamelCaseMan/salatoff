@@ -711,6 +711,52 @@ input[type=number] {
 }
 
 /* /modals */
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.pagination .-page {
+  box-sizing: border-box;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  color: var(--black);
+  transition: 0.2s ease;
+  text-align: center;
+}
+.pagination .-page:hover {
+  background-color: rgba(162, 205, 58, 0.2);
+}
+.pagination .-page.active {
+  background-color: var(--green);
+  color: #fff;
+}
+.pagination .-page.--disabled {
+  opacity: 0.3;
+}
+.pagination .-page.--disabled:hover {
+  background-color: transparent;
+}
+.pagination .-page:first-child {
+  padding: 0;
+}
+.pagination .-page:last-child {
+  margin-right: 0;
+  padding: 0;
+}
+
+/* /pagination */
 /* date-selector */
 .date-selector-wrapper {
   width: 315px;

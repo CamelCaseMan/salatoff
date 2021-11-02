@@ -1415,6 +1415,41 @@ body.profile-page {
 }
 /* /basket-page */
 
+/* blog-page */
+.blog {
+	&-page {
+		padding-top: 40px;
+	}
+	&__news {
+
+	}
+	&__new {
+		display: block;
+		margin-bottom: 30px;
+		color: var(--black);
+		padding: 25px;
+		background-color: #fff;
+		border: 1px solid rgba(0 0 0 / 10%);
+		border-radius: 16px;
+		transition: .2s ease;
+		&:hover {
+			box-shadow: rgba(0 0 0 / 10%) 0 8px 8px;
+		}
+		.-title {
+			font-size: 1.5rem;
+			font-weight: 700;
+			margin-bottom: 12px;
+		}
+		.-text {
+			opacity: 0.6;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+/* /blog-page */
+
 /* our-production */
 .our-production {
 	&-page {
