@@ -34,6 +34,106 @@
                 <td class="text-right">123 руб.</td>
                 <td class="">12 февраля</td>
             </tr>
+            <tr>
+                <td>123</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal"
+                            data-toggle-active="mw-user-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td>Маша Зубкова</td>
+
+                <td class="">+7989898574</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td class="">123</td>
+                <td class="text-right">123 руб.</td>
+                <td class="">12 февраля</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal"
+                            data-toggle-active="mw-user-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td>Маша Зубкова</td>
+
+                <td class="">+7989898574</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td class="">123</td>
+                <td class="text-right">123 руб.</td>
+                <td class="">12 февраля</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal"
+                            data-toggle-active="mw-user-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td>Маша Зубкова</td>
+
+                <td class="">+7989898574</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td class="">123</td>
+                <td class="text-right">123 руб.</td>
+                <td class="">12 февраля</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal"
+                            data-toggle-active="mw-user-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td>Маша Зубкова</td>
+
+                <td class="">+7989898574</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td class="">123</td>
+                <td class="text-right">123 руб.</td>
+                <td class="">12 февраля</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal"
+                            data-toggle-active="mw-user-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td>Маша Зубкова</td>
+
+                <td class="">+7989898574</td>
+                <td>
+                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
+                        Подробнее
+                    </div>
+                </td>
+                <td class="">123</td>
+                <td class="text-right">123 руб.</td>
+                <td class="">12 февраля</td>
+            </tr>
             @foreach($orders as $key =>$order)
                 <tr>
                     <td>{{$order->id}}</td>
