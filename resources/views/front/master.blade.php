@@ -21,6 +21,10 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- End JQ -->
 
+    <!-- JQ Masked input -->
+    <script src="{{asset('theme')}}/inc/masked-input/jquery.maskedinput.min.js"></script>
+    <!-- End JQ Masked input -->
+
     <!-- Owl-carousel -->
     <link rel="stylesheet" href="{{asset('theme')}}/inc/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="{{asset('theme')}}/inc/owlcarousel/owl.theme.default.min.css">
@@ -406,7 +410,7 @@
                         <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style" id="wndw-login-phone" type="text">
+                            <input class="input-style input-phone" name="phone" required id="wndw-login-phone" placeholder="+7 (___) ___ ____" type="tel">
                             <!-- * Это сообщение об ошибке -->
                             <div class="-error-message">Сообщение с ошибкой</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -461,7 +465,7 @@
                         <label class="-prefix" for="wndw-signin-name">Имя</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style" id="wndw-signin-name" type="text">
+                            <input class="input-style input-phone" name="phone" id="wndw-signin-name" placeholder="+7 (___) ___ ____" type="tel">
                             <!-- * Это сообщение об ошибке -->
                             <div class="-error-message">Сообщение с ошибкой</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
