@@ -1,7 +1,7 @@
 @extends('front.master')
 @section('content')
 
-<div class="basket-page container mb-160 l-mb-130">
+<div class="article-page container mb-160 l-mb-130">
 
     <div class="product-page__back mb-30 xs-mb-20">
         <a href="/blog">
@@ -15,6 +15,8 @@
 
     <h2 class="second-title">{{$news->title}}</h2>
 
+    <p>{{$news->text}}</p>
+    <p>{{$news->text}}</p>
     <p>{{$news->text}}</p>
 
 </div>

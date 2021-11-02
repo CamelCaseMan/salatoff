@@ -1450,6 +1450,17 @@ body.profile-page {
 }
 /* /blog-page */
 
+/* article-page */
+.article {
+	&-page {
+		padding-top: 40px;
+		p {
+			margin-bottom: 1em;
+		}
+	}
+}
+/* /article-page */
+
 /* our-production */
 .our-production {
 	&-page {

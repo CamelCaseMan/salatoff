@@ -2366,6 +2366,15 @@ body.profile-page {
 }
 
 /* /blog-page */
+/* article-page */
+.article-page {
+  padding-top: 40px;
+}
+.article-page p {
+  margin-bottom: 1em;
+}
+
+/* /article-page */
 /* our-production */
 .our-production-page {
   padding-top: 40px;
@@ -4300,6 +4309,15 @@ body.profile-page {
     background-color: transparent;
   }
 
+  /* pagination */
+  .pagination .-page {
+    width: 35px;
+    height: 35px;
+    margin-right: 0;
+    font-size: 0.9rem;
+  }
+
+  /* /pagination */
   /* header */
   .header__top {
     padding: 0;

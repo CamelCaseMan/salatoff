@@ -15,11 +15,6 @@
 
         </div>        
 
-        <div class="pagination-wrapper">
-            <div class="pagination">
-
-            </div>
-        </div>
         {{ $list->links('paginate') }}
 
     </div>
