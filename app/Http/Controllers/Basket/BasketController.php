@@ -7,6 +7,7 @@ use App\Http\Requests\Basket\BasketAddCountProductRequest;
 use App\Http\Requests\Basket\BasketAddProductRequest;
 use App\Http\Requests\Basket\RemoveOneProductRequest;
 use App\Services\Basket\BasketService;
+use App\Services\Basket\CartStatusService;
 use App\Services\Order\BasketOrder;
 
 
@@ -43,7 +44,7 @@ class BasketController extends Controller
     {
         $order = $basketService->addOneBasket($basketAddProductRequest->productId);
         $info = $this->basketOrder->setInfoOrder($order->id);
-        $this->setCount($info['count'], $info['products']);
+        $this->setCount();
         return response()->json($info);
     }
 
@@ -57,7 +58,7 @@ class BasketController extends Controller
     {
         $order = $basketService->addCountBasket($basketAddCountProductRequest->productId, $basketAddCountProductRequest->count);
         $info = $this->basketOrder->setInfoOrder($order->id);
-        $this->setCount($info['count'], $info['products']);
+        $this->setCount();
         return response()->json($info);
     }
 
@@ -72,7 +73,7 @@ class BasketController extends Controller
     {
         $order = $basketService->removeOneBasket($removeOneProductRequest->productId);
         $info = $this->basketOrder->setInfoOrder($order->id);
-        $this->setCount($info['count'], $info['products']);
+        $this->setCount();
         return response()->json($info);
     }
 
@@ -86,24 +87,24 @@ class BasketController extends Controller
     {
         $order = $basketService->removeProduct($removeOneProductRequest->productId);
         $info = $this->basketOrder->setInfoOrder($order->id);
-        $this->setCount($info['count'], $info['products']);
+        $this->setCount();
         return response()->json($info);
     }
 
     /**
-     * @param int $count
-     * Отображаем количество товаров в корзине
+     * Храним состояние корзины
      */
-    public function setCount(int $count, array $products)
+    private function setCount()
     {
-        session()->forget('cart_count');
-        session()->forget('cart_products');
-        session(['cart_count' => $count]);
-        $products_id = [];
-        foreach ($products as $product) {
-            $products_id[] = $product['id'];
-        }
-        session(['cart_products' => $products_id]);
+        session()->forget('basket_status');
+        $cart_status = new CartStatusService();
+        $basket_status = $cart_status->setStatusInfo();
+        session(['basket_status' => $basket_status]);
+    }
+
+    public function registration()
+    {
+        return view('front.basket.registration');
     }
 
 

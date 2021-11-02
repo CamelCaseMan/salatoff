@@ -11,7 +11,7 @@ class OrderController
     {
         $orders = Order::orderBy('id', 'DESC')
             ->where('status', '1')
-            ->paginate(1);
+            ->paginate(35);
         return view('manager.orders.orders', compact('orders'));
     }
 

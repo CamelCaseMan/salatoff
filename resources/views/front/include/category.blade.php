@@ -17,8 +17,8 @@
                 </div>
                 <div class="-price-row">
                     <div class="-price">{{$product->price}} ₽</div>
-                    <div class="-button typical-button @if(session('cart_products')!=null)
-                    @if(in_array($product->id,session('cart_products')))--done @else add-one-button @endif @else add-one-button
+                    <div class="-button typical-button @if(session('basket_status')!=null)
+                    @if(in_array($product->id,session('basket_status')['products_id']))--done @else add-one-button @endif @else add-one-button
                             @endif " data-id="{{$product->id}}" data-url="/{{$product->slug}}">
                         <span class="-text">В корзину</span>
                         <svg class="-icon" width="27" height="18" viewBox="0 0 27 18" fill="none">

@@ -61,8 +61,18 @@
                                   stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="-num quty-interface-value quty-start" data-value="1">
-                        1 шт.
+                    <div class="-num quty-interface-value quty-start" data-value="@if(session('basket_status')!=null)
+                    @if(in_array($product->id,session('basket_status')['products_id'])) {{session('basket_status')['products'][$product->id]}} @else
+                            1 @endif
+                        @else
+                            1
+                        @endif">
+                        @if(session('basket_status')!=null)
+                            @if(in_array($product->id,session('basket_status')['products_id'])) {{session('basket_status')['products'][$product->id]}} @else
+                                1 @endif шт.
+                        @else
+                            1 шт.
+                        @endif
                     </div>
                     <div class="-btn quty-interface-btn" data-quty="+">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -77,9 +87,10 @@
             </div>
 
             <div class="typical-button -button add-cart-button" data-id="{{$product->id}}">
-                @if(session('cart_products')!=null)
-                    @if(in_array($product->id,session('cart_products')))Изменить количество @else Добавить в
-                    корзину @endif
+                @if(session('basket_status')!=null)
+                    @if(in_array($product->id,session('basket_status')['products_id']))Изменить количество @else
+                        Добавить в
+                        корзину @endif
                 @else Добавить в корзину @endif
             </div>
         </div>

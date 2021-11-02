@@ -159,5 +159,5 @@
         </table>
         {{ $orders->links() }}
     </div>
-    @include('manager.orders.modals_client')
+  {{--  @include('manager.orders.modals_client')--}}
 @endsection
