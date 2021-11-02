@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+	cutMenuOnClick()
+	function cutMenuOnClick() {
+		const hamburger = document.getElementsByClassName('header__hamburger')[0]
+		const menu = document.getElementById('header-drop')
+
+		document.addEventListener('click', (evt) => {
+
+			if ( !menu.classList.contains('active') ) return
+
+			const menuBottom = menu.getBoundingClientRect().bottom
+
+			if (evt.clientY > menuBottom) {
+				menu.style.height = 0
+
+				menu.classList.remove('active')
+				hamburger.classList.remove('active')
+			}
+
+		})
+
+	}
+
 	expandElements();
 	function expandElements() {
 		const togglers = document.getElementsByClassName('expand-toggler');
@@ -186,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const element = document.getElementById(id);
 			if (element) {
 				element.classList.toggle('active');
+				this.classList.toggle('active');
 			} else {
 				console.error(`Element by id "${id}" not found!`);
 			}

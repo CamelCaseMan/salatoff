@@ -70,7 +70,7 @@ input[type=number] {
 
 .tag-button {
   display: inline-block;
-  background-color: #ddd;
+  background-color: #eee;
   color: #555;
   padding: 2px 5px;
   border-radius: 2px;
@@ -78,8 +78,8 @@ input[type=number] {
 }
 .tag-button.--green {
   cursor: pointer;
-  background-color: #387c4b17;
-  color: #387C4B;
+  background-color: #a2cd3a29;
+  color: var(--green);
 }
 .tag-button.--blue {
   cursor: pointer;
