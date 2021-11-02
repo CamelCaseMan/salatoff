@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\ShopsAndCafesController;
 use App\Http\Controllers\Front\OtherCategoriesController;
 use App\Http\Controllers\Front\PageController;
+use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
@@ -39,6 +40,10 @@ Route::get('/catering/{product}', [OtherCategoriesController::class, 'showPagePr
 Route::get('/dinner', [OtherCategoriesController::class, 'showPageCategory']);
 Route::get('/dinner/{product}', [OtherCategoriesController::class, 'showPageProduct']);
 
+//Блог
+Route::get('/blog', [BlogController::class, 'showPageList']);
+Route::get('/blog/{slug}', [BlogController::class, 'showPageText']);
+
 
 //Корзина
 Route::prefix('basket')->group(function () {
@@ -55,10 +60,10 @@ Route::prefix('basket')->group(function () {
 /**
  * Shop - оформление заказа
  */
-Route::namespace('Shop')->middleware(['auth'])->group(function () {
+/*Route::namespace('Shop')->middleware(['auth'])->group(function () {
     Route::get('/save-order', [OrderController::class, 'orderConfirm'])->name('save.order');
     Route::get('/finish', 'FinishController@index')->name('finish');
-});
+});*/
 
 /**
  * Личный кабинет клиента
@@ -80,6 +85,6 @@ Route::prefix('manager')/*->middleware(['role:client'])*/->group(function () {
 });
 
 
-Auth::routes();
+///Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');

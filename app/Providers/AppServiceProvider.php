@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Services\Basket\CartStatusService;
 use App\Services\ShopsAndCafesService;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;

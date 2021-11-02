@@ -146,7 +146,7 @@
                     <ul class="-side">
 
                         <li>
-                            <a href="#">Блог</a>
+                            <a href="/blog">Блог</a>
                         </li>
                         <li>
                             <a href="#">Рецепты</a>

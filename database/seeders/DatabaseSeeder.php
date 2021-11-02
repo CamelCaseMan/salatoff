@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductSeeder::class);
         $this->call(AttributeSeeder::class);
         $this->call(CuponSeeder::class);
+        \App\Models\Blog::factory(55)->create();
     }
 }
