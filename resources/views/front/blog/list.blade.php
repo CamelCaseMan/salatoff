@@ -1,6 +1,5 @@
 @extends('front.master')
 @section('content')
-
     <div class="blog-page container mb-160 l-mb-130">
 
         <h2 class="second-title">Наш блог</h2>
