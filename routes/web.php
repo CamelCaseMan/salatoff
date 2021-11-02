@@ -43,6 +43,8 @@ Route::get('/dinner/{product}', [OtherCategoriesController::class, 'showPageProd
 //Корзина
 Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
+    Route::get('/registration', [BasketController::class, 'registration']);
+
     Route::get('/finish/{id}', [FinishController::class, 'showFinishPage'])->name('basket.finish')->middleware(['role:client']);
     Route::post('/add', [BasketController::class, 'addProduct']);
     Route::post('/addcount', [BasketController::class, 'addCountProduct']);

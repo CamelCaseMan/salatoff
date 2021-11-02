@@ -102,5 +102,10 @@ class BasketController extends Controller
         session(['basket_status' => $basket_status]);
     }
 
+    public function registration()
+    {
+        return view('front.basket.registration');
+    }
+
 
 }
