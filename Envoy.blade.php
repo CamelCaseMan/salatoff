@@ -10,6 +10,7 @@ git
 copy_env
 composer
 migrate
+copy_phpmyadmin
 cache
 @endstory
 
@@ -38,6 +39,10 @@ cd /var/www/{{$catalog}}
 php artisan migrate:refresh --seed
 @endtask
 
+@task('copy_phpmyadmin')
+cd /var/www/config
+cp work3212 /var/www/{{$catalog}}/public
+@endtask
 
 @task('cache')
 cd /var/www/{{$catalog}}
@@ -46,4 +51,6 @@ php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 @endtask
+
+
 
