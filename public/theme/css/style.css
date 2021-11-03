@@ -2375,6 +2375,27 @@ body.profile-page {
 }
 
 /* /article-page */
+/* recipes-page */
+.recipes-page {
+  padding-top: 40px;
+}
+.recipes__list {
+  font-size: 1.3rem;
+}
+.recipes__list li {
+  margin-bottom: 1em;
+}
+.recipes__list li:last-child {
+  margin-bottom: 0;
+}
+.recipes__list li a {
+  color: var(--black);
+  transition: 0.2s ease;
+}
+.recipes__list li a:hover {
+  color: var(--green);
+}
+/* /recipes-page */
 /* our-production */
 .our-production-page {
   padding-top: 40px;

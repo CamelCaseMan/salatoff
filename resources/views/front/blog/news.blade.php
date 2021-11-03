@@ -13,7 +13,7 @@
         </a>
     </div>
 
-    <h2 class="second-title">{{$news->title}}</h2>
+    <h1 class="second-title">{{$news->title}}</h1>
 
     <p>{{$news->text}}</p>
 
