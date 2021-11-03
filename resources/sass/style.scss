@@ -1461,6 +1461,33 @@ body.profile-page {
 }
 /* /article-page */
 
+/* recipes-page */
+.recipes {
+	&-page {
+		padding-top: 40px;
+	}
+	&__list {
+		font-size: 1.3rem;
+		li {
+			margin-bottom: 1em;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			a {
+				color: var(--black);
+				transition: .2s ease;
+				&:hover {
+					color: var(--green);
+				}
+			}
+		}
+	}
+	&__list {
+
+	}
+}
+/* /recipes-page */
+
 /* our-production */
 .our-production {
 	&-page {

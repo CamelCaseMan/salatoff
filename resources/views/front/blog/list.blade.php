@@ -2,7 +2,7 @@
 @section('content')
     <div class="blog-page container mb-160 l-mb-130">
 
-        <h2 class="second-title">Наш блог</h2>
+        <h1 class="second-title">Наш блог</h1>
 
         <div class="blog__news mb-80">
 
