@@ -9,6 +9,8 @@ check_dir
 git
 copy_env
 composer
+migrate
+cache
 @endstory
 
 @task('check_dir')
@@ -34,5 +36,14 @@ composer install --ignore-platform-reqs
 @task('migrate')
 cd /var/www/{{$catalog}}
 php artisan migrate:refresh --seed
+@endtask
+
+
+@task('cache')
+cd /var/www/{{$catalog}}
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
 @endtask
 
