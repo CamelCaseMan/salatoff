@@ -81,7 +81,7 @@
                         <div class="pretty-slider__hidden-slides">
                             <!-- ! Сюда нужно загрузить все слайды -->
 
-                            <a href="/shop" class="pretty-slider__slide slider__slide"
+                            <a href="/shops-and-cafes" class="pretty-slider__slide slider__slide"
                                style="background-color: #11305e;">
                                 <div class="slider__slide-content">
                                     <div class="-title">
