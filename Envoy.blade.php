@@ -1,7 +1,7 @@
 @servers(['web' => ['developer@37.143.13.151']])
 
 @setup
-$catalog = 'html-'.date("H-i-s-d-m-y");
+$catalog = 'salatoff';
 @endsetup
 
 @story('deploy')
@@ -10,12 +10,12 @@ git
 copy_env
 composer
 migrate
-copy_phpmyadmin
 cache
 @endstory
 
 @task('check_dir')
 cd /var/www/
+rm -r salatoff
 mkdir {{$catalog}}
 @endtask
 
@@ -50,6 +50,7 @@ php artisan cache:clear
 php artisan config:clear
 php artisan route:clear
 php artisan view:clear
+chmod -R 775 storage
 @endtask
 
 
