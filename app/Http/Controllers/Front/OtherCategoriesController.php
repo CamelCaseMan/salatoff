@@ -21,7 +21,7 @@ class OtherCategoriesController
     {
         $category_url = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
         $products = $this->otherCategories->geListProductsCategory($category_url);
-        return view('front.catering.category', ['products' => $products]);
+        return view('front.'.$category_url.'.category', ['products' => $products]);
     }
 
     /**

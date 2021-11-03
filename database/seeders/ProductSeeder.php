@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
                 'category_id' => 23,
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
-                'image' => '/theme/img/catering/' . rand(1, 9) . '.png',
+                'image' => '/theme/img/catering/' . rand(1, 7) . '.png',
                 'weight' => mt_rand(550, 1999)
             ];
         }
