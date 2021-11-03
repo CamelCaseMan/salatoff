@@ -6,9 +6,33 @@ $catalog = 'html-'.date("H-i-s-d-m-y");
 
 @story('deploy')
 check_dir
+git
+copy_env
+composer
 @endstory
 
 @task('check_dir')
 cd /var/www/
 mkdir {{$catalog}}
 @endtask
+
+@task('git')
+cd /var/www/{{$catalog}}
+git clone https://github.com/work3212/salatoff.git .
+@endtask
+
+@task('copy_env')
+cd /var/www/config
+cp .env /var/www/{{$catalog}}
+@endtask
+
+@task('composer')
+cd /var/www/{{$catalog}}
+composer install --ignore-platform-reqs
+@endtask
+
+@task('migrate')
+cd /var/www/{{$catalog}}
+php artisan migrate:refresh --seed
+@endtask
+
