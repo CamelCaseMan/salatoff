@@ -420,6 +420,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
+	superForm()
+	function superForm() {
+		
+	}
+
 	$( "#datepicker" ).datepicker( { 
 		firstDay: 1,
 		dateFormat: "dd.mm.yy",

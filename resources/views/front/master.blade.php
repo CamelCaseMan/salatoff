@@ -44,6 +44,7 @@
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <script src="{{asset('theme')}}/js/auth.js"></script>
+    <script src="{{asset('theme')}}/js/registration.js"></script>
     <!-- End Scripts -->
     <style>
         #has_add_basket .-button {
@@ -455,10 +456,10 @@
 </div>
 
 
-<div id="wndw-signin" class="modal">
+<div id="wndw-signin" class="modal active">
     <div class="modal__container">
         <div class="modal__bg close-modal"></div>
-        <div class="modal__body">
+        <div class="modal__body active">
             <div class="modal__close close-modal">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
@@ -469,15 +470,14 @@
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform">
+                <form id="signin-form" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-signin-name">Имя</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style input-phone" name="phone" id="wndw-signin-name" placeholder="+7 (___) ___ ____" type="tel">
-                            <input class="input-style" name="code" id="" placeholder="" type="text">
+                            <input class="input-style" required name="name" id="wndw-signin-name" type="text">
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <div class="-error-message">Введите имя</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
@@ -486,9 +486,10 @@
                         <label class="-prefix" for="wndw-signin-phone">Номер телефона</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style" id="wndw-signin-phone" type="text">
+                            <input class="input-style input-phone" autocomplete="off" required name="phone" id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
+                            <!-- <input class="input-style" name="code" placeholder="код" type="text"> -->
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <div class="-error-message">Введите номер</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
