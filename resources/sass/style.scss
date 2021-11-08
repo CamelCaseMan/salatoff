@@ -1482,11 +1482,117 @@ body.profile-page {
 			}
 		}
 	}
-	&__list {
-
-	}
 }
 /* /recipes-page */
+
+/* order-page */
+.order {
+	&-page {
+		padding-top: 60px;
+	}
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		.second-title {
+			margin-bottom: 0;
+			text-align: center;
+		}
+		.product-page__back {
+			position: absolute;
+			left: 0;
+		}
+	}
+	&__body {
+		max-width: 754px;
+		margin: 0 auto;
+		&-header {
+			margin-bottom: 25px;
+			.-num {
+				font-size: 1.2rem;
+				margin-bottom: 15px;
+				text-align: right;
+			}
+			.-line {
+				position: relative;
+				height: 4px;
+				border: 1px solid #828282;
+				border-radius: 4px;
+				overflow: hidden;
+				.-passed{
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					background-color: var(--green);
+				}
+			}
+		}
+		&-content {
+			padding-left: 80px;
+			padding-right: 80px;
+			padding-top: 35px;
+			padding-bottom: 80px;
+			border-radius: 24px;
+			background-color: #eee;
+		}
+		&-title {
+			.-back {
+				margin-bottom: 8px;
+				opacity: 0.6;
+				font-size: 0.9rem;
+				transition: .2s ease;
+				cursor: pointer;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			.-title {
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+		}
+		&-buttons {
+			.-split-buttons {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 40px;
+			}
+			.-finish-buttons {
+				display: none;
+				.-button {
+					display: block;
+					margin-bottom: 15px;
+					text-transform: uppercase;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+	&__form {
+		&-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 40px;
+		}
+	}
+	&__tab {
+		display: none;
+		&.active {
+			display: block;
+		}
+		.-link {
+			color: var(--black);
+			transition: .2s ease;
+			text-decoration: underline;
+			&:hover {
+				color: var(--green);
+			}
+		}
+	}
+}
+/* /order-page */
 
 /* our-production */
 .our-production {

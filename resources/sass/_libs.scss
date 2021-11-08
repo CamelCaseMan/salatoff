@@ -292,8 +292,8 @@
 	background-color: var(--green);
 	display: inline-block;
 	padding: 30px;
-	padding-bottom: 22px;
-	padding-top: 18px;
+	padding-bottom: 21px;
+	padding-top: 19px;
 	border-radius: 40px;
 	transition: .2s ease;
 	&:hover {
@@ -302,9 +302,15 @@
 	&.--stroke {
 		background-color: transparent;
 		border: 2px solid var(--green);
+		&.--thin {
+			border-width: 1px;
+		}
 		&:hover {
 			color: var(--green);
 		}
+	}
+	&.--square {
+		border-radius: 8px;
 	}
 }
 /* /typical-button */
@@ -850,6 +856,9 @@
 		.-prefix {
 			margin-bottom: 10px;
 			display: block;
+			.-star {
+				color: var(--red);
+			}
 		}
 	}
 	&-postsuccess {
@@ -869,6 +878,14 @@
 
 /* valinput */
 .valinput {
+	&.--date {
+		position: relative;
+		label {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+		}
+	}
 	.input-style {
 		&.--error + .-error-message {
 			display: block;

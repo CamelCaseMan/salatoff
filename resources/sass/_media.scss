@@ -1348,6 +1348,14 @@
 	}
 	/* /our-production */
 
+	/* recipes-page */
+	.recipes {
+		&__list {
+			font-size: 1.1rem;
+		}
+	}
+	/* /recipes-page */
+
 	/* footer */
 	.footer {
 		&__container {

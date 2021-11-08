@@ -384,8 +384,8 @@ input[type=number] {
   background-color: var(--green);
   display: inline-block;
   padding: 30px;
-  padding-bottom: 22px;
-  padding-top: 18px;
+  padding-bottom: 21px;
+  padding-top: 19px;
   border-radius: 40px;
   transition: 0.2s ease;
 }
@@ -396,8 +396,14 @@ input[type=number] {
   background-color: transparent;
   border: 2px solid var(--green);
 }
+.typical-button.--stroke.--thin {
+  border-width: 1px;
+}
 .typical-button.--stroke:hover {
   color: var(--green);
+}
+.typical-button.--square {
+  border-radius: 8px;
 }
 
 /* /typical-button */
@@ -936,6 +942,9 @@ input[type=number] {
   margin-bottom: 10px;
   display: block;
 }
+.superform .-form-section .-prefix .-star {
+  color: var(--red);
+}
 .superform-success .-button {
   display: block;
   text-align: center;
@@ -945,6 +954,14 @@ input[type=number] {
 
 /* /superform */
 /* valinput */
+.valinput.--date {
+  position: relative;
+}
+.valinput.--date label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 .valinput .input-style.--error + .-error-message {
   display: block;
 }
