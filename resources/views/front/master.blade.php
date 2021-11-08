@@ -43,6 +43,7 @@
     <!-- Scripts -->
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
+    <script src="{{asset('theme')}}/js/auth.js"></script>
     <!-- End Scripts -->
     <style>
         #has_add_basket .-button {
@@ -51,6 +52,11 @@
     </style>
 </head>
 <body class="fixed ">
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST">
+    @csrf
+    <p><input type="submit">Выход</p>
+</form>
 
 
 <!-- Header -->
@@ -459,6 +465,7 @@
                           stroke-linejoin="round"/>
                 </svg>
             </div>
+            <div id="btn_code" style="cursor:pointer;">Запросить код</div>
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
@@ -468,6 +475,7 @@
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
                             <input class="input-style input-phone" name="phone" id="wndw-signin-name" placeholder="+7 (___) ___ ____" type="tel">
+                            <input class="input-style" name="code" id="" placeholder="" type="text">
                             <!-- * Это сообщение об ошибке -->
                             <div class="-error-message">Сообщение с ошибкой</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->

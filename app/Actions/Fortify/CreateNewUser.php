@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use App\Rules\CheckRegisterCode;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -15,27 +16,33 @@ class CreateNewUser implements CreatesNewUsers
     /**
      * Validate and create a newly registered user.
      *
-     * @param  array  $input
+     * @param  array $input
      * @return \App\Models\User
      */
     public function create(array $input)
     {
+        \Log::info('create');
+        $messages = [
+            'phone.unique' => 'Номер уже зарегистрирован',
+            'name.required' => 'Имя обязательное поле',
+            'code.required' => 'Код подтверждение обязательное поле',
+        ];
+
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => [
+            'phone' => [
+                'bail',
                 'required',
-                'string',
-                'email',
-                'max:255',
-                Rule::unique(User::class),
+                'unique:users',
+                'regex:/^([0-9\s\-\+\(\)]*)$/',
+                'min:10',
             ],
-            'password' => $this->passwordRules(),
-        ])->validate();
+            'code' => ['required', new CheckRegisterCode()],
+        ], $messages)->validate();
 
         return User::create([
             'name' => $input['name'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
+            'phone' => $input['phone'],
         ]);
     }
 }

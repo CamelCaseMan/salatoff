@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ChangePasswordClientRequest;
-use App\Http\Requests\ChangeProfileClientRequest;
 use App\Models\Order;
 use App\Services\Client\ClientService;
 use Auth;
@@ -13,10 +11,10 @@ class ProfileController extends Controller
 {
     private $clientProfile;
 
-    public function __construct(ClientService $clientService)
+    /*public function __construct(ClientService $clientService)
     {
         $this->clientProfile = $clientService;
-    }
+    }*/
 
     public function getProfile(ClientService $clientService)
     {
@@ -36,7 +34,7 @@ class ProfileController extends Controller
         return view('client.index', compact('user', 'orders'));
     }
 
-    public function changeInfo(ChangeProfileClientRequest $request)
+/*    public function changeInfo(ChangeProfileClientRequest $request)
     {
         $id = Auth::user()->id;
         $this->clientProfile->updateProfile($id, $request);
@@ -44,9 +42,9 @@ class ProfileController extends Controller
         return redirect()
             ->route('profile')
             ->with(['status' => 'Данные успешно изменены']);
-    }
+    }*/
 
-    public function changePassword(ChangePasswordClientRequest $request)
+/*    public function changePassword(ChangePasswordClientRequest $request)
     {
         $id = Auth::user()->id;
         $res = $this->clientProfile->updatePassword($id, $request);
@@ -59,5 +57,5 @@ class ProfileController extends Controller
                 ->route('profile')
                 ->with(['status' => 'Вы не верно указали старый пароль!']);
         }
-    }
+    }*/
 }

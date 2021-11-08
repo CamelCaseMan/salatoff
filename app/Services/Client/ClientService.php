@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ClientService
 {
-    private $eloquentOrdersRepository;
+    /*private $eloquentOrdersRepository;
     private $eloquentProfileRepository;
 
     public function __construct(EloquentOrdersRepository $eloquentOrdersRepository, EloquentProfileRepository $eloquentProfileRepository)
@@ -38,6 +38,6 @@ class ClientService
             'password' => Hash::make($request['password']),
         ];
         return $this->eloquentProfileRepository->updatePasswordUser($id, $data);
-    }
+    }*/
 
 }

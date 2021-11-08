@@ -12,6 +12,7 @@ use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\OrderController as ManagerOrder;
+use App\Http\Controllers\Auth\GenerateAuthCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,11 +75,11 @@ Route::prefix('basket')->group(function () {
 /**
  * Личный кабинет клиента
  */
-Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/->group(function () {
-    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
-    Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
-    Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
-});
+//Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/->group(function () {
+   //Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
+   // Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
+  //  Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
+//});
 
 
 /**
@@ -90,7 +91,19 @@ Route::prefix('manager')/*->middleware(['role:client'])*/->group(function () {
 
 });
 
+/**
+ * Аутификация
+ */
+Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegister']);
 
-///Auth::routes();
+
+/**
+ * Восстановление пароля
+ */
+//Route::get('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'showPage']);
+//Route::post('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'sendCode']);
+//Route::post('/forgot/update', [\App\Actions\Fortify\ForgotPassword::class, 'checkCode']);
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');

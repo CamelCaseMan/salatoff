@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
 
+
         if (\Schema::hasTable('categories')) {
             $category = new ShopsAndCafesService();
 
@@ -42,5 +43,7 @@ class AppServiceProvider extends ServiceProvider
                 );
             }
         }
+
+
     }
 }
