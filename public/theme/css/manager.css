@@ -438,6 +438,7 @@ input[type=number] {
 }
 .input-droplist input, .input-droplist .input-style {
   padding-right: 40px;
+  background-color: #fff;
 }
 .input-droplist input:focus + .-focus-elements .-arrow, .input-droplist .input-style:focus + .-focus-elements .-arrow {
   transform: scaleY(-1);
@@ -487,6 +488,45 @@ input[type=number] {
 }
 
 /* /input-droplist */
+/* radio-selector */
+.radio-selector .-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.radio-selector .-radio:last-child {
+  margin-bottom: 0;
+}
+.radio-selector .-radio input {
+  display: none;
+}
+.radio-selector .-radio input:checked + .-circle::after {
+  display: block;
+}
+.radio-selector .-radio .-circle {
+  margin-right: 8px;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  position: relative;
+}
+.radio-selector .-radio .-circle::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--green);
+  border-radius: 6px;
+}
+
+/* /radio-selector */
 /* nexts-form */
 .nexts-form__cells {
   display: flex;

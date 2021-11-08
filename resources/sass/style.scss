@@ -1571,10 +1571,27 @@ body.profile-page {
 		}
 	}
 	&__form {
+		input, textarea, .radio-selector .-radio {
+			border-color: #fff;
+		}
+		.input-droplist {
+			width: 100%;
+			& > div {
+				border-color: #fff;
+				&.--error {
+					border-color: var(--red);
+				}
+			}
+		}
 		&-row {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			column-gap: 40px;
+			&-split {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 25px;
+			}	
 		}
 	}
 	&__tab {
@@ -1583,6 +1600,7 @@ body.profile-page {
 			display: block;
 		}
 		.-link {
+			display: inline-block;
 			color: var(--black);
 			transition: .2s ease;
 			text-decoration: underline;

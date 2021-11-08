@@ -444,6 +444,7 @@ input[type=number] {
 }
 .input-droplist input, .input-droplist .input-style {
   padding-right: 40px;
+  background-color: #fff;
 }
 .input-droplist input:focus + .-focus-elements .-arrow, .input-droplist .input-style:focus + .-focus-elements .-arrow {
   transform: scaleY(-1);
@@ -493,6 +494,45 @@ input[type=number] {
 }
 
 /* /input-droplist */
+/* radio-selector */
+.radio-selector .-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.radio-selector .-radio:last-child {
+  margin-bottom: 0;
+}
+.radio-selector .-radio input {
+  display: none;
+}
+.radio-selector .-radio input:checked + .-circle::after {
+  display: block;
+}
+.radio-selector .-radio .-circle {
+  margin-right: 8px;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  position: relative;
+}
+.radio-selector .-radio .-circle::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--green);
+  border-radius: 6px;
+}
+
+/* /radio-selector */
 /* nexts-form */
 .nexts-form__cells {
   display: flex;
@@ -2495,11 +2535,29 @@ body.profile-page {
   text-transform: uppercase;
   font-weight: 500;
 }
+.order__form input, .order__form textarea, .order__form .radio-selector .-radio {
+  border-color: #fff;
+}
+.order__form .input-droplist {
+  width: 100%;
+}
+.order__form .input-droplist > div {
+  border-color: #fff;
+}
+.order__form .input-droplist > div.--error {
+  border-color: var(--red);
+}
 .order__form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   -moz-column-gap: 40px;
        column-gap: 40px;
+}
+.order__form-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
 }
 .order__tab {
   display: none;
@@ -2508,6 +2566,7 @@ body.profile-page {
   display: block;
 }
 .order__tab .-link {
+  display: inline-block;
   color: var(--black);
   transition: 0.2s ease;
   text-decoration: underline;

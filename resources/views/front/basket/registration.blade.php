@@ -67,10 +67,10 @@
 							
 							<div class="order__form-row">
 								<section class="-form-section">
-										<label class="-prefix" for="tab-002-phone">Контактный номер <span class="-star">*</span></label>
+										<label class="-prefix" for="tab-001-phone">Контактный номер <span class="-star">*</span></label>
 										<div class="valinput">
 											<!-- * Если успешно, то "--success", нет — "--error" -->
-											<input class="input-style --required input-phone" name="phone" id="tab-002-phone" placeholder="+7 (___) ___ ____" type="tel">
+											<input class="input-style --required input-phone" name="phone" id="tab-001-phone" placeholder="+7 (___) ___ ____" type="tel">
 											<!-- * Это сообщение об ошибке -->
 											<div class="-error-message">Обязательное поле</div>
 											<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -78,10 +78,10 @@
 										</div>
 								</section>
 								<section class="-form-section">
-										<label class="-prefix" for="tab-002-email">E-mail</label>
+										<label class="-prefix" for="tab-001-email">E-mail</label>
 										<div class="valinput">
 											<!-- * Если успешно, то "--success", нет — "--error" -->
-											<input class="input-style" name="email" id="tab-002-email" type="text" placeholder="example@mail.ru">
+											<input class="input-style" name="email" id="tab-001-email" type="text" placeholder="example@mail.ru">
 											<!-- * Это сообщение об ошибке -->
 											<div class="-error-message">Обязательное поле</div>
 											<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -128,21 +128,147 @@
 
 					</div>
 
-					<div class="step-tabs-tab order__tab active">
+					<div class="step-tabs-tab order__tab">
 
 						<div class="order__body-title mb-30">
 							<div class="-back">← Назад</div>
 							<div class="-title">Адрес доставки</div>
 						</div>
-
-						<a class="-link" href="/">Показать карту зоны доставки</a>
+						
+						<a class="-link mb-40" href="/">Показать карту зоны доставки</a>
 	
 						<div class="superform order__form">
 							<div class="order__form-row">
 								<section class="-form-section">
-									
+									<label class="-prefix" for="tab-003-city">Город</label>
+									<div class="input-droplist">
+										<input id="tab-003-city" readonly value="Москва" class="input-style -input" tabindex="-1">
+										<div class="-focus-elements">
+											<svg class="-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
+												<path d="M7 9L13.9282 0H0.0717969L7 9Z" fill="#C4C4C4"/>
+											</svg>									
+											<div class="-list">
+												<ul class="-new">
+													<li data-value="Москва">Москва</li>
+													<li data-value="Лобня">Лобня</li>
+													<li data-value="Курск">Курск</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section class="-form-section">
+										<label class="-prefix" for="tab-003-street">Улица</label>
+										<div class="valinput">
+											<!-- * Если успешно, то "--success", нет — "--error" -->
+											<input class="input-style --required" name="street" id="tab-003-street" type="text">
+											<!-- * Это сообщение об ошибке -->
+											<div class="-error-message">Обязательное поле</div>
+											<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+											<!-- <div class="-message">Сообщение к полю</div> -->
+										</div>
 								</section>
 							</div>
+						</div>
+
+						<div class="superform order__form">
+							<div class="order__form-row">
+								<div class="order__form-row-split">
+									<section class="-form-section">
+										<label class="-prefix" for="tab-003-home">Дом</label>
+										<div class="valinput">
+												<!-- * Если успешно, то "--success", нет — "--error" -->
+												<input class="input-style --required" name="home" id="tab-003-home" type="text">
+												<!-- * Это сообщение об ошибке -->
+												<div class="-error-message">Обязательное поле</div>
+												<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+												<!-- <div class="-message">Сообщение к полю</div> -->
+											</div>
+									</section>
+									<section class="-form-section">
+										<label class="-prefix" for="tab-003-prehome">Подъезд</label>
+										<div class="valinput">
+												<!-- * Если успешно, то "--success", нет — "--error" -->
+												<input class="input-style --required" name="prehome" id="tab-003-prehome" type="text">
+												<!-- * Это сообщение об ошибке -->
+												<div class="-error-message">Обязательное поле</div>
+												<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+												<!-- <div class="-message">Сообщение к полю</div> -->
+											</div>
+									</section>
+								</div>
+								<div class="order__form-row-split">
+									<section class="-form-section">
+										<label class="-prefix" for="tab-003-floor">Этаж</label>
+										<div class="valinput">
+												<!-- * Если успешно, то "--success", нет — "--error" -->
+												<input class="input-style --required" name="floor" id="tab-003-floor" type="text">
+												<!-- * Это сообщение об ошибке -->
+												<div class="-error-message">Обязательное поле</div>
+												<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+												<!-- <div class="-message">Сообщение к полю</div> -->
+											</div>
+									</section>
+									<section class="-form-section">
+										<label class="-prefix" for="tab-003-office">Квартира/офис</label>
+										<div class="valinput">
+												<!-- * Если успешно, то "--success", нет — "--error" -->
+												<input class="input-style --required" name="office" id="tab-003-office" type="text">
+												<!-- * Это сообщение об ошибке -->
+												<div class="-error-message">Обязательное поле</div>
+												<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+												<!-- <div class="-message">Сообщение к полю</div> -->
+											</div>
+									</section>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="step-tabs-tab order__tab active">
+
+						<div class="order__body-title mb-30">
+							<div class="-back">← Назад</div>
+							<div class="-title">Способ оплаты</div>
+						</div>
+						
+						<div class="superform order__form mb-60">
+							<div class="order__form-row">
+								<div class="radio-selector">
+									<label class="-radio input-style">
+										<input type="radio" checked name="card">
+										<div class="-circle"></div>
+										<div class="-name">Картой онлайн</div>
+									</label>
+									<label class="-radio input-style">
+										<input type="radio" name="card">
+										<div class="-circle"></div>
+										<div class="-name">Картой при получении</div>
+									</label>
+									<label class="-radio input-style">
+										<input type="radio" name="card">
+										<div class="-circle"></div>
+										<div class="-name">Наличными курьеру</div>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="order__body-title mb-30">
+							<div class="-title">Комментарий к заказу</div>
+						</div>
+						<div class="superform order__form" style="padding-bottom: 1px;">
+							<section class="-form-section">
+								<div class="valinput">
+									<!-- * Если успешно, то "--success", нет — "--error" -->
+									<textarea class="input-style --required" name="home" rows="6" placeholder="Если мы должны что-то знать дополнительно, напишите об этом здесь "></textarea>
+									<!-- * Это сообщение об ошибке -->
+									<div class="-error-message">Обязательное поле</div>
+									<!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+									<!-- <div class="-message">Сообщение к полю</div> -->
+								</div>
+							</section>
 						</div>
 
 					</div>
