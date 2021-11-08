@@ -44,6 +44,7 @@
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <script src="{{asset('theme')}}/js/auth.js"></script>
+    <script src="{{asset('theme')}}/js/auth_2.js"></script>
     <!-- End Scripts -->
     <style>
         #has_add_basket .-button {
@@ -57,6 +58,8 @@
     @csrf
     <p><input type="submit">Выход</p>
 </form>
+
+{{Auth::user()->phone ?? 'Не авторизован'}}
 
 
 <!-- Header -->

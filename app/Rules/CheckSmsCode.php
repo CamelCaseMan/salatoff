@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class CheckRegisterCode implements Rule
+class CheckSmsCode implements Rule
 {
     /**
      * Create a new rule instance.
@@ -25,7 +25,7 @@ class CheckRegisterCode implements Rule
      */
     public function passes($attribute, $value)
     {
-        $code = session('login_code');
+        $code = session('sms_code');
         if ($code !== $value) {
             return false;
         } else {
