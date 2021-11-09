@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/theme/js/script.js": "/theme/js/script.js",
     "/theme/js/basket.js": "/theme/js/basket.js",
+    "/theme/js/registration.js": "/theme/js/registration.js",
     "/css/app.css": "/css/app.css",
     "/theme/css/client.css": "/theme/css/client.css",
     "/theme/css/product.css": "/theme/css/product.css",

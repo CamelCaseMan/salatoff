@@ -44,7 +44,7 @@
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <script src="{{asset('theme')}}/js/auth.js"></script>
-    <script src="{{asset('theme')}}/js/auth_2.js"></script>
+    <script src="{{asset('theme')}}/js/registration.js"></script>
     <!-- End Scripts -->
     <style>
         #has_add_basket .-button {
@@ -468,19 +468,18 @@
                           stroke-linejoin="round"/>
                 </svg>
             </div>
-            <div id="btn_code" style="cursor:pointer;">Запросить код</div>
+            <!-- <div id="btn_code" style="cursor:pointer;">Запросить код</div> -->
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform">
+                <form id="signin-form" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-signin-name">Имя</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style input-phone" name="phone" id="wndw-signin-name" placeholder="+7 (___) ___ ____" type="tel">
-                            <input class="input-style" name="code" id="" placeholder="" type="text">
+                            <input class="input-style" required name="name" id="wndw-signin-name" type="text">
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <div class="-error-message">Введите имя</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
@@ -489,9 +488,10 @@
                         <label class="-prefix" for="wndw-signin-phone">Номер телефона</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style" id="wndw-signin-phone" type="text">
+                            <input class="input-style input-phone" autocomplete="off" required name="phone" id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
+                            <!-- <input class="input-style" name="code" placeholder="код" type="text"> -->
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <div class="-error-message">Введите номер</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
@@ -500,7 +500,7 @@
                 </form>
 
                 <!-- * Следующая форма для ввода кода из СМС -->
-                <form action="/" class="superform superform-postsuccess nexts-form">
+                <form id="sendcode-form" class="superform superform-postsuccess nexts-form">
                     <section class="-form-section">
                         <label class="-prefix text-center" for="wndw-signin-code">Введите код из СМС</label>
                         <div class="valinput">
@@ -513,9 +513,9 @@
                             </div>
 
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="nexts-form__input input-style" name="code" type="text">
+                            <input id="sendcode-input" class="nexts-form__input input-style" name="code" type="text">
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message text-center">Неверное количество введенных символов</div>
+                            <div id="error-field" class="-error-message text-center">Неверное количество введенных символов</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
