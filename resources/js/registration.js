@@ -73,28 +73,58 @@ document.addEventListener('DOMContentLoaded', () => {
 		function sendCode() {
 			sendData.append('code', codeInput.value)
 
+			let dataObj = {}
+
 			for ( let pair of sendData.entries() ) {
-				console.log(pair)
+				dataObj[ pair[0] ] = pair[1]
 			}
 
-			fetch('/register', {
-				method: 'POST',
+			$.ajax({
+				url: '/register',
+				type: 'POST',
 				headers: {
 					'X-CSRF-TOKEN': CSRFToken
 				},
-				body: sendData
-			})
-			.then(response => {
-				console.log(response)
-				return response.json
-			})
-			.then(data => {
-				console.log(data)
-				// location.reload()				
-			})
-			.catch(err => {
-				console.log( err.json() )
-			})
+				data: dataObj,
+				dataType: 'JSON',
+
+				success: function (data) {
+					//window.location.href = '/customer';
+					location.reload()
+
+				},
+				error: function (msg) {
+					nextsWrapper.classList.add('--error')
+					nextsWrapper.classList.remove('--done')
+					codeInput.classList.add('--error')
+
+					const errors = msg['responseJSON']['errors']
+
+					errorField.innerHTML = ''
+					Object.values(errors).forEach(errArr => {
+						errorField.innerHTML += errArr[0] + '<br>'
+					})
+				}
+			});
+
+			// fetch('/register', {
+			// 	method: 'POST',
+			// 	headers: {
+			// 		'X-CSRF-TOKEN': CSRFToken
+			// 	},
+			// 	body: sendData
+			// })
+			// .then(response => {
+			// 	console.log(response)
+			// 	return response.text
+			// })
+			// .then(data => {
+			// 	console.log(data)
+			// })
+			// .catch(err => {
+			// 	// console.log( err )
+			// 	console.log(err);
+			// })
 		}
 
 	}
