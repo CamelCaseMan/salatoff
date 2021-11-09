@@ -59,6 +59,8 @@
     <p><input type="submit">Выход</p>
 </form>
 
+{{Auth::user()->phone ?? 'Не авторизован'}}
+
 
 <!-- Header -->
 <header id="header" class="header">
