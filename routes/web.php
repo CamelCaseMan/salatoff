@@ -75,17 +75,19 @@ Route::prefix('basket')->group(function () {
 /**
  * Личный кабинет клиента
  */
-//Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/->group(function () {
-   //Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
-   // Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
-  //  Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
-//});
+Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/
+->group(function () {
+    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
+    Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
+    Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
+});
 
 
 /**
  * Личный кабинет менеджера
  */
-Route::prefix('manager')/*->middleware(['role:client'])*/->group(function () {
+Route::prefix('manager')/*->middleware(['role:client'])*/
+->group(function () {
     Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
     Route::get('/orders', [ManagerOrder::class, 'showOrderPage'])->name('manager.orders');
 
@@ -94,7 +96,7 @@ Route::prefix('manager')/*->middleware(['role:client'])*/->group(function () {
 /**
  * Аутификация
  */
-Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegister']);
+Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegister'])->middleware(['throttle:generate_code']);
 
 
 /**
@@ -103,7 +105,6 @@ Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegis
 //Route::get('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'showPage']);
 //Route::post('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'sendCode']);
 //Route::post('/forgot/update', [\App\Actions\Fortify\ForgotPassword::class, 'checkCode']);
-
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');

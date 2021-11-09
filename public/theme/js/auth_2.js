@@ -1,26 +1,19 @@
 window.onload = function () {
 
-    let a = $('#wndw-login form .modal__button');
-    console.log(a);
     /**
      * Вход
      */
     $('#wndw-login form .modal__button').click(function () {
         event.preventDefault();
-        alert('d');
 
         let phone = $('#wndw-login form .input-phone');
         let password = 'OwhIoqU6';
-        /*let code = $('#wndw-signin form input[name="code"]');*/
+        let code = $('#wndw-login form input[name="code_2"]');
 
 
         phone = phone.val().replace(/[^+\d]/g, '');
-
-
         console.log(phone);
-
-
-        //  return false;
+        console.log(code.val());
 
         $.ajax({
             url: '/login',
@@ -28,18 +21,16 @@ window.onload = function () {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            data: {phone: phone, password: password /*code: code.val()*/},
+            data: {phone: phone, password: password, code: code.val()},
             dataType: 'JSON',
 
             success: function (data) {
-                console.log(data);
-                //window.location.href = '/customer';
+                window.location.href = '/';
 
             },
             error: function (msg) {
-                console.log(msg['responseJSON']['errors']);
-                // password.addClass('error_form');
-                // phone.addClass('error_form');
+                console.log(msg['responseText']);
+               // console.log(msg['responseJSON']['errors']);
             }
         });
     });

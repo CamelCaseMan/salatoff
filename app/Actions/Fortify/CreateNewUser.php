@@ -36,7 +36,7 @@ class CreateNewUser implements CreatesNewUsers
                 'regex:/^([0-9\s\-\+\(\)]*)$/',
                 'min:10',
             ],
-            'code' => ['required', new CheckSmsCode()],
+            'code' => ['required', new CheckSmsCode($input['phone'])],
         ], $messages)->validate();
 
         return User::create([

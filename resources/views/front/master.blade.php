@@ -44,6 +44,7 @@
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
     <script src="{{asset('theme')}}/js/auth.js"></script>
+    <script src="{{asset('theme')}}/js/auth_2.js"></script>
     <script src="{{asset('theme')}}/js/registration.js"></script>
     <!-- End Scripts -->
     <style>
@@ -53,14 +54,6 @@
     </style>
 </head>
 <body class="fixed ">
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST">
-    @csrf
-    <p><input type="submit">Выход</p>
-</form>
-
-{{Auth::user()->phone ?? 'Не авторизован'}}
-
 
 <!-- Header -->
 <header id="header" class="header">
@@ -103,21 +96,7 @@
                         <path d="M6.79995 13.3906C3.70733 13.3906 0.199951 16.8968 0.199951 19.9898V23.9854H19.7999V19.9898C19.7999 16.8968 16.2926 13.3906 13.2 13.3906H6.79995Z"
                               fill="#A2CD3A"/>
                     </svg>
-                    <div id="hdr-dplst" class="-droplist">
-                        <ul>
-                            <li>
-                                <div class="-link open-modal" data-open-modal="wndw-login">Войти</div>
-                            </li>
-                            <li>
-                                <div class="-link open-modal" data-open-modal="wndw-signin">Регистрация</div>
-                            </li>
-                            <li>
-                                <div class="--exit -link">
-                                    Выйти
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    @include('front.include.auth_menu')
                 </div>
                 <a href="/basket" class="header__cart">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -419,8 +398,10 @@
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
                         <div class="valinput">
+                            <input type="text" name="code_2">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style input-phone" name="phone" required id="wndw-login-phone" placeholder="+7 (___) ___ ____" type="tel">
+                            <input class="input-style input-phone" name="phone" required id="wndw-login-phone"
+                                   placeholder="+7 (___) ___ ____" type="tel">
                             <!-- * Это сообщение об ошибке -->
                             <div class="-error-message">Сообщение с ошибкой</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -488,7 +469,8 @@
                         <label class="-prefix" for="wndw-signin-phone">Номер телефона</label>
                         <div class="valinput">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="input-style input-phone" autocomplete="off" required name="phone" id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
+                            <input class="input-style input-phone" autocomplete="off" required name="phone"
+                                   id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
                             <!-- <input class="input-style" name="code" placeholder="код" type="text"> -->
                             <!-- * Это сообщение об ошибке -->
                             <div class="-error-message">Введите номер</div>
@@ -515,7 +497,9 @@
                             <!-- * Если успешно, то "--success", нет — "--error" -->
                             <input id="sendcode-input" class="nexts-form__input input-style" name="code" type="text">
                             <!-- * Это сообщение об ошибке -->
-                            <div id="error-field" class="-error-message text-center">Неверное количество введенных символов</div>
+                            <div id="error-field" class="-error-message text-center">Неверное количество введенных
+                                символов
+                            </div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>

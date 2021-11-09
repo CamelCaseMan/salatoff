@@ -6,27 +6,37 @@ use Illuminate\Contracts\Validation\Rule;
 
 class CheckSmsCode implements Rule
 {
+    private $phone;
+
     /**
-     * Create a new rule instance.
-     *
-     * @return void
+     * CheckSmsCode constructor.
+     * @param string $phone
      */
-    public function __construct()
+    public function __construct(string $phone)
     {
-        //
+        $this->phone = $phone;
     }
 
     /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string $attribute
-     * @param  mixed $value
+     * @param string $attribute
+     * @param mixed $code
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $code)
     {
-        $code = session('sms_code');
-        if ($code !== $value) {
+        $sms = session('sms_code');
+
+        if (is_null($sms)){
+            return false;
+        }
+
+        //Проверяем есть ли такой код
+        if (!array_key_exists($code, $sms)) {
+            return false;
+        }
+
+        //Проверяем соответствие код -> номер
+        if ($sms[$code] != $this->phone) {
             return false;
         } else {
             return true;
