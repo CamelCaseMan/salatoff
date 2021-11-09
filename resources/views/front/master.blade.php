@@ -456,17 +456,17 @@
 </div>
 
 
-<div id="wndw-signin" class="modal active">
+<div id="wndw-signin" class="modal">
     <div class="modal__container">
         <div class="modal__bg close-modal"></div>
-        <div class="modal__body active">
+        <div class="modal__body">
             <div class="modal__close close-modal">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>
             </div>
-            <div id="btn_code" style="cursor:pointer;">Запросить код</div>
+            <!-- <div id="btn_code" style="cursor:pointer;">Запросить код</div> -->
             <div class="modal__title">Регистрация</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
@@ -498,7 +498,7 @@
                 </form>
 
                 <!-- * Следующая форма для ввода кода из СМС -->
-                <form action="/" class="superform superform-postsuccess nexts-form">
+                <form id="sendcode-form" class="superform superform-postsuccess nexts-form">
                     <section class="-form-section">
                         <label class="-prefix text-center" for="wndw-signin-code">Введите код из СМС</label>
                         <div class="valinput">
@@ -511,9 +511,9 @@
                             </div>
 
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="nexts-form__input input-style" name="code" type="text">
+                            <input id="sendcode-input" class="nexts-form__input input-style" name="code" type="text">
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message text-center">Неверное количество введенных символов</div>
+                            <div id="error-field" class="-error-message text-center">Неверное количество введенных символов</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
