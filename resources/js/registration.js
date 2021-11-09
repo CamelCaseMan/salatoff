@@ -105,26 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
 						errorField.innerHTML += errArr[0] + '<br>'
 					})
 				}
-			});
+			})
 
-			// fetch('/register', {
-			// 	method: 'POST',
-			// 	headers: {
-			// 		'X-CSRF-TOKEN': CSRFToken
-			// 	},
-			// 	body: sendData
-			// })
-			// .then(response => {
-			// 	console.log(response)
-			// 	return response.text
-			// })
-			// .then(data => {
-			// 	console.log(data)
-			// })
-			// .catch(err => {
-			// 	// console.log( err )
-			// 	console.log(err);
-			// })
 		}
 
 	}

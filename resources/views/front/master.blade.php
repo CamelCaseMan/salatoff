@@ -43,7 +43,7 @@
     <!-- Scripts -->
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
-    <script src="{{asset('theme')}}/js/auth.js"></script>
+    <!-- <script src="{{asset('theme')}}/js/auth.js"></script> -->
     <script src="{{asset('theme')}}/js/registration.js"></script>
     <!-- End Scripts -->
     <style>

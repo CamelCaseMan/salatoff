@@ -1,5 +1,4 @@
-// window.onload = function () {
-{
+window.onload = function () {
 
     /**
      * Отправка кода на телефон
