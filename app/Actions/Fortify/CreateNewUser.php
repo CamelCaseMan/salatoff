@@ -3,7 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
-use App\Rules\CheckRegisterCode;
+use App\Rules\CheckSmsCode;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -21,7 +21,6 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-        \Log::info('create');
         $messages = [
             'phone.unique' => 'Номер уже зарегистрирован',
             'name.required' => 'Имя обязательное поле',
@@ -37,7 +36,7 @@ class CreateNewUser implements CreatesNewUsers
                 'regex:/^([0-9\s\-\+\(\)]*)$/',
                 'min:10',
             ],
-            'code' => ['required', new CheckRegisterCode()],
+            'code' => ['required', new CheckSmsCode()],
         ], $messages)->validate();
 
         return User::create([
