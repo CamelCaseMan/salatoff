@@ -18,7 +18,15 @@ class BlogController extends Controller
 
     public function showPageText(string $slug)
     {
-        $news = Blog::where('slug', $slug)->firstOrFail();
+        $news = Blog::where('slug', $slug)
+            ->with('getSeo')
+            ->firstOrFail();
+
+        \MetaTag::setTags([
+            'title' => $news->getSeo->title ?? null,
+            'description' => $news->getSeo->description ?? null,
+        ]);
+
         return view('front.blog.news', compact('news'));
     }
 }

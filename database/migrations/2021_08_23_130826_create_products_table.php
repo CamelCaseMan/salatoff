@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->boolean('show')->default(0);
             $table->text('image')->nullable();
             $table->string('weight')->nullable();
+            $table->bigInteger('seo_id')->unsigned()->default(1);
             $table->timestamps();
         });
 
@@ -29,6 +30,11 @@ class CreateProductsTable extends Migration
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
+                ->onDelete('cascade');
+
+            $table->foreign('seo_id')
+                ->references('id')
+                ->on('seos')
                 ->onDelete('cascade');
         });
     }

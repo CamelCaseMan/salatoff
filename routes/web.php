@@ -27,7 +27,12 @@ use App\Http\Controllers\Auth\GenerateAuthCode;
 */
 
 //Страницы сайта
-Route::get('/', [PageController::class, 'showPage']);
+Route::get('/', [PageController::class, 'showPage'],
+    MetaTag::setTags([
+        'title' => config('meta-tags.default.title'),
+        'description' => config('meta-tags.default.desсription'),
+    ])
+);
 Route::get('/our-production', [PageController::class, 'showPage']);
 
 // Каталог и карточки товара раздела кафе и магазины
@@ -79,11 +84,10 @@ Route::prefix('basket')->group(function () {
 /**
  * Личный кабинет клиента
  */
-Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/
+Route::prefix('client')/*->middleware(['role:client'])*/
 ->group(function () {
-    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
-    Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
-    Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
+    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('client.profile');
+    Route::get('/change-profile', [ProfileController::class, 'changeInfo'])->name('change.profile');
 });
 
 

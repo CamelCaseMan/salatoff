@@ -1,4 +1,4 @@
-@extends('client.master')
+@extends('front.master')
 @section('content')
     <div id="profile" class="profile profile-page">
         <div class="container">
