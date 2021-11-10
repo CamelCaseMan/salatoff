@@ -1507,6 +1507,16 @@ body.profile-page {
 	&__body {
 		max-width: 754px;
 		margin: 0 auto;
+		&.--finish {
+			.order__body-buttons {
+				.-split-buttons {
+					display: none;
+				}
+				.-finish-buttons {
+					display: block;
+				}
+			}
+		}
 		&-header {
 			margin-bottom: 25px;
 			.-num {
@@ -1526,6 +1536,7 @@ body.profile-page {
 					top: 0;
 					bottom: 0;
 					background-color: var(--green);
+					transition: .2s ease;
 				}
 			}
 		}
@@ -1562,10 +1573,17 @@ body.profile-page {
 			.-finish-buttons {
 				display: none;
 				.-button {
+					&[type="submit"] {
+						width: 100%;
+						border: none;
+					}
 					display: block;
 					margin-bottom: 15px;
 					text-transform: uppercase;
 					font-weight: 500;
+					&:last-child {
+						margin-bottom: 0;
+					}
 				}
 			}
 		}
@@ -1599,6 +1617,39 @@ body.profile-page {
 		&.active {
 			display: block;
 		}
+		&-total {
+			padding-bottom: 20px;
+			.-top {
+				padding-top: 25px;
+				padding-bottom: 30px;
+				border-top: 1px solid;
+				border-bottom: 1px solid;
+				border-color: #828282;
+				margin-bottom: 25px;
+				.-title {
+					font-size: 1.2rem;
+					font-weight: 700;
+					margin-bottom: 25px;
+				}
+				ul {
+					li {
+						line-height: 2;
+						display: flex;
+						justify-content: space-between;
+					}
+				}
+			}
+			.-bottom {
+				li {
+					line-height: 2;
+					display: flex;
+					justify-content: space-between;
+					.-item {
+						font-weight: 700;
+					}
+				}
+			}
+		}
 		.-link {
 			display: inline-block;
 			color: var(--black);
@@ -1606,6 +1657,32 @@ body.profile-page {
 			text-decoration: underline;
 			&:hover {
 				color: var(--green);
+			}
+		}
+		.-checkout-section {
+			margin-bottom: 60px;
+			.-title {
+				display: flex;
+				margin-bottom: 15px;
+				.-text {
+					font-weight: 700;
+					font-size: 1.2rem;
+					margin-right: 25px;
+				}
+				.-icon {
+					cursor: pointer;
+					&:hover {
+						path {
+							stroke: var(--black);
+						}
+					}
+					path {
+						transition: .2s ease;
+					}
+				}
+			}
+			p {
+				line-height: 2;
 			}
 		}
 	}

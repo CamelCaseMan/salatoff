@@ -2476,6 +2476,12 @@ body.profile-page {
   max-width: 754px;
   margin: 0 auto;
 }
+.order__body.--finish .order__body-buttons .-split-buttons {
+  display: none;
+}
+.order__body.--finish .order__body-buttons .-finish-buttons {
+  display: block;
+}
 .order__body-header {
   margin-bottom: 25px;
 }
@@ -2497,6 +2503,7 @@ body.profile-page {
   top: 0;
   bottom: 0;
   background-color: var(--green);
+  transition: 0.2s ease;
 }
 .order__body-content {
   padding-left: 80px;
@@ -2535,6 +2542,13 @@ body.profile-page {
   text-transform: uppercase;
   font-weight: 500;
 }
+.order__body-buttons .-finish-buttons .-button[type=submit] {
+  width: 100%;
+  border: none;
+}
+.order__body-buttons .-finish-buttons .-button:last-child {
+  margin-bottom: 0;
+}
 .order__form input, .order__form textarea, .order__form .radio-selector .-radio {
   border-color: #fff;
 }
@@ -2565,6 +2579,35 @@ body.profile-page {
 .order__tab.active {
   display: block;
 }
+.order__tab-total {
+  padding-bottom: 20px;
+}
+.order__tab-total .-top {
+  padding-top: 25px;
+  padding-bottom: 30px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #828282;
+  margin-bottom: 25px;
+}
+.order__tab-total .-top .-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.order__tab-total .-top ul li {
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.order__tab-total .-bottom li {
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.order__tab-total .-bottom li .-item {
+  font-weight: 700;
+}
 .order__tab .-link {
   display: inline-block;
   color: var(--black);
@@ -2573,6 +2616,30 @@ body.profile-page {
 }
 .order__tab .-link:hover {
   color: var(--green);
+}
+.order__tab .-checkout-section {
+  margin-bottom: 60px;
+}
+.order__tab .-checkout-section .-title {
+  display: flex;
+  margin-bottom: 15px;
+}
+.order__tab .-checkout-section .-title .-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 25px;
+}
+.order__tab .-checkout-section .-title .-icon {
+  cursor: pointer;
+}
+.order__tab .-checkout-section .-title .-icon:hover path {
+  stroke: var(--black);
+}
+.order__tab .-checkout-section .-title .-icon path {
+  transition: 0.2s ease;
+}
+.order__tab .-checkout-section p {
+  line-height: 2;
 }
 
 /* /order-page */
