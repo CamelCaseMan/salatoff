@@ -6,6 +6,7 @@ use App\Http\Controllers\Front\OtherCategoriesController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\RecipesController;
 use App\Http\Controllers\Front\BlogController;
+use App\Http\Controllers\Front\ReviewController;
 use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
@@ -50,6 +51,9 @@ Route::get('/blog/{slug}', [BlogController::class, 'showPageText']);
 Route::get('/recipes', [RecipesController::class, 'getCategoryRecipes']);
 Route::get('/recipes/{category_slug}', [RecipesController::class, 'getListRecipes']);
 Route::get('/recipes/{category_slug}/{recipe_slug}', [RecipesController::class, 'getRecipe']);
+
+//Отправка отзыва
+Route::post('/send/review', [ReviewController::class, 'sendReview']);
 
 
 //Корзина
