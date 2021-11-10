@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
                 'category_id' => 23,
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
-                'image' => 'http://salatoff.loc/theme/img/catering/' . rand(1, 9) . '.png',
+                'image' => '/theme/img/catering/' . rand(1, 7) . '.png',
                 'weight' => mt_rand(550, 1999)
             ];
         }
@@ -68,7 +68,7 @@ class ProductSeeder extends Seeder
                 'category_id' => 24,
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
-                'image' => 'http://salatoff.loc/theme/img/dinner/' . rand(1, 8) . '.jpeg',
+                'image' => '/theme/img/dinner/' . rand(1, 8) . '.jpeg',
                 'weight' => mt_rand(550, 1999)
             ];
         }

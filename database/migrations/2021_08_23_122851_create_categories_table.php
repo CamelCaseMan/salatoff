@@ -22,7 +22,15 @@ class CreateCategoriesTable extends Migration
             $table->boolean('show')->default(1);
             $table->integer('sort')->nullable();
             $table->text('style')->nullable();
+            $table->bigInteger('seo_id')->unsigned()->default(1);
             $table->timestamps();
+        });
+
+        Schema::table('categories', function (Blueprint $table) {
+            $table->foreign('seo_id')
+                ->references('id')
+                ->on('seos')
+                ->onDelete('cascade');
         });
     }
 

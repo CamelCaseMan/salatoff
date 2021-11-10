@@ -6,12 +6,14 @@ use App\Http\Controllers\Front\OtherCategoriesController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\RecipesController;
 use App\Http\Controllers\Front\BlogController;
+use App\Http\Controllers\Front\ReviewController;
 use App\Http\Controllers\Basket\BasketController;
 use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\OrderController as ManagerOrder;
+use App\Http\Controllers\Auth\GenerateAuthCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,12 @@ use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 */
 
 //Страницы сайта
-Route::get('/', [PageController::class, 'showPage']);
+Route::get('/', [PageController::class, 'showPage'],
+    MetaTag::setTags([
+        'title' => config('meta-tags.default.title'),
+        'description' => config('meta-tags.default.desсription'),
+    ])
+);
 Route::get('/our-production', [PageController::class, 'showPage']);
 
 // Каталог и карточки товара раздела кафе и магазины
@@ -49,6 +56,9 @@ Route::get('/blog/{slug}', [BlogController::class, 'showPageText']);
 Route::get('/recipes', [RecipesController::class, 'getCategoryRecipes']);
 Route::get('/recipes/{category_slug}', [RecipesController::class, 'getListRecipes']);
 Route::get('/recipes/{category_slug}/{recipe_slug}', [RecipesController::class, 'getRecipe']);
+
+//Отправка отзыва
+Route::post('/send/review', [ReviewController::class, 'sendReview']);
 
 
 //Корзина
@@ -74,23 +84,35 @@ Route::prefix('basket')->group(function () {
 /**
  * Личный кабинет клиента
  */
-Route::prefix('client')->namespace('Client')/*->middleware(['role:client'])*/->group(function () {
-    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('profile');
-    Route::get('/change-profile', 'ProfileController@changeInfo')->name('change.profile');
-    Route::get('/change-password', 'ProfileController@changePassword')->name('change.password');
+Route::prefix('client')/*->middleware(['role:client'])*/
+->group(function () {
+    Route::get('/profile', [ProfileController::class, 'getProfile'])->name('client.profile');
+    Route::get('/change-profile', [ProfileController::class, 'changeInfo'])->name('change.profile');
 });
 
 
 /**
  * Личный кабинет менеджера
  */
-Route::prefix('manager')/*->middleware(['role:client'])*/->group(function () {
+Route::prefix('manager')/*->middleware(['role:client'])*/
+->group(function () {
     Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
     Route::get('/orders', [ManagerOrder::class, 'showOrderPage'])->name('manager.orders');
 
 });
 
+/**
+ * Аутификация
+ */
+Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegister'])->middleware(['throttle:generate_code']);
 
-///Auth::routes();
+
+/**
+ * Восстановление пароля
+ */
+//Route::get('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'showPage']);
+//Route::post('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'sendCode']);
+//Route::post('/forgot/update', [\App\Actions\Fortify\ForgotPassword::class, 'checkCode']);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');

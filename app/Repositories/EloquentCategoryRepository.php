@@ -64,6 +64,7 @@ class EloquentCategoryRepository extends CoreRepository
         return Model::where('slug', $slug)
             ->where('show', 1)
             ->where('parent_id', $id)
+            ->with('getSeo')
             ->first();
     }
 

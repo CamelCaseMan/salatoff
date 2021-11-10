@@ -405,15 +405,15 @@ document.addEventListener('DOMContentLoaded', () => {
 					input.value += next.value
 				})
 
-				if (input.value.length === 4) {
-					setTimeout( () => {
-						nextsWrapper.classList.add('--done')
-					}, 200)
-					form.submit()
-				} else {
-					nextsWrapper.classList.add('--error')
-					input.classList.add('--error')
-				}
+				// if (input.value.length === 4) {
+				// 	setTimeout( () => {
+				// 		nextsWrapper.classList.add('--done')
+				// 	}, 200)
+				// 	// form.submit()
+				// } else {
+				// 	nextsWrapper.classList.add('--error')
+				// 	input.classList.add('--error')
+				// }
 			}
 
 		}

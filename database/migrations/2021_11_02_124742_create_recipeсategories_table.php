@@ -17,7 +17,15 @@ class CreateRecipeсategoriesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->bigInteger('seo_id')->unsigned()->default(1);
             $table->timestamps();
+        });
+
+        Schema::table('recipeсategories', function (Blueprint $table) {
+            $table->foreign('seo_id')
+                ->references('id')
+                ->on('seos')
+                ->onDelete('cascade');
         });
     }
 

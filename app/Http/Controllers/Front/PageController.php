@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Services\Front\ReviewService;
 
 
 class PageController extends Controller
@@ -16,7 +17,8 @@ class PageController extends Controller
         $url = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
 
         if (empty($url)) {
-            return view('front.page.main');
+            $reviews = ReviewService::getReview();
+            return view('front.page.main', compact('reviews'));
         }
 
         if (view()->exists('front.page.' . $url)) {
@@ -26,6 +28,5 @@ class PageController extends Controller
         }
 
     }
-
 
 }

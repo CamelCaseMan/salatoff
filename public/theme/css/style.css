@@ -991,6 +991,12 @@ input[type=number] {
 .superform .-form-section .-prefix .-star {
   color: var(--red);
 }
+.superform-postsuccess {
+  display: none;
+}
+.superform-success {
+  display: none;
+}
 .superform-success .-button {
   display: block;
   text-align: center;

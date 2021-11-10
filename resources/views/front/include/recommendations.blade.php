@@ -8,7 +8,7 @@
                 @php
                     $parent_url = $recommendation->getCategory->getParentSlug($recommendation->getCategory->parent_id);
                 @endphp
-                <a target="_blank " href="@if(!is_null($parent_url))/shop/{{$parent_url->slug}}@endif/{{$recommendation->getCategory->slug}}/{{$recommendation->slug}}"
+                <a target="_blank " href="@if(!is_null($parent_url))/shops-and-cafes/{{$parent_url->slug}}@endif/{{$recommendation->getCategory->slug}}/{{$recommendation->slug}}"
                    class="catalog-page__product">
                     <div class="-img">
                         <img src="{{$recommendation->image}}" alt="{{$recommendation->name}}">

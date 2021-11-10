@@ -982,8 +982,15 @@ input[type=number] {
   margin-bottom: 10px;
   display: block;
 }
+
 .superform .-form-section .-prefix .-star {
   color: var(--red);
+}
+.superform-postsuccess {
+  display: none;
+}
+.superform-success {
+  display: none;
 }
 .superform-success .-button {
   display: block;
