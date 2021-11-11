@@ -1,17 +1,22 @@
 <?php
 
-namespace App\Services\Client\Repositories;
+namespace App\Repositories;
 
 use App\Models\Order;
-use App\Models\OrdersProducts;
 
 class EloquentOrdersRepository
 {
+    /**
+     * @param int $id
+     * @return mixed
+     * Получаем заказы текущего клиента
+     */
     public function getOrders(int $id)
     {
-        $result = Order::where('user_id', $id)->get();
+        $result = Order::where('user_id', $id)
+            ->where('status', '1')
+            ->get();
         return $result;
     }
-
 
 }

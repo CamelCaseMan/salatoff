@@ -1,11 +1,12 @@
-window.onload = function () {
+// window.onload = function () {
+{
 
     /**
      * Отправка кода на телефон
      */
     $('#wndw-signin #btn_code').click(function () {
         event.preventDefault();
-        alert('d');
+        // alert('d');
         $.ajax({
             url: '/generate-code/login',
             type: "POST",

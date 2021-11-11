@@ -296,69 +296,16 @@
             <h2 class="second-title">Отзывы</h2>
             <div class="reviews-screen__reviews">
                 <div class="owl-carousel owl-theme reviews-slider">
-                    <div class="item">
-                        <div class="reviews-screen__item">
-                            <div class="-name">Мария</div>
-                            <div class="-text">
-                                <p>Когда совсем лень готовить и хочется чего-нибудь вкусненького, мы обычно заказываем
-                                    готовую еду с доставкой на дом на salatoff.ru Особенно понравились блинчики с
-                                    капустой, салаты цезарь и греческий, грибной суп-пюре, картошка с грибами и рис с
-                                    овощами! Спасибо за вкусные и доступные блюда, а главное за быструю доставку! Вы
-                                    лучшие, буду брать только у вас!</p>
+                    @foreach($reviews as $review)
+                        <div class="item">
+                            <div class="reviews-screen__item">
+                                <div class="-name">{{$review->name}}</div>
+                                <div class="-text">
+                                    <p>{{$review->text}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="reviews-screen__item">
-                            <div class="-name">Николай</div>
-                            <div class="-text">
-                                <p>Всё так вкусно! Всегда заказываю Salatoff, когда устаю после работы, а покушать
-                                    нечего.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="reviews-screen__item">
-                            <div class="-name">Мария</div>
-                            <div class="-text">
-                                <p>Когда совсем лень готовить и хочется чего-нибудь вкусненького, мы обычно заказываем
-                                    готовую еду с доставкой на дом на salatoff.ru Особенно понравились блинчики с
-                                    капустой, салаты цезарь и греческий, грибной суп-пюре, картошка с грибами и рис с
-                                    овощами! Спасибо за вкусные и доступные блюда, а главное за быструю доставку! Вы
-                                    лучшие, буду брать только у вас!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="reviews-screen__item">
-                            <div class="-name">Николай</div>
-                            <div class="-text">
-                                <p>Всё так вкусно! Всегда заказываю Salatoff, когда устаю после работы, а покушать
-                                    нечего.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="reviews-screen__item">
-                            <div class="-name">Мария</div>
-                            <div class="-text">
-                                <p>Когда совсем лень готовить и хочется чего-нибудь вкусненького, мы обычно заказываем
-                                    готовую еду с доставкой на дом на salatoff.ru Особенно понравились блинчики с
-                                    капустой, салаты цезарь и греческий, грибной суп-пюре, картошка с грибами и рис с
-                                    овощами! Спасибо за вкусные и доступные блюда, а главное за быструю доставку! Вы
-                                    лучшие, буду брать только у вас!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="reviews-screen__item">
-                            <div class="-name">Николай</div>
-                            <div class="-text">
-                                <p>Всё так вкусно! Всегда заказываю Salatoff, когда устаю после работы, а покушать
-                                    нечего.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="reviews-screen__button">
