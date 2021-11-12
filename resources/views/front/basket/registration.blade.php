@@ -289,10 +289,10 @@
 								</svg>
 							</div>
 							<p>
-								Ваше имя: <span data-put-me="name">—</span><br>
-								Организация: <span data-put-me="team">—</span><br>
-								Контактный номер: <span data-put-me="phone">—</span><br>
-								E-mail: <span data-put-me="email">—</span>
+								Ваше имя: <span class="step-tabs-check-entry" data-name="name">—</span><br>
+								Организация: <span class="step-tabs-check-entry" data-name="team">—</span><br>
+								Контактный номер: <span class="step-tabs-check-entry" data-name="phone">—</span><br>
+								E-mail: <span class="step-tabs-check-entry" data-name="email">—</span>
 							</p>
 						</section>
 
@@ -305,7 +305,7 @@
 								</svg>
 							</div>
 							<p>
-								<span data-put-me="date">—</span>
+								<span class="step-tabs-check-entry" data-name="date">—</span>
 							</p>
 						</section>
 
@@ -318,8 +318,8 @@
 								</svg>
 							</div>
 							<p>
-								<span data-put-me="city">—</span>, ул. <span data-put-me="street">—</span>, д. <span data-put-me="home">—</span><br>
-								Подъезд <span data-put-me="entrance">—</span>, этаж <span data-put-me="floor">—</span>, кв./оф. <span data-put-me="office">—</span>
+								<span class="step-tabs-check-entry" data-name="city">—</span>, ул. <span class="step-tabs-check-entry" data-name="street">—</span>, д. <span class="step-tabs-check-entry" data-name="home">—</span><br>
+								Подъезд <span class="step-tabs-check-entry" data-name="entrance">—</span>, этаж <span class="step-tabs-check-entry" data-name="floor">—</span>, кв./оф. <span class="step-tabs-check-entry" data-name="office">—</span>
 							</p>
 						</section>
 
@@ -332,7 +332,7 @@
 								</svg>
 							</div>
 							<p>
-								<span data-put-me="card">—</span>
+								<span class="step-tabs-check-entry" data-name="card">—</span>
 							</p>
 						</section>						
 
@@ -345,7 +345,7 @@
 								</svg>
 							</div>
 							<p>
-								<span data-put-me="comment">—</span>
+								<span class="step-tabs-check-entry" data-name="comment">—</span>
 							</p>
 						</section>
 

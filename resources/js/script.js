@@ -427,12 +427,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		Object.values(stepForms).forEach(init)
 
 		function init(form) {
+			const htmlForm = form.getElementsByTagName('form')[0]
+
 			const layoutLine = form.getElementsByClassName('step-tabs-line')[0]
 			const layoutNum = form.getElementsByClassName('step-tabs-num')[0]
 
 			const nextButtons = form.getElementsByClassName('step-tabs-next')
 			const backButtons = form.getElementsByClassName('step-tabs-back')
 			const triggers = form.getElementsByClassName('step-tabs-trigger')
+			const checkEntries = form.getElementsByClassName('step-tabs-check-entry')
 
 			const tabs = form.getElementsByClassName('step-tabs-tab')
 
@@ -454,6 +457,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			function setNextTab() {
 				if ( ! validateTab() ) return
+
+				addToCheckout()
 				setTab(++currentNum)
 			}
 
@@ -507,6 +512,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			function activateTab(num) {
 				tabs[num].classList.add('active')
+			}
+			
+			function addToCheckout() {
+				const formData = new FormData(htmlForm)
+
+				for ( let [name, value] of formData.entries() ) {
+					if ( ! value ) continue
+
+					const targetEntry = Object.values(checkEntries).filter(entry => name === entry.dataset.name)[0]
+					if (targetEntry) {
+						targetEntry.innerText = value
+					}
+				}
+
 			}
 
 			function normalizeNum(num) {
