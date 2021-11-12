@@ -229,13 +229,15 @@ p {
 					margin-bottom: 4px;
 				}
 			}
-			.-link, a {
+			.-link, a, input.-link {
 				cursor: pointer;
 				padding: 15px 25px;
 				display: flex;
 				color: var(--black);
 				transition: .2s ease;
 				background-color: #fff;
+				border: none;
+				width: 100%;
 				&.--exit {
 					color: #828282;
 				}
