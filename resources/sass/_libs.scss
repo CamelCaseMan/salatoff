@@ -892,6 +892,9 @@
 		.-prefix {
 			margin-bottom: 10px;
 			display: block;
+			.-star {
+				color: var(--red);
+			}
 		}
 	}
 	&-postsuccess {

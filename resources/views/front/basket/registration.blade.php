@@ -1,9 +1,9 @@
 @extends('front.master')
 @section('content')
 
-	<div class="order-page container mb-160 l-mb-130">
+	<div class="order-page container mb-160 l-mb-120">
 
-		<div class="order__header mb-60">
+		<div class="order__header mb-60 s-mb-40">
 
 			<div class="product-page__back">
 					<a href="/basket">
@@ -237,17 +237,17 @@
 							<div class="order__form-row">
 								<div class="radio-selector">
 									<label class="-radio input-style">
-										<input type="radio" checked name="card">
+										<input type="radio" value="Картой онлайн" checked name="card">
 										<div class="-circle"></div>
 										<div class="-name">Картой онлайн</div>
 									</label>
 									<label class="-radio input-style">
-										<input type="radio" name="card">
+										<input type="radio" value="Картой при получении" name="card">
 										<div class="-circle"></div>
 										<div class="-name">Картой при получении</div>
 									</label>
 									<label class="-radio input-style">
-										<input type="radio" name="card">
+										<input type="radio" value="Наличными курьеру" name="card">
 										<div class="-circle"></div>
 										<div class="-name">Наличными курьеру</div>
 									</label>

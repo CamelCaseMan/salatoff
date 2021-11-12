@@ -1636,6 +1636,10 @@ body.profile-page {
 						line-height: 2;
 						display: flex;
 						justify-content: space-between;
+						.-price {
+							margin-left: 10px;
+							white-space: nowrap;
+						}
 					}
 				}
 			}
