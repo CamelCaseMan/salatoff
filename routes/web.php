@@ -66,9 +66,9 @@ Route::get('/review/on/{id}/{code}', [ReviewController::class, 'includeReview'])
 //Корзина
 Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
-    Route::get('/registration', [BasketController::class, 'registration']);
+    Route::get('/registration', [BasketController::class, 'registration'])->name('basket.registration');
 
-    Route::get('/finish/{id}', [FinishController::class, 'showFinishPage'])->name('basket.finish')->middleware(['role:client']);
+    Route::get('/finish', [FinishController::class, 'showFinishPage'])->name('basket.finish')/*->middleware(['role:client'])*/;
     Route::post('/add', [BasketController::class, 'addProduct']);
     Route::post('/addcount', [BasketController::class, 'addCountProduct']);
     Route::post('/remove', [BasketController::class, 'removeOneProduct']);
