@@ -12,5 +12,6 @@ class Review extends Model
     protected $fillable = [
         'name',
         'text',
+        'code'
     ];
 }
