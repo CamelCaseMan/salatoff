@@ -909,6 +909,11 @@
 			position: static;
 		}
 	}
+	input[type="checkbox"] {
+		&.--error + label {
+			color: var(--red);
+		}
+	}
 }
 /* /superform */
 

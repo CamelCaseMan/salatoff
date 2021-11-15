@@ -1,4 +1,5 @@
-window.onload = function () {
+// window.onload = function () {
+{
 
     /**
      * Отправка отзыва

@@ -997,6 +997,9 @@ input[type=number] {
   margin-top: 40px;
   position: static;
 }
+.superform input[type=checkbox].--error + label {
+  color: var(--red);
+}
 
 /* /superform */
 /* valinput */
@@ -1245,27 +1248,29 @@ p a {
 .header__account .-droplist li:last-child {
   margin-bottom: 4px;
 }
-.header__account .-droplist .-link, .header__account .-droplist a {
+.header__account .-droplist .-link, .header__account .-droplist a, .header__account .-droplist input.-link {
   cursor: pointer;
   padding: 15px 25px;
   display: flex;
   color: var(--black);
   transition: 0.2s ease;
   background-color: #fff;
+  border: none;
+  width: 100%;
 }
-.header__account .-droplist .-link.--exit, .header__account .-droplist a.--exit {
+.header__account .-droplist .-link.--exit, .header__account .-droplist a.--exit, .header__account .-droplist input.-link.--exit {
   color: #828282;
 }
-.header__account .-droplist .-link:hover, .header__account .-droplist a:hover {
+.header__account .-droplist .-link:hover, .header__account .-droplist a:hover, .header__account .-droplist input.-link:hover {
   color: var(--green);
 }
-.header__account .-droplist .-link:hover path, .header__account .-droplist a:hover path {
+.header__account .-droplist .-link:hover path, .header__account .-droplist a:hover path, .header__account .-droplist input.-link:hover path {
   stroke: #84a92b;
 }
-.header__account .-droplist .-link .-icon, .header__account .-droplist a .-icon {
+.header__account .-droplist .-link .-icon, .header__account .-droplist a .-icon, .header__account .-droplist input.-link .-icon {
   margin-right: 8px;
 }
-.header__account .-droplist .-link .-num, .header__account .-droplist a .-num {
+.header__account .-droplist .-link .-num, .header__account .-droplist a .-num, .header__account .-droplist input.-link .-num {
   color: var(--green);
 }
 .header__cart {
