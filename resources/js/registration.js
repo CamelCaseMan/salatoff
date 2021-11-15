@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const form1 = document.getElementById('signin-form')
 		const form2 = document.getElementById('sendcode-form')
 
+		const phoneInput = document.getElementById('wndw-signin-phone')
 		const nextsWrapper = form2.getElementsByClassName('nexts-form__cells')[0]
 		const nexts = nextsWrapper.getElementsByTagName('input')
 		const codeInput = document.getElementById('sendcode-input')
@@ -31,21 +32,33 @@ document.addEventListener('DOMContentLoaded', () => {
 			sendData = new FormData(form1)
 			sendData.set( 'phone', sendData.get('phone').replace(/[^+\d]/g, '') )
 
-			fetch('/generate-code/login', {
-				method: 'POST',
+			let dataObj = {}
+
+			for ( let pair of sendData.entries() ) {
+				dataObj[ pair[0] ] = pair[1]
+			}
+
+			$.ajax({
+				url: '/generate-code/login',
+				type: "POST",
 				headers: {
 					'X-CSRF-TOKEN': CSRFToken
 				},
-				body: sendData
+				data: dataObj,
+				success: function (data) {
+					form1.classList.add('--success')
+					nexts[0].focus()
+				},
+				error: function (msg) {
+					if (msg.status == 422) {
+						phoneInput.classList.add('--error')
+					} else {
+						alert('Произошла какая-то ошибка!')
+						location.reload
+					}
+				}
 			})
-			.then(response => {
-				form1.classList.add('--success')
-				nexts[0].focus()
-			})
-			.catch(err => {
-				alert('Произошла какая-то ошибка')
-				location.reload()
-			})
+
 		})
 
 		Object.values(nexts).forEach( (input, i) => {
@@ -89,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				dataType: 'JSON',
 
 				success: function (data) {
-					//window.location.href = '/customer';
 					location.reload()
 
 				},
@@ -105,26 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
 						errorField.innerHTML += errArr[0] + '<br>'
 					})
 				}
-			});
+			})
 
-			// fetch('/register', {
-			// 	method: 'POST',
-			// 	headers: {
-			// 		'X-CSRF-TOKEN': CSRFToken
-			// 	},
-			// 	body: sendData
-			// })
-			// .then(response => {
-			// 	console.log(response)
-			// 	return response.text
-			// })
-			// .then(data => {
-			// 	console.log(data)
-			// })
-			// .catch(err => {
-			// 	// console.log( err )
-			// 	console.log(err);
-			// })
 		}
 
 	}

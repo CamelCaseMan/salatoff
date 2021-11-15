@@ -2,15 +2,13 @@
     <ul>
         @if(Auth::check())
             <li>
-                <div class="-link open-modal" data-open-modal="wndw-login"><a href="/client/profile">Личный кабинет</a></div>
+                <a href="/client/profile" class="-link">Личный кабинет</a>
             </li>
             <li>
-                <div class="--exit -link">
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <input type="submit" value="Выйти">
-                    </form>
-                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input type="submit" class="-link --exit" value="Выйти">
+                </form>
             </li>
         @else
             <li>

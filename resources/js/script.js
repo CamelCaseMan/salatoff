@@ -420,9 +420,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
-	superForm()
-	function superForm() {
+	stepTabs()
+	function stepTabs() {
+		const stepForms = document.getElementsByClassName('step-tabs')
 
+		Object.values(stepForms).forEach(init)
+
+		function init(form) {
+			const htmlForm = form.getElementsByTagName('form')[0]
+
+			const layoutLine = form.getElementsByClassName('step-tabs-line')[0]
+			const layoutNum = form.getElementsByClassName('step-tabs-num')[0]
+
+			const nextButtons = form.getElementsByClassName('step-tabs-next')
+			const backButtons = form.getElementsByClassName('step-tabs-back')
+			const triggers = form.getElementsByClassName('step-tabs-trigger')
+			const checkEntries = form.getElementsByClassName('step-tabs-check-entry')
+
+			const tabs = form.getElementsByClassName('step-tabs-tab')
+
+			let currentNum = 0
+
+			setTab(0)
+
+			Object.values(triggers).forEach(trigger => {
+				trigger.addEventListener('click', () => {
+					setTab(+trigger.dataset.num)
+				})
+			})
+			Object.values(nextButtons).forEach(btn => {
+				btn.addEventListener('click', setNextTab)
+			})
+			Object.values(backButtons).forEach(btn => {
+				btn.addEventListener('click', setPrevTab)
+			})
+
+			function setNextTab() {
+				if ( ! validateTab() ) return
+
+				addToCheckout()
+				setTab(++currentNum)
+			}
+
+			function setPrevTab() {
+				setTab(--currentNum)
+			}
+
+			function setTab(num) {
+				num = normalizeNum(num)
+
+				currentNum = num
+
+				setLayout(num)
+				deactivateAllTabs()
+				activateTab(num)
+
+				if (num === tabs.length-1) {
+					form.classList.add('--finish')
+				} else {
+					form.classList.remove('--finish')
+				}
+				
+			}
+
+			function validateTab() {
+				const tab = tabs[currentNum]
+				const inputs = tab.getElementsByTagName('input')
+
+				let isValid = true
+
+				for(let input of inputs) {
+					if (input.required && input.value === '') {
+						input.classList.add('--error')
+						isValid = false
+					}
+				}
+
+				return isValid
+			}
+
+			function setLayout(num) {
+				layoutNum.innerText = `Шаг ${num+1} из ${tabs.length}`
+				layoutLine.style.width = 100 / ( tabs.length / (num+1) ) + '%'
+			}
+
+			function deactivateAllTabs() {
+				Object.values(tabs).forEach(tab => {
+					tab.classList.remove('active')
+				})
+			}
+
+			function activateTab(num) {
+				tabs[num].classList.add('active')
+			}
+			
+			function addToCheckout() {
+				const formData = new FormData(htmlForm)
+
+				for ( let [name, value] of formData.entries() ) {
+					if ( ! value ) continue
+
+					const targetEntry = Object.values(checkEntries).filter(entry => name === entry.dataset.name)[0]
+					if (targetEntry) {
+						targetEntry.innerText = value
+					}
+				}
+
+			}
+
+			function normalizeNum(num) {
+				if (num < 0) return 0
+				if (num >= tabs.length) return tabs.length-1
+				return num
+			}
+
+		}
 	}
 
 	$( "#datepicker" ).datepicker( { 

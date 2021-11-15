@@ -1,10 +1,10 @@
 @extends('front.master')
 @section('content')
 
-    <div id="wndw-001" class="modal">
+    <div id="wndw-001" class="modal active">
         <div class="modal__container">
             <div class="modal__bg close-modal"></div>
-            <div class="modal__body">
+            <div class="modal__body active">
                 <div class="modal__close close-modal">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
@@ -14,32 +14,32 @@
                 <div class="modal__title">Добавить отзыв</div>
                 <div class="modal__address-modal">
                     <!-- ! Добавить класс "--success", после успешной отправки -->
-                    <form action="" class="superform">
+                    <form action="/send/review" method="POST" class="superform send-form">
                         <section class="-form-section">
                             <label class="-prefix" for="wndw-001-name">Имя</label>
                             <div class="valinput">
                                 <!-- * Если успешно, то "--success", нет — "--error" -->
-                                <input class="input-style --error" id="wndw-001-name" type="text">
+                                <input class="input-style" name="name" required id="wndw-001-name" type="text">
                                 <!-- * Это сообщение об ошибке -->
-                                <div class="-error-message">Сообщение с ошибкой</div>
+                                <div class="-error-message">Напишите имя</div>
                                 <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
-                                <div class="-message">Сообщение к полю</div>
+                                <!-- <div class="-message">Сообщение к полю</div> -->
                             </div>
                         </section>
                         <section class="-form-section">
                             <label class="-prefix" for="wndw-001-text">Текст</label>
                             <div class="valinput">
                                 <!-- * Если успешно, то "--success", нет — "--error" -->
-                                <textarea class="input-style" id="wndw-001-text" rows="5"></textarea>
+                                <textarea class="input-style" name="text" required id="wndw-001-text" rows="5"></textarea>
                                 <!-- * Это сообщение об ошибке -->
-                                <div class="-error-message">Сообщение с ошибкой</div>
+                                <div class="-error-message">Напишите ваш отзыв</div>
                                 <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                                 <!-- <div class="-message">Сообщение к полю</div> -->
                             </div>
                         </section>
                         <section class="-form-section">
-                            <label>
-                                <input type="checkbox">
+                            <input id="wndw-001-checked" type="checkbox" name="checked" required>
+                            <label for="wndw-001-checked">
                                 Я не робот
                             </label>
                         </section>

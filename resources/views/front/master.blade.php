@@ -45,10 +45,11 @@
     <!-- Scripts -->
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
-    <script src="{{asset('theme')}}/js/auth.js"></script>
+    <!-- <script src="{{asset('theme')}}/js/auth.js"></script> -->
     <script src="{{asset('theme')}}/js/auth_2.js"></script>
     <script src="{{asset('theme')}}/js/registration.js"></script>
     <script src="{{asset('theme')}}/js/review.js"></script>
+    <script src="{{asset('theme')}}/js/send-form.js"></script>
     <!-- End Scripts -->
     <style>
         #has_add_basket .-button {
@@ -476,7 +477,7 @@
                                    id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
                             <!-- <input class="input-style" name="code" placeholder="код" type="text"> -->
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Введите номер</div>
+                            <div class="-error-message">Данный номер уже зарегистрирован</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
