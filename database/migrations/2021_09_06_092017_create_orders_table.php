@@ -17,11 +17,14 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->integer('status')->unsigned()->default(0);
-            $table->string('name')->nullable();
-            $table->string('phone')->nullable();
-            $table->double('total')->default(0);
+            $table->string('name')->default('Нет данных');
+            $table->string('phone')->default('Нет данных');
+            $table->string('organization')->nullable();
+            $table->string('email')->nullable();
+            $table->date('delivery_date')->default('2021-12-02');
             $table->json('delivery')->nullable();
             $table->bigInteger('cupon_id')->nullable()->unsigned();
+            $table->double('total')->default(0);
             $table->timestamps();
         });
 

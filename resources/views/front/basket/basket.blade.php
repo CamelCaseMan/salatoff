@@ -91,7 +91,8 @@
                     <div class="basket__split-title mb-40">
                         Скидки и бонусы
                     </div>
-                    <form action="" class="superform">
+                    <form method="GET" action="{{route('basket.registration')}}" class="superform">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <div class="basket__order-row">
                             <section class="-form-section">
                                 <label class="-prefix" for="ordpg-001-name">Карта «Город Тройка»</label>

@@ -9,7 +9,7 @@ use App\Http\Requests\Basket\RemoveOneProductRequest;
 use App\Services\Basket\BasketService;
 use App\Services\Basket\CartStatusService;
 use App\Services\Order\BasketOrder;
-
+use Illuminate\Http\Request;
 
 class BasketController extends Controller
 {
@@ -27,8 +27,8 @@ class BasketController extends Controller
      */
     public function showBasket(BasketService $basketService)
     {
-        $order = $this->basketOrder->getOrder();
-        if (is_null($order) || count($order->products) < 1) {
+        $order = $this->getOrder();
+        if ($order == false) {
             return view('front.basket.emptyBasket');
         }
         return view('front.basket.basket', compact('order'));
@@ -102,9 +102,28 @@ class BasketController extends Controller
         session(['basket_status' => $basket_status]);
     }
 
-    public function registration()
+    public function registration(Request $request)
     {
-        return view('front.basket.registration');
+       // dd($request->all());
+        $order = $this->getOrder();
+        if ($order == false) {
+            return view('front.basket.emptyBasket');
+        }
+        return view('front.basket.registration', compact('order'));
+    }
+
+    /**
+     * @return bool|mixed
+     * Получаем информацию о заказе
+     */
+    private function getOrder()
+    {
+        $order = $this->basketOrder->getOrder();
+        if (is_null($order) || count($order->products) < 1) {
+            return false;
+        } else {
+            return $order;
+        }
     }
 
 
