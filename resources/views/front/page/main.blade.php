@@ -1,10 +1,10 @@
 @extends('front.master')
 @section('content')
 
-    <div id="wndw-001" class="modal active">
+    <div id="wndw-001" class="modal">
         <div class="modal__container">
             <div class="modal__bg close-modal"></div>
-            <div class="modal__body active">
+            <div class="modal__body">
                 <div class="modal__close close-modal">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"

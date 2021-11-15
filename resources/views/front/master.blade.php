@@ -45,10 +45,8 @@
     <!-- Scripts -->
     <script src="{{asset('theme')}}/js/script.js"></script>
     <script src="{{asset('theme')}}/js/basket.js"></script>
-    <!-- <script src="{{asset('theme')}}/js/auth.js"></script> -->
     <script src="{{asset('theme')}}/js/auth_2.js"></script>
     <script src="{{asset('theme')}}/js/registration.js"></script>
-    <script src="{{asset('theme')}}/js/review.js"></script>
     <script src="{{asset('theme')}}/js/send-form.js"></script>
     <!-- End Scripts -->
     <style>
@@ -398,16 +396,15 @@
             <div class="modal__title">Войти</div>
             <div class="modal__address-modal">
                 <!-- ! Добавить класс "--success", после успешной отправки -->
-                <form action="" class="superform">
+                <form id="login-form" action="" class="superform">
                     <section class="-form-section">
                         <label class="-prefix" for="wndw-login-phone">Номер телефона</label>
                         <div class="valinput">
-                            <input type="text" name="code_2">
                             <!-- * Если успешно, то "--success", нет — "--error" -->
                             <input class="input-style input-phone" name="phone" required id="wndw-login-phone"
                                    placeholder="+7 (___) ___ ____" type="tel">
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Сообщение с ошибкой</div>
+                            <div class="-error-message">Введите номер</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
@@ -416,7 +413,7 @@
                 </form>
 
                 <!-- * Следующая форма для ввода кода из СМС -->
-                <form action="/" class="superform superform-postsuccess nexts-form">
+                <form id="login-code-form" action="/" class="superform superform-postsuccess nexts-form">
                     <section class="-form-section">
                         <label class="-prefix text-center" for="wndw-signin-code">Введите код из СМС</label>
                         <div class="valinput">
@@ -429,9 +426,9 @@
                             </div>
 
                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                            <input class="nexts-form__input input-style" name="code" type="text">
+                            <input id="code-value-input" class="nexts-form__input input-style" name="code" type="text">
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message text-center">Неверное количество введенных символов</div>
+                            <div id="login-error" class="-error-message text-center">Неверное количество введенных символов</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
