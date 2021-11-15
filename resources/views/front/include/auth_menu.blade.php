@@ -7,7 +7,7 @@
             <li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <input type="submit" class="-link --exit" value="Выйти">
+                    <input type="submit" style="text-align: left;" class="-link --exit" value="Выйти">
                 </form>
             </li>
         @else

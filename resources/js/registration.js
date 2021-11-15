@@ -1,6 +1,108 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const CSRFToken = document.querySelector('meta[name="csrf-token"]').content
 
+	logIn()
+	function logIn() {
+		const form1 = document.getElementById('login-form')
+		const form2 = document.getElementById('login-code-form')
+		const nextsWrapper = form2.getElementsByClassName('nexts-form__cells')[0]
+		const nexts = nextsWrapper.getElementsByTagName('input')
+		const codeInput = document.getElementById('code-value-input')
+		const errorField = document.getElementById('login-error')
+
+		const phoneInput = document.getElementById('wndw-login-phone')
+
+		const sendData = {
+			password: '0123456789'
+		}
+
+		form1.addEventListener('submit', (evt) => {
+			evt.preventDefault()
+
+			sendData.phone = phoneInput.value.replace(/[^+\d]/g, '')
+
+			$.ajax({
+				url: '/generate-code/login',
+				type: "POST",
+				headers: {
+					'X-CSRF-TOKEN': CSRFToken
+				},
+				data: sendData,
+				success: function (data) {
+					form1.classList.add('--success')
+					nexts[0].focus()
+				},
+				error: function (msg) {
+					console.log(msg)
+				}
+			})
+		})
+
+		Object.values(nexts).forEach( (input, i) => {
+			input.addEventListener('input', evt => {
+				if (i === nexts.length-1) {
+					setTimeout( () => {
+						checkInput()
+					}, 100 )
+				}
+			})
+		} )
+
+		function checkInput() {
+			if (codeInput.value.length === 4) {
+				nextsWrapper.classList.add('--done')
+				setTimeout( () => {
+					sendCode()
+				}, 200)
+			} else {
+				nextsWrapper.classList.add('--error')
+				codeInput.classList.add('--error')
+			}
+		}
+
+		function sendCode() {
+			sendData.code = codeInput.value
+
+			$.ajax({
+				url: '/login',
+				type: "POST",
+				headers: {
+						'X-CSRF-TOKEN': CSRFToken
+				},
+				data: sendData,
+				dataType: 'JSON',
+
+				success: function (data) {
+					console.log(data)
+					location.reload()
+				},
+				error: function (msg) {
+					const errors = msg['responseJSON']['errors']
+
+					if ('phone' in errors) {
+						form1.classList.remove('--success')
+						phoneInput.classList.add('--error')
+						
+						const errorField = document.querySelector('#wndw-login-phone + .-error-message')
+						errorField.innerHTML = 'Ваш номер не был найден! Возможно вам нужно <span>зарегистрироваться</span>'
+					}
+					if ('code' in errors) {
+						nextsWrapper.classList.add('--error')
+						nextsWrapper.classList.remove('--done')
+						codeInput.classList.add('--error')
+	
+						errorField.innerHTML = ''
+						Object.values(errors).forEach(errArr => {
+							errorField.innerHTML += errArr[0] + '<br>'
+						})
+					}
+				}
+			})
+		}
+
+
+	}
+
 	signIn()
 	function signIn() {
 		const form1 = document.getElementById('signin-form')
@@ -52,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				error: function (msg) {
 					if (msg.status == 422) {
 						phoneInput.classList.add('--error')
+					} else if (msg.status == 429) {
+						alert('Код был запрошен слишком много раз! Пожалуйста, попробуйте позже!')
 					} else {
 						alert('Произошла какая-то ошибка!')
 						location.reload
