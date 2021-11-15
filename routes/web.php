@@ -59,6 +59,8 @@ Route::get('/recipes/{category_slug}/{recipe_slug}', [RecipesController::class, 
 
 //Отправка отзыва
 Route::post('/send/review', [ReviewController::class, 'sendReview']);
+//Публикация отзыва через письмо
+Route::get('/review/on/{id}/{code}', [ReviewController::class, 'includeReview']);
 
 
 //Корзина

@@ -34,7 +34,6 @@ class ReviewRequest extends FormRequest
         return [
             'name.required' => "Укажите свое имя",
             'text.required' => "Укажите текст отзыва",
-            'text.size' => "Отзыв должен быть длиннее 12 символов",
         ];
     }
 }
