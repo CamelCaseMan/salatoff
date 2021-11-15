@@ -49,6 +49,7 @@
     <script src="{{asset('theme')}}/js/auth_2.js"></script>
     <script src="{{asset('theme')}}/js/registration.js"></script>
     <script src="{{asset('theme')}}/js/review.js"></script>
+    <script src="{{asset('theme')}}/js/send-form.js"></script>
     <!-- End Scripts -->
     <style>
         #has_add_basket .-button {
