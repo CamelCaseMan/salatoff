@@ -65,9 +65,12 @@
         <div class="header__top">
 
             <!-- Header logo -->
-            <a href="/" class="header__logo">
-                <img src="{{asset('theme')}}/img/logo.svg" alt="Еда без забот логотип">
-            </a>
+            <div class="header__logo">
+                <a href="/" class="-logo">
+                    <img src="{{asset('theme')}}/img/logo.svg" alt="Еда без забот логотип">
+                </a>
+                <a href="/" class="-pricelist">Прайс<span class="xs-d-none">-лист</span></a>
+            </div>
             <!-- End Header logo -->
 
         @include('front.include.menu')
@@ -127,7 +130,7 @@
                 <nav class="header__drop-menu">
                     <ul class="-side">
                         <li>
-                            <a href="/catering">Кейтеринг</a>
+                            <a href="/contacts">Контакты</a>
                         </li>
                         <li>
                             <a href="/our-production">Наше производство</a>
@@ -529,7 +532,7 @@
 
         <ul class="footer__menu --fm-02">
             <li>
-                <a href="/catering">Кейтеринг</a>
+                <a href="/contacts">Контакты</a>
             </li>
             <li>
                 <a href="/our-production">Наше производство</a>

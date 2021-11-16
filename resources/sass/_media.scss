@@ -441,7 +441,18 @@
 	/* header */
 	.header {
 		&__logo {
-			width: 80px;
+			.-logo {
+				min-width: 80px;
+				width: 80px;
+			}
+			.-pricelist {
+				font-size: 0.7rem;
+				padding: 2px 8px;
+				padding-top: 1px;
+				padding-bottom: 3px;
+				margin-left: 10px;
+				margin-top: 27px;
+			}
 		}
 		&__menu {
 			margin-top: 24px;
@@ -464,7 +475,7 @@
 		&__top {
 			height: 80px;
 			column-gap: 0;
-			grid-template-columns: 90px 1fr 1fr 1fr 90px;
+			grid-template-columns: 180px 1fr 1fr 1fr 90px;
 		}
 	}
 	/* /header */
