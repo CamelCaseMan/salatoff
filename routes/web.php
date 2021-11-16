@@ -68,7 +68,8 @@ Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
     Route::get('/registration', [BasketController::class, 'registration'])->name('basket.registration');
 
-    Route::get('/finish', [OrderController::class, 'orderConfirm'])->name('basket.finish')/*->middleware(['role:client'])*/;
+    Route::get('/finish', [OrderController::class, 'orderConfirm'])->name('basket.finish')/*->middleware(['role:client'])*/
+    ;
     Route::post('/add', [BasketController::class, 'addProduct']);
     Route::post('/addcount', [BasketController::class, 'addCountProduct']);
     Route::post('/remove', [BasketController::class, 'removeOneProduct']);
@@ -106,13 +107,14 @@ Route::prefix('manager')/*->middleware(['role:client'])*/
 /**
  * Аутификация
  */
-Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegister'])->middleware(['throttle:generate_code']);
+Route::post('/generate-code/register', [GenerateAuthCode::class, 'generateCodeRegister'])->middleware(['throttle:generate_code']);
+Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeLogin'])->middleware(['throttle:generate_code']);
 
 
 /**
  * Авторизация
  */
-Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class , 'store'])->middleware(['throttle:register']);
+Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class, 'store'])->middleware(['throttle:register']);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');
