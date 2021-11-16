@@ -110,10 +110,8 @@ Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegis
 
 
 /**
- * Восстановление пароля
+ * Авторизация
  */
-//Route::get('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'showPage']);
-//Route::post('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'sendCode']);
 Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class , 'store'])->middleware(['throttle:register']);
 
 

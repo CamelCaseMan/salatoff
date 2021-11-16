@@ -39,7 +39,6 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::createUsersUsing(CreateNewUser::class);
 
         //Авторизация
-
         Fortify::authenticateUsing(function (Request $request) {
             $messages = [
                 'phone.required' => 'Номер телефона обязательное поле',
