@@ -10,11 +10,11 @@ use App\Models\Order;
 class OrderController
 {
     /**
-     * @param OrderRequest $orderRequest
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @param OrderRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      * Валидируем и сохраняем заказ
      */
-    public function orderConfirm(OrderRequest $orderRequest)
+    public function orderConfirm(OrderRequest $request)
     {
         $orderID = session('orderId');
 
@@ -22,9 +22,12 @@ class OrderController
             return view('front.basket.emptyBasket');
         }
 
+
         $order = Order::find($orderID);
-        $data = $this->prepareData($orderRequest->all(), $order);
-        $order->saveOrder($data);
+        $data = $request->prepareData();
+        dd($data);
+
+        //$order->saveOrder($delivery);
         session()->forget('orderId');
         return redirect()->route('basket.finish', [$order]);
     }
@@ -36,7 +39,7 @@ class OrderController
      * Подготавливаем данные для сохранения заказа
      * Считаем корзину с учетом купона
      */
-    private function prepareData(array $data, $order): array
+/*    private function prepareData(array $data, $order): array
     {
         $cupon = new CuponHelper();
         $data['delivery'] = [
@@ -50,7 +53,7 @@ class OrderController
         $data['total'] = $order->getFullPrice() - $cupon->getDiscountValue($data['cupon'], $order);
         $data['cupon_id'] = $cupon->getIdCupon($data['cupon'], $order);
         return $data;
-    }
+    }*/
 
 
 }

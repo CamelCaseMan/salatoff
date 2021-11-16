@@ -67,6 +67,13 @@ class FortifyServiceProvider extends ServiceProvider
             });
         });
 
+        /*RateLimiter::for ('register', function (Request $request) {
+            return Limit::perMinute(1)->by($request->ip())->response(function () {
+                return new Response('Слишком много попыток повторите позже');
+            });
+        });*/
+
+
         /*Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);*/

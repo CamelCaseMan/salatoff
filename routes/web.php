@@ -58,7 +58,7 @@ Route::get('/recipes/{category_slug}', [RecipesController::class, 'getListRecipe
 Route::get('/recipes/{category_slug}/{recipe_slug}', [RecipesController::class, 'getRecipe']);
 
 //Отправка отзыва
-Route::post('/send/review', [ReviewController::class, 'sendReview']);
+Route::post('/send/review', [ReviewController::class, 'sendReview'])->middleware(['throttle:login12']);
 //Публикация отзыва через письмо
 Route::get('/review/on/{id}/{code}', [ReviewController::class, 'includeReview']);
 
@@ -68,7 +68,7 @@ Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
     Route::get('/registration', [BasketController::class, 'registration'])->name('basket.registration');
 
-    Route::get('/finish', [FinishController::class, 'showFinishPage'])->name('basket.finish')/*->middleware(['role:client'])*/;
+    Route::get('/finish', [OrderController::class, 'orderConfirm'])->name('basket.finish')/*->middleware(['role:client'])*/;
     Route::post('/add', [BasketController::class, 'addProduct']);
     Route::post('/addcount', [BasketController::class, 'addCountProduct']);
     Route::post('/remove', [BasketController::class, 'removeOneProduct']);
@@ -114,7 +114,7 @@ Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeRegis
  */
 //Route::get('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'showPage']);
 //Route::post('/forgot', [\App\Actions\Fortify\ForgotPassword::class, 'sendCode']);
-//Route::post('/forgot/update', [\App\Actions\Fortify\ForgotPassword::class, 'checkCode']);
+Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class , 'store'])->middleware(['throttle:register']);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');
