@@ -442,10 +442,10 @@
 </div>
 
 
-<div id="wndw-signin" class="modal">
+<div id="wndw-signin" class="modal active">
     <div class="modal__container">
         <div class="modal__bg close-modal"></div>
-        <div class="modal__body">
+        <div class="modal__body active">
             <div class="modal__close close-modal">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
@@ -476,7 +476,7 @@
                                    id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
                             <!-- <input class="input-style" name="code" placeholder="код" type="text"> -->
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Данный номер уже зарегистрирован</div>
+                            <div class="-error-message">Введите номер</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
