@@ -39,7 +39,6 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::createUsersUsing(CreateNewUser::class);
 
         //Авторизация
-
         Fortify::authenticateUsing(function (Request $request) {
             $messages = [
                 'phone.required' => 'Номер телефона обязательное поле',
@@ -66,6 +65,13 @@ class FortifyServiceProvider extends ServiceProvider
                 return new Response('Слишком много попыток повторите позже');
             });
         });
+
+        /*RateLimiter::for ('register', function (Request $request) {
+            return Limit::perMinute(1)->by($request->ip())->response(function () {
+                return new Response('Слишком много попыток повторите позже');
+            });
+        });*/
+
 
         /*Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

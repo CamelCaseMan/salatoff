@@ -33,13 +33,6 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
 
-        RateLimiter::for ('generate_code', function (Request $request) {
-            return Limit::perMinute(5)->by($request->phone . $request->ip())->response(function () {
-                return new Response('Слишком много попыток повторите позже');
-            });
-        });
-
-
         if (\Schema::hasTable('categories')) {
             $category = new ShopsAndCafesService();
 

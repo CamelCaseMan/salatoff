@@ -311,7 +311,7 @@
                             </div>
                             <p>
                                 Ваше имя: <span class="step-tabs-check-entry" data-name="name">—</span><br>
-                                Организация: <span class="step-tabs-check-entry" data-name="team">—</span><br>
+                                Организация: <span class="step-tabs-check-entry" data-name="organization">—</span><br>
                                 Контактный номер: <span class="step-tabs-check-entry" data-name="phone">—</span><br>
                                 E-mail: <span class="step-tabs-check-entry" data-name="email">—</span>
                             </p>
@@ -331,7 +331,7 @@
                                 </svg>
                             </div>
                             <p>
-                                <span class="step-tabs-check-entry" data-name="date">—</span>
+                                <span class="step-tabs-check-entry" data-name="delivery_date">—</span>
                             </p>
                         </section>
 

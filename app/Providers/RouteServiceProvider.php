@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -56,8 +57,24 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function configureRateLimiting()
     {
-        RateLimiter::for('api', function (Request $request) {
+        RateLimiter::for ('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+        });
+
+        /*RateLimiter::for ('register', function (Request $request) {
+            return Limit::perMinute(3)->by($request->ip());
+        });*/
+
+        RateLimiter::for ('register', function (Request $request) {
+            return Limit::perMinute(3)->by($request->phone . $request->ip())->response(function () {
+                return new Response('Слишком много попыток регистрации - повторите запрос позже');
+            });
+        });
+
+        RateLimiter::for ('generate_code', function (Request $request) {
+            return Limit::perMinute(3)->by($request->phone . $request->ip())->response(function () {
+                return new Response('Слишком много попыток отправить смс - повторите позже');
+            });
         });
     }
 }

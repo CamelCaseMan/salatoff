@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Order;
 
-use App\Rules\CheckTotalBasket;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -25,19 +24,55 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required', 'string',
-            'phone' => 'required', 'string',
-            'address' => 'required', 'string',
-            'total' => [new CheckTotalBasket()]
+            'name' => 'required',
+            'phone' => 'required',
+            'delivery_date' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => "Укажите имя контактного лица, отвественного за доставку!",
-            'phone.required' => "Укажите номер телефона, лица отвественного за доставку!",
-            'address.required' => "Поле адрес обязательно!",
+            'name.required' => "Поле имя обязательно",
+            'phone.required' => "Поле телефон обязательно",
+            'delivery_date.required' => "Поле дата доставки обязательно",
         ];
+    }
+
+    /**
+     * @return array
+     * Подготовливаем данные
+     */
+    public function prepareData()
+    {
+        $data = [
+            'name' => $this->name,
+            'phone' => $this->phone,
+            'organization' => $this->organization,
+            'email' => $this->email,
+            'delivery_date' => $this->delivery_date,
+            'delivery' => $this->prepareDelivery(),
+            'cupon_id' => $this->cupon_id,
+        ];
+
+        return $data;
+    }
+
+    /**
+     * Подготовка данных о доставке
+     */
+    private function prepareDelivery()
+    {
+        $delivery = [
+            'city' => $this->city,
+            'street' => $this->street ?? null,
+            'home' => $this->home?? null,
+            'entrance' => $this->entrance?? null,
+            'floor' => $this->floor?? null,
+            'office' => $this->office?? null,
+            'card' => $this->card,
+            'comment' => $this->comment?? null,
+        ];
+        return $delivery;
     }
 }
