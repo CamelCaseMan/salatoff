@@ -26,7 +26,7 @@ class GenerateAuthCode
             $code => $request->phone]
         ]);
 
-        $this->sendMessage($request->phone);
+        $this->sendMessage($request->phone, $code);
     }
 
     /**
@@ -40,16 +40,17 @@ class GenerateAuthCode
             $code => $request->phone]
         ]);
 
-        $this->sendMessage($request->phone);
+        $this->sendMessage($request->phone, $code);
     }
 
     /**
      * @param string $phone
+     * @param string $code
      * Отравка смс с кодом на телефон. Формат 70000000000
      */
-    private function sendMessage(string $phone)
+    private function sendMessage(string $phone, string $code)
     {
         $phone = str_replace(array('+',), '', $phone);
-        $this->smsaeroApiV2->send($phone, 'Проверка');
+        $this->smsaeroApiV2->send($phone, $code);
     }
 }
