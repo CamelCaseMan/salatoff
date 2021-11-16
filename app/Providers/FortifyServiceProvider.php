@@ -60,11 +60,7 @@ class FortifyServiceProvider extends ServiceProvider
 
         );
 
-        RateLimiter::for ('login', function (Request $request) {
-            return Limit::perMinute(3)->by($request->phone . $request->ip())->response(function () {
-                return new Response('Слишком много попыток повторите позже');
-            });
-        });
+
 
         /*RateLimiter::for ('register', function (Request $request) {
             return Limit::perMinute(1)->by($request->ip())->response(function () {
