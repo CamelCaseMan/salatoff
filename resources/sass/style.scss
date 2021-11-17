@@ -56,7 +56,7 @@ p {
 	&__top {
 		display: grid;
 		column-gap: 20px;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: 220px 1fr 1fr 1fr 1fr;
 		justify-items: center;
 		height: 104px;
 	}
@@ -100,7 +100,22 @@ p {
 	&__logo {
 		justify-self: start;
 		margin-top: 8px;
-		display: block;
+		display: flex;
+		align-items: flex-start;
+		.-logo {
+			display: block;
+			min-width: 100px;
+		}
+		.-pricelist {
+			display: block;
+			color: var(--green);
+			border: 1px solid var(--green);
+			border-radius: 20px;
+			font-size: 0.75rem;
+			padding: 4px 10px;
+			margin-left: 15px;
+			margin-top: 35px;
+		}
 	}
 	&__menu {
 		margin-top: 33px;
@@ -1856,7 +1871,7 @@ body.profile-page {
 	&__logo {
 		grid-column: 1/3;
 		img {
-			width: 140px;
+			width: 100px;
 			display: block;
 		}
 	}

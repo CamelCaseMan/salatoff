@@ -1,3 +1,5 @@
+const { values } = require("lodash");
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	cutMenuOnClick()
@@ -534,6 +536,31 @@ document.addEventListener('DOMContentLoaded', () => {
 				return num
 			}
 
+		}
+	}
+
+	inputStyle()
+	function inputStyle() {
+		const inputs = document.getElementsByClassName('input-style')
+
+		Object.values(inputs).forEach(init)
+
+		function init(input) {
+			input.addEventListener('blur', () => {
+				setTimeout( () => {
+					if (! input.value && input.required) addError()
+				} )
+			})
+			input.addEventListener('input', () => {
+				if (input.value) removeError()
+			})
+
+			function addError() {
+				input.classList.add('--error')
+			}
+			function removeError() {
+				input.classList.remove('--error')
+			}
 		}
 	}
 

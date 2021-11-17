@@ -33,7 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
 					nexts[0].focus()
 				},
 				error: function (msg) {
-					console.log(msg)
+					if ('responseJSON' in msg) {
+						if ('errors' in msg['responseJSON']) {
+							const errors = msg['responseJSON']['errors']
+							if ('phone' in errors) {
+								phoneInput.classList.add('--error')
+								const errorField = phoneInput.nextElementSibling
+								errorField.innerHTML = errors.phone
+							}
+						}
+					}
 				}
 			})
 		})
@@ -77,25 +86,42 @@ document.addEventListener('DOMContentLoaded', () => {
 					location.reload()
 				},
 				error: function (msg) {
-					const errors = msg['responseJSON']['errors']
+					nextsWrapper.classList.add('--error')
+					nextsWrapper.classList.remove('--done')
+					codeInput.classList.add('--error')
 
-					if ('phone' in errors) {
-						form1.classList.remove('--success')
-						phoneInput.classList.add('--error')
+					if ('responseJSON' in msg) {
+						if ('errors' in msg['responseJSON']) {
+							const errors = msg['responseJSON']['errors']
+
+							errorField.innerHTML = ''
+							Object.values(errors).forEach(errArr => {
+								errorField.innerHTML += errArr[0] + '<br>'
+							})
+						}
+					}
+					if (msg.status == 429) {
+						errorField.innerHTML = msg['responseText']
+					}
+					// const errors = msg['responseJSON']['errors']
+
+					// if ('phone' in errors) {
+					// 	form1.classList.remove('--success')
+					// 	phoneInput.classList.add('--error')
 						
-						const errorField = document.querySelector('#wndw-login-phone + .-error-message')
-						errorField.innerHTML = 'Ваш номер не был найден! Возможно вам нужно <span>зарегистрироваться</span>'
-					}
-					if ('code' in errors) {
-						nextsWrapper.classList.add('--error')
-						nextsWrapper.classList.remove('--done')
-						codeInput.classList.add('--error')
+					// 	const errorField = document.querySelector('#wndw-login-phone + .-error-message')
+					// 	errorField.innerHTML = 'Ваш номер не был найден! Возможно вам нужно <span>зарегистрироваться</span>'
+					// }
+					// if ('code' in errors) {
+					// 	nextsWrapper.classList.add('--error')
+					// 	nextsWrapper.classList.remove('--done')
+					// 	codeInput.classList.add('--error')
 	
-						errorField.innerHTML = ''
-						Object.values(errors).forEach(errArr => {
-							errorField.innerHTML += errArr[0] + '<br>'
-						})
-					}
+					// 	errorField.innerHTML = ''
+					// 	Object.values(errors).forEach(errArr => {
+					// 		errorField.innerHTML += errArr[0] + '<br>'
+					// 	})
+					// }
 				}
 			})
 		}
@@ -141,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 			$.ajax({
-				url: '/generate-code/login',
+				url: '/generate-code/register',
 				type: "POST",
 				headers: {
 					'X-CSRF-TOKEN': CSRFToken
@@ -152,13 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
 					nexts[0].focus()
 				},
 				error: function (msg) {
-					if (msg.status == 422) {
+					const errors = msg['responseJSON']['errors']
+					console.log(msg)
+					if ('phone' in errors) {
 						phoneInput.classList.add('--error')
+
+						const errorField = document.querySelector('#wndw-signin-phone + .-error-message')
+						errorField.innerHTML = errors.phone
 					} else if (msg.status == 429) {
 						alert('Код был запрошен слишком много раз! Пожалуйста, попробуйте позже!')
 					} else {
 						alert('Произошла какая-то ошибка!')
-						location.reload
+						location.reload()
 					}
 				}
 			})
@@ -214,12 +245,19 @@ document.addEventListener('DOMContentLoaded', () => {
 					nextsWrapper.classList.remove('--done')
 					codeInput.classList.add('--error')
 
-					const errors = msg['responseJSON']['errors']
-
-					errorField.innerHTML = ''
-					Object.values(errors).forEach(errArr => {
-						errorField.innerHTML += errArr[0] + '<br>'
-					})
+					if ('responseJSON' in msg) {
+						if ('errors' in msg['responseJSON']) {
+							const errors = msg['responseJSON']['errors']
+		
+							errorField.innerHTML = ''
+							Object.values(errors).forEach(errArr => {
+								errorField.innerHTML += errArr[0] + '<br>'
+							})
+						}
+					}
+					if (msg.status == 429) {
+						errorField.innerHTML = msg['responseText']
+					}
 				}
 			})
 

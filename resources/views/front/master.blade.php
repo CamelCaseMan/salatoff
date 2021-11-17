@@ -64,9 +64,12 @@
         <div class="header__top">
 
             <!-- Header logo -->
-            <a href="/" class="header__logo">
-                <img src="{{asset('theme')}}/img/logo.svg" alt="Еда без забот логотип">
-            </a>
+            <div class="header__logo">
+                <a href="/" class="-logo">
+                    <img src="{{asset('theme')}}/img/logo.svg" alt="Еда без забот логотип">
+                </a>
+                <a href="/" class="-pricelist">Прайс<span class="xs-d-none">-лист</span></a>
+            </div>
             <!-- End Header logo -->
 
         @include('front.include.menu')
@@ -126,7 +129,7 @@
                 <nav class="header__drop-menu">
                     <ul class="-side">
                         <li>
-                            <a href="/catering">Кейтеринг</a>
+                            <a href="/contacts">Контакты</a>
                         </li>
                         <li>
                             <a href="/our-production">Наше производство</a>
@@ -473,7 +476,7 @@
                                    id="wndw-signin-phone" placeholder="+7 (___) ___ ____" type="tel">
                             <!-- <input class="input-style" name="code" placeholder="код" type="text"> -->
                             <!-- * Это сообщение об ошибке -->
-                            <div class="-error-message">Данный номер уже зарегистрирован</div>
+                            <div class="-error-message">Введите номер</div>
                             <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                             <!-- <div class="-message">Сообщение к полю</div> -->
                         </div>
@@ -528,7 +531,7 @@
 
         <ul class="footer__menu --fm-02">
             <li>
-                <a href="/catering">Кейтеринг</a>
+                <a href="/contacts">Контакты</a>
             </li>
             <li>
                 <a href="/our-production">Наше производство</a>
