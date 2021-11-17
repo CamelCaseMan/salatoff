@@ -18,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * The controller namespace for the application.
@@ -61,9 +61,9 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
 
-       RateLimiter::for ('register', function (Request $request) {
+        RateLimiter::for ('register', function (Request $request) {
             return Limit::perMinute(3)->by($request->phone . $request->ip())->response(function () {
-                return new Response('Слишком много попыток регистрации - повторите запрос позже',429);
+                return new Response('Слишком много попыток регистрации - повторите запрос позже', 429);
             });
         });
 
@@ -79,16 +79,5 @@ class RouteServiceProvider extends ServiceProvider
             });
         });
 
-        /*RateLimiter::for ('register', function (Request $request) {
-            return Limit::perMinute(3)->by($request->phone . $request->ip());
-        });
-
-        RateLimiter::for ('generate_code', function (Request $request) {
-            return Limit::perMinute(3)->by($request->phone . $request->ip());
-        });
-
-        RateLimiter::for ('login', function (Request $request) {
-            return Limit::perMinute(3)->by($request->phone . $request->ip());
-        });*/
     }
 }
