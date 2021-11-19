@@ -11,22 +11,26 @@
                 </div>
             </div>
             <div class="manager-modal__content">
-                <ul class="-chars">
-                    <li>
-                        <div class="-prefix">Клиент</div>
-                        {{$order->user['name']}}
-                    </li>
-                    <li>
-                        <div class="-prefix">Почта</div>
-                        {{$order->user['email']}}
-                    </li>
-                    <li>
-                        <div class="-prefix">Регистрации на сайте</div>
-                        {{$order->user['created_at']}}
-                    </li>
-                </ul>
+                @if(!is_null($order->user_id))
+                    <ul class="-chars">
+                        <li>
+                            <div class="-prefix">Клиент</div>
+                            {{$order->user['name']}}
+                        </li>
+                        <li>
+                            <div class="-prefix">Почта</div>
+                            {{$order->user['email']}}
+                        </li>
+                        <li>
+                            <div class="-prefix">Регистрации на сайте</div>
+                            {{$order->user['created_at']}}
+                        </li>
+                    </ul>
+                    @else
+                    <h3>Клиент не зарегистрирован</h3>
+                @endif
             </div>
         </div>
-@include('manager.orders.modals_delivery')
+    {{-- @include('manager.orders.modals_delivery')--}}
     @endforeach
 </div>

@@ -32,7 +32,7 @@ Route::get('/', [PageController::class, 'showPage'],
         'title' => config('meta-tags.default.title'),
         'description' => config('meta-tags.default.desсription'),
     ])
-);
+)->name('front.home');
 Route::get('/our-production', [PageController::class, 'showPage']);
 
 // Каталог и карточки товара раздела кафе и магазины
@@ -67,9 +67,11 @@ Route::get('/review/on/{id}/{code}', [ReviewController::class, 'includeReview'])
 Route::prefix('basket')->group(function () {
     Route::get('/', [BasketController::class, 'showBasket']);
     Route::get('/registration', [BasketController::class, 'registration'])->name('basket.registration');
-
     Route::get('/finish', [OrderController::class, 'orderConfirm'])->name('basket.finish')/*->middleware(['role:client'])*/
     ;
+    Route::get('/success', [OrderController::class, 'success'])->name('basket.success');
+
+
     Route::post('/add', [BasketController::class, 'addProduct']);
     Route::post('/addcount', [BasketController::class, 'addCountProduct']);
     Route::post('/remove', [BasketController::class, 'removeOneProduct']);

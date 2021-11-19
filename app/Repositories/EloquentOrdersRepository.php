@@ -19,4 +19,12 @@ class EloquentOrdersRepository
         return $result;
     }
 
+
+    public function updateInfoOrder(Order $order, array $data)
+    {
+        $order->update($data);
+    }
+
+
+
 }

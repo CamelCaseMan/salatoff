@@ -2,42 +2,36 @@
 
 namespace App\Helpers;
 
+
 use App\Models\Cupon;
+use Carbon\Carbon;
 
 class CuponHelper
 {
-    /**
-     * @param string $cupon_value
-     * @param $order
-     * @return float
-     */
-    public function getDiscountValue(string $cupon_value, $order): float
+    public static function getValue(int $id = null, $total = 0): array
     {
-        $cupon = Cupon::where('value', $cupon_value)->first();
-
-        if (!empty($cupon)) {
-            $discount = ($order->getFullPrice() * $cupon->discount) / 100;
+        if ($id == null) {
+            $data = [
+                'discount' => 0,
+                'value_discount' => 0
+            ];
         } else {
-            $discount = 0;
+            $cupon = Cupon::find($id);
+            $status = !Carbon::parse($cupon->expiration)->isPast();
+
+            if ($status) {
+                $data = [
+                    'discount' => $cupon->discount,
+                    'value_discount' => round(($total * $cupon->discount) / 100, 2)
+                ];
+            } else {
+                $data = [
+                    'discount' => 0,
+                    'value_discount' => 0
+                ];
+            }
         }
 
-        return rand($discount, 2);
-    }
-
-    /**
-     * @param string $cupon_value
-     * @param $order
-     * @return int
-     * Получаем ID купона
-     */
-    public function getIdCupon(string $cupon_value, $order): int
-    {
-        $cupon = Cupon::where('value', $cupon_value)->first();
-        if (!empty($cupon)) {
-            $id = $cupon->id;
-        } else {
-            $id = null;
-        }
-        return $id;
+        return $data;
     }
 }

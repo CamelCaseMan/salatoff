@@ -52,7 +52,6 @@ class OrderRequest extends FormRequest
             'email' => $this->email,
             'delivery_date' => $this->delivery_date,
             'delivery' => $this->prepareDelivery(),
-            'cupon_id' => $this->cupon_id,
         ];
 
         return $data;

@@ -54,6 +54,7 @@ class FortifyServiceProvider extends ServiceProvider
             $user = User::where('phone', $request->phone)->first();
 
             if (!empty($user)) {
+                session()->forget('sms_code');
                 return $user;
             }
         }

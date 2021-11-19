@@ -47,7 +47,7 @@
                                     <div class="valinput">
                                         <!-- * Если успешно, то "--success", нет — "--error" -->
                                         <input class="input-style --required" required name="name" id="tab-001-name"
-                                               type="text" placeholder="Ваше имя" value="{{ old('name') }}">
+                                               type="text" placeholder="Ваше имя" value="{{ $user->name ?? null }}">
                                         <!-- * Это сообщение об ошибке -->
                                         <div class="-error-message">Обязательное поле</div>
                                         <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -75,7 +75,8 @@
                                     <div class="valinput">
                                         <!-- * Если успешно, то "--success", нет — "--error" -->
                                         <input class="input-style --required input-phone" required name="phone"
-                                               id="tab-001-phone" value="{{ old('phone') }}" placeholder="+7 (___) ___ ____" type="tel">
+                                               id="tab-001-phone" value="{{ $user->phone ?? null }}}"
+                                               placeholder="+7 (___) ___ ____" type="tel">
                                         <!-- * Это сообщение об ошибке -->
                                         <div class="-error-message">Обязательное поле</div>
                                         <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -87,7 +88,7 @@
                                     <div class="valinput">
                                         <!-- * Если успешно, то "--success", нет — "--error" -->
                                         <input class="input-style" name="email" id="tab-001-email" type="text"
-                                               placeholder="example@mail.ru" value="{{ old('email') }}">
+                                               placeholder="example@mail.ru" value="{{ $user->email ?? null}}">
                                         <!-- * Это сообщение об ошибке -->
                                         <div class="-error-message">Обязательное поле</div>
                                         <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -252,17 +253,17 @@
                             <div class="order__form-row">
                                 <div class="radio-selector">
                                     <label class="-radio input-style">
-                                        <input type="radio" value="Картой онлайн" checked name="card">
+                                        <input type="radio" value="Картой онлайн" checked name="Payment">
                                         <div class="-circle"></div>
                                         <div class="-name">Картой онлайн</div>
                                     </label>
                                     <label class="-radio input-style">
-                                        <input type="radio" value="Картой при получении" name="card">
+                                        <input type="radio" value="Картой при получении" name="card_delivery">
                                         <div class="-circle"></div>
                                         <div class="-name">Картой при получении</div>
                                     </label>
                                     <label class="-radio input-style">
-                                        <input type="radio" value="Наличными курьеру" name="card">
+                                        <input type="radio" value="Наличными курьеру" name="cash_delivery">
                                         <div class="-circle"></div>
                                         <div class="-name">Наличными курьеру</div>
                                     </label>
@@ -409,11 +410,11 @@
                             <ul class="-bottom">
                                 <li>
                                     <div class="-item">Скидка</div>
-                                    <div class="-price">10 ₽</div>
+                                    <div class="-price">{{$discount}} ₽</div>
                                 </li>
                                 <li>
                                     <div class="-item">К оплате</div>
-                                    <div class="-price">155 ₽</div>
+                                    <div class="-price">{{$order->getFullPrice() - $discount}} ₽</div>
                                 </li>
                             </ul>
                         </div>

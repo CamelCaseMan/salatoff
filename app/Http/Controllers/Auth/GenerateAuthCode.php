@@ -50,7 +50,9 @@ class GenerateAuthCode
      */
     private function sendMessage(string $phone, string $code)
     {
+
         $phone = str_replace(array('+',), '', $phone);
+        \Log::info($phone);
         $this->smsaeroApiV2->send($phone, $code);
     }
 }
