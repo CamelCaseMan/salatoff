@@ -62,6 +62,7 @@ class OrderRequest extends FormRequest
      */
     private function prepareDelivery()
     {
+        dd($this->all());
         $delivery = [
             'city' => $this->city,
             'street' => $this->street ?? null,

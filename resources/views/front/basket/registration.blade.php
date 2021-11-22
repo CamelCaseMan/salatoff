@@ -253,17 +253,17 @@
                             <div class="order__form-row">
                                 <div class="radio-selector">
                                     <label class="-radio input-style">
-                                        <input type="radio" value="Картой онлайн" checked name="Payment">
+                                        <input type="radio" value="Картой онлайн" checked name="payment">
                                         <div class="-circle"></div>
                                         <div class="-name">Картой онлайн</div>
                                     </label>
                                     <label class="-radio input-style">
-                                        <input type="radio" value="Картой при получении" name="card_delivery">
+                                        <input type="radio" value="Картой при получении" name="payment">
                                         <div class="-circle"></div>
                                         <div class="-name">Картой при получении</div>
                                     </label>
                                     <label class="-radio input-style">
-                                        <input type="radio" value="Наличными курьеру" name="cash_delivery">
+                                        <input type="radio" value="Наличными курьеру" name="payment">
                                         <div class="-circle"></div>
                                         <div class="-name">Наличными курьеру</div>
                                     </label>
@@ -373,7 +373,7 @@
                                 </svg>
                             </div>
                             <p>
-                                <span class="step-tabs-check-entry" data-name="card">—</span>
+                                <span class="step-tabs-check-entry" data-name="payment">—</span>
                             </p>
                         </section>
 
