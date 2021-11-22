@@ -400,6 +400,9 @@
 		cursor: pointer;
 		background-color: #fff;
 		margin-bottom: 15px;
+		&.--transparent {
+			background-color: transparent;
+		}
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -850,6 +853,22 @@
 	}
 	td {
 		padding: 0;
+		&.ui-state-disabled {
+			opacity: 1;
+			.ui-state-default {
+				background-color: transparent;
+				color: #ddd;
+				border: none !important;
+				padding: 0;
+				height: 36px;
+				width: 36px;
+				border-radius: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: .2s ease;
+			}
+		}
 		a {
 			border: none !important;
 			padding: 0;
@@ -873,6 +892,10 @@
 			&.ui-state-highlight {
 				background-color: #f5f5f5;
 				color: var(--black);
+			}
+			&.ui-state-disabled {
+				background-color: transparent;
+				color: #ccc;
 			}
 		}
 	}

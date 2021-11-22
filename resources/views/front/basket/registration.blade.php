@@ -109,8 +109,13 @@
                         </div>
 
                         <p class="mb-40">
-                            Ближайшая дата доставки — 21.11.2021 <br>
-                            Вы можете выбрать другой удобный день
+                            Обратите внимание, заказы принимаются в обработку с 9:00 до 16:30 <br>
+                            При заказе до 16:30 доставка осуществляется на следующий день. <br>
+                            При заказе после 16:30 доставка осуществляется через день. <br>
+                            Ближайшая дата доставки — <b>21.11.2021</b><br>
+                            <br>
+                            Доставка заказов осуществляется с 7:00 до 12:00 <br>
+                            <b>В воскресные дни доставка не осуществляется</b>
                         </p>
 
                         <div class="superform order__form">
@@ -148,24 +153,32 @@
                         <a class="-link mb-40" href="/">Показать карту зоны доставки</a>
 
                         <div class="superform order__form">
+                            <div class="order__form-row radio-selector" id="set-city-radio" data-target="tab-003-city">
+                                <section class="-form-section">
+                                    <label class="-radio --transparent">
+                                        <input type="radio" checked name="region" value="Москва">
+                                        <div class="-circle"></div>
+                                        <div class="-text">Москва</div>
+                                    </label>
+                                </section>
+                                <section class="-form-section">
+                                    <label class="-radio --transparent">
+                                        <input type="radio" name="region" value="Московская область">
+                                        <div class="-circle"></div>
+                                        <div class="-text">Московская область</div>
+                                    </label>
+                                </section>
+                            </div>
                             <div class="order__form-row">
                                 <section class="-form-section">
                                     <label class="-prefix" for="tab-003-city">Город <span class="-star">*</span></label>
-                                    <div class="input-droplist">
-                                        <input id="tab-003-city" name="city" required readonly value="Москва"
-                                               class="input-style -input" tabindex="-1">
-                                        <div class="-focus-elements">
-                                            <svg class="-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
-                                                <path d="M7 9L13.9282 0H0.0717969L7 9Z" fill="#C4C4C4"/>
-                                            </svg>
-                                            <div class="-list">
-                                                <ul class="-new">
-                                                    <li data-value="Москва">Москва</li>
-                                                    <li data-value="Лобня">Лобня</li>
-                                                    <li data-value="Курск">Курск</li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="valinput">
+                                        <!-- * Если успешно, то "--success", нет — "--error" -->
+                                        <input class="input-style --required" value="Москва" readonly required name="city" id="tab-003-city" type="text">
+                                        <!-- * Это сообщение об ошибке -->
+                                        <div class="-error-message">Обязательное поле</div>
+                                        <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                                        <!-- <div class="-message">Сообщение к полю</div> -->
                                     </div>
                                 </section>
                                 <section class="-form-section">
