@@ -87,33 +87,32 @@
                         По воскресеньям заказы не доставляем
                     </p>
                 </div>
-                <div class="basket__order basket__split-item">
+                <div class="basket__order basket__split-item" style="display: flex;flex-direction: column;justify-content: center;">
                     <div class="basket__split-title mb-40">
                         Скидки и бонусы
                     </div>
                     <form method="GET" action="{{route('basket.registration')}}" class="superform">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                        <div class="basket__order-row">
-                            <section class="-form-section">
-                                <label class="-prefix" for="ordpg-001-name">Карта «Город Тройка»</label>
-                                <div class="valinput">
+                        <!-- <div class="basket__order-row"> -->
+                            <!-- <section class="-form-section"> -->
+                                <!-- <label class="-prefix" for="ordpg-001-name">Карта «Город Тройка»</label> -->
+                                <!-- <div class="valinput"> -->
                                     <!-- * Если успешно, то "--success", нет — "--error" -->
-                                    <input class="input-style" id="ordpg-001-name" placeholder="Введите номер карты"
-                                           type="text">
+                                    <!-- <input class="input-style" id="ordpg-001-name" placeholder="Введите номер карты" type="text"> -->
                                     <!-- * Это сообщение об ошибке -->
-                                    <div class="-error-message">Сообщение с ошибкой</div>
+                                    <!-- <div class="-error-message">Сообщение с ошибкой</div> -->
                                     <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                                     <!-- <div class="-message">Сообщение к полю</div> -->
-                                </div>
-                            </section>
-                            <div class="-check-btn">Проверить баланс</div>
-                        </div>
+                                <!-- </div> -->
+                            <!-- </section> -->
+                            <!-- <div class="-check-btn">Проверить баланс</div> -->
+                        <!-- </div> -->
 
                         <!-- 
                             * Следущий блок должен вызываться после
                               проверки баланса карты тройка
                         -->
-                        <div class="basket__order-flex-row">
+                        <!-- <div class="basket__order-flex-row">
                             <p>
                                 <b>Карта «Город Тройка»</b><br>
                                 Баланс по карте: 150 баллов <br>
@@ -135,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="basket__order-row">
                             <section class="-form-section">
@@ -148,13 +147,6 @@
                                     <div class="-error-message">Сообщение с ошибкой</div>
                                     <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
                                     <div class="-message">Когда вы используете промокод, бонусы не начисляются</div>
-
-                                    <div class="-arrow">
-                                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-                                            <path d="M9.50402 5.65595H0.640015V4.34395H9.50402L5.36001 0.199951H7.20002L12 4.99995L7.20002 9.79995H5.36001L9.50402 5.65595Z"
-                                                  fill="#A2CD3A"/>
-                                        </svg>
-                                    </div>
                                 </div>
                             </section>
                             <div class="-total">

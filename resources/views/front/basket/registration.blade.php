@@ -104,7 +104,7 @@
 
                         <div class="order__body-title mb-30">
                             <div class="-back step-tabs-back">← Назад</div>
-                            <div class="-title">Дата доставки</div>
+                            <div class="-title">Дата доставки <span class="-star">*</span></div>
                         </div>
 
                         <p class="mb-40">
@@ -149,7 +149,7 @@
                         <div class="superform order__form">
                             <div class="order__form-row">
                                 <section class="-form-section">
-                                    <label class="-prefix" for="tab-003-city">Город</label>
+                                    <label class="-prefix" for="tab-003-city">Город <span class="-star">*</span></label>
                                     <div class="input-droplist">
                                         <input id="tab-003-city" name="city" required readonly value="Москва"
                                                class="input-style -input" tabindex="-1">
@@ -168,7 +168,7 @@
                                     </div>
                                 </section>
                                 <section class="-form-section">
-                                    <label class="-prefix" for="tab-003-street">Улица</label>
+                                    <label class="-prefix" for="tab-003-street">Улица <span class="-star">*</span></label>
                                     <div class="valinput">
                                         <!-- * Если успешно, то "--success", нет — "--error" -->
                                         <input class="input-style --required" required name="street" id="tab-003-street"
@@ -186,7 +186,7 @@
                             <div class="order__form-row">
                                 <div class="order__form-row-split">
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-home">Дом</label>
+                                        <label class="-prefix" for="tab-003-home">Дом <span class="-star">*</span></label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
                                             <input class="input-style --required" required name="home" id="tab-003-home"
@@ -198,7 +198,7 @@
                                         </div>
                                     </section>
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-prehome">Подъезд</label>
+                                        <label class="-prefix" for="tab-003-prehome">Подъезд <span class="-star">*</span></label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
                                             <input class="input-style --required" required name="entrance"
@@ -212,7 +212,7 @@
                                 </div>
                                 <div class="order__form-row-split">
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-floor">Этаж</label>
+                                        <label class="-prefix" for="tab-003-floor">Этаж <span class="-star">*</span></label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
                                             <input class="input-style --required" required name="floor"
@@ -224,7 +224,7 @@
                                         </div>
                                     </section>
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-office">Квартира/офис</label>
+                                        <label class="-prefix" for="tab-003-office">Кв-ра/офис <span class="-star">*</span></label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
                                             <input class="input-style --required" required name="office"

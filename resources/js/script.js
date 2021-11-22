@@ -548,8 +548,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		function init(input) {
 			input.addEventListener('blur', () => {
 				setTimeout( () => {
-					if (! input.value && input.required) addError()
-				} )
+					console.log('here')
+					if (! input.value && input.required) {
+						addError()
+					} else {
+						removeError()
+					}
+				}, 200 )
 			})
 			input.addEventListener('input', () => {
 				if (input.value) removeError()

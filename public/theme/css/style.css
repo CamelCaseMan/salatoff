@@ -2547,6 +2547,9 @@ body.profile-page {
   font-size: 1.5rem;
   font-weight: 700;
 }
+.order__body-title .-title .-star {
+  color: var(--red);
+}
 .order__body-buttons .-split-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
