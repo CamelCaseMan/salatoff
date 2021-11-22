@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Basket;
 
+use App\Helpers\CuponHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Basket\BasketAddCountProductRequest;
 use App\Http\Requests\Basket\BasketAddProductRequest;
@@ -9,15 +10,18 @@ use App\Http\Requests\Basket\RemoveOneProductRequest;
 use App\Services\Basket\BasketService;
 use App\Services\Basket\CartStatusService;
 use App\Services\Order\BasketOrder;
+use App\Services\Order\OrderService;
 use Illuminate\Http\Request;
 
 class BasketController extends Controller
 {
     private $basketOrder;
+    private $orderService;
 
-    public function __construct(BasketOrder $basketOrder)
+    public function __construct(BasketOrder $basketOrder, OrderService $orderService)
     {
         $this->basketOrder = $basketOrder;
+        $this->orderService = $orderService;
     }
 
     /**
@@ -104,12 +108,15 @@ class BasketController extends Controller
 
     public function registration(Request $request)
     {
-       // dd($request->all());
         $order = $this->getOrder();
+        $this->orderService->updateInfoNotConfirmedOrder($order, $request->all());
+        $discount = CuponHelper::getValue($order->cupon_id, $order->getFullPrice())['value_discount'];
+        $user = \Auth::user() ?? null;
+
         if ($order == false) {
             return view('front.basket.emptyBasket');
         }
-        return view('front.basket.registration', compact('order'));
+        return view('front.basket.registration', compact('order', 'discount', 'user'));
     }
 
     /**

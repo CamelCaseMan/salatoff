@@ -6,158 +6,60 @@
         <table class="big-table">
             <tr>
                 <th>№ заказа</th>
+                <th>Дата доставки</th>
                 <th>Клиент</th>
                 <th>На кого заказано</th>
                 <th>Телефон</th>
-                <th>Информация по доставке</th>
-                <th>Купон на скидку</th>
+                <th>Доставка</th>
+                <th>Список продуктов</th>
+                <th>Купон</th>
                 <th class="text-right">Итого</th>
-                <th>Дата заказа</th>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal"
-                            data-toggle-active="mw-user-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td>Маша Зубкова</td>
-
-                <td class="">+7989898574</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td class="">123</td>
-                <td class="text-right">123 руб.</td>
-                <td class="">12 февраля</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal"
-                            data-toggle-active="mw-user-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td>Маша Зубкова</td>
-
-                <td class="">+7989898574</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td class="">123</td>
-                <td class="text-right">123 руб.</td>
-                <td class="">12 февраля</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal"
-                            data-toggle-active="mw-user-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td>Маша Зубкова</td>
-
-                <td class="">+7989898574</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td class="">123</td>
-                <td class="text-right">123 руб.</td>
-                <td class="">12 февраля</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal"
-                            data-toggle-active="mw-user-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td>Маша Зубкова</td>
-
-                <td class="">+7989898574</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td class="">123</td>
-                <td class="text-right">123 руб.</td>
-                <td class="">12 февраля</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal"
-                            data-toggle-active="mw-user-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td>Маша Зубкова</td>
-
-                <td class="">+7989898574</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td class="">123</td>
-                <td class="text-right">123 руб.</td>
-                <td class="">12 февраля</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal"
-                            data-toggle-active="mw-user-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td>Маша Зубкова</td>
-
-                <td class="">+7989898574</td>
-                <td>
-                    <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_123">
-                        Подробнее
-                    </div>
-                </td>
-                <td class="">123</td>
-                <td class="text-right">123 руб.</td>
-                <td class="">12 февраля</td>
             </tr>
             @foreach($orders as $key =>$order)
                 <tr>
                     <td>{{$order->id}}</td>
+                    <td class="">
+                        {{ date("d/m/Y", strtotime($order->delivery_date))}}
+
+                    </td>
+                    <td>
+                        @if(is_null($order->user_id))
+                            Без регистрации
+                        @else
+                            <div class="tag-button --green toggle-active open-modal"
+                                 data-toggle-active="mw-user-info_{{$key}}">
+                                Подробнее
+                            </div>
+                        @endif
+                    </td>
+                    <td>{{$order->name}}</td>
+
+                    <td class="">{{$order->phone}}</td>
+                    <td>
+                        <div class="tag-button --green toggle-active open-modal"
+                             data-toggle-active="mw-delivery-info_{{$key}}">
+                            Подробнее
+                        </div>
+                    </td>
                     <td>
                         <div class="tag-button --green toggle-active open-modal"
                              data-toggle-active="mw-user-info_{{$key}}">
                             Подробнее
                         </div>
                     </td>
-                    <td>{{$order->name}}</td>
-
-                    <td class="">{{$order->phone}}</td>
-                    <td>
-                        <div class="tag-button --green toggle-active open-modal" data-toggle-active="mw-delivery-info_{{$key}}">
-                            Подробнее
-                        </div>
+                    <td class="text-right">
+                        @if(isset($order->cupon))
+                            {{$order->cupon->discount}} %
+                        @else
+                            Нету
+                        @endif
                     </td>
-                    <td class="text-right">{{ $order->cupon['discount']? $order->cupon['discount'].'%': 'Нет' }}</td>
-                    <td class="text-right">{{$order->total}}руб.</td>
-                    <td class="">{{$order->created_at}}</td>
+                    <td class="text-right">{{$order->total}} руб.</td>
+
                 </tr>
             @endforeach
         </table>
         {{ $orders->links() }}
     </div>
-  {{--  @include('manager.orders.modals_client')--}}
+    @include('manager.orders.modals_client')
 @endsection

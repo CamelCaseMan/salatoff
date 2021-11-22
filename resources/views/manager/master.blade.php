@@ -23,7 +23,7 @@
             <div class="manager-page__left-plug"></div>
             <div class="manager-page__menu">
                 <ul>
-                    <li>
+                   {{-- <li>
                         <a href="#">На главную</a>
                     </li>
                     <li>
@@ -31,13 +31,13 @@
                     </li>
                     <li>
                         <a href="#">Товары</a>
-                    </li>
+                    </li>--}}
                     <li>
                         <a href="#" class="active">Заказы</a>
                     </li>
-                    <li>
+                  {{--  <li>
                         <a href="#">Блог</a>
-                    </li>
+                    </li>--}}
                 </ul>
             </div>
             <div class="manager-page__container">

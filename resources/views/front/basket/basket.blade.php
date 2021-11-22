@@ -141,7 +141,7 @@
                                 <label class="-prefix" for="ordpg-001-text">Промокод</label>
                                 <div class="valinput">
                                     <!-- * Если успешно, то "--success", нет — "--error" -->
-                                    <input placeholder="Введите промокод" style="padding-right: 40px;"
+                                    <input name="cupon" placeholder="Введите промокод" style="padding-right: 40px;"
                                            class="input-style" id="ordpg-001-text">
                                     <!-- * Это сообщение об ошибке -->
                                     <div class="-error-message">Сообщение с ошибкой</div>
