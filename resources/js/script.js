@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			let currentNum = 0
 
-			setTab(1)
+			setTab(0)
 
 			Object.values(triggers).forEach(trigger => {
 				trigger.addEventListener('click', () => {
@@ -611,18 +611,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			selectOtherMonths: true,
 		} )
 	
-		const date = new Date()
-
-		const maxTime = 16.3
-		const currentTime = +`${date.getHours()}.${date.getMinutes()}`
-
-		if (currentTime >= maxTime) {
-			datePicker.datepicker('option', 'minDate', 1)
-			datePicker.datepicker('setDate', 1)
-		} else {
-			datePicker.datepicker('option', 'minDate', 0)
-			datePicker.datepicker('setDate', 'today')
-		}
+		datePicker.datepicker('setDate', '24.11.2021')
+		datePicker.datepicker('option', 'minDate', '24.11.2021')
 
 		function disableSpecificWeekDays(date) {
 			const day = date.getDay();
