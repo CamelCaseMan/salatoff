@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Basket;
 
 use App\Helpers\CuponHelper;
+use App\Helpers\DeliveryDateHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Basket\BasketAddCountProductRequest;
 use App\Http\Requests\Basket\BasketAddProductRequest;
@@ -35,7 +36,8 @@ class BasketController extends Controller
         if ($order == false) {
             return view('front.basket.emptyBasket');
         }
-        return view('front.basket.basket', compact('order'));
+        $delivery_date = DeliveryDateHelper::setDateDelivery();
+        return view('front.basket.basket', compact('order', 'delivery_date'));
     }
 
     /**
@@ -116,7 +118,14 @@ class BasketController extends Controller
         if ($order == false) {
             return view('front.basket.emptyBasket');
         }
-        return view('front.basket.registration', compact('order', 'discount', 'user'));
+
+        //Проверка на минимальную сумму заказа
+        if ($order->getFullPrice() < config('shop.min_order')) {
+            return redirect()->route('basket.start');
+        }
+
+        $delivery_date = DeliveryDateHelper::setDateDelivery();
+        return view('front.basket.registration', compact('order', 'discount', 'user', 'delivery_date'));
     }
 
     /**
