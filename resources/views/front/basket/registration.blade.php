@@ -130,7 +130,7 @@
                                                       fill="#C4C4C4"/>
                                             </svg>
                                         </label>
-                                        <input readonly type="text" required name="delivery_date" class="input-style"
+                                        <input data-min-date="{{$delivery_date}}" readonly type="text" required name="delivery_date" class="input-style"
                                                id="datepicker" placeholder="Выберите дату">
                                         <!-- * Это сообщение об ошибке -->
                                         <div class="-error-message">Обязательное поле</div>
@@ -212,10 +212,10 @@
                                         </div>
                                     </section>
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-prehome">Подъезд <span class="-star">*</span></label>
+                                        <label class="-prefix" for="tab-003-prehome">Подъезд</label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                                            <input class="input-style --required" required name="entrance"
+                                            <input class="input-style --required" name="entrance"
                                                    id="tab-003-prehome" type="text">
                                             <!-- * Это сообщение об ошибке -->
                                             <div class="-error-message">Обязательное поле</div>
@@ -226,10 +226,10 @@
                                 </div>
                                 <div class="order__form-row-split">
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-floor">Этаж <span class="-star">*</span></label>
+                                        <label class="-prefix" for="tab-003-floor">Этаж</label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                                            <input class="input-style --required" required name="floor"
+                                            <input class="input-style --required" name="floor"
                                                    id="tab-003-floor" type="text">
                                             <!-- * Это сообщение об ошибке -->
                                             <div class="-error-message">Обязательное поле</div>
@@ -238,10 +238,10 @@
                                         </div>
                                     </section>
                                     <section class="-form-section">
-                                        <label class="-prefix" for="tab-003-office">Кв-ра/офис <span class="-star">*</span></label>
+                                        <label class="-prefix" for="tab-003-office">Кв-ра/офис</label>
                                         <div class="valinput">
                                             <!-- * Если успешно, то "--success", нет — "--error" -->
-                                            <input class="input-style --required" required name="office"
+                                            <input class="input-style --required" name="office"
                                                    id="tab-003-office" type="text">
                                             <!-- * Это сообщение об ошибке -->
                                             <div class="-error-message">Обязательное поле</div>

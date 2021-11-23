@@ -553,6 +553,11 @@
 		text-align: center;
 		border: none;
 		width: 100%;
+		&.--disabled {
+			background-color: #ddd;
+			cursor: default;
+			color: gray;
+		}
 	}
 	&__sms-modal {
 		.-input {

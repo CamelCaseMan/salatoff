@@ -643,6 +643,11 @@ input[type=number] {
   border: none;
   width: 100%;
 }
+.modal__button.--disabled {
+  background-color: #ddd;
+  cursor: default;
+  color: gray;
+}
 .modal__sms-modal .-input {
   display: flex;
   align-items: center;
@@ -2433,6 +2438,12 @@ body.profile-page {
 }
 .basket__order-flex-row .input-droplist .input-style:focus {
   border-color: #828282;
+}
+.basket__order-button.--disabled + .basket-submit-message {
+  display: block;
+}
+.basket__order .basket-submit-message {
+  display: none;
 }
 
 /* /basket-page */

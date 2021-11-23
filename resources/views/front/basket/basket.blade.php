@@ -91,7 +91,7 @@
                     <div class="basket__split-title mb-40">
                         Скидки и бонусы
                     </div>
-                    <form method="GET" action="{{route('basket.registration')}}" class="superform">
+                    <form id="basket-submit" method="GET" action="{{route('basket.registration')}}" class="superform">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <!-- <div class="basket__order-row"> -->
                             <!-- <section class="-form-section"> -->
@@ -153,7 +153,13 @@
                                 <b>Итого:</b> <span id="total-price">{{$order->getFullPrice()}}</span> ₽
                             </div>
                         </div>
-                        <input type="submit" value="Оформить заказ" class="typical-button modal__button d-block">
+
+                        <!-- ! В аттрибуте "dataset-min-price" устанавливаем минимальную цену заказа -->
+                        <input class="d-none" readonly id="basket-submit-total" type="text" data-min-price="2000" value="{{$order->getFullPrice()}}">
+                        <input type="submit" value="Оформить заказ" class="typical-button basket__order-button modal__button d-block mb-20">
+                        <p class="basket-submit-message">
+                            Минимальная сумма заказа: 2000 ₽
+                        </p>
                     </form>
                 </div>
             </div>

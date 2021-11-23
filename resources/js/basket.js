@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const CSRFToken = document.querySelector('meta[name="csrf-token"]').content
     const headerQuty = document.getElementById('header-quty')
     const totalPrice = document.getElementById('total-price')
+    const basketInput = document.getElementById('basket-submit-total')
     let quty = 1
 
     qutyInterface()
@@ -191,6 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (totalPrice) {
                         totalPrice.innerText = data.total
+                    }
+                    if (basketInput) {
+                        basketInput.value = data.total
+                        const event = new Event( 'change', {bubbles : true, cancelable : true} )
+                        basketInput.dispatchEvent(event)
                     }
                 })
 

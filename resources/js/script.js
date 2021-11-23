@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			let currentNum = 0
 
-			setTab(1)
+			setTab(0)
 
 			Object.values(triggers).forEach(trigger => {
 				trigger.addEventListener('click', () => {
@@ -595,9 +595,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
+	basketSubmit()
+	function basketSubmit() {
+		const form = document.getElementById('basket-submit')
+		const total = document.getElementById('basket-submit-total')
+
+		if (! form || ! total) return
+
+		const button = form.getElementsByClassName('basket__order-button')[0]
+		let allowSubmit = false
+
+		setForm()
+
+		total.addEventListener('change', setForm)
+
+		form.addEventListener('submit', (evt) => {
+			evt.preventDefault()
+
+			if (! allowSubmit) return
+			form.submit()
+		})
+
+		function setForm() {
+			if ( checkPrice() ) {
+				activateForm()
+			} else {
+				deactivateForm()
+			}
+		}
+
+		function checkPrice() {
+			const minPrice = +total.dataset.minPrice
+			const currentPrice = +total.value
+
+			if (currentPrice >= minPrice) return true
+			return false	
+		}
+
+		function activateForm() {
+			if (button) {
+				button.classList.remove('--disabled')
+			}
+			allowSubmit = true
+		}
+
+		function deactivateForm() {
+			if (button) {
+				button.classList.add('--disabled')
+			}
+			allowSubmit = false
+		}
+
+	}
+
 	cartDatepicker()
 	function cartDatepicker() {
 		const datePicker = $( "#datepicker" )
+
+		if (! datePicker[0]) return
+
 		datePicker.datepicker( { 
 			beforeShowDay: disableSpecificWeekDays,
 			firstDay: 1,
@@ -611,18 +667,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			selectOtherMonths: true,
 		} )
 	
-		const date = new Date()
-
-		const maxTime = 16.3
-		const currentTime = +`${date.getHours()}.${date.getMinutes()}`
-
-		if (currentTime >= maxTime) {
-			datePicker.datepicker('option', 'minDate', 1)
-			datePicker.datepicker('setDate', 1)
-		} else {
-			datePicker.datepicker('option', 'minDate', 0)
-			datePicker.datepicker('setDate', 'today')
-		}
+		datePicker.datepicker('setDate', datePicker[0].dataset.minDate)
+		datePicker.datepicker('option', 'minDate', datePicker[0].dataset.minDate)
 
 		function disableSpecificWeekDays(date) {
 			const day = date.getDay();
@@ -633,6 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 	}
+
 
 	$('.clients-logos').owlCarousel({
     loop: false,
