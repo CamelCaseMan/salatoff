@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			let currentNum = 0
 
-			setTab(0)
+			setTab(1)
 
 			Object.values(triggers).forEach(trigger => {
 				trigger.addEventListener('click', () => {
@@ -548,8 +548,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		function init(input) {
 			input.addEventListener('blur', () => {
 				setTimeout( () => {
-					if (! input.value && input.required) addError()
-				} )
+					if (! input.value && input.required) {
+						addError()
+					} else {
+						removeError()
+					}
+				}, 200 )
 			})
 			input.addEventListener('input', () => {
 				if (input.value) removeError()
@@ -564,17 +568,71 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	$( "#datepicker" ).datepicker( { 
-		firstDay: 1,
-		dateFormat: "dd.mm.yy",
-		dayNames: [ "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота" ],
-		dayNamesShort: [ "Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Сбт" ],
-		dayNamesMin: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
-		monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Окрябрь", "Ноябрь", "Декабрь" ],
-		monthNamesShort: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окр", "Ноя", "Дек" ],
-		showOtherMonths: true,
-    selectOtherMonths: true
-	} );
+	setCity() 
+	function setCity() {
+		const radioWrapper = document.getElementById('set-city-radio')
+
+		if (! radioWrapper) return
+
+		const targetInput = document.getElementById( radioWrapper.dataset.target )
+		const radioInputs = radioWrapper.getElementsByTagName('input')
+
+		radioInputs[0].checked = true
+
+		Object.values(radioInputs).forEach( (input, i) => {
+			input.addEventListener('change', () => {
+				if (i === 0) {
+					targetInput.readOnly = true
+					targetInput.value = input.value
+				}
+				if (i === 1) {
+					targetInput.readOnly = false
+					targetInput.value = ''
+					targetInput.focus()
+				}
+			})
+		} )
+
+	}
+
+	cartDatepicker()
+	function cartDatepicker() {
+		const datePicker = $( "#datepicker" )
+		datePicker.datepicker( { 
+			beforeShowDay: disableSpecificWeekDays,
+			firstDay: 1,
+			dateFormat: "dd.mm.yy",
+			dayNames: [ "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота" ],
+			dayNamesShort: [ "Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Сбт" ],
+			dayNamesMin: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
+			monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Окрябрь", "Ноябрь", "Декабрь" ],
+			monthNamesShort: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окр", "Ноя", "Дек" ],
+			showOtherMonths: true,
+			selectOtherMonths: true,
+		} )
+	
+		const date = new Date()
+
+		const maxTime = 16.3
+		const currentTime = +`${date.getHours()}.${date.getMinutes()}`
+
+		if (currentTime >= maxTime) {
+			datePicker.datepicker('option', 'minDate', 1)
+			datePicker.datepicker('setDate', 1)
+		} else {
+			datePicker.datepicker('option', 'minDate', 0)
+			datePicker.datepicker('setDate', 'today')
+		}
+
+		function disableSpecificWeekDays(date) {
+			const day = date.getDay();
+			if (day === 0) {
+				return [false]
+			} else {
+				return [true]
+			}
+		}
+	}
 
 	$('.clients-logos').owlCarousel({
     loop: false,
