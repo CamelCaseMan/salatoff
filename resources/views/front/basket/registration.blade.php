@@ -130,7 +130,7 @@
                                                       fill="#C4C4C4"/>
                                             </svg>
                                         </label>
-                                        <input readonly type="text" required name="delivery_date" class="input-style"
+                                        <input data-min-date="{{$delivery_date}}" readonly type="text" required name="delivery_date" class="input-style"
                                                id="datepicker" placeholder="Выберите дату">
                                         <!-- * Это сообщение об ошибке -->
                                         <div class="-error-message">Обязательное поле</div>

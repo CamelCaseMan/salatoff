@@ -1428,6 +1428,16 @@ body.profile-page {
 				}
 			}
 		}
+		&-button {
+			&.--disabled {
+				& + .basket-submit-message {
+					display: block;
+				}
+			}
+		}
+		.basket-submit-message {
+			display: none;
+		}
 	}
 }
 /* /basket-page */

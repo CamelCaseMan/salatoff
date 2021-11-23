@@ -595,9 +595,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
+	basketSubmit()
+	function basketSubmit() {
+		const form = document.getElementById('basket-submit')
+		const total = document.getElementById('basket-submit-total')
+
+		if (! form || ! total) return
+
+		const button = form.getElementsByClassName('basket__order-button')[0]
+		let allowSubmit = false
+
+		setForm()
+
+		total.addEventListener('change', setForm)
+
+		form.addEventListener('submit', (evt) => {
+			evt.preventDefault()
+
+			if (! allowSubmit) return
+			form.submit()
+		})
+
+		function setForm() {
+			if ( checkPrice() ) {
+				activateForm()
+			} else {
+				deactivateForm()
+			}
+		}
+
+		function checkPrice() {
+			const minPrice = +total.dataset.minPrice
+			const currentPrice = +total.value
+
+			if (currentPrice >= minPrice) return true
+			return false	
+		}
+
+		function activateForm() {
+			if (button) {
+				button.classList.remove('--disabled')
+			}
+			allowSubmit = true
+		}
+
+		function deactivateForm() {
+			if (button) {
+				button.classList.add('--disabled')
+			}
+			allowSubmit = false
+		}
+
+	}
+
 	cartDatepicker()
 	function cartDatepicker() {
 		const datePicker = $( "#datepicker" )
+
+		if (! datePicker[0]) return
+
 		datePicker.datepicker( { 
 			beforeShowDay: disableSpecificWeekDays,
 			firstDay: 1,
@@ -611,8 +667,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			selectOtherMonths: true,
 		} )
 	
-		datePicker.datepicker('setDate', '24.11.2021')
-		datePicker.datepicker('option', 'minDate', '24.11.2021')
+		datePicker.datepicker('setDate', datePicker[0].dataset.minDate)
+		datePicker.datepicker('option', 'minDate', datePicker[0].dataset.minDate)
 
 		function disableSpecificWeekDays(date) {
 			const day = date.getDay();
@@ -623,6 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 	}
+
 
 	$('.clients-logos').owlCarousel({
     loop: false,

@@ -637,6 +637,11 @@ input[type=number] {
   border: none;
   width: 100%;
 }
+.modal__button.--disabled {
+  background-color: #ddd;
+  cursor: default;
+  color: gray;
+}
 .modal__sms-modal .-input {
   display: flex;
   align-items: center;
