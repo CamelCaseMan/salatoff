@@ -49,7 +49,7 @@ class OrderController
         $this->orderService->updateInfoConfirmedOrder($order, $data);
 
         //Обрабатываем метод оплаты
-       // dd($data);
+        dd($data['payment']);
 
 
         session(['success_order_id' => $orderID]);
