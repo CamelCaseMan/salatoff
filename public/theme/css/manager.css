@@ -743,6 +743,21 @@ input[type=number] {
 .modal__address-modal .-addresses-wrapper .-addresses li:hover {
   background-color: #E5E5E5;
 }
+.modal__user-modal .-chars {
+  margin: 0;
+  padding: 0;
+}
+.modal__user-modal .-chars li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.modal__user-modal .-chars li:last-child {
+  margin-bottom: 0;
+}
+.modal__user-modal .-chars li .-prefix {
+  opacity: 0.6;
+}
 .modal .-split-buttons .-button {
   margin-bottom: 8px;
   position: static !important;
@@ -1143,6 +1158,10 @@ body.--block {
 html, body {
   font-family: "Golos", sans-serif;
   color: var(--black);
+}
+
+body.--fixed {
+  overflow: hidden;
 }
 
 .manager-page {

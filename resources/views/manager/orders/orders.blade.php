@@ -26,8 +26,8 @@
                         @if(is_null($order->user_id))
                             Без регистрации
                         @else
-                            <div class="tag-button --green toggle-active open-modal"
-                                 data-toggle-active="mw-user-info_{{$key}}">
+                            <div class="tag-button --green open-modal"
+                                 data-open-modal="wndw-user-info-{{$key}}">
                                 Подробнее
                             </div>
                         @endif
@@ -36,14 +36,14 @@
 
                     <td class="">{{$order->phone}}</td>
                     <td>
-                        <div class="tag-button --green toggle-active open-modal"
-                             data-toggle-active="mw-delivery-info_{{$key}}">
+                        <div class="tag-button --green open-modal"
+                             data-open-modal="wndw-user-delivery-info-{{$key}}">
                             Подробнее
                         </div>
                     </td>
                     <td>
-                        <div class="tag-button --green toggle-active open-modal"
-                             data-toggle-active="mw-user-info_{{$key}}">
+                        <div class="tag-button --green open-modal"
+                             data-open-modal="wndw-user-info-{{$key}}">
                             Подробнее
                         </div>
                     </td>

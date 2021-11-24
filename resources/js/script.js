@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const hamburger = document.getElementsByClassName('header__hamburger')[0]
 		const menu = document.getElementById('header-drop')
 
+		if (! menu || ! hamburger) return
+
 		document.addEventListener('click', (evt) => {
 
 			if ( !menu.classList.contains('active') ) return
@@ -276,7 +278,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 			document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
-			header.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
+			if (header) {
+				header.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
+			}
 			document.body.classList.add('--fixed')
 
 			const modalBody = modal.getElementsByClassName('modal__body')[0]
@@ -315,7 +319,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			setTimeout( () => {
 				document.body.style.paddingRight = 0
-				header.style.paddingRight = 0
+				if (header) {
+					header.style.paddingRight = 0
+				}
 				document.body.classList.remove('--fixed')
 			}, 300 )
 

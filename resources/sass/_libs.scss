@@ -661,6 +661,23 @@
 			}
 		}
 	}
+	&__user-modal {
+		.-chars {
+			margin: 0;
+			padding: 0;
+			li {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 8px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				.-prefix {
+					opacity: 0.6;
+				}
+			}
+		}
+	}
 	.-split-buttons {
 		.-button {
 			margin-bottom: 8px;
