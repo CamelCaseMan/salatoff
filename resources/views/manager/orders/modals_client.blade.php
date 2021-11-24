@@ -1,16 +1,16 @@
-<div class="manager-modals">
-    <div class="manager-modals__bg close-modal"></div>
-    @foreach($orders as $key =>$order)
-        <div id="mw-user-info_{{$key}}" class="manager-modals__modal manager-modal">
-            <div class="manager-modal__header">
-                <div class="-title">Зарегистрирован на сайте</div>
-                <div class="-close close-modal">
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                        <path d="M1 1L14 14M14 1L1 14" stroke="black" stroke-width="1.5"/>
-                    </svg>
-                </div>
+@foreach($orders as $key =>$order)
+<div id="wndw-user-info-{{$key}}" class="modal">
+    <div class="modal__container">
+        <div class="modal__bg close-modal"></div>
+        <div class="modal__body">
+            <div class="modal__close close-modal">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
             </div>
-            <div class="manager-modal__content">
+            <div class="modal__title" style="font-size: 1.5rem;">Информация о пользователе</div>
+            <div class="modal__user-modal">
                 @if(!is_null($order->user_id))
                     <ul class="-chars">
                         <li>
@@ -27,10 +27,11 @@
                         </li>
                     </ul>
                     @else
-                    <h3>Клиент не зарегистрирован</h3>
+                    <p>Клиент не зарегистрирован</p>
                 @endif
             </div>
         </div>
-    {{-- @include('manager.orders.modals_delivery')--}}
-    @endforeach
+    </div>
 </div>
+{{-- @include('manager.orders.modals_delivery')--}}
+@endforeach

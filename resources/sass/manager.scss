@@ -9,6 +9,10 @@ html, body {
 	color: var(--black);
 }
 
+body.--fixed {
+  overflow: hidden;
+}
+
 .manager-page {
   padding-top: 50px;
   padding-bottom: 100px;
