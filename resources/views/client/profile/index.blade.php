@@ -1,18 +1,29 @@
 @include('include.message')
-<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <div class="profile__block mb-5">
-        <form action="{{route('change.profile')}}" class="profile__form">
-            {{ csrf_field() }}
-            <h5 class="profile__title mb-3">Профиль</h5>
-            <div class="form-group mb-3">
-                <label for="name">Ваше имя</label>
-                <input type="text" name="name" class="form-control" value="{{$user->name}}">
+<div class="magic-tab profile__tab active" id="profile-tab-01">
+    <form action="{{route('change.profile')}}" class="profile__form superform">
+        {{ csrf_field() }}
+        <section class="-form-section">
+            <label class="-prefix" for="pt-name">Имя <span class="-star">*</span></label>
+            <div class="valinput">
+                <!-- * Если успешно, то "--success", нет — "--error" -->
+                <input class="input-style" required name="name" id="pt-name" type="text">
+                <!-- * Это сообщение об ошибке -->
+                <div class="-error-message">Введите имя</div>
+                <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                <!-- <div class="-message">Сообщение к полю</div> -->
             </div>
-            <div class="form-group mb-3">
-                <label for="last-name">Почта для получение скидочных предложений</label>
-                <input type="text" name="email" class="form-control" value="{{$user->email}}">
+        </section>
+        <section class="-form-section">
+            <label class="-prefix" for="pt-email">Почта для получение скидочных предложений</label>
+            <div class="valinput">
+                <!-- * Если успешно, то "--success", нет — "--error" -->
+                <input class="input-style" name="name" id="pt-email" type="text">
+                <!-- * Это сообщение об ошибке -->
+                <div class="-error-message">Введите имя</div>
+                <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
+                <!-- <div class="-message">Сообщение к полю</div> -->
             </div>
-            <button class="btn btn-success profile__btn">Сохранить изменения</button>
-        </form>
-    </div>
+        </section>
+        <input type="submit" value="Сохранить изменения" class="typical-button modal__button d-block">
+    </form>
 </div>
