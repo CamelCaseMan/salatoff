@@ -160,21 +160,23 @@
         <div class="info-screen__container container">
             <div class="info-screen__title">
                 Главный принцип нашей кулинарии — <br>
-                <div class="-highlighting">
+                <span style="color: #A2CD3A;">
+                    Качество. Лояльность. <br>
+                    Оперативность.
+                </span>
+                <!-- <div class="-highlighting">
                     эксклюзивность.
                     <svg class="-outline" width="372" height="96" viewBox="0 0 372 96" fill="none">
                         <ellipse cx="186.427" cy="47.5" rx="184.19" ry="46.5" stroke="#A2CD3A"/>
                         <path d="M370.617 47.5009C372.783 76.313 284.937 90.5472 189.294 95.435M370.617 47.5009V47.5009ZM186.427 94.0009C84.6655 92.4458 -1.31047 73.3142 1.04738 48.2339M2.23783 47.5009C-0.222605 18.9259 83.9874 4.84858 186.267 3.81902M186.427 1.0009C289.039 0.855765 370.587 18.3191 370.423 43.6075"
                               stroke="#A2CD3A" stroke-linecap="round"/>
                     </svg>
-                </div>
+                </div> -->
             </div>
             <div class="info-screen__text">
-                <p>Наши технологи разрабатывают блюда, которых нет больше нигде, регулярно улучшают их вкусовые
-                    качества, и делают так, чтобы кулинария соответствовала нормам высшего качества по приготовлению,
-                    хранению и фасовке.</p>
-                <p>Поэтому производство регулярно расширяется, чтобы обслуживать больше клиентов и радовать их более
-                    широким ассортиментом.</p>
+                <p>
+                    Крупнейший производитель кулинарии, выпечки, салатов, кондитерских изделий и блюд японской кухни в Москве и МО. Мы работаем на этом рынке более 15 лет. Наличие собственных производственных площадей (более 3000 кв. м) позволяет нам выпускать широкий ассортимент блюд готовой кулинарии, салатов, кондитерских изделий, выпечки, сэндвичей.
+                </p>
             </div>
         </div>
     </div>
@@ -201,7 +203,7 @@
                     <div class="item">
                         <div class="clients-screen__logo">
                             <div class="-logo"
-                                 style="background-image: url('{{asset('theme')}}/img/logos/gorod.png');"></div>
+                                 style="background-image: url('{{asset('theme')}}/img/logos/tvoydom.png');"></div>
                         </div>
                         <div class="clients-screen__logo">
                             <div class="-logo"
@@ -211,17 +213,7 @@
                     <div class="item">
                         <div class="clients-screen__logo">
                             <div class="-logo"
-                                 style="background-image: url('{{asset('theme')}}/img/logos/miratorg.png');"></div>
-                        </div>
-                        <div class="clients-screen__logo">
-                            <div class="-logo"
-                                 style="background-image: url('{{asset('theme')}}/img/logos/perekrestok.png');"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="clients-screen__logo">
-                            <div class="-logo"
-                                 style="background-image: url('{{asset('theme')}}/img/logos/cofix.png');"></div>
+                                 style="background-image: url('{{asset('theme')}}/img/logos/gopoedim.png');"></div>
                         </div>
                         <div class="clients-screen__logo">
                             <div class="-logo"
@@ -231,7 +223,7 @@
                     <div class="item">
                         <div class="clients-screen__logo">
                             <div class="-logo"
-                                 style="background-image: url('{{asset('theme')}}/img/logos/pech.png');"></div>
+                                 style="background-image: url('{{asset('theme')}}/img/logos/cum.png');"></div>
                         </div>
                         <div class="clients-screen__logo">
                             <div class="-logo"
@@ -276,12 +268,6 @@
                         <div class="clients-screen__logo">
                             <div class="-logo"
                                  style="background-image: url('{{asset('theme')}}/img/logos/star.png');"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="clients-screen__logo">
-                            <div class="-logo"
-                                 style="background-image: url('{{asset('theme')}}/img/logos/cum.png');"></div>
                         </div>
                     </div>
                 </div>
