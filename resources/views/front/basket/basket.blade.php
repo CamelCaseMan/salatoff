@@ -113,10 +113,10 @@
                         </div>
 
                         <!-- ! В аттрибуте "dataset-min-price" устанавливаем минимальную цену заказа -->
-                        <input class="d-none" readonly id="basket-submit-total" type="text" data-min-price="2000" value="{{$order->getFullPrice()}}">
+                        <input class="d-none" readonly id="basket-submit-total" type="text" data-min-price="{{config('shop.min_order')}}" value="{{$order->getFullPrice()}}">
                         <input type="submit" value="Оформить заказ" class="typical-button basket__order-button modal__button d-block mb-20">
                         <p class="basket-submit-message">
-                            Минимальная сумма заказа: 2000 ₽
+                            Минимальная сумма заказа: {{config('shop.min_order')}} ₽
                         </p>
                     </form>
                 </div>
