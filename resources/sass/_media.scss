@@ -1358,6 +1358,56 @@
 	}
 	/* /order-page */
 
+	/* profile-page */
+	.profile {
+		&-page {
+			padding-top: 40px;
+			.second-title {
+				font-size: 1.5rem !important;
+			}
+		}
+		&__header {
+			.-link {
+				font-size: 1rem;
+				margin-right: 15px;
+			}
+		}
+		&__order {
+			border-radius: 16px;
+			&-header {
+				padding: 0 15px;
+				padding-bottom: 15px;
+			}
+			&-products {
+				&-container {
+					padding: 20px 15px;
+				}
+			}
+			&-product {
+				grid-template-columns: 80px 1fr;
+				align-items: start;
+				.-photo {
+					min-width: 80px;
+					height: 80px;
+				}
+				.-body {
+					grid-column: 2/3;
+					.-name {
+						font-size: 1.1rem;
+					}
+				}
+				.-quty {
+					text-align: left;
+				}
+			}
+			&-footer {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+	/* profile-page */
+
 	/* our-production */
 	.our-production {
 		&__top {
