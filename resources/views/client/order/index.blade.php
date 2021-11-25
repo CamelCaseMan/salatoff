@@ -1,12 +1,11 @@
-<div class="tab-pane fade show" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+<div class="magic-tab profile__tab" id="profile-tab-02">
     @if(count($orders) < 1)
-        <h2>История заказов пуста</h2>
+        <p>История заказов пуста</p>
     @else
         @foreach($orders as $order)
-
-            <div class="order">
-                <div class="order__header">
-                    <div class="order__title expand-toggler" data-expand="order-{{$order->id}}">
+            <div class="profile__order">
+                <div class="profile__order-header">
+                    <div class="profile__order-title expand-toggler" data-expand="order-{{$order->id}}">
                         <div class="-left">
                             Заказ №{{$order->id}}
                         </div>
@@ -16,7 +15,7 @@
                             </svg>
                         </div>
                     </div>
-                    <ul class="order__chars">
+                    <ul class="profile__order-chars">
                         <li>
                             <div class="-prefix">Номер для связи</div>
                             {{$order->phone}}
@@ -26,16 +25,16 @@
                             {{$order->updated_at}}
                         </li>
                     </ul>
-                    <div class="btn btn-success">Повторить</div>
+                    <div class="-repeat">Повторить</div>
                 </div>
-                <div class="order__products" id="order-{{$order->id}}">
-                    <div class="order__products-container">
+                <div class="profile__order-products" id="order-{{$order->id}}">
+                    <div class="profile__order-products-container">
                         @foreach($order->products as $product)
-                            <div class="order__product">
+                            <div class="profile__order-product">
                                 <div class="-photo" style="background-image: url({{$product->image}});"></div>
                                 <div class="-body">
                                     <div class="-name">{{$product->name}}</div>
-                                    <div class="btn btn-success add-one-button" data-id="{{$product->id}}">В корзину
+                                    <div class="typical-button add-one-button" data-id="{{$product->id}}">В корзину
                                     </div>
                                 </div>
                                 <div class="-quty">1 шт</div>
@@ -44,7 +43,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="order__footer">
+                <div class="profile__order-footer">
                     <div class="-title">
                         Итого
                     </div>
