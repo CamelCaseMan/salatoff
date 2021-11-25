@@ -25,23 +25,29 @@
                             {{ date("d.m.Y / h:i:s", strtotime($order->updated_at))}}
                         </li>
                     </ul>
-                    <div class="-repeat">Повторить</div>
+                    <div class="-repeat repeat-order" data-id="repeat-wrapper-{{$order->id}}">Повторить</div>
                 </div>
                 <div class="profile__order-products" id="order-{{$order->id}}">
-                    <div class="profile__order-products-container">
+                    <div class="profile__order-products-container" id="repeat-wrapper-{{$order->id}}">
                         @foreach($order->products as $product)
-                            <div class="profile__order-product">
+                            <div class="profile__order-product repeat-product" data-id="{{$product->id}}" data-count="{{$product->pivot->count}}">
                                 <div class="-photo" style="background-image: url({{$product->image}});"></div>
                                 <div class="-body">
                                     <div class="-name">{{$product->name}}</div>
                                     @if($product->show == 1)
-                                        <div class="typical-button add-one-button" data-id="{{$product->id}}">В корзину
+                                        <div class="-button typical-button @if(session('basket_status')!=null)
+                                        @if(in_array($product->id,session('basket_status')['products_id']))--done @else add-one-button @endif @else add-one-button
+                                                @endif " data-id="{{$product->id}}">
+                                            <span class="-text">В корзину</span>
+                                            <svg class="-icon" width="27" height="18" viewBox="0 0 27 18" fill="none">
+                                                <path d="M0.5 7.5L10 17L26 1" stroke="#A2CD3A" stroke-width="1.5"/>
+                                            </svg>
                                         </div>
                                         @else
-                                        <span>Товар закончился</span>
+                                        <span class="-empty">Товар закончился</span>
                                     @endif
                                 </div>
-                                <div class="-quty">1 шт</div>
+                                <div class="-quty">{{$product->pivot->count}} шт</div>
                                 <div class="-price">{{$product->price}} руб.</div>
                             </div>
                         @endforeach

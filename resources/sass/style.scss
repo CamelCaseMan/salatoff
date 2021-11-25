@@ -953,9 +953,44 @@ p {
 					font-weight: 500;
 					margin-bottom: 15px;
 				}
-				.typical-button {
-					padding: 10px 20px;
-					padding-bottom: 12px;
+				.-empty {
+					opacity: 0.6;
+					font-size: 0.9rem;
+				}
+				.-button {
+					padding: 0;
+					padding-bottom: 3px;
+					box-sizing: border-box;
+					height: 42px;
+					width: 130px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					transition: .2s ease;
+					position: relative;
+					.-text {
+						position: absolute;
+						transition: .1s ease;
+					}
+					.-icon {
+						position: absolute;
+						opacity: 0;
+						top: 12px;
+						right: 6px;
+						transition: .1s ease;
+					}
+					&.--done {
+						width: 42px;
+						border: 1px solid #E0E0E0;
+						cursor: default;
+						background-color: transparent;
+						.-text {
+							opacity: 0;
+						}
+						.-icon {
+							opacity: 1;
+						}
+					}
 				}
 			}
 			.-quty {

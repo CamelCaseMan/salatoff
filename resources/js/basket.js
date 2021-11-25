@@ -206,6 +206,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    basketRepeat()
+    function basketRepeat() {
+        const buttons = document.getElementsByClassName('repeat-order')
+
+        Object.values(buttons).forEach(init)
+        function init(button) {
+            const id = button.dataset.id
+            const wrapper = document.getElementById(id)
+
+            if (! wrapper) return
+
+            const products = []
+            const productsHTML = wrapper.getElementsByClassName('repeat-product')
+
+            Object.values(productsHTML).forEach(product => {
+                const id = product.dataset.id
+                const count = product.dataset.count
+                const button = product.getElementsByClassName('add-one-button')[0]
+                products.push({
+                    id,
+                    count,
+                    button
+                })
+            })
+
+            button.addEventListener('click', () => {
+                sendProducts(products, button)
+            })
+
+        }
+
+        function sendProducts(products, button) {
+
+            for (let product of products) {
+                const formData = new FormData();
+                formData.append('productId', product.id)
+                formData.append('count', product.count)
+    
+                sendBasket('/basket/addcount', formData, (err, data) => {
+                    if (err) {
+                        console.log(err)
+                        return
+                    }
+                    console.log(data)
+    
+                    product.button.classList.add('--done')
+                    button.classList.add('--done')
+                    headerQuty.innerText = data.count
+                })
+
+            }
+        }
+    }
+
     
     function sendBasket(url, formData, callback) {
 

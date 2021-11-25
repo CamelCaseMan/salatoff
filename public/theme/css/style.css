@@ -403,7 +403,10 @@ input[type=number] {
   border: 2px solid var(--green);
 }
 .typical-button.--stroke:hover {
-  color: var(--green);
+  color: var(--green) !important;
+}
+.typical-button.--square {
+  border-radius: 8px;
 }
 
 /* /typical-button */
@@ -570,6 +573,13 @@ input[type=number] {
 }
 .modal.active {
   display: block;
+}
+.modal.--mini .modal__body {
+  max-width: 400px;
+  padding-top: 25px;
+}
+.modal.--mini .modal__title {
+  font-size: 1.5rem;
 }
 .modal.--transparent {
   opacity: 0;
@@ -1992,9 +2002,44 @@ p a {
   font-weight: 500;
   margin-bottom: 15px;
 }
-.profile__order-product .-body .typical-button {
-  padding: 10px 20px;
-  padding-bottom: 12px;
+.profile__order-product .-body .-empty {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+.profile__order-product .-body .-button {
+  padding: 0;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  height: 42px;
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease;
+  position: relative;
+}
+.profile__order-product .-body .-button .-text {
+  position: absolute;
+  transition: 0.1s ease;
+}
+.profile__order-product .-body .-button .-icon {
+  position: absolute;
+  opacity: 0;
+  top: 12px;
+  right: 6px;
+  transition: 0.1s ease;
+}
+.profile__order-product .-body .-button.--done {
+  width: 42px;
+  border: 1px solid #E0E0E0;
+  cursor: default;
+  background-color: transparent;
+}
+.profile__order-product .-body .-button.--done .-text {
+  opacity: 0;
+}
+.profile__order-product .-body .-button.--done .-icon {
+  opacity: 1;
 }
 .profile__order-product .-quty {
   text-align: right;
