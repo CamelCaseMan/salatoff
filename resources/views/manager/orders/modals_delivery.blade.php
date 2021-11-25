@@ -11,11 +11,13 @@
             <div class="modal__title" style="font-size: 1.5rem;">Информация по доставке</div>
             <div class="modal__user-modal">
                 <ul class="-chars">
-                    @foreach($order->getInfoDelivery() as $text)
-                        <li>
-                            <div class="-prefix">{{$text['name']}}</div>
-                            {{$text['value']}}
-                        </li>
+                    @foreach($order->getInfoDelivery() as $key => $text)
+                        @if(!is_null($text))
+                            <li>
+                                <div class="-prefix">{{$key}}</div>
+                                {{$text}}
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>

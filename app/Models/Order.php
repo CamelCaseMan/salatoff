@@ -102,34 +102,19 @@ class Order extends Model
     public function getInfoDelivery()
     {
         $info = [];
+        $delivery = $this->delivery;
 
-        $a = $this->delivery;
+        $info = [
+            'Метод оплаты' => $delivery['card'] ?? null,
+            'Город' => $delivery['city'] ?? null,
+            'Улица' => $delivery['street'] ?? null,
+            'Дом' => $delivery['home'] ?? null,
+            'Этаж' => $delivery['floor'] ?? null,
+            'Офис' => $delivery['office'] ?? null,
+            'Подъезд' => $delivery['entrance'] ?? null,
+            'Комментарий' => $delivery['comment'] ?? null,
 
-        foreach ($a as $key => $delivery) {
-            if (!is_null($delivery)) {
-                switch ($key) {
-                    case 'entrance':
-                        $name = 'Подъезд';
-                        break;
-                    case 'intercom':
-                        $name = 'Домофон';
-                        break;
-                    case 'floor':
-                        $name = 'Этаж';
-                        break;
-                    case 'flat':
-                        $name = 'Квартира';
-                        break;
-                    case 'comment':
-                        $name = 'Комментарий к заказу';
-                        break;
-                }
-                $info[] = [
-                    'name' => $name,
-                    'value' => $delivery
-                ];
-            }
-        }
+        ];
 
         return $info;
     }

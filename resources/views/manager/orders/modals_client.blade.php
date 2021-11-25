@@ -17,10 +17,12 @@
                             <div class="-prefix">Клиент</div>
                             {{$order->user['name']}}
                         </li>
+                        @if(isset($order->user['email']))
                         <li>
                             <div class="-prefix">Почта</div>
                             {{$order->user['email']}}
                         </li>
+                        @endif
                         <li>
                             <div class="-prefix">Регистрации на сайте</div>
                             {{$order->user['created_at']}}
@@ -33,5 +35,6 @@
         </div>
     </div>
 </div>
-{{-- @include('manager.orders.modals_delivery')--}}
+ @include('manager.orders.modals_delivery')
+@include('manager.orders.modals_products')
 @endforeach

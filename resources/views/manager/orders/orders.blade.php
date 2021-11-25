@@ -10,8 +10,8 @@
                 <th>Клиент</th>
                 <th>На кого заказано</th>
                 <th>Телефон</th>
-                <th>Доставка</th>
                 <th>Список продуктов</th>
+                <th>Доставка</th>
                 <th>Купон</th>
                 <th class="text-right">Итого</th>
             </tr>
@@ -37,13 +37,13 @@
                     <td class="">{{$order->phone}}</td>
                     <td>
                         <div class="tag-button --green open-modal"
-                             data-open-modal="wndw-user-delivery-info-{{$key}}">
+                             data-open-modal="wndw-products-info-{{$key}}">
                             Подробнее
                         </div>
                     </td>
                     <td>
                         <div class="tag-button --green open-modal"
-                             data-open-modal="wndw-user-info-{{$key}}">
+                             data-open-modal="wndw-delivery-info-{{$key}}">
                             Подробнее
                         </div>
                     </td>
@@ -62,4 +62,5 @@
         {{ $orders->links() }}
     </div>
     @include('manager.orders.modals_client')
+    @include('manager.orders.modals_products')
 @endsection
