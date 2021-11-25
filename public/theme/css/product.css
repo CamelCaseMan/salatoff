@@ -397,7 +397,10 @@ input[type=number] {
   border: 2px solid var(--green);
 }
 .typical-button.--stroke:hover {
-  color: var(--green);
+  color: var(--green) !important;
+}
+.typical-button.--square {
+  border-radius: 8px;
 }
 
 /* /typical-button */
@@ -564,6 +567,13 @@ input[type=number] {
 }
 .modal.active {
   display: block;
+}
+.modal.--mini .modal__body {
+  max-width: 400px;
+  padding-top: 25px;
+}
+.modal.--mini .modal__title {
+  font-size: 1.5rem;
 }
 .modal.--transparent {
   opacity: 0;

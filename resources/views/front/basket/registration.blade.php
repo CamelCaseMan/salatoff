@@ -1,6 +1,36 @@
 @extends('front.master')
 @section('content')
 
+    <div id="wndw-order-map" class="modal">
+        <div class="modal__container">
+            <div class="modal__bg close-modal"></div>
+            <div class="modal__body" style="max-width: 460px;">
+                <div class="modal__close close-modal">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="modal__title">Карта доставки</div>
+                <div class="modal__map-modal">
+                    <img style="border-radius: 8px;" src="{{asset('theme')}}/img/map-order.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wndw-order-cancel" class="modal --mini">
+        <div class="modal__container">
+            <div class="modal__bg close-modal"></div>
+            <div class="modal__body">
+                <div class="modal__title">Прервать ввод данных?</div>
+                <p class="mb-40">Все введённые данные не сохранятся</p>
+                <div class="-button close-modal typical-button d-block text-center mb-10 --square" style="display: block">Нет, продолжить</div>
+                <a href="/basket" class="-button typical-button d-block text-center --square --stroke --thin" style="display: block;; color: #1a1a1a;">Да, отменить</a> 
+            </div>
+        </div>
+    </div>
+
     <div class="order-page container mb-160 l-mb-120">
 
         <div class="order__header mb-60 s-mb-40">
@@ -150,7 +180,7 @@
                             <div class="-title">Адрес доставки</div>
                         </div>
 
-                        <a class="-link mb-40" href="/">Показать карту зоны доставки</a>
+                        <span class="-link mb-40 open-modal" style="cursor: pointer;" data-open-modal="wndw-order-map">Показать карту зоны доставки</span>
 
                         <div class="superform order__form">
                             <div class="order__form-row radio-selector" id="set-city-radio" data-target="tab-003-city">
@@ -440,7 +470,7 @@
 
                 <div class="order__body-buttons">
                     <div class="-split-buttons">
-                        <a href="/basket" class="-button typical-button d-block text-center --square --stroke --thin">Отмена</a>
+                        <div class="-button typical-button d-block text-center --square --stroke --thin open-modal" data-open-modal="wndw-order-cancel">Отмена</div>
                         <div class="-button typical-button d-block text-center --square step-tabs-next">
                             Далее
                             <svg width="12" height="11" viewBox="0 0 12 11" fill="none">
@@ -453,8 +483,8 @@
                         <button type="submit" class="-button typical-button d-block text-center --square">Оформить
                             заказ
                         </button>
-                        <a href="/basket" class="-button typical-button d-block text-center --square --stroke --thin">Отменить
-                            ввод данных</a>
+                        <div class="-button typical-button d-block text-center --square --stroke --thin open-modal" data-open-modal="wndw-order-cancel">Отменить
+                            ввод данных</div>
                     </div>
                 </div>
 

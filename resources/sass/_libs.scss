@@ -303,8 +303,11 @@
 		background-color: transparent;
 		border: 2px solid var(--green);
 		&:hover {
-			color: var(--green);
+			color: var(--green) !important;
 		}
+	}
+	&.--square {
+		border-radius: 8px;
 	}
 }
 /* /typical-button */
@@ -481,6 +484,15 @@
 	transition: .3s ease;
 	&.active {
 		display: block;
+	}
+	&.--mini {
+		.modal__body {
+			max-width: 400px;
+			padding-top: 25px;
+		}
+		.modal__title {
+			font-size: 1.5rem;
+		}
 	}
 	&.--transparent {
 		opacity: 0;
