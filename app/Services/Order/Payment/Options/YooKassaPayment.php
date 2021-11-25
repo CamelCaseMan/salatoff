@@ -25,6 +25,6 @@ class YooKassaPayment implements PaymentInterface
      */
     public function returnUrl(): string
     {
-        // TODO: Implement returnUrl() method.
+        return 'https://yandex.ru';
     }
 }

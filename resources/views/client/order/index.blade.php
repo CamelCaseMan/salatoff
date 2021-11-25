@@ -21,8 +21,8 @@
                             {{$order->phone}}
                         </li>
                         <li>
-                            <div class="-prefix">Дата и время</div>
-                            {{$order->updated_at}}
+                            <div class="-prefix">Дата заказа</div>
+                            {{ date("d.m.Y / h:i:s", strtotime($order->updated_at))}}
                         </li>
                     </ul>
                     <div class="-repeat">Повторить</div>
@@ -34,8 +34,12 @@
                                 <div class="-photo" style="background-image: url({{$product->image}});"></div>
                                 <div class="-body">
                                     <div class="-name">{{$product->name}}</div>
-                                    <div class="typical-button add-one-button" data-id="{{$product->id}}">В корзину
-                                    </div>
+                                    @if($product->show == 1)
+                                        <div class="typical-button add-one-button" data-id="{{$product->id}}">В корзину
+                                        </div>
+                                        @else
+                                        <span>Товар закончился</span>
+                                    @endif
                                 </div>
                                 <div class="-quty">1 шт</div>
                                 <div class="-price">{{$product->price}} руб.</div>

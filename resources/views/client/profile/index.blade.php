@@ -6,7 +6,7 @@
             <label class="-prefix" for="pt-name">Имя <span class="-star">*</span></label>
             <div class="valinput">
                 <!-- * Если успешно, то "--success", нет — "--error" -->
-                <input class="input-style" required name="name" id="pt-name" type="text">
+                <input class="input-style" required name="name" id="pt-name" type="text" value="{{$user->name}}">
                 <!-- * Это сообщение об ошибке -->
                 <div class="-error-message">Введите имя</div>
                 <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
@@ -17,7 +17,7 @@
             <label class="-prefix" for="pt-email">Почта для получение скидочных предложений</label>
             <div class="valinput">
                 <!-- * Если успешно, то "--success", нет — "--error" -->
-                <input class="input-style" name="name" id="pt-email" type="text">
+                <input class="input-style" name="email" id="pt-email" type="text" value="{{$user->email}}">
                 <!-- * Это сообщение об ошибке -->
                 <div class="-error-message">Введите имя</div>
                 <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->

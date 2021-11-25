@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Services\Order\Delivery\Delivery;
 use App\Services\Order\Discounts\Discount;
 use App\Services\Order\OrderService;
+use App\Services\Order\Payment\PaymentFactory;
 
 
 class OrderController
@@ -43,32 +44,31 @@ class OrderController
 
         //Считаем стоимость доставки
         $delivery = Delivery::setDelivery('courier');
-        $data['total'] = $total + $delivery->costOfDelivery();
+        $data['total'] = $data['total'] + $delivery->costOfDelivery();
 
         //Сохраняем заказ
         $this->orderService->updateInfoConfirmedOrder($order, $data);
 
         //Обрабатываем метод оплаты
-        dd($data['payment']);
+        $payment = PaymentFactory::getPaymentMethod($order, $data['delivery']['payment']);
+        $payment_url = $payment->returnUrl();
 
 
         session(['success_order_id' => $orderID]);
         session()->forget('basket_status');
         session()->forget('orderId');
 
+        if (!empty($payment_url)) {
+            return redirect($payment_url);
+        }
+
         return redirect()->route('basket.success');
-    }
-
-    private function redirectClient()
-    {
-
     }
 
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * Страница успешного заказа
-     *
      */
     public function success()
     {

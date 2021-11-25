@@ -27,6 +27,8 @@ class OrderRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required',
             'delivery_date' => 'required',
+            'payment' => 'required',
+
         ];
     }
 
@@ -69,7 +71,7 @@ class OrderRequest extends FormRequest
             'entrance' => $this->entrance?? null,
             'floor' => $this->floor?? null,
             'office' => $this->office?? null,
-            'card' => $this->card,
+            'payment' => $this->payment,
             'comment' => $this->comment?? null,
         ];
         return $delivery;

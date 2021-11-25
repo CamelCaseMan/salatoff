@@ -10,17 +10,19 @@ class PaymentFactory
 {
     /**
      * @param Order $order
-     * @param string $mthod
+     * @param string $method
      * @return PaymentInterface
      * @throws \Exception
      * Получаем способ оплаты по его ID
      */
-    public static function getPaymentMethod(Order $order, string $mthod): PaymentInterface
+    public static function getPaymentMethod(Order $order, string $method): PaymentInterface
     {
-        switch ($mthod) {
-            case "online":
+        switch ($method) {
+            case "Картой онлайн":
                 return new YooKassaPayment($order);
-            case "offline":
+            case "Картой при получении":
+                return new OfflinePayment($order);
+            case "Наличными курьеру":
                 return new OfflinePayment($order);
             default:
                 throw new \Exception("Unknown Payment Method");

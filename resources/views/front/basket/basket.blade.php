@@ -73,7 +73,7 @@
                         Обратите внимание
                     </div>
                     <p class="-text">
-                        Минимальная сумма заказа: 2000 ₽<br>
+                        Минимальная сумма заказа: {{config('shop.min_order')}} ₽<br>
                         Ближайшая дата доставки: {{$delivery_date}}<br>
                         Доставка по Москве и Московской области — <a href="#">бесплатно</a><br>
                         <br>
@@ -93,48 +93,6 @@
                     </div>
                     <form id="basket-submit" method="GET" action="{{route('basket.registration')}}" class="superform">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                        <!-- <div class="basket__order-row"> -->
-                            <!-- <section class="-form-section"> -->
-                                <!-- <label class="-prefix" for="ordpg-001-name">Карта «Город Тройка»</label> -->
-                                <!-- <div class="valinput"> -->
-                                    <!-- * Если успешно, то "--success", нет — "--error" -->
-                                    <!-- <input class="input-style" id="ordpg-001-name" placeholder="Введите номер карты" type="text"> -->
-                                    <!-- * Это сообщение об ошибке -->
-                                    <!-- <div class="-error-message">Сообщение с ошибкой</div> -->
-                                    <!-- * Если нужно доп. сообщение под инпутом (размещать под -error-message): -->
-                                    <!-- <div class="-message">Сообщение к полю</div> -->
-                                <!-- </div> -->
-                            <!-- </section> -->
-                            <!-- <div class="-check-btn">Проверить баланс</div> -->
-                        <!-- </div> -->
-
-                        <!-- 
-                            * Следущий блок должен вызываться после
-                              проверки баланса карты тройка
-                        -->
-                        <!-- <div class="basket__order-flex-row">
-                            <p>
-                                <b>Карта «Город Тройка»</b><br>
-                                Баланс по карте: 150 баллов <br>
-                                Оплата бонусами — не более 40% заказа = не более 60 баллов
-                            </p>
-                            <div class="input-droplist">
-                                <div data-value="0" class="input-style -no-input -input" tabindex="-1">
-                                    Начислить
-                                </div>
-                                <div class="-focus-elements">
-                                    <svg class="-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
-                                        <path d="M7 9L13.9282 0H0.0717969L7 9Z" fill="#C4C4C4"/>
-                                    </svg>
-                                    <div class="-list">
-                                        <ul class="-new">
-                                            <li data-value="0">Начислить</li>
-                                            <li data-value="1">Списать</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <div class="basket__order-row">
                             <section class="-form-section">

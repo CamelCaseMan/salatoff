@@ -105,7 +105,7 @@ class Order extends Model
         $delivery = $this->delivery;
 
         $info = [
-            'Метод оплаты' => $delivery['card'] ?? null,
+            'Метод оплаты' => $delivery['payment'],
             'Город' => $delivery['city'] ?? null,
             'Улица' => $delivery['street'] ?? null,
             'Дом' => $delivery['home'] ?? null,

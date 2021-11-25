@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,5 +23,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Blog::factory(55)->create();
         \App\Models\RecipeСategories::factory(10)->create();
         \App\Models\Recipes::factory(100)->create();
+
+        Artisan::call('make:role');
     }
 }
