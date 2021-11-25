@@ -39,9 +39,13 @@ class CreateNewUser implements CreatesNewUsers
             'code' => ['required', new CheckSmsCode($input['phone'])],
         ], $messages)->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'phone' => $input['phone'],
         ]);
+
+        $user->assignRole('client');
+
+        return $user;
     }
 }
