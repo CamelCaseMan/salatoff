@@ -34,6 +34,7 @@ Route::get('/', [PageController::class, 'showPage'],
     ])
 )->name('front.home');
 Route::get('/our-production', [PageController::class, 'showPage']);
+Route::get('/contacts', [PageController::class, 'showPage']);
 
 // Каталог и карточки товара раздела кафе и магазины
 Route::get('/shops-and-cafes', [ShopsAndCafesController::class, 'showPageCatalog']);

@@ -2,7 +2,7 @@
 
 namespace App\Services\Order;
 
-
+use Carbon\Carbon;
 use App\Models\Order;
 use App\Repositories\EloquentCuponsRepository;
 use App\Repositories\EloquentOrdersRepository;
@@ -22,7 +22,15 @@ class OrderService
     {
         //Получаем id купона
         if (!is_null($data['cupon'])) {
-            $id = $this->cuponsRepository->findCuponId($data['cupon']);
+            $cupon = $this->cuponsRepository->findCupon($data['cupon']);
+            $status = !Carbon::parse($cupon->expiration)->isPast();
+
+            if ($status) {
+                $id = $cupon->id;
+            } else {
+                $id = null;
+            }
+
             $data['cupon_id'] = $id;
         }
         $this->ordersRepository->updateInfoOrder($order, $data);

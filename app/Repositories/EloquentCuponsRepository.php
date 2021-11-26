@@ -6,10 +6,10 @@ use App\Models\Cupon;
 
 class EloquentCuponsRepository
 {
-    public function findCuponId(string $value)
+    public function findCupon(string $value)
     {
         $cupon = Cupon::where('value', $value)
             ->first();
-        return $cupon->id;
+        return $cupon;
     }
 }
