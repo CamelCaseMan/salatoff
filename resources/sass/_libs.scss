@@ -485,6 +485,13 @@
 	&.active {
 		display: block;
 	}
+	&.--map {
+		.modal__body {
+			max-width: 900px;
+			padding: 0;
+			overflow: hidden;
+		}
+	}
 	&.--mini {
 		.modal__body {
 			max-width: 400px;

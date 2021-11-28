@@ -1,19 +1,18 @@
 @extends('front.master')
 @section('content')
 
-    <div id="wndw-order-map" class="modal">
+    <div id="wndw-order-map" class="modal --map">
         <div class="modal__container">
             <div class="modal__bg close-modal"></div>
-            <div class="modal__body" style="max-width: 460px;">
+            <div class="modal__body">
                 <div class="modal__close close-modal">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M13 1L1 13M1 1L13 13" stroke="#272727" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="modal__title">Карта доставки</div>
                 <div class="modal__map-modal">
-                    <img style="border-radius: 8px;" src="{{asset('theme')}}/img/map-order.jpg">
+                    <img src="{{asset('theme')}}/img/map-delivery.jpg">
                 </div>
             </div>
         </div>

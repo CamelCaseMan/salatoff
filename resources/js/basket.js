@@ -136,6 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (totalPrice) {
                         totalPrice.innerText = data.total
                     }
+                    if (basketInput) {
+                        basketInput.value = data.total
+                        const event = new Event( 'change', {bubbles : true, cancelable : true} )
+                        basketInput.dispatchEvent(event)
+                    }
 
                     if (data.count == 0) location.reload()
 

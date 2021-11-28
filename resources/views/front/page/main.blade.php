@@ -61,64 +61,74 @@
     </a>
 
     <!-- Slider -->
-    <div id="slider" class="slider mb-120 l-mb-100 s-mb-80">
-        <div class="slider__container container">
-
-            <!-- Pretty slider -->
-            <div id="pts-01" class="pretty-slider">
-
-                <div class="pretty-slider__wrapper">
-
-                    <!-- Slider engine -->
-                    <div class="pretty-slider__engine">
-
-                        <div class="pretty-slider__visible-slides slider__border-radius">
-
-                            <div class="pretty-slider__visible-slides-wrapper"></div>
-
-                        </div>
-
-                        <div class="pretty-slider__hidden-slides">
-                            <!-- ! Сюда нужно загрузить все слайды -->
-
-                            <a href="/shops-and-cafes" class="pretty-slider__slide slider__slide"
-                               style="background-color: #11305e;">
-                                <div class="slider__slide-content">
-                                    <div class="-title">
-                                        Скидка 15% на каждый следующий заказ
-                                    </div>
-                                    <div class="-button typical-button">Выбрать блюдо</div>
+    <div class="slider__wrapper container">
+        <div id="main-slider" class="slider owl-carousel owl-theme owl-loaded mb-120 l-mb-100 s-mb-80">
+            <div class="owl-stage-outer slider__slides-wrapper">
+                <div class="owl-stage">
+                    <div class="owl-item">
+                        <a href="/" class="slider__slide">
+                            <img src="{{asset('theme')}}/img/slider-images/banner7.jpg" alt="Салатофф">
+                            <div class="slider__slide-body">
+                                <div class="-title">
+                                    Скидка 15% на каждый следующий заказ
                                 </div>
-                                <div class="slider__slide-image"
-                                     style="background-image: url({{asset('theme')}}/img/slider/01.png);"></div>
-                            </a>
-                        </div>
-
+                            </div>
+                        </a>
                     </div>
-                    <!-- End Slider engine -->
-
-                    <div class="pretty-slider__navigation">
-                        <div class="-arrow">
-                            <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
-                                <path d="M8.32448 0.5C8.03208 0.5 7.79816 0.581081 7.62273 0.743243L0.473603 7.31081C0.268925 7.52703 0.166585 7.75676 0.166585 8C0.166585 8.24324 0.268925 8.45946 0.473603 8.64865L7.62273 15.2162C7.8274 15.4054 8.06132 15.5 8.32448 15.5C8.58764 15.5 8.82156 15.4054 9.02623 15.2162C9.23091 15.027 9.33325 14.8108 9.33325 14.5676C9.33325 14.3243 9.23091 14.1081 9.02623 13.9189L2.62273 8L9.02623 2.08108C9.23091 1.89189 9.33325 1.66216 9.33325 1.39189C9.33325 1.12162 9.23822 0.905405 9.04816 0.743243C8.85811 0.581081 8.61688 0.5 8.32448 0.5Z"
-                                      fill="#828282"/>
-                            </svg>
-                        </div>
-                        <div class="-arrow">
-                            <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
-                                <path d="M1.67552 0.5C1.96792 0.5 2.20184 0.581081 2.37727 0.743243L9.5264 7.31081C9.73108 7.52703 9.83342 7.75676 9.83342 8C9.83342 8.24324 9.73108 8.45946 9.5264 8.64865L2.37727 15.2162C2.1726 15.4054 1.93868 15.5 1.67552 15.5C1.41236 15.5 1.17844 15.4054 0.973766 15.2162C0.769087 15.027 0.666748 14.8108 0.666748 14.5676C0.666748 14.3243 0.769087 14.1081 0.973766 13.9189L7.37727 8L0.973766 2.08108C0.769087 1.89189 0.666748 1.66216 0.666748 1.39189C0.666748 1.12162 0.761777 0.905405 0.951836 0.743243C1.14189 0.581081 1.38312 0.5 1.67552 0.5Z"
-                                      fill="#828282"/>
-                            </svg>
-                        </div>
+                    <div class="owl-item">
+                        <a href="/" class="slider__slide">
+                            <img src="{{asset('theme')}}/img/slider-images/banner.jpeg" alt="Салатофф">
+                            <div class="slider__slide-body">
+                                <div class="-title">
+                                    Удобная упаковка для фасованной и весовой продукции
+                                </div>
+                            </div>
+                        </a>
                     </div>
-
+                    <div class="owl-item">
+                        <a href="/" class="slider__slide">
+                            <img src="{{asset('theme')}}/img/slider-images/banner3.jpeg" alt="Салатофф">
+                            <div class="slider__slide-body">
+                                <div class="-title">
+                                    Индивидуальный подход к каждому клиенту
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owl-item">
+                        <a href="/" class="slider__slide">
+                            <img src="{{asset('theme')}}/img/slider-images/banner4.jpeg" alt="Салатофф">
+                            <div class="slider__slide-body">
+                                <div class="-title">
+                                    Лучшее качество <br> и вкус
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owl-item">
+                        <a href="/" class="slider__slide">
+                            <img src="{{asset('theme')}}/img/slider-images/banner5.jpeg" alt="Салатофф">
+                            <div class="slider__slide-body">
+                                <div class="-title">
+                                    Помощь в подборе ассортимента
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="owl-item">
+                        <a href="/" class="slider__slide">
+                            <img src="{{asset('theme')}}/img/slider-images/banner6.jpeg" alt="Салатофф">
+                            <div class="slider__slide-body">
+                                <div class="-title">
+                                    Правильная еда <br> для здорового питания
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-                <div class="pretty-slider__dots slider__dots"></div>
-
             </div>
-            <!-- End Pretty slider -->
-
+            <div id="main-slider-nav" class="slider__nav"></div>
+            <div id="main-slider-dots" class="slider__dots"></div>
         </div>
     </div>
     <!-- End Slider -->
@@ -156,7 +166,7 @@
     <!-- End Catalog screen -->
 
     <!-- Info screen -->
-    <div class="info-screen mb-280 l-mb-160 s-mb-100 xs-mb-80">
+    <div class="info-screen mb-240 l-mb-160 s-mb-100 xs-mb-80">
         <div class="info-screen__container container">
             <div class="info-screen__title">
                 Главный принцип нашей кулинарии — <br>
@@ -181,6 +191,39 @@
         </div>
     </div>
     <!-- End Info screen -->
+
+    <!-- Map screen -->
+    <div class="map-screen mb-240 l-mb-160 s-mb-100 xs-mb-80">
+        <div class="map-screen__container container">
+            <h2 class="second-title">
+                Заказ и доставка
+            </h2>
+            <div class="map-screen__split">
+                <div class="map-screen__info">
+                    <div class="-title">
+                        Информация о времени заказа
+                    </div>
+                    <p class="-text">
+                        Минимальная сумма заказа: 300 ₽<br>
+                        Доставка по Москве и Московской области — бесплатно<br>
+                        <br>
+                        Мы обрабатываем заказы с 9:00 до 16:30. <br>
+                        <br>
+                        Это значит, что если Вы заказали у нас еду до 16:30, мы привезём её уже на следующий день.
+                        А если заказ поступил после 16:30, то через день. <br>
+                        <br>
+                        Доставка заказов осуществляется с 7:00 до 12:00 <br>
+                        <br>
+                        По воскресеньям заказы не доставляем
+                    </p>
+                </div>
+                <div class="map-screen__map" style="background-image: url({{asset('theme')}}/img/exp-map.jpg);">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Map screen -->
 
     <!-- Clients screen -->
     <div class="clients-screen mb-200 l-mb-160 s-mb-100 xs-mb-80">
