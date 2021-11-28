@@ -53,7 +53,6 @@ class OrderController
         $payment = PaymentFactory::getPaymentMethod($order, $data['delivery']['payment']);
         $payment_url = $payment->returnUrl();
 
-
         session(['success_order_id' => $orderID]);
         session()->forget('basket_status');
         session()->forget('orderId');

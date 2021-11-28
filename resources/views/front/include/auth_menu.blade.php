@@ -4,6 +4,11 @@
             <li>
                 <a href="/client/profile" class="-link">Личный кабинет</a>
             </li>
+            @if(Auth::user()->hasRole('manager'))
+                <li>
+                    <a href="/manager/orders" class="-link">Заказы магазина</a>
+                </li>
+            @endif
             <li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
