@@ -20,7 +20,7 @@
                     <tr>
                         <td>{{$order->id}}</td>
                         <td class="">
-                            {{ date("d/m/Y", strtotime($order->delivery_date))}}
+                            {{ date("d-m-Y", strtotime($order->delivery_date))}}
 
                         </td>
                         <td>

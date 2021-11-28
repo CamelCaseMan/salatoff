@@ -68,7 +68,7 @@
                 <a href="/" class="-logo">
                     <img src="{{asset('theme')}}/img/logo.svg" alt="Еда без забот логотип">
                 </a>
-                <a href="/" class="-pricelist">Прайс<span class="xs-d-none">-лист</span></a>
+                <a href="/price/Store.pdf" class="-pricelist">Прайс<span class="xs-d-none">-лист</span></a>
             </div>
             <!-- End Header logo -->
 
@@ -556,12 +556,12 @@
         </div>
 
         <div class="footer__button">
-            <a href="/shop" class="typical-button">Выбрать блюдо</a>
+            <a href="/dinner" class="typical-button">Выбрать блюдо</a>
         </div>
 
         <ul class="footer__socials">
             <li>
-                <a href="#">
+                <a href="https://www.facebook.com/Salatoff-%D0%95%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%B7%D0%B0%D0%B1%D0%BE%D1%82-279364752697452/">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                         <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.3586 19.0544 23.5621 12.8 23.9738V14.4H16V12.8H12.8V10.4C12.8 9.07452 13.8745 8 15.2 8H16V6.4H15.2C12.9909 6.4 11.2 8.19086 11.2 10.4V12.8H8V14.4H11.2V23.9738C4.94557 23.5621 0 18.3586 0 12Z"
                               fill="#A2CD3A"/>
@@ -569,7 +569,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.instagram.com/eda_bezzabot">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                         <path d="M12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8Z"
                               fill="#A2CD3A"/>

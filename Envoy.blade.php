@@ -53,6 +53,7 @@ php artisan view:clear
 php artisan storage:link
 chmod -R 775 storage
 @endtask
+{{--envoy run deploy--}}
 
 
 

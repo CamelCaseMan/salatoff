@@ -16,7 +16,7 @@ class CuponSeeder extends Seeder
         $data = [
             'value' => '481WSZF3KF',
             'discount' => 10,
-            'expiration' => '2021-10-20 12:00:00',
+            'expiration' => '2022-10-20 12:00:00',
         ];
 
         \DB::table('cupons')->insert($data);

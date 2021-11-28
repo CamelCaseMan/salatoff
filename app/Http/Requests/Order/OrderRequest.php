@@ -52,10 +52,9 @@ class OrderRequest extends FormRequest
             'phone' => $this->phone,
             'organization' => $this->organization,
             'email' => $this->email,
-            'delivery_date' => $this->delivery_date,
+            'delivery_date' => date("Y-m-d", strtotime($this->delivery_date)),
             'delivery' => $this->prepareDelivery(),
         ];
-
         return $data;
     }
 
@@ -64,6 +63,7 @@ class OrderRequest extends FormRequest
      */
     private function prepareDelivery()
     {
+
         $delivery = [
             'city' => $this->city,
             'street' => $this->street ?? null,

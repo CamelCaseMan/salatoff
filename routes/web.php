@@ -79,18 +79,12 @@ Route::prefix('basket')->group(function () {
     Route::post('/removeAll', [BasketController::class, 'removeProduct']);
 });
 
-/**
- * Shop - оформление заказа
- */
-/*Route::namespace('Shop')->middleware(['auth'])->group(function () {
-    Route::get('/save-order', [OrderController::class, 'orderConfirm'])->name('save.order');
-    Route::get('/finish', 'FinishController@index')->name('finish');
-});*/
+
 
 /**
  * Личный кабинет клиента
  */
-Route::prefix('client')/*->middleware(['role:client'])*/
+Route::prefix('client')->middleware(['role:client'])
 ->group(function () {
     Route::get('/profile', [ProfileController::class, 'getProfile'])->name('client.profile');
     Route::get('/change-profile', [ProfileController::class, 'changeInfo'])->name('change.profile');
@@ -100,7 +94,7 @@ Route::prefix('client')/*->middleware(['role:client'])*/
 /**
  * Личный кабинет менеджера
  */
-Route::prefix('manager')/*->middleware(['role:client'])*/
+Route::prefix('manager')->middleware(['role:client'])
 ->group(function () {
     Route::get('/', [ManagerController::class, 'showMainPage'])->name('profile');
     Route::get('/orders', [ManagerOrder::class, 'showOrderPage'])->name('manager.orders');
@@ -118,6 +112,3 @@ Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeLogin
  * Авторизация
  */
 Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class, 'store'])->middleware(['throttle:register']);
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:client');
