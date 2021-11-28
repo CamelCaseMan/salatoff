@@ -1411,8 +1411,10 @@ p a {
 .slider {
   margin-top: 40px;
 }
-.slider__slides-wrapper {
+.slider__parent {
   overflow: hidden;
+}
+.slider__slides-wrapper {
   border-radius: 24px;
 }
 .slider__slide {

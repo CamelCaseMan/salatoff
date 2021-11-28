@@ -338,8 +338,10 @@ p {
 /* slider */
 .slider {
 	margin-top: 40px;
-	&__slides-wrapper {
+	&__parent {
 		overflow: hidden;
+	}
+	&__slides-wrapper {
 		border-radius: 24px;
 	}
 	&__slide {

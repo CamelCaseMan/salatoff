@@ -61,74 +61,76 @@
     </a>
 
     <!-- Slider -->
-    <div class="slider__wrapper container">
-        <div id="main-slider" class="slider owl-carousel owl-theme owl-loaded mb-120 l-mb-100 s-mb-80">
-            <div class="owl-stage-outer slider__slides-wrapper">
-                <div class="owl-stage">
-                    <div class="owl-item">
-                        <a href="/" class="slider__slide">
-                            <img src="{{asset('theme')}}/img/slider-images/banner7.jpg" alt="Салатофф">
-                            <div class="slider__slide-body">
-                                <div class="-title">
-                                    Скидка 15% на каждый следующий заказ
+    <div class="slider__parent">
+        <div class="slider__wrapper container">
+            <div id="main-slider" class="slider owl-carousel owl-theme owl-loaded mb-120 l-mb-100 s-mb-80">
+                <div class="owl-stage-outer slider__slides-wrapper">
+                    <div class="owl-stage">
+                        <div class="owl-item">
+                            <a href="/" class="slider__slide">
+                                <img src="{{asset('theme')}}/img/slider-images/banner7.jpg" alt="Салатофф">
+                                <div class="slider__slide-body">
+                                    <div class="-title">
+                                        Скидка 15% на каждый следующий заказ
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="owl-item">
-                        <a href="/" class="slider__slide">
-                            <img src="{{asset('theme')}}/img/slider-images/banner.jpeg" alt="Салатофф">
-                            <div class="slider__slide-body">
-                                <div class="-title">
-                                    Удобная упаковка для фасованной и весовой продукции
+                            </a>
+                        </div>
+                        <div class="owl-item">
+                            <a href="/" class="slider__slide">
+                                <img src="{{asset('theme')}}/img/slider-images/banner.jpeg" alt="Салатофф">
+                                <div class="slider__slide-body">
+                                    <div class="-title">
+                                        Удобная упаковка для фасованной и весовой продукции
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="owl-item">
-                        <a href="/" class="slider__slide">
-                            <img src="{{asset('theme')}}/img/slider-images/banner3.jpeg" alt="Салатофф">
-                            <div class="slider__slide-body">
-                                <div class="-title">
-                                    Индивидуальный подход к каждому клиенту
+                            </a>
+                        </div>
+                        <div class="owl-item">
+                            <a href="/" class="slider__slide">
+                                <img src="{{asset('theme')}}/img/slider-images/banner3.jpeg" alt="Салатофф">
+                                <div class="slider__slide-body">
+                                    <div class="-title">
+                                        Индивидуальный подход к каждому клиенту
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="owl-item">
-                        <a href="/" class="slider__slide">
-                            <img src="{{asset('theme')}}/img/slider-images/banner4.jpeg" alt="Салатофф">
-                            <div class="slider__slide-body">
-                                <div class="-title">
-                                    Лучшее качество <br> и вкус
+                            </a>
+                        </div>
+                        <div class="owl-item">
+                            <a href="/" class="slider__slide">
+                                <img src="{{asset('theme')}}/img/slider-images/banner4.jpeg" alt="Салатофф">
+                                <div class="slider__slide-body">
+                                    <div class="-title">
+                                        Лучшее качество <br> и вкус
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="owl-item">
-                        <a href="/" class="slider__slide">
-                            <img src="{{asset('theme')}}/img/slider-images/banner5.jpeg" alt="Салатофф">
-                            <div class="slider__slide-body">
-                                <div class="-title">
-                                    Помощь в подборе ассортимента
+                            </a>
+                        </div>
+                        <div class="owl-item">
+                            <a href="/" class="slider__slide">
+                                <img src="{{asset('theme')}}/img/slider-images/banner5.jpeg" alt="Салатофф">
+                                <div class="slider__slide-body">
+                                    <div class="-title">
+                                        Помощь в подборе ассортимента
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="owl-item">
-                        <a href="/" class="slider__slide">
-                            <img src="{{asset('theme')}}/img/slider-images/banner6.jpeg" alt="Салатофф">
-                            <div class="slider__slide-body">
-                                <div class="-title">
-                                    Правильная еда <br> для здорового питания
+                            </a>
+                        </div>
+                        <div class="owl-item">
+                            <a href="/" class="slider__slide">
+                                <img src="{{asset('theme')}}/img/slider-images/banner6.jpeg" alt="Салатофф">
+                                <div class="slider__slide-body">
+                                    <div class="-title">
+                                        Правильная еда <br> для здорового питания
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div id="main-slider-nav" class="slider__nav"></div>
+                <div id="main-slider-dots" class="slider__dots"></div>
             </div>
-            <div id="main-slider-nav" class="slider__nav"></div>
-            <div id="main-slider-dots" class="slider__dots"></div>
         </div>
     </div>
     <!-- End Slider -->
