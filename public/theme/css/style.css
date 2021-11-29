@@ -1510,16 +1510,16 @@ p a {
   transition: 0.3s ease;
 }
 .catalog-screen__cat:nth-child(1) {
-  background-color: #E0E0E0;
-  color: #E0E0E0;
-}
-.catalog-screen__cat:nth-child(2) {
-  background-color: #70B0FF;
-  color: #70B0FF;
-}
-.catalog-screen__cat:nth-child(3) {
   background-color: #FFBF8C;
   color: #FFBF8C;
+}
+.catalog-screen__cat:nth-child(2) {
+  background-color: #BBCEFF;
+  color: #BBCEFF;
+}
+.catalog-screen__cat:nth-child(3) {
+  background-color: #FDFF8C;
+  color: #FDFF8C;
 }
 .catalog-screen__cat:hover {
   transform: translateY(-16px);
