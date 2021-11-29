@@ -4,7 +4,7 @@
             <li>
                 <a href="/client/profile" class="-link">Личный кабинет</a>
             </li>
-            @if(Auth::user()->hasRole('manager'))
+            @if(Auth::user()->hasRole('client'))
                 <li>
                     <a href="/manager/orders" class="-link">Заказы магазина</a>
                 </li>
