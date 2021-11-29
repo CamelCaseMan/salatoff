@@ -447,16 +447,16 @@ p {
 		overflow: hidden;
 		transition: .3s ease;
 		&:nth-child(1) {
-			background-color: #E0E0E0;
-			color: #E0E0E0;
-		}
-		&:nth-child(2) {
-			background-color: #70B0FF;
-			color: #70B0FF;
-		}
-		&:nth-child(3) {
 			background-color: #FFBF8C;
 			color: #FFBF8C;
+		}
+		&:nth-child(2) {
+			background-color: #BBCEFF;
+			color: #BBCEFF;
+		}
+		&:nth-child(3) {
+			background-color: #FDFF8C;
+			color: #FDFF8C;
 		}
 		&:hover {
 			transform: translateY(-16px);
