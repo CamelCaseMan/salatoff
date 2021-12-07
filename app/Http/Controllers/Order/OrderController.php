@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Order;
 
+use App\Events\NewOrder;
 use App\Http\Requests\Order\OrderRequest;
 use App\Models\Order;
 use App\Services\Order\Delivery\Delivery;
@@ -53,9 +54,13 @@ class OrderController
         $payment = PaymentFactory::getPaymentMethod($order, $data['delivery']['payment']);
         $payment_url = $payment->returnUrl();
 
+        event(new NewOrder($order));
+
         session(['success_order_id' => $orderID]);
         session()->forget('basket_status');
         session()->forget('orderId');
+
+
 
         if (!empty($payment_url)) {
             return redirect($payment_url);

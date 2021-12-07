@@ -16,6 +16,7 @@ class CreateAttributesTable extends Migration
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('product_id')->unsigned();
+            $table->text('weight')->nullable(); //Вес продукта
             $table->text('nutrients')->nullable(); //Белки жиры углеводы
             $table->text('energy')->nullable(); // Энергетическая ценнность
             $table->text('composition')->nullable(); //Состав

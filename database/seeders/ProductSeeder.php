@@ -41,7 +41,7 @@ class ProductSeeder extends Seeder
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => $images[rand(0, 10)],
-                'weight' => mt_rand(550, 1999)
+                'add_image' => $images[rand(0, 10)],
             ];
         }
 
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => '/theme/img/catering/' . rand(1, 7) . '.png',
-                'weight' => mt_rand(550, 1999)
+                'add_image' => '/theme/img/catering/' . rand(1, 7) . '.png',
             ];
         }
 
@@ -69,7 +69,7 @@ class ProductSeeder extends Seeder
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => '/theme/img/dinner/' . rand(1, 8) . '.jpeg',
-                'weight' => mt_rand(550, 1999)
+                'add_image' => '/theme/img/dinner/' . rand(1, 8) . '.jpeg',
             ];
         }
 

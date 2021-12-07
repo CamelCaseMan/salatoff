@@ -3,8 +3,8 @@
 
         <div class="-title-row mb-20 d-none s-d-block">
             <div class="-title">{{$product->name}}</div>
-            @if(!is_null($product->weight))
-                <div class="-weight">{{$product->weight}}г</div>
+            @if(isset($product->getAttributeProduct->weight) && !is_null($product->getAttributeProduct->weight))
+                <div class="-weight">{{$product->getAttributeProduct->weight}}г</div>
             @endif
         </div>
 
@@ -19,8 +19,8 @@
 
             <div class="-title-row mb-40 s-d-none">
                 <div class="-title">{{$product->name}}</div>
-                @if(!is_null($product->weight))
-                    <div class="-weight">{{$product->weight}}г</div>
+                @if(isset($product->getAttributeProduct->weight) && !is_null($product->getAttributeProduct->weight))
+                    <div class="-weight">{{$product->getAttributeProduct->weight}}г</div>
                 @endif
             </div>
 
@@ -64,7 +64,7 @@
                     <div class="-num quty-interface-value quty-start" data-value="@if(session('basket_status')!=null)
                     @if(in_array($product->id,session('basket_status')['products_id'])) {{session('basket_status')['products'][$product->id]}} @else
                             1 @endif
-                        @else
+                    @else
                             1
                         @endif">
                         @if(session('basket_status')!=null)
