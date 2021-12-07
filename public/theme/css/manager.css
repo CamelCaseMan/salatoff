@@ -135,6 +135,10 @@ input[type=number] {
   display: flex;
 }
 
+.-red {
+  color: var(--red);
+}
+
 .mb-300 {
   margin-bottom: 300px;
 }

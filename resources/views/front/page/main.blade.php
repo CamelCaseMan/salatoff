@@ -217,7 +217,7 @@
                         <br>
                         Доставка осуществляется с 7:00 до 12:00 с часовым интервалом<br>
                         <br>
-                        <b>По воскресеньям заказы не доставляем</b>
+                        <b class="-red">По воскресеньям заказы не доставляем</b>
                     </p>
                 </div>
                 <div class="map-screen__map" style="background-image: url({{asset('theme')}}/img/exp-map.jpg);">

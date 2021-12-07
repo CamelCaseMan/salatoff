@@ -706,12 +706,21 @@ p {
 				display: block;
 				padding-top: 100%;
 			}
+			&:hover {
+				.-hover-image {
+					opacity: 1;
+				}
+			}
 			img {
 				position: absolute;
 				width: 100%;
 				left: -50%;
 				top: -50%;
 				transform: translateX(50%) translateY(50%);
+			}
+			.-hover-image {
+				opacity: 0;
+				transition: .2s ease;
 			}
 		}
 		.-content {
@@ -822,12 +831,21 @@ p {
 				display: block;
 				padding-top: 100%;
 			}
+			&:hover {
+				.-hover-image {
+					opacity: 1;
+				}
+			}
 			img {
 				position: absolute;
 				width: 100%;
 				left: -50%;
 				top: -50%;
 				transform: translateX(50%) translateY(50%);
+			}
+			.-hover-image {
+				opacity: 0;
+				transition: .2s ease;
 			}
 		}
 		.-title-row {
