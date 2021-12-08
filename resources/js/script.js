@@ -686,7 +686,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-
 	$('.clients-logos').owlCarousel({
     loop: false,
     margin: 20,
