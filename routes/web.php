@@ -8,12 +8,12 @@ use App\Http\Controllers\Front\RecipesController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ReviewController;
 use App\Http\Controllers\Basket\BasketController;
-use App\Http\Controllers\Basket\FinishController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 use App\Http\Controllers\Auth\GenerateAuthCode;
+use App\Services\Payments\YooKassa;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,3 +112,4 @@ Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeLogin
  * Авторизация
  */
 Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class, 'store'])->middleware(['throttle:register']);
+Route::match(['GET', 'POST'],'payment/callback',[YooKassa::class, 'callback'])->name('payment.callback');

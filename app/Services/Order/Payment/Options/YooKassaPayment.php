@@ -4,6 +4,8 @@ namespace App\Services\Order\Payment\Options;
 
 use App\Models\Order;
 use App\Services\Order\Payment\PaymentInterface;
+use App\Services\Payments\YooKassa;
+
 
 class YooKassaPayment implements PaymentInterface
 {
@@ -14,10 +16,6 @@ class YooKassaPayment implements PaymentInterface
         $this->order = $order;
     }
 
-    public function prepareData()
-    {
-
-    }
 
     /**
      * @return string
@@ -25,6 +23,8 @@ class YooKassaPayment implements PaymentInterface
      */
     public function returnUrl(): string
     {
-        return '';
+        $payment = new YooKassa();
+        $url = $payment->createPayment($this->order);
+        return $url;
     }
 }

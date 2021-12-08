@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cda630eb937ab6e88fefc8a3ec6b8e3",
+    "content-hash": "359edec0ca9d0577d513f9d766adacd7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5471,6 +5471,63 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "yoomoney/yookassa-sdk-php",
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoomoney/yookassa-sdk-php.git",
+                "reference": "3afe1c4b70f10ae3a0d7a1d12d3752d8e328d33c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoomoney/yookassa-sdk-php/zipball/3afe1c4b70f10ae3a0d7a1d12d3752d8e328d33c",
+                "reference": "3afe1c4b70f10ae3a0d7a1d12d3752d8e328d33c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0",
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "ext-xml": "*",
+                "mockery/mockery": "^0.9.9",
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "YooKassa\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "YooMoney",
+                    "email": "cms@yoomoney.ru"
+                }
+            ],
+            "description": "This is a developer tool for integration with YooMoney.",
+            "homepage": "https://yookassa.ru/developers/api",
+            "keywords": [
+                "api",
+                "payments",
+                "sdk",
+                "yookassa",
+                "yoomoney"
+            ],
+            "support": {
+                "issues": "https://github.com/yoomoney/yookassa-sdk-php/issues",
+                "source": "https://github.com/yoomoney/yookassa-sdk-php/tree/2.2.3"
+            },
+            "time": "2021-12-07T14:27:04+00:00"
         }
     ],
     "packages-dev": [
