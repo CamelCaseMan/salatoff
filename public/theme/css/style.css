@@ -1804,39 +1804,69 @@ p a {
 .catalog-page__product .-price {
   font-size: 1.5rem;
 }
-.catalog-page__product .-button {
+.catalog-page__product .-quty-complex {
+  width: 150px;
+  position: relative;
+  border: 1px solid var(--green);
+  height: 42px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.catalog-page__product .-quty-complex .-button {
   padding: 0;
   padding-bottom: 3px;
   box-sizing: border-box;
-  height: 42px;
-  width: 130px;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.2s ease;
   position: relative;
+  border-radius: 0;
 }
-.catalog-page__product .-button .-text {
+.catalog-page__product .-quty-complex .-button .-text {
   position: absolute;
   transition: 0.1s ease;
 }
-.catalog-page__product .-button .-icon {
+.catalog-page__product .-quty-complex .-button .-icon {
   position: absolute;
   opacity: 0;
   top: 12px;
   right: 6px;
   transition: 0.1s ease;
 }
-.catalog-page__product .-button.--done {
-  width: 42px;
-  border: 1px solid #E0E0E0;
-  background-color: transparent;
+.catalog-page__product .-quty-complex .-button.--done {
+  transform: translateY(-100%);
 }
-.catalog-page__product .-button.--done .-text {
-  opacity: 0;
+.catalog-page__product .-quty-complex .-button.--done + .-quty {
+  transform: translateY(-100%);
 }
-.catalog-page__product .-button.--done .-icon {
-  opacity: 1;
+.catalog-page__product .-quty-complex .-quty {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
+  transition: 0.2s ease;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 3px;
+}
+.catalog-page__product .-quty-complex .-quty .-num {
+  width: 70px;
+  padding-bottom: 6px;
+  text-align: center;
+}
+.catalog-page__product .-quty-complex .-quty .-btn {
+  cursor: pointer;
+}
+.catalog-page__product .-quty-complex .-quty .-btn svg path {
+  transition: 0.2s ease;
+}
+.catalog-page__product .-quty-complex .-quty .-btn:hover svg path {
+  stroke: var(--green);
 }
 
 /* /catalog-page */

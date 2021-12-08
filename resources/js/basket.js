@@ -168,7 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
             Object.values(buttons).forEach(button => {
                 button.addEventListener('click', changeQuty)
             })
-            function changeQuty() {
+            function changeQuty(evt) {
+                
+                evt.stopPropagation()
+                evt.preventDefault()
+
                 const symbol = this.dataset.quty;
                 switch (symbol) {
                     case '+':
