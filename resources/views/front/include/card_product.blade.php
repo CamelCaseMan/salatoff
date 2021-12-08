@@ -14,8 +14,10 @@
             @else
                 <img src="{{asset('theme')}}/img/image-plug.jpg" alt="Изображения пока нет">
             @endif
+            @if(isset($product->add_image) && !is_null($product->add_image))
             <!-- ! Второе изображение -->
-            <img class="-hover-image" src="{{asset('theme')}}/img/image-plug.jpg" alt="{{$product->name}}">
+                <img class="-hover-image" src="{{$product->add_image}}" alt="{{$product->name}}">
+            @endif
         </div>
         <div class="-info-side">
 

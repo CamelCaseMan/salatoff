@@ -7,8 +7,10 @@
                 @else
                     <img src="{{asset('theme')}}/img/image-plug.jpg" alt="Изображения пока нет">
                 @endif
+                @if(isset($product->add_image) && !is_null($product->add_image))
                 <!-- ! Второе изображение -->
-                <img class="-hover-image" src="{{asset('theme')}}/img/image-plug.jpg" alt="{{$product->name}}">
+                    <img class="-hover-image" src="{{$product->add_image}}" alt="{{$product->name}}">
+                @endif
             </div>
             <div class="-content">
                 <div class="-name-row">
@@ -19,6 +21,24 @@
                 </div>
                 <div class="-price-row">
                     <div class="-price">{{$product->price}} ₽</div>
+
+                    {{-- Вывод количества для Жени начало --}}
+                    <div class="-num quty-interface-value quty-start" data-value="@if(session('basket_status')!=null)
+                    @if(in_array($product->id,session('basket_status')['products_id'])) {{session('basket_status')['products'][$product->id]}} @else
+                            1 @endif
+                    @else
+                            1
+                        @endif">
+                        @if(session('basket_status')!=null)
+                            @if(in_array($product->id,session('basket_status')['products_id'])) {{session('basket_status')['products'][$product->id]}} @else
+                                1 @endif шт.
+                        @else
+                            1 шт.
+                        @endif
+                    </div>
+                    {{-- Вывод количества для Жени конец --}}
+
+
                     <div class="-button typical-button @if(session('basket_status')!=null)
                     @if(in_array($product->id,session('basket_status')['products_id']))--done @else add-one-button @endif @else add-one-button
                             @endif " data-id="{{$product->id}}" data-url="/{{$product->slug}}">
