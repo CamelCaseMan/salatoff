@@ -107,7 +107,7 @@ input[type=number] {
 
 .second-title {
   font-size: 3rem;
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 80px;
 }
 
@@ -133,6 +133,10 @@ input[type=number] {
 
 .d-flex {
   display: flex;
+}
+
+.-red {
+  color: var(--red);
 }
 
 .mb-300 {

@@ -75,7 +75,7 @@
                     <p class="-text">
                         Минимальная сумма заказа: {{config('shop.min_order')}} ₽<br>
                         Ближайшая дата доставки: {{$delivery_date}}<br>
-                        Доставка по Москве и Московской области — <a href="#">бесплатно</a><br>
+                        Доставка по Москве и Московской области — бесплатно<br>
                         <br>
                         Мы обрабатываем заказы с 9:00 до 16:30. <br>
                         <br>
@@ -84,7 +84,7 @@
                         <br>
                         Доставка заказов осуществляется с 7:00 до 12:00 <br>
                         <br>
-                        По воскресеньям заказы не доставляем
+                        <b class="-red">По воскресеньям заказы не доставляем</b>
                     </p>
                 </div>
                 <div class="basket__order basket__split-item" style="display: flex;flex-direction: column;justify-content: center;">
