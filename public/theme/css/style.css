@@ -1517,13 +1517,38 @@ p a {
   background-color: #FFBF8C;
   color: #FFBF8C;
 }
+.catalog-screen__cat:nth-child(1) .-img .-left, .catalog-screen__cat:nth-child(1) .-img .-right {
+  transform-origin: 75px 85px;
+  transition: 0.5s ease;
+}
+.catalog-screen__cat:nth-child(1):hover .-img .-left {
+  transform: rotate(7deg);
+}
+.catalog-screen__cat:nth-child(1):hover .-img .-right {
+  transform: rotate(-7deg);
+}
 .catalog-screen__cat:nth-child(2) {
-  background-color: #BBCEFF;
-  color: #BBCEFF;
+  background-color: #8CB3FF;
+  color: #8CB3FF;
+}
+.catalog-screen__cat:nth-child(2) .-img .-bug {
+  transform-origin: 145px 25px;
+  transition: 0.5s ease;
+}
+.catalog-screen__cat:nth-child(2):hover .-img .-bug {
+  transform: rotate(10deg);
 }
 .catalog-screen__cat:nth-child(3) {
-  background-color: #FDFF8C;
-  color: #FDFF8C;
+  background-color: #FFE66C;
+  color: #FFE66C;
+}
+.catalog-screen__cat:nth-child(3) .-img .-bubbles {
+  transform: scaleY(0);
+  transform-origin: 100px 100px;
+  transition: 0.5s ease;
+}
+.catalog-screen__cat:nth-child(3):hover .-img .-bubbles {
+  transform: scaleY(1);
 }
 .catalog-screen__cat:hover {
   transform: translateY(-16px);
@@ -1531,8 +1556,12 @@ p a {
 }
 .catalog-screen__cat .-img {
   height: 240px;
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.catalog-screen__cat .-img svg {
+  overflow: visible;
 }
 .catalog-screen__cat .-name {
   height: 120px;
@@ -1807,7 +1836,6 @@ p a {
 .catalog-page__product .-quty-complex {
   width: 150px;
   position: relative;
-  border: 1px solid var(--green);
   height: 42px;
   overflow: hidden;
   border-radius: 30px;
@@ -1850,8 +1878,10 @@ p a {
   box-sizing: border-box;
   height: 100%;
   transition: 0.2s ease;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #828282;
+  border-radius: 30px;
   padding-top: 3px;
 }
 .catalog-page__product .-quty-complex .-quty .-num {
@@ -3467,7 +3497,10 @@ p a {
          column-gap: 15px;
   }
   .catalog-screen__cat .-img {
-    height: 220px;
+    height: 180px;
+  }
+  .catalog-screen__cat .-img svg {
+    transform: scale(0.7);
   }
   .catalog-screen__cat .-name {
     height: 90px;
@@ -3926,10 +3959,10 @@ p a {
     margin-bottom: 0;
   }
   .catalog-screen__cat .-img {
-    height: 215px;
+    height: 180px;
   }
   .catalog-screen__cat .-name {
-    height: 65px;
+    height: 90px;
     padding-bottom: 6px;
     padding-left: 20px;
     padding-right: 20px;

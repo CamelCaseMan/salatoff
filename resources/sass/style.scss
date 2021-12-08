@@ -449,14 +449,57 @@ p {
 		&:nth-child(1) {
 			background-color: #FFBF8C;
 			color: #FFBF8C;
+			.-img {
+				.-left, .-right {
+					transform-origin: 75px 85px;
+					transition: .5s ease;
+				}
+			}
+			&:hover {
+				.-img {
+					.-left {
+						transform: rotate(7deg);
+					}
+					.-right {
+						transform: rotate(-7deg);
+					}
+				}
+			}
 		}
 		&:nth-child(2) {
-			background-color: #BBCEFF;
-			color: #BBCEFF;
+			background-color: #8CB3FF;
+			color: #8CB3FF;
+			.-img {
+				.-bug {
+					transform-origin: 145px 25px;
+					transition: .5s ease;
+				}
+			}
+			&:hover {
+				.-img {
+					.-bug {
+						transform: rotate(10deg);
+					}
+				}
+			}
 		}
 		&:nth-child(3) {
-			background-color: #FDFF8C;
-			color: #FDFF8C;
+			background-color: #FFE66C;
+			color: #FFE66C;
+			.-img {
+				.-bubbles {
+					transform: scaleY(0);
+					transform-origin: 100px 100px;
+					transition: .5s ease;
+				}
+			}
+			&:hover {
+				.-img {
+					.-bubbles {
+						transform: scaleY(1);
+					}
+				}
+			}
 		}
 		&:hover {
 			transform: translateY(-16px);
@@ -464,8 +507,12 @@ p {
 		}
 		.-img {
 			height: 240px;
-			background-position: center;
-			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			svg {
+				overflow: visible;
+			}
 		}
 		.-name {
 			height: 120px;
@@ -753,7 +800,6 @@ p {
 		.-quty-complex {
 			width: 150px;
 			position: relative;
-			border: 1px solid var(--green);
 			height: 42px;
 			overflow: hidden;
 			border-radius: 30px;
@@ -795,8 +841,10 @@ p {
 				box-sizing: border-box;
 				height: 100%;
 				transition: .2s ease;
-				padding-left: 6px;
-				padding-right: 6px;
+				padding-left: 5px;
+				padding-right: 5px;
+				border: 1px solid #828282;
+				border-radius: 30px;
 				padding-top: 3px;
 				.-num {
 					width: 70px;

@@ -487,7 +487,10 @@
 		}
 		&__cat {
 			.-img {
-				height: 220px;
+				height: 180px;
+				svg {
+					transform: scale(.7);
+				}
 			}
 			.-name {
 				height: 90px;
@@ -974,10 +977,10 @@
 				margin-bottom: 0;
 			}
 			.-img {
-				height: 215px;
+				height: 180px;
 			}
 			.-name {
-				height: 65px;
+				height: 90px;
 				padding-bottom: 6px;
 				padding-left: 20px;
 				padding-right: 20px;
