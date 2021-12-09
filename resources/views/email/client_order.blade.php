@@ -58,16 +58,16 @@
             <div class="title" style="font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; color: #A2CD3A;">Состав заказа</div>
 
             <table class="table" style="margin-bottom: 10px; border-collapse: collapse;">
-                <tr class="thead">
-                    <td style="font-family: sans-serif; padding: 6px; font-size: 0.8rem; color: rgba(37, 37, 37, 0.6);">Название</td>
-                    <td style="text-align: right; font-family: sans-serif; padding: 6px; font-size: 0.8rem; color: rgba(37, 37, 37, 0.6);">Количество</td>
-                    <td style="text-align: right; font-family: sans-serif; padding: 6px; font-size: 0.8rem; color: rgba(37, 37, 37, 0.6);">Цена</td>
+                <tr class="thead" style="background-color: #A2CD3A;">
+                    <td style="font-family: sans-serif; padding: 6px; font-size: 0.8rem; color: white; border: 1px solid rgba(37, 37, 37, 0.2);">Название</td>
+                    <td style="text-align: right; font-family: sans-serif; padding: 6px; font-size: 0.8rem; color: white; border: 1px solid rgba(37, 37, 37, 0.2);">Количество</td>
+                    <td style="text-align: right; font-family: sans-serif; padding: 6px; font-size: 0.8rem; color: white; border: 1px solid rgba(37, 37, 37, 0.2);">Цена</td>
                 </tr>
                 @foreach($order->products as $key => $product)
                 <tr>
-                    <td style="font-family: sans-serif; padding: 6px; color: #252525;">{{$key + 1}}. {{$product->name}}</td>
-                    <td style="text-align: right; font-family: sans-serif; padding: 6px; color: #252525;">{{$product->pivot->count}} шт</td>
-                    <td style="text-align: right; font-family: sans-serif; padding: 6px; color: #252525;">{{$product->price}} руб.</td>
+                    <td style="border: 1px solid rgba(37, 37, 37, 0.2); font-family: sans-serif; padding: 6px; color: #252525;">{{$key + 1}}. {{$product->name}}</td>
+                    <td style="border: 1px solid rgba(37, 37, 37, 0.2); text-align: right; font-family: sans-serif; padding: 6px; color: #252525;">{{$product->pivot->count}} шт</td>
+                    <td style="border: 1px solid rgba(37, 37, 37, 0.2); text-align: right; font-family: sans-serif; padding: 6px; color: #252525;">{{$product->price}} руб.</td>
                 </tr>
                 @endforeach
             </table>
