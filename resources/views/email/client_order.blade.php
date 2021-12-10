@@ -84,7 +84,7 @@
             @endif
             <div class="char" style="padding: 6px 0;">
                 <span class="prefix" style="font-size: 0.8rem; color: rgba(37, 37, 37, 0.6); margin-bottom: 5px; margin-right: 6px;">Если что-то хотите уточнить, — звоните</span>
-                <a href="tel:+7 495 797 64 57">+7 495 797 64 57</a>
+                <a href="tel:+74957976457">+7 495 797 64 57</a>
             </div>
         </div>
 

@@ -23,7 +23,12 @@ class OrderService
         //Получаем id купона
         if (!is_null($data['cupon'])) {
             $cupon = $this->cuponsRepository->findCupon($data['cupon']);
-            $status = !Carbon::parse($cupon->expiration)->isPast();
+            if (!is_null($cupon)) {
+                $status = !Carbon::parse($cupon->expiration)->isPast();
+            } else {
+                $status = false;
+            }
+
 
             if ($status) {
                 $id = $cupon->id;
