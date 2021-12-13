@@ -31,6 +31,6 @@ class OrderClientMail extends Mailable
     public function build()
     {
         return $this->markdown('email.client_order')
-            ->subject('Новый заказ клиент!');
+            ->subject('Вы оформили заказ!');
     }
 }
