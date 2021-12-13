@@ -21,7 +21,7 @@ class ReviewController extends Controller
         ];
 
         $review = Review::create($data);
-        Mail::to('54cc0e613b-46cc81@inbox.mailtrap.io')
+        Mail::to(config('shop.admin_email'))
             ->send(new ReviewMail($review));
         return response()->json(['message' => 'success']);
     }

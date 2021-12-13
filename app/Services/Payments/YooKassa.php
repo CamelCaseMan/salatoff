@@ -2,7 +2,12 @@
 
 namespace App\Services\Payments;
 
+use App\Mail\OrderSuccessfullyPaid;
+use Illuminate\Support\Facades\Mail;
 use YooKassa\Client;
+use YooKassa\Model\Notification\NotificationSucceeded;
+use YooKassa\Model\Notification\NotificationWaitingForCapture;
+use YooKassa\Model\NotificationEventType;
 
 class YooKassa
 {
@@ -103,7 +108,23 @@ class YooKassa
 
     public function callback()
     {
+        $source = file_get_contents('php://input');
+        $requestBody = json_decode($source, true);
 
+        try {
+            $notification = ($requestBody['event'] === NotificationEventType::PAYMENT_SUCCEEDED)
+                ? $this->sendSuccessMessage($requestBody)
+                : \Log::info('Платеж не прошел');
+        } catch (Exception $e) {
+            // Обработка ошибок при неверных данных
+        }
+    }
+
+    private function sendSuccessMessage($requestBody)
+    {
+        $order_id = $requestBody['object']['metadata']['order_id'];
+        Mail::to(config('shop.admin_email'))
+            ->send(new OrderSuccessfullyPaid($order_id));
     }
 
 }
