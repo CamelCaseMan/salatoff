@@ -19,8 +19,8 @@ class EloquentCategoryRepository extends CoreRepository
     {
         return Model::where('show', 1)
             ->where('parent_id', 0)
-            ->where('id', '!=', 23)//Исключаем кейтеринг
-            ->where('id', '!=', 24)//Комплексные обеды
+            ->where('id', '!=', 18)//Исключаем кейтеринг
+            ->where('id', '!=', 19)//Комплексные обеды
             ->get();
     }
 
@@ -42,8 +42,8 @@ class EloquentCategoryRepository extends CoreRepository
     public function getShopsAndCafes()
     {
         return Model::where('show', 1)
-            ->where('id', '!=', 23)//Исключаем кейтеринг
-            ->where('id', '!=', 24)//Исключаем готовые обеды
+            ->where('id', '!=', 18)//Исключаем кейтеринг
+            ->where('id', '!=', 19)//Исключаем готовые обеды
             ->get();
     }
 

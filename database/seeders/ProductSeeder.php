@@ -37,7 +37,7 @@ class ProductSeeder extends Seeder
             $data[$i] = [
                 'name' => $title,
                 'slug' => \Str::of($title)->slug('-')->snake(),
-                'category_id' => rand(3, 22),
+                'category_id' => rand(3, 19),
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => $images[rand(0, 10)],
@@ -51,7 +51,7 @@ class ProductSeeder extends Seeder
             $catering[$i] = [
                 'name' => $title,
                 'slug' => \Str::of($title)->slug('-')->snake(),
-                'category_id' => 23,
+                'category_id' => 18,
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => '/theme/img/catering/' . rand(1, 7) . '.png',
@@ -65,7 +65,7 @@ class ProductSeeder extends Seeder
             $dinner[$i] = [
                 'name' => $title,
                 'slug' => \Str::of($title)->slug('-')->snake(),
-                'category_id' => 24,
+                'category_id' => 19,
                 'price' => mt_rand(550, 1999) / 10,
                 'show' => rand(0, 1),
                 'image' => '/theme/img/dinner/' . rand(1, 8) . '.jpeg',

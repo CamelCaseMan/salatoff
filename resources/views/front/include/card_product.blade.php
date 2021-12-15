@@ -4,7 +4,7 @@
         <div class="-title-row mb-20 d-none s-d-block">
             <div class="-title">{{$product->name}}</div>
             @if(isset($product->getAttributeProduct->weight) && !is_null($product->getAttributeProduct->weight))
-                <div class="-weight">{{$product->getAttributeProduct->weight}}г</div>
+                <div class="-weight">{{$product->getAttributeProduct->weight}}</div>
             @endif
         </div>
 
@@ -24,7 +24,7 @@
             <div class="-title-row mb-40 s-d-none">
                 <div class="-title">{{$product->name}}</div>
                 @if(isset($product->getAttributeProduct->weight) && !is_null($product->getAttributeProduct->weight))
-                    <div class="-weight">{{$product->getAttributeProduct->weight}}г</div>
+                    <div class="-weight">{{$product->getAttributeProduct->weight}}</div>
                 @endif
             </div>
 
