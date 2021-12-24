@@ -7,13 +7,13 @@
         <div class="blog__news mb-80">
 
             @foreach($list as $item)
-            <a href="/blog/{{$item->slug}}" class="blog__new">
-                <div class="-title">{{$item->title}}</div>
-                <p class="-text">{{$item->anons}}</p>
-            </a>
+                <a href="/blog/{{$item->slug}}" class="blog__new">
+                    <div class="-title">{{$item->title}}</div>
+                    <p class="-text">{!!$item->anons!!}</p>
+                </a>
             @endforeach
 
-        </div>        
+        </div>
 
         {{ $list->links('paginate') }}
 

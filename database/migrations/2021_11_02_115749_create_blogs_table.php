@@ -19,15 +19,10 @@ class CreateBlogsTable extends Migration
             $table->text('anons');
             $table->string('slug');
             $table->text('text');
-            $table->bigInteger('seo_id')->unsigned()->default(1);
+            $table->text('seo_title')->nullable();
+            $table->text('seo_desсription')->nullable();
+            $table->text('seo_keywords')->nullable();
             $table->timestamps();
-        });
-
-        Schema::table('blogs', function (Blueprint $table) {
-            $table->foreign('seo_id')
-                ->references('id')
-                ->on('seos')
-                ->onDelete('cascade');
         });
     }
 

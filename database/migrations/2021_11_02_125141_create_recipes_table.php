@@ -19,7 +19,9 @@ class CreateRecipesTable extends Migration
             $table->string('slug');
             $table->text('text');
             $table->bigInteger('category_id')->unsigned();
-            $table->bigInteger('seo_id')->unsigned()->default(1);
+            $table->text('seo_title')->nullable();
+            $table->text('seo_desсription')->nullable();
+            $table->text('seo_keywords')->nullable();
             $table->timestamps();
         });
 
@@ -27,11 +29,6 @@ class CreateRecipesTable extends Migration
             $table->foreign('category_id')
                 ->references('id')
                 ->on('recipeсategories')
-                ->onDelete('cascade');
-
-            $table->foreign('seo_id')
-                ->references('id')
-                ->on('seos')
                 ->onDelete('cascade');
         });
     }

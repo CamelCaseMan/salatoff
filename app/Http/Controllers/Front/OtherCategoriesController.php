@@ -34,6 +34,6 @@ class OtherCategoriesController
         //Получаем урл категории
         $url = explode("/", parse_url(\Request::url())['path'])[1];
         $product = $this->otherCategories->getProduct($url, $product);
-        return view('front.catering.product', ['product' => $product]);
+        return view('front.'.$url.'.product', ['product' => $product]);
     }
 }

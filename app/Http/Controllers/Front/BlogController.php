@@ -19,12 +19,12 @@ class BlogController extends Controller
     public function showPageText(string $slug)
     {
         $news = Blog::where('slug', $slug)
-            ->with('getSeo')
             ->firstOrFail();
+        $description = str_replace('"', '',$news->seo_desсription) ?? null;
 
         \MetaTag::setTags([
-            'title' => $news->getSeo->title ?? null,
-            'description' => $news->getSeo->description ?? null,
+            'title' => $news->seo_title ?? null,
+            'description' => $description,
         ]);
 
         return view('front.blog.news', compact('news'));

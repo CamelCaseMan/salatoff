@@ -16,5 +16,6 @@ class Attribute extends Model
         'composition',
         'implementation_period',
         'packaging',
+        'weight'
     ];
 }

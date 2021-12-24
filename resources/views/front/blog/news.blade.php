@@ -15,7 +15,7 @@
 
     <h1 class="second-title">{{$news->title}}</h1>
 
-    <p>{{$news->text}}</p>
+    <p>{!!$news->text!!}</p>
 
 </div>
 @endsection

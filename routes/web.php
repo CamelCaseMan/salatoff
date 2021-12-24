@@ -13,8 +13,9 @@ use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\OrderController as ManagerOrder;
 use App\Http\Controllers\Auth\GenerateAuthCode;
+use App\Http\Controllers\Work3212\Work3212Controller;
 use App\Services\Payments\YooKassa;
-
+use App\Http\Controllers\Unloading\ObedController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,3 +114,9 @@ Route::post('/generate-code/login', [GenerateAuthCode::class, 'generateCodeLogin
  */
 Route::post('register', [Laravel\Fortify\Http\Controllers\RegisteredUserController::class, 'store'])->middleware(['throttle:register']);
 Route::match(['GET', 'POST'],'payment/callback',[YooKassa::class, 'callback'])->name('payment.callback');
+
+/*Route::get('/work3212', [Work3212Controller::class, 'index'])->name('work3212');;
+Route::get('/work3212/add', [Work3212Controller::class, 'add'])->name('addwork3212');*/
+
+Route::get('/unloading/obed', [ObedController::class, 'index']);
+
