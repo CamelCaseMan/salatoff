@@ -785,7 +785,8 @@ p {
 			align-items: center;
 		}
 		.-name {
-			font-size: 1.5rem;
+			font-size: 1.3rem;
+			line-height: 1.5;
 			font-weight: 700;
 			height: 70px;
 			margin-right: 5px;
@@ -930,7 +931,7 @@ p {
 		}
 		.-title-row {
 			.-title {
-				font-size: 2rem;
+				font-size: 1.7rem;
 				font-weight: 700;
 				margin-bottom: 5px;
 			}
@@ -1491,8 +1492,41 @@ p {
 .article {
 	&-page {
 		padding-top: 40px;
-		p {
+		p, ul, ol {
 			margin-bottom: 1em;
+			a {
+				color: var(--green);
+			}
+		}
+		h2, h3, h4, h5, h6 {
+			margin-top: 1.2em;
+			margin-bottom: 0.8em;
+		}
+		img {
+			border-radius: 12px;
+			margin: 10px;
+		}
+		ul {
+			line-height: 1.7;
+			padding-left: 20px;
+			li {
+				list-style: disc inside;
+				margin-bottom: 0.6em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		ol {
+			line-height: 1.7;
+			padding-left: 20px;
+			li {
+				list-style: decimal inside;
+				margin-bottom: 0.6em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 }

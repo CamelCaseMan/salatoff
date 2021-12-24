@@ -231,6 +231,11 @@
 		&__wrapper {
 			gap: 40px 25px;
 		}
+		&__product {
+			.-name {
+				font-size: 1.1rem;
+			}
+		}
 		&__cat {
 			border-radius: 12px;
 			.-name {
