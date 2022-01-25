@@ -1509,11 +1509,9 @@ p a {
 }
 .catalog-screen__cat {
   display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: 0.3s ease;
+  padding-bottom: 10px;
 }
-.catalog-screen__cat:nth-child(1) {
+.catalog-screen__cat:nth-child(1) .catalog-screen__cat-inner {
   background-color: #FFBF8C;
   color: #FFBF8C;
 }
@@ -1527,7 +1525,7 @@ p a {
 .catalog-screen__cat:nth-child(1):hover .-img .-right {
   transform: rotate(-7deg);
 }
-.catalog-screen__cat:nth-child(2) {
+.catalog-screen__cat:nth-child(2) .catalog-screen__cat-inner {
   background-color: #8CB3FF;
   color: #8CB3FF;
 }
@@ -1538,7 +1536,7 @@ p a {
 .catalog-screen__cat:nth-child(2):hover .-img .-bug {
   transform: rotate(10deg);
 }
-.catalog-screen__cat:nth-child(3) {
+.catalog-screen__cat:nth-child(3) .catalog-screen__cat-inner {
   background-color: #FFE66C;
   color: #FFE66C;
 }
@@ -1550,9 +1548,13 @@ p a {
 .catalog-screen__cat:nth-child(3):hover .-img .-bubbles {
   transform: scaleY(1);
 }
-.catalog-screen__cat:hover {
-  transform: translateY(-16px);
+.catalog-screen__cat:hover .catalog-screen__cat-inner {
   box-shadow: 0 40px 30px -30px;
+  transform: translateY(-16px);
+}
+.catalog-screen__cat-inner {
+  transition: 0.3s ease;
+  border-radius: 16px;
 }
 .catalog-screen__cat .-img {
   height: 240px;
@@ -1741,6 +1743,9 @@ p a {
   grid-template-columns: 1fr 1fr 1fr;
 }
 .catalog-page__cat {
+  background-color: transparent !important;
+  color: gray !important;
+  position: relative;
   display: block;
   border-radius: 16px;
   overflow: hidden;
@@ -1756,18 +1761,24 @@ p a {
   background-size: cover;
 }
 .catalog-page__cat .-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--black);
+  color: #fff;
   text-align: center;
   font-weight: 700;
   font-size: 1.5rem;
   text-align: center;
   box-sizing: border-box;
-  height: 90px;
+  height: auto;
   padding: 0 30px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  background: rgba(100, 100, 100, 0.5);
+  padding-top: 15px;
 }
 .catalog-page__product {
   border-radius: 16px;
@@ -3986,7 +3997,7 @@ p a {
   .catalog-screen__cat {
     display: block;
     border-radius: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   .catalog-screen__cat:hover {
     transform: none;
